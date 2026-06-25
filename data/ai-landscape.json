@@ -1,0 +1,5165 @@
+{
+  "schema_version": "1.1",
+  "last_updated": "2026-06-25",
+  "companies": [
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "section": "Frontier AI",
+      "founded": 2015,
+      "hq": "San Francisco, CA",
+      "color": "#10A37F",
+      "emoji": "🟢",
+      "description": "Developer of GPT and o-series models. ChatGPT is the world's most-used AI product. Restructured from nonprofit to capped-profit in 2019; IPO filing confidentially submitted Jun 2026.",
+      "leadership": [
+        {
+          "name": "Sam Altman",
+          "title": "CEO",
+          "since": "2019-03"
+        },
+        {
+          "name": "Greg Brockman",
+          "title": "President (on leave)",
+          "since": "2015-01"
+        },
+        {
+          "name": "Brad Lightcap",
+          "title": "COO",
+          "since": "2023-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "GPT-4o",
+          "type": "LLM API",
+          "flagship": true,
+          "description": "Omni model — text, vision, audio natively",
+          "launched": "2024-05"
+        },
+        {
+          "name": "ChatGPT",
+          "type": "Consumer app",
+          "flagship": false,
+          "description": "100M+ weekly active users",
+          "launched": "2022-11"
+        },
+        {
+          "name": "o3",
+          "type": "Reasoning model",
+          "flagship": false,
+          "description": "Advanced chain-of-thought reasoning",
+          "launched": "2025-01"
+        },
+        {
+          "name": "Sora",
+          "type": "Video generation",
+          "flagship": false,
+          "description": "Text-to-video model",
+          "launched": "2024-12"
+        },
+        {
+          "name": "DALL-E 3",
+          "type": "Image generation",
+          "flagship": false,
+          "description": "Text-to-image, integrated in ChatGPT",
+          "launched": "2023-10"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 17.9,
+        "valuation_usd_billions": 157.0,
+        "valuation_as_of": "2024-10",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2024-10",
+        "last_round_amount_usd_billions": 6.6,
+        "last_round_type": "Series F",
+        "last_round_investors": [
+          "SoftBank",
+          "Microsoft",
+          "Tiger Global"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2023-01",
+          "amount_usd_billions": 10.0,
+          "type": "Strategic Investment",
+          "lead_investor": "Microsoft",
+          "valuation_usd_billions": null,
+          "investors": [
+            "Microsoft"
+          ]
+        },
+        {
+          "date": "2024-05",
+          "amount_usd_billions": 0.87,
+          "type": "Secondary",
+          "lead_investor": "Thrive Capital",
+          "valuation_usd_billions": 80.0,
+          "investors": [
+            "Thrive Capital",
+            "Khosla Ventures",
+            "a16z"
+          ]
+        },
+        {
+          "date": "2024-10",
+          "amount_usd_billions": 6.6,
+          "type": "Series F",
+          "lead_investor": "SoftBank",
+          "valuation_usd_billions": 157.0,
+          "investors": [
+            "SoftBank",
+            "Microsoft",
+            "Tiger Global",
+            "Khosla Ventures"
+          ]
+        }
+      ],
+      "model_history": [
+        {
+          "name": "ChatGPT (GPT-3.5)",
+          "date": "2022-11",
+          "parameters_billions": 175,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Conversational assistant that sparked the AI consumer revolution",
+          "context_length_k": 8,
+          "notable": true,
+          "notes": "First model to reach 100M users in 2 months",
+          "elo_score": 1111,
+          "elo_estimated": false
+        },
+        {
+          "name": "GPT-4",
+          "date": "2023-03",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "~1.8T MoE (estimated)",
+          "type": "Multimodal LLM",
+          "purpose": "Advanced reasoning and vision; first GPT with image understanding",
+          "context_length_k": 32,
+          "notable": true,
+          "notes": "Params undisclosed; widely estimated ~1.8T MoE",
+          "elo_score": 1207,
+          "elo_estimated": false
+        },
+        {
+          "name": "GPT-4 Turbo",
+          "date": "2023-11",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Extended 128K context window; lower cost than GPT-4",
+          "context_length_k": 128,
+          "notable": false,
+          "notes": "Introduced 128K context and updated knowledge",
+          "elo_score": 1254,
+          "elo_estimated": false
+        },
+        {
+          "name": "GPT-4o",
+          "date": "2024-05",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Multimodal",
+          "purpose": "Native omni-modal: text, audio, and vision in one model",
+          "context_length_k": 128,
+          "notable": true,
+          "notes": "First model to process audio natively end-to-end",
+          "elo_score": 1285,
+          "elo_estimated": false
+        },
+        {
+          "name": "GPT-4o mini",
+          "date": "2024-07",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Small, fast, cheap — replaced GPT-3.5 Turbo in most use cases",
+          "context_length_k": 128,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1272,
+          "elo_estimated": false
+        },
+        {
+          "name": "o1",
+          "date": "2024-09",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Reasoning",
+          "purpose": "Chain-of-thought reasoning model; top USAMO math performance",
+          "context_length_k": 128,
+          "notable": true,
+          "notes": "First in the o-series; thinks before answering",
+          "elo_score": 1321,
+          "elo_estimated": false
+        },
+        {
+          "name": "o1 Pro",
+          "date": "2024-12",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Reasoning",
+          "purpose": "Higher-compute version of o1 for hardest problems",
+          "context_length_k": 128,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1362,
+          "elo_estimated": true
+        },
+        {
+          "name": "o3",
+          "date": "2025-01",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Reasoning",
+          "purpose": "Major reasoning leap; near-human on ARC-AGI benchmark",
+          "context_length_k": 200,
+          "notable": true,
+          "notes": "Scored 87.5% on ARC-AGI; considered milestone toward AGI",
+          "elo_score": 1402,
+          "elo_estimated": false
+        },
+        {
+          "name": "GPT-4.5",
+          "date": "2025-02",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Improved instruction following and reduced hallucinations",
+          "context_length_k": 128,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1295,
+          "elo_estimated": true
+        },
+        {
+          "name": "GPT-5",
+          "date": "2026-01",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Multimodal LLM",
+          "purpose": "Flagship next-generation model with native agentic capabilities",
+          "context_length_k": 256,
+          "notable": true,
+          "notes": "Released alongside ChatGPT agent mode expansion",
+          "elo_score": 1460,
+          "elo_estimated": true
+        }
+      ],
+      "acquisitions": [
+        {
+          "name": "Global Illumination",
+          "date": "2023-08",
+          "amount_note": "undisclosed",
+          "description": "Creative tools team; talent and tech for consumer product design"
+        },
+        {
+          "name": "Rockset",
+          "date": "2024-06",
+          "amount_note": "undisclosed",
+          "description": "Real-time analytics database; strengthens enterprise data infrastructure"
+        },
+        {
+          "name": "Multi",
+          "date": "2025-02",
+          "amount_note": "undisclosed",
+          "description": "Collaborative AI workspace startup"
+        }
+      ],
+      "notable_investors": [
+        "Microsoft",
+        "SoftBank",
+        "Thrive Capital",
+        "Khosla Ventures",
+        "Tiger Global",
+        "Sequoia Capital",
+        "Andreessen Horowitz",
+        "Founders Fund"
+      ],
+      "tags": [
+        "llm",
+        "consumer",
+        "enterprise",
+        "multimodal",
+        "reasoning",
+        "ipo-candidate"
+      ]
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "section": "Frontier AI",
+      "founded": 2021,
+      "hq": "San Francisco, CA",
+      "color": "#CC785C",
+      "emoji": "🟤",
+      "description": "Safety-focused AI lab founded by former OpenAI researchers. Pioneered Constitutional AI. Claude Mythos deployed to critical infrastructure globally. IPO filed Jun 2026.",
+      "leadership": [
+        {
+          "name": "Dario Amodei",
+          "title": "CEO & Co-founder",
+          "since": "2021-01"
+        },
+        {
+          "name": "Daniela Amodei",
+          "title": "President & Co-founder",
+          "since": "2021-01"
+        },
+        {
+          "name": "John Jumper",
+          "title": "VP Research (joining)",
+          "since": "2026-06"
+        },
+        {
+          "name": "Tom Brown",
+          "title": "VP Research",
+          "since": "2021-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "Claude Mythos",
+          "type": "LLM API",
+          "flagship": true,
+          "description": "Most powerful Claude; in critical infrastructure 15+ countries",
+          "launched": "2026-01"
+        },
+        {
+          "name": "Claude Fable 5",
+          "type": "LLM",
+          "flagship": false,
+          "description": "Accessible model capable of generating playable video games",
+          "launched": "2026-06"
+        },
+        {
+          "name": "Claude.ai",
+          "type": "Consumer app",
+          "flagship": false,
+          "description": "Web and mobile chat interface",
+          "launched": "2023-07"
+        },
+        {
+          "name": "Claude API",
+          "type": "API",
+          "flagship": false,
+          "description": "Developer API with tool use, vision, extended context",
+          "launched": "2023-03"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 9.45,
+        "valuation_usd_billions": 18.0,
+        "valuation_as_of": "2024-11",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2024-11",
+        "last_round_amount_usd_billions": 4.0,
+        "last_round_type": "Series E",
+        "last_round_investors": [
+          "Amazon",
+          "Google",
+          "Spark Capital"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2023-04",
+          "amount_usd_billions": 0.45,
+          "type": "Series C",
+          "lead_investor": "Spark Capital",
+          "valuation_usd_billions": 4.1,
+          "investors": [
+            "Spark Capital",
+            "Google",
+            "Salesforce"
+          ]
+        },
+        {
+          "date": "2023-05",
+          "amount_usd_billions": 1.25,
+          "type": "Strategic",
+          "lead_investor": "Google",
+          "valuation_usd_billions": null,
+          "investors": [
+            "Google"
+          ]
+        },
+        {
+          "date": "2023-09",
+          "amount_usd_billions": 1.25,
+          "type": "Strategic",
+          "lead_investor": "Amazon",
+          "valuation_usd_billions": null,
+          "investors": [
+            "Amazon"
+          ]
+        },
+        {
+          "date": "2024-03",
+          "amount_usd_billions": 2.75,
+          "type": "Series C Ext.",
+          "lead_investor": "Spark Capital",
+          "valuation_usd_billions": 18.0,
+          "investors": [
+            "Spark Capital",
+            "Google",
+            "Salesforce",
+            "Menlo Ventures"
+          ]
+        },
+        {
+          "date": "2024-11",
+          "amount_usd_billions": 4.0,
+          "type": "Series E",
+          "lead_investor": "Amazon",
+          "valuation_usd_billions": 18.0,
+          "investors": [
+            "Amazon",
+            "Google",
+            "Spark Capital"
+          ]
+        }
+      ],
+      "model_history": [
+        {
+          "name": "Claude 1",
+          "date": "2023-03",
+          "parameters_billions": 52,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Constitutional AI-aligned assistant; first Claude release",
+          "context_length_k": 9,
+          "notable": true,
+          "notes": "Trained using Constitutional AI; focused on harmlessness",
+          "elo_score": 1052,
+          "elo_estimated": true
+        },
+        {
+          "name": "Claude 2",
+          "date": "2023-07",
+          "parameters_billions": 137,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Major upgrade; 100K context window for long documents",
+          "context_length_k": 100,
+          "notable": true,
+          "notes": "First model with 100K token context",
+          "elo_score": 1118,
+          "elo_estimated": true
+        },
+        {
+          "name": "Claude 3 Haiku",
+          "date": "2024-03",
+          "parameters_billions": 20,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Fastest, smallest Claude 3; edge and high-volume use",
+          "context_length_k": 200,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1179,
+          "elo_estimated": false
+        },
+        {
+          "name": "Claude 3 Sonnet",
+          "date": "2024-03",
+          "parameters_billions": 70,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Balanced performance-speed model in the Claude 3 family",
+          "context_length_k": 200,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1202,
+          "elo_estimated": false
+        },
+        {
+          "name": "Claude 3 Opus",
+          "date": "2024-03",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "~2T MoE (estimated)",
+          "type": "LLM",
+          "purpose": "Flagship Claude 3; outperformed GPT-4 on most benchmarks",
+          "context_length_k": 200,
+          "notable": true,
+          "notes": "First Claude to beat GPT-4 on MMLU",
+          "elo_score": 1248,
+          "elo_estimated": false
+        },
+        {
+          "name": "Claude 3.5 Sonnet",
+          "date": "2024-06",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Best coding model at launch; new computer-use capability",
+          "context_length_k": 200,
+          "notable": true,
+          "notes": "Introduced Computer Use (agentic GUI interaction)",
+          "elo_score": 1298,
+          "elo_estimated": false
+        },
+        {
+          "name": "Claude 3.5 Haiku",
+          "date": "2024-10",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Affordable, fast model competitive with Claude 3 Opus",
+          "context_length_k": 200,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1241,
+          "elo_estimated": false
+        },
+        {
+          "name": "Claude 3.7 Sonnet",
+          "date": "2025-02",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Reasoning",
+          "purpose": "Extended thinking mode; hybrid instant + reasoning responses",
+          "context_length_k": 200,
+          "notable": true,
+          "notes": "First Claude with controllable chain-of-thought depth",
+          "elo_score": 1356,
+          "elo_estimated": false
+        },
+        {
+          "name": "Claude 4 Sonnet",
+          "date": "2025-05",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Significant intelligence jump; best-in-class coding",
+          "context_length_k": 200,
+          "notable": true,
+          "notes": "Claude 4 family launch alongside Opus 4",
+          "elo_score": 1385,
+          "elo_estimated": true
+        },
+        {
+          "name": "Claude 4 Opus",
+          "date": "2025-05",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Most intelligent Claude 4; excels at complex multi-step tasks",
+          "context_length_k": 200,
+          "notable": true,
+          "notes": "",
+          "elo_score": 1418,
+          "elo_estimated": true
+        },
+        {
+          "name": "Claude Mythos",
+          "date": "2026-01",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Frontier model deployed to government and critical infrastructure",
+          "context_length_k": 256,
+          "notable": true,
+          "notes": "Subject to US government access restrictions Jun 2026",
+          "elo_score": 1475,
+          "elo_estimated": true
+        },
+        {
+          "name": "Claude Fable 5",
+          "date": "2026-06",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Accessible model; can generate fully playable video games",
+          "context_length_k": 200,
+          "notable": false,
+          "notes": "Based on Mythos architecture, tuned for creative generation",
+          "elo_score": 1425,
+          "elo_estimated": true
+        }
+      ],
+      "acquisitions": [],
+      "notable_investors": [
+        "Amazon",
+        "Google",
+        "Spark Capital",
+        "Salesforce Ventures",
+        "Menlo Ventures",
+        "SK Telecom",
+        "Factorial Capital"
+      ],
+      "tags": [
+        "safety",
+        "alignment",
+        "enterprise",
+        "coding",
+        "ipo-candidate",
+        "constitutional-ai"
+      ]
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "section": "Frontier AI",
+      "founded": 2023,
+      "hq": "Memphis, TN / Austin, TX",
+      "color": "#1A1A1A",
+      "emoji": "⚫",
+      "description": "AI startup founded by Elon Musk. Grok integrated into X (Twitter). Operates Colossus supercomputer cluster. Under DOJ scrutiny for unpermitted Memphis data center turbines.",
+      "leadership": [
+        {
+          "name": "Elon Musk",
+          "title": "CEO & Founder",
+          "since": "2023-07"
+        },
+        {
+          "name": "Igor Babuschkin",
+          "title": "Chief Scientist",
+          "since": "2023-07"
+        }
+      ],
+      "products": [
+        {
+          "name": "Grok 3",
+          "type": "LLM",
+          "flagship": true,
+          "description": "Frontier model with real-time web access and deep research mode",
+          "launched": "2025-02"
+        },
+        {
+          "name": "Aurora",
+          "type": "Image generation",
+          "flagship": false,
+          "description": "Text-to-image model integrated in X",
+          "launched": "2024-08"
+        },
+        {
+          "name": "Grok (X integration)",
+          "type": "Consumer AI",
+          "flagship": false,
+          "description": "AI assistant embedded in X/Twitter for all users",
+          "launched": "2023-11"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 6.1,
+        "valuation_usd_billions": 50.0,
+        "valuation_as_of": "2024-05",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2024-05",
+        "last_round_amount_usd_billions": 6.0,
+        "last_round_type": "Series B",
+        "last_round_investors": [
+          "Andreessen Horowitz",
+          "Sequoia",
+          "Kingdom Holdings"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2023-12",
+          "amount_usd_billions": 0.135,
+          "type": "Seed",
+          "lead_investor": "Elon Musk",
+          "valuation_usd_billions": null,
+          "investors": [
+            "Elon Musk",
+            "Sequoia Capital",
+            "Vy Capital"
+          ]
+        },
+        {
+          "date": "2024-05",
+          "amount_usd_billions": 6.0,
+          "type": "Series B",
+          "lead_investor": "Andreessen Horowitz",
+          "valuation_usd_billions": 18.0,
+          "investors": [
+            "Andreessen Horowitz",
+            "Sequoia Capital",
+            "Kingdom Holdings"
+          ]
+        }
+      ],
+      "model_history": [
+        {
+          "name": "Grok 1",
+          "date": "2023-11",
+          "parameters_billions": 314,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Real-time web-connected assistant embedded in X Premium",
+          "context_length_k": 8,
+          "notable": true,
+          "notes": "Open-sourced in Mar 2024; 314B MoE architecture confirmed",
+          "elo_score": 1151,
+          "elo_estimated": true
+        },
+        {
+          "name": "Grok 1.5",
+          "date": "2024-03",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Improved reasoning; 128K context window",
+          "context_length_k": 128,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1213,
+          "elo_estimated": true
+        },
+        {
+          "name": "Grok 2",
+          "date": "2024-08",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Flagship model with Aurora image generation integration",
+          "context_length_k": 128,
+          "notable": true,
+          "notes": "Estimated ~540B+ params; released alongside Aurora",
+          "elo_score": 1268,
+          "elo_estimated": false
+        },
+        {
+          "name": "Grok 3",
+          "date": "2025-02",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Major capability jump; deep research mode; trained on Colossus",
+          "context_length_k": 128,
+          "notable": true,
+          "notes": "Trained on 100K H100 Colossus cluster; competitive with GPT-4o",
+          "elo_score": 1358,
+          "elo_estimated": false
+        },
+        {
+          "name": "Grok 3 Mini",
+          "date": "2025-04",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Reasoning",
+          "purpose": "Lightweight reasoning model for X integration",
+          "context_length_k": 128,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1302,
+          "elo_estimated": true
+        }
+      ],
+      "acquisitions": [],
+      "notable_investors": [
+        "Elon Musk",
+        "Andreessen Horowitz",
+        "Sequoia Capital",
+        "Kingdom Holdings",
+        "Vy Capital",
+        "Valor Equity Partners"
+      ],
+      "tags": [
+        "llm",
+        "social",
+        "real-time",
+        "supercomputing",
+        "regulatory-issues"
+      ]
+    },
+    {
+      "id": "google_deepmind",
+      "name": "Google DeepMind",
+      "section": "Frontier AI",
+      "founded": 2010,
+      "hq": "London, UK / Mountain View, CA",
+      "color": "#4285F4",
+      "emoji": "🔷",
+      "description": "Alphabet's consolidated AI division (DeepMind + Google Brain merged 2023). Leads Gemini frontier models, AlphaFold science, and AI integration across Google's 3B+ user products.",
+      "leadership": [
+        {
+          "name": "Demis Hassabis",
+          "title": "CEO, Google DeepMind",
+          "since": "2023-04"
+        },
+        {
+          "name": "Sundar Pichai",
+          "title": "CEO, Alphabet",
+          "since": "2019-12"
+        },
+        {
+          "name": "Jeff Dean",
+          "title": "Chief Scientist, Google",
+          "since": "2023-04"
+        }
+      ],
+      "products": [
+        {
+          "name": "Gemini 2.5 Pro",
+          "type": "LLM API",
+          "flagship": true,
+          "description": "Top-ranked reasoning model; #1 on LMArena leaderboard mid-2025",
+          "launched": "2025-06"
+        },
+        {
+          "name": "Gemini (Google apps)",
+          "type": "Consumer AI",
+          "flagship": false,
+          "description": "AI assistant in Search, Workspace, Android — 3B+ users",
+          "launched": "2024-02"
+        },
+        {
+          "name": "NotebookLM",
+          "type": "Consumer app",
+          "flagship": false,
+          "description": "AI research notebook with Audio Overview podcast generation",
+          "launched": "2023-07"
+        },
+        {
+          "name": "AlphaFold 3",
+          "type": "Research tool",
+          "flagship": false,
+          "description": "Protein and biomolecule structure prediction",
+          "launched": "2024-05"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": null,
+        "valuation_usd_billions": null,
+        "valuation_as_of": null,
+        "public": true,
+        "ticker": "GOOG",
+        "last_round_date": null,
+        "last_round_amount_usd_billions": null,
+        "last_round_type": null,
+        "last_round_investors": []
+      },
+      "funding_rounds_history": [],
+      "model_history": [
+        {
+          "name": "Bard (PaLM 2)",
+          "date": "2023-02",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Google's first public AI chatbot, powered by PaLM 2",
+          "context_length_k": 8,
+          "notable": false,
+          "notes": "Initially limited; widely criticized vs ChatGPT",
+          "elo_score": 1049,
+          "elo_estimated": true
+        },
+        {
+          "name": "PaLM 2",
+          "date": "2023-05",
+          "parameters_billions": 340,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Multilingual reasoning model powering Bard and Workspace AI",
+          "context_length_k": 8,
+          "notable": false,
+          "notes": "Powers Google Workspace AI features",
+          "elo_score": 1090,
+          "elo_estimated": true
+        },
+        {
+          "name": "Gemini 1.0 Nano",
+          "date": "2023-12",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "On-device model for Pixel phones and edge deployments",
+          "context_length_k": 8,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1062,
+          "elo_estimated": true
+        },
+        {
+          "name": "Gemini 1.0 Pro",
+          "date": "2023-12",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Mid-tier Gemini for Bard and API; multimodal from launch",
+          "context_length_k": 32,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1111,
+          "elo_estimated": true
+        },
+        {
+          "name": "Gemini 1.0 Ultra",
+          "date": "2023-12",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Multimodal LLM",
+          "purpose": "Flagship Gemini 1.0; first model to beat GPT-4 on MMLU",
+          "context_length_k": 32,
+          "notable": true,
+          "notes": "Scored 90.0% on MMLU; first model to surpass human expert",
+          "elo_score": 1220,
+          "elo_estimated": true
+        },
+        {
+          "name": "Gemini 1.5 Pro",
+          "date": "2024-02",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Multimodal LLM",
+          "purpose": "Breakthrough 1M token context window; video/audio understanding",
+          "context_length_k": 1000,
+          "notable": true,
+          "notes": "1M context = ~11 hours of video or 30K lines of code",
+          "elo_score": 1261,
+          "elo_estimated": false
+        },
+        {
+          "name": "Gemini 1.5 Flash",
+          "date": "2024-05",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Fast, efficient Gemini 1.5; low-cost API access",
+          "context_length_k": 1000,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1228,
+          "elo_estimated": false
+        },
+        {
+          "name": "Gemini 2.0 Flash",
+          "date": "2024-12",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Multimodal LLM",
+          "purpose": "Agentic capabilities; real-time streaming; native tool use",
+          "context_length_k": 1000,
+          "notable": true,
+          "notes": "Introduced native agentic multimodal reasoning",
+          "elo_score": 1322,
+          "elo_estimated": false
+        },
+        {
+          "name": "Gemini 2.5 Pro",
+          "date": "2025-06",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Reasoning LLM",
+          "purpose": "#1 on LMArena; deep thinking mode; coding and math SOTA",
+          "context_length_k": 1000,
+          "notable": true,
+          "notes": "Topped every major benchmark at launch in mid-2025",
+          "elo_score": 1448,
+          "elo_estimated": false
+        }
+      ],
+      "acquisitions": [
+        {
+          "name": "DeepMind",
+          "date": "2014-01",
+          "amount_note": "~$500M",
+          "description": "Foundational acquisition; brought AlphaGo, AlphaFold, Gemini research team"
+        },
+        {
+          "name": "Isomorphic Labs (spin-out)",
+          "date": "2021-11",
+          "amount_note": "internal",
+          "description": "Drug discovery spinout using AlphaFold; later merged back"
+        }
+      ],
+      "notable_investors": [
+        "Alphabet (Google)"
+      ],
+      "tags": [
+        "research",
+        "multimodal",
+        "science",
+        "consumer",
+        "cloud",
+        "public-company"
+      ]
+    },
+    {
+      "id": "meta_ai",
+      "name": "Meta AI",
+      "section": "Frontier AI",
+      "founded": 2013,
+      "hq": "Menlo Park, CA",
+      "color": "#0866FF",
+      "emoji": "🌐",
+      "description": "Meta's AI division. Llama open-source models are the most widely deployed in the world. AI integrated across Facebook, Instagram, WhatsApp. Building superintelligence lab (with Alexandr Wang from Scale AI).",
+      "leadership": [
+        {
+          "name": "Mark Zuckerberg",
+          "title": "CEO, Meta",
+          "since": "2004-02"
+        },
+        {
+          "name": "Yann LeCun",
+          "title": "Chief AI Scientist",
+          "since": "2013-12"
+        },
+        {
+          "name": "Ahmad Al-Dahle",
+          "title": "VP Generative AI",
+          "since": "2023-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "Llama 4",
+          "type": "Open model",
+          "flagship": true,
+          "description": "Multimodal open-source frontier model (Scout/Maverick variants)",
+          "launched": "2025-04"
+        },
+        {
+          "name": "Meta AI Assistant",
+          "type": "Consumer AI",
+          "flagship": false,
+          "description": "AI assistant across FB/Instagram/WhatsApp/Ray-Ban — 1B+ user reach",
+          "launched": "2023-09"
+        },
+        {
+          "name": "Facebook AI Mode",
+          "type": "Consumer AI",
+          "flagship": false,
+          "description": "AI mode on Facebook drawing from public platform data",
+          "launched": "2026-06"
+        },
+        {
+          "name": "WhatsApp Business AI Agent",
+          "type": "Business tool",
+          "flagship": false,
+          "description": "Globally available AI agent for WhatsApp Business",
+          "launched": "2026-06"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": null,
+        "valuation_usd_billions": null,
+        "valuation_as_of": null,
+        "public": true,
+        "ticker": "META",
+        "last_round_date": null,
+        "last_round_amount_usd_billions": null,
+        "last_round_type": null,
+        "last_round_investors": []
+      },
+      "funding_rounds_history": [],
+      "model_history": [
+        {
+          "name": "LLaMA 1",
+          "date": "2023-02",
+          "parameters_billions": 65,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Open-source research model that ignited the open-weights movement",
+          "context_length_k": 2,
+          "notable": true,
+          "notes": "Released with research paper; weights leaked publicly weeks later",
+          "elo_score": 1003,
+          "elo_estimated": true
+        },
+        {
+          "name": "LLaMA 2",
+          "date": "2023-07",
+          "parameters_billions": 70,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "First commercially licensed open LLM from Meta; major ecosystem adoption",
+          "context_length_k": 4,
+          "notable": true,
+          "notes": "Partnered with Microsoft for enterprise licensing",
+          "elo_score": 1075,
+          "elo_estimated": true
+        },
+        {
+          "name": "Code Llama",
+          "date": "2023-08",
+          "parameters_billions": 34,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Specialized code generation and explanation model",
+          "context_length_k": 16,
+          "notable": false,
+          "notes": "Fine-tuned from Llama 2 on code datasets",
+          "elo_score": 1050,
+          "elo_estimated": true
+        },
+        {
+          "name": "LLaMA 3 (8B/70B)",
+          "date": "2024-04",
+          "parameters_billions": 70,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Significant quality jump over Llama 2; strong multilingual",
+          "context_length_k": 8,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1192,
+          "elo_estimated": false
+        },
+        {
+          "name": "LLaMA 3.1 405B",
+          "date": "2024-07",
+          "parameters_billions": 405,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "First open model competitive with GPT-4 Turbo on most benchmarks",
+          "context_length_k": 128,
+          "notable": true,
+          "notes": "Landmark: open-source matches closed frontier for first time",
+          "elo_score": 1265,
+          "elo_estimated": false
+        },
+        {
+          "name": "LLaMA 3.2",
+          "date": "2024-09",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Multimodal",
+          "purpose": "Multimodal vision models (11B/90B) plus edge models (1B/3B)",
+          "context_length_k": 128,
+          "notable": false,
+          "notes": "First Llama with vision capability",
+          "elo_score": 1218,
+          "elo_estimated": false
+        },
+        {
+          "name": "LLaMA 3.3 70B",
+          "date": "2024-12",
+          "parameters_billions": 70,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Efficient update; 405B-level performance at 70B params",
+          "context_length_k": 128,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1255,
+          "elo_estimated": false
+        },
+        {
+          "name": "LLaMA 4 Scout",
+          "date": "2025-04",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Multimodal LLM",
+          "purpose": "17B active (MoE); extremely long 10M token context window",
+          "context_length_k": 10000,
+          "notable": true,
+          "notes": "10M context is longest ever; MoE with 16 experts",
+          "elo_score": 1309,
+          "elo_estimated": true
+        },
+        {
+          "name": "LLaMA 4 Maverick",
+          "date": "2025-04",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Multimodal LLM",
+          "purpose": "128 experts MoE; GPT-4o competitive at fraction of cost",
+          "context_length_k": 1000,
+          "notable": true,
+          "notes": "Beats GPT-4o and Gemini 2.0 Flash on benchmarks",
+          "elo_score": 1352,
+          "elo_estimated": true
+        }
+      ],
+      "acquisitions": [
+        {
+          "name": "Scale AI (significant investment)",
+          "date": "2025-06",
+          "amount_note": "undisclosed",
+          "description": "Strategic investment alongside hiring Alexandr Wang for Meta superintelligence lab"
+        }
+      ],
+      "notable_investors": [
+        "Meta Platforms (internal)"
+      ],
+      "tags": [
+        "open-source",
+        "social",
+        "consumer",
+        "multimodal",
+        "llama",
+        "superintelligence-lab",
+        "public-company"
+      ]
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "section": "Foundation Model Labs",
+      "founded": 2023,
+      "hq": "Paris, France",
+      "color": "#FF7000",
+      "emoji": "🟠",
+      "description": "European open-weight model lab. Pioneer of efficient MoE architecture. Rumored €3B raise at €20B valuation (Jun 2026). Secured $830M debt for Paris data center. First acquisition: Koyeb.",
+      "leadership": [
+        {
+          "name": "Arthur Mensch",
+          "title": "CEO & Co-founder",
+          "since": "2023-04"
+        },
+        {
+          "name": "Timothée Lacroix",
+          "title": "CTO & Co-founder",
+          "since": "2023-04"
+        },
+        {
+          "name": "Guillaume Lample",
+          "title": "Chief Scientist & Co-founder",
+          "since": "2023-04"
+        }
+      ],
+      "products": [
+        {
+          "name": "Mistral Large 2",
+          "type": "LLM API",
+          "flagship": true,
+          "description": "123B flagship; strong multilingual and code",
+          "launched": "2024-07"
+        },
+        {
+          "name": "Forge",
+          "type": "Enterprise platform",
+          "flagship": false,
+          "description": "Enterprise AI deployment platform launched at NVIDIA GTC 2026",
+          "launched": "2026-03"
+        },
+        {
+          "name": "Le Chat",
+          "type": "Consumer app",
+          "flagship": false,
+          "description": "Consumer chat interface; growing European user base",
+          "launched": "2024-02"
+        },
+        {
+          "name": "Mistral Speech",
+          "type": "Open model",
+          "flagship": false,
+          "description": "Open-source speech generation model",
+          "launched": "2026-03"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 1.1,
+        "valuation_usd_billions": 22.0,
+        "valuation_as_of": "2026-06",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2026-06",
+        "last_round_amount_usd_billions": 3.3,
+        "last_round_type": "Series C (rumored)",
+        "last_round_investors": [
+          "Andreessen Horowitz",
+          "General Catalyst",
+          "Salesforce"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2023-06",
+          "amount_usd_billions": 0.113,
+          "type": "Seed",
+          "lead_investor": "Lightspeed",
+          "valuation_usd_billions": 0.26,
+          "investors": [
+            "Lightspeed Venture Partners",
+            "Xavier Niel",
+            "Eric Schmidt"
+          ]
+        },
+        {
+          "date": "2023-12",
+          "amount_usd_billions": 0.415,
+          "type": "Series A",
+          "lead_investor": "Andreessen Horowitz",
+          "valuation_usd_billions": 2.0,
+          "investors": [
+            "Andreessen Horowitz",
+            "Lightspeed",
+            "Salesforce Ventures",
+            "BNP Paribas"
+          ]
+        },
+        {
+          "date": "2024-06",
+          "amount_usd_billions": 0.645,
+          "type": "Series B",
+          "lead_investor": "General Catalyst",
+          "valuation_usd_billions": 6.0,
+          "investors": [
+            "General Catalyst",
+            "Andreessen Horowitz",
+            "Lightspeed",
+            "Salesforce"
+          ]
+        },
+        {
+          "date": "2026-03",
+          "amount_usd_billions": 0.83,
+          "type": "Debt Facility",
+          "lead_investor": "Undisclosed",
+          "valuation_usd_billions": null,
+          "investors": [
+            "Undisclosed banks"
+          ]
+        },
+        {
+          "date": "2026-06",
+          "amount_usd_billions": 3.3,
+          "type": "Series C (rumored)",
+          "lead_investor": "TBD",
+          "valuation_usd_billions": 22.0,
+          "investors": [
+            "TBD"
+          ]
+        }
+      ],
+      "model_history": [
+        {
+          "name": "Mistral 7B",
+          "date": "2023-09",
+          "parameters_billions": 7.3,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Efficient open model that outperformed Llama 2 13B at 7B params",
+          "context_length_k": 8,
+          "notable": true,
+          "notes": "Released with weights; proved smaller models could compete with larger ones",
+          "elo_score": 1082,
+          "elo_estimated": true
+        },
+        {
+          "name": "Mixtral 8x7B",
+          "date": "2023-12",
+          "parameters_billions": 46.7,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "MoE architecture using 8 experts; best open model at launch",
+          "context_length_k": 32,
+          "notable": true,
+          "notes": "~12B active params at inference; sparked MoE adoption across the industry",
+          "elo_score": 1155,
+          "elo_estimated": false
+        },
+        {
+          "name": "Mistral Large",
+          "date": "2024-02",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "First closed frontier model from Mistral; via API and Azure",
+          "context_length_k": 32,
+          "notable": true,
+          "notes": "Announced alongside Azure partnership; ~123B estimated",
+          "elo_score": 1210,
+          "elo_estimated": true
+        },
+        {
+          "name": "Mixtral 8x22B",
+          "date": "2024-04",
+          "parameters_billions": 141,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Larger MoE; 65K context; strong code and reasoning",
+          "context_length_k": 64,
+          "notable": false,
+          "notes": "Active params ~39B; surpassed Llama 2 70B on most tasks",
+          "elo_score": 1225,
+          "elo_estimated": false
+        },
+        {
+          "name": "Codestral",
+          "date": "2024-06",
+          "parameters_billions": 22,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Specialized code completion model; 80+ programming languages",
+          "context_length_k": 32,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1103,
+          "elo_estimated": true
+        },
+        {
+          "name": "Mistral Nemo",
+          "date": "2024-07",
+          "parameters_billions": 12,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "12B collaborative model with Nvidia; runs on consumer hardware",
+          "context_length_k": 128,
+          "notable": false,
+          "notes": "Jointly developed with Nvidia; designed for local deployment",
+          "elo_score": 1168,
+          "elo_estimated": true
+        },
+        {
+          "name": "Mistral Large 2",
+          "date": "2024-07",
+          "parameters_billions": 123,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Flagship closed model; strong multilingual and 128K context",
+          "context_length_k": 128,
+          "notable": true,
+          "notes": "Released same day as Llama 3.1 405B; competitive with GPT-4o",
+          "elo_score": 1255,
+          "elo_estimated": false
+        },
+        {
+          "name": "Mistral Small 3",
+          "date": "2025-01",
+          "parameters_billions": 24,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Updated small model; strong coding and instruction following",
+          "context_length_k": 32,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1202,
+          "elo_estimated": true
+        },
+        {
+          "name": "Mistral Large 3",
+          "date": "2025-06",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Updated flagship with improved reasoning and tool use",
+          "context_length_k": 128,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1281,
+          "elo_estimated": true
+        },
+        {
+          "name": "Mistral Speech",
+          "date": "2026-03",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Audio",
+          "purpose": "Open-source speech synthesis and transcription model",
+          "context_length_k": null,
+          "notable": false,
+          "notes": "",
+          "elo_score": null,
+          "elo_estimated": true
+        }
+      ],
+      "acquisitions": [
+        {
+          "name": "Koyeb",
+          "date": "2026-02",
+          "amount_note": "undisclosed",
+          "description": "Cloud infrastructure startup; enables managed Mistral model deployment"
+        }
+      ],
+      "notable_investors": [
+        "Andreessen Horowitz",
+        "General Catalyst",
+        "Lightspeed Venture Partners",
+        "Salesforce Ventures",
+        "BNP Paribas",
+        "Xavier Niel",
+        "Eric Schmidt"
+      ],
+      "tags": [
+        "open-source",
+        "european",
+        "efficient",
+        "moe",
+        "multilingual",
+        "enterprise"
+      ]
+    },
+    {
+      "id": "cohere",
+      "name": "Cohere",
+      "section": "Foundation Model Labs",
+      "founded": 2019,
+      "hq": "Toronto, Canada / Berlin, Germany",
+      "color": "#39579A",
+      "emoji": "🔵",
+      "description": "Enterprise NLP platform. Merged with Germany's Aleph Alpha (Apr 2026) creating a transatlantic AI powerhouse. $240M ARR. Joelle Pineau (ex-Meta AI research head) as Chief AI Officer. IPO candidate.",
+      "leadership": [
+        {
+          "name": "Aidan Gomez",
+          "title": "CEO & Co-founder",
+          "since": "2019-01"
+        },
+        {
+          "name": "Ivan Zhang",
+          "title": "CTO & Co-founder",
+          "since": "2019-01"
+        },
+        {
+          "name": "Joelle Pineau",
+          "title": "Chief AI Officer",
+          "since": "2025-08"
+        },
+        {
+          "name": "Nick Frosst",
+          "title": "Co-founder",
+          "since": "2019-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "North",
+          "type": "Enterprise AI platform",
+          "flagship": true,
+          "description": "Enterprise AI agent platform launched Aug 2025",
+          "launched": "2025-08"
+        },
+        {
+          "name": "Command R+",
+          "type": "LLM API",
+          "flagship": false,
+          "description": "104B enterprise RAG model with 128K context and tool use",
+          "launched": "2024-04"
+        },
+        {
+          "name": "Cohere Transcribe",
+          "type": "Speech API",
+          "flagship": false,
+          "description": "Open-source voice transcription model",
+          "launched": "2026-03"
+        },
+        {
+          "name": "Embed",
+          "type": "Embeddings API",
+          "flagship": false,
+          "description": "Multilingual embeddings for semantic search and RAG",
+          "launched": "2022-11"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 0.97,
+        "valuation_usd_billions": 7.0,
+        "valuation_as_of": "2025-09",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2025-09",
+        "last_round_amount_usd_billions": null,
+        "last_round_type": "Valuation update",
+        "last_round_investors": [
+          "PSP Investments",
+          "Nvidia",
+          "Oracle"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2023-02",
+          "amount_usd_billions": 0.27,
+          "type": "Series C",
+          "lead_investor": "Inovia Capital",
+          "valuation_usd_billions": 2.2,
+          "investors": [
+            "Inovia Capital",
+            "Index Ventures",
+            "Tiger Global",
+            "Salesforce Ventures"
+          ]
+        },
+        {
+          "date": "2024-07",
+          "amount_usd_billions": 0.5,
+          "type": "Series D",
+          "lead_investor": "PSP Investments",
+          "valuation_usd_billions": 5.5,
+          "investors": [
+            "PSP Investments",
+            "Nvidia",
+            "Oracle",
+            "Salesforce"
+          ]
+        }
+      ],
+      "model_history": [
+        {
+          "name": "Command",
+          "date": "2022-11",
+          "parameters_billions": 52,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Enterprise instruction-following model; early RAG-focused design",
+          "context_length_k": 4,
+          "notable": false,
+          "notes": "Cohere's first commercial model; launched same month as ChatGPT",
+          "elo_score": 1020,
+          "elo_estimated": true
+        },
+        {
+          "name": "Command Light",
+          "date": "2022-11",
+          "parameters_billions": 6,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Lightweight Command variant for high-throughput enterprise use",
+          "context_length_k": 4,
+          "notable": false,
+          "notes": "",
+          "elo_score": 990,
+          "elo_estimated": true
+        },
+        {
+          "name": "Command R",
+          "date": "2024-03",
+          "parameters_billions": 35,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Optimized for retrieval-augmented generation with 128K context",
+          "context_length_k": 128,
+          "notable": true,
+          "notes": "Purpose-built for RAG; introduced grounded generation",
+          "elo_score": 1100,
+          "elo_estimated": false
+        },
+        {
+          "name": "Command R+",
+          "date": "2024-04",
+          "parameters_billions": 104,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Enterprise flagship with multi-step tool use and 128K context",
+          "context_length_k": 128,
+          "notable": true,
+          "notes": "Competes with GPT-4 Turbo for enterprise RAG workloads",
+          "elo_score": 1170,
+          "elo_estimated": false
+        },
+        {
+          "name": "Command R (v2)",
+          "date": "2025-01",
+          "parameters_billions": 35,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Updated Command R with improved accuracy and reduced hallucination",
+          "context_length_k": 128,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1128,
+          "elo_estimated": true
+        },
+        {
+          "name": "Command R+ (v2)",
+          "date": "2025-03",
+          "parameters_billions": 120,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Updated flagship with stronger reasoning; competitive with Claude 3.5",
+          "context_length_k": 128,
+          "notable": false,
+          "notes": "",
+          "elo_score": 1195,
+          "elo_estimated": true
+        },
+        {
+          "name": "Cohere Transcribe",
+          "date": "2026-03",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Audio",
+          "purpose": "Enterprise-grade open-source speech transcription",
+          "context_length_k": null,
+          "notable": false,
+          "notes": "",
+          "elo_score": null,
+          "elo_estimated": true
+        }
+      ],
+      "acquisitions": [
+        {
+          "name": "Ottogrid",
+          "date": "2025-05",
+          "amount_note": "undisclosed",
+          "description": "AI-powered market research platform; expands enterprise analytics offering"
+        },
+        {
+          "name": "Aleph Alpha (merger)",
+          "date": "2026-04",
+          "amount_note": "undisclosed",
+          "description": "German AI company; creates transatlantic enterprise AI leader with European sovereign AI capabilities"
+        }
+      ],
+      "notable_investors": [
+        "PSP Investments",
+        "Nvidia",
+        "Oracle",
+        "Salesforce Ventures",
+        "Inovia Capital",
+        "Index Ventures",
+        "Tiger Global",
+        "NVIDIA"
+      ],
+      "tags": [
+        "enterprise",
+        "rag",
+        "multilingual",
+        "search",
+        "ipo-candidate",
+        "aleph-alpha"
+      ]
+    },
+    {
+      "id": "microsoft_ai",
+      "name": "Microsoft AI",
+      "section": "Big Tech AI",
+      "founded": 1975,
+      "hq": "Redmond, WA",
+      "color": "#00BCF2",
+      "emoji": "🪟",
+      "description": "Microsoft's AI division. $13B+ invested in OpenAI. Copilot across all products. 20M+ paid Copilot users (Apr 2026). Azure OpenAI Service dominant enterprise AI platform.",
+      "leadership": [
+        {
+          "name": "Satya Nadella",
+          "title": "CEO, Microsoft",
+          "since": "2014-02"
+        },
+        {
+          "name": "Mustafa Suleyman",
+          "title": "EVP & CEO, Microsoft AI",
+          "since": "2024-03"
+        },
+        {
+          "name": "Eric Boyd",
+          "title": "CVP, Azure AI",
+          "since": "2022-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "Copilot",
+          "type": "AI assistant",
+          "flagship": true,
+          "description": "AI in Windows, Office 365, Edge, Bing — 20M+ paid users",
+          "launched": "2023-11"
+        },
+        {
+          "name": "Azure OpenAI Service",
+          "type": "Cloud API",
+          "flagship": false,
+          "description": "Enterprise access to OpenAI models via Azure",
+          "launched": "2023-01"
+        },
+        {
+          "name": "GitHub Copilot",
+          "type": "Developer tool",
+          "flagship": false,
+          "description": "AI code completion in IDEs — millions of developers",
+          "launched": "2022-06"
+        },
+        {
+          "name": "Scout",
+          "type": "Personal AI assistant",
+          "flagship": false,
+          "description": "Personal AI assistant for consumer and professional use",
+          "launched": "2026-06"
+        },
+        {
+          "name": "Phi-3/Phi-4",
+          "type": "Open model",
+          "flagship": false,
+          "description": "Small language model family for on-device AI",
+          "launched": "2024-04"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": null,
+        "valuation_usd_billions": null,
+        "valuation_as_of": null,
+        "public": true,
+        "ticker": "MSFT",
+        "last_round_date": null,
+        "last_round_amount_usd_billions": null,
+        "last_round_type": null,
+        "last_round_investors": []
+      },
+      "funding_rounds_history": [],
+      "model_history": [],
+      "acquisitions": [
+        {
+          "name": "Activision Blizzard",
+          "date": "2023-10",
+          "amount_note": "$68.7B",
+          "description": "Largest gaming acquisition; AI used for procedural content generation and NPCs"
+        },
+        {
+          "name": "Inflection AI (team)",
+          "date": "2024-03",
+          "amount_note": "~$650M",
+          "description": "Acquired most of Inflection team including Mustafa Suleyman; Inflection IP remained separate"
+        }
+      ],
+      "notable_investors": [
+        "Microsoft (public — MSFT)"
+      ],
+      "tags": [
+        "enterprise",
+        "developer",
+        "cloud",
+        "copilot",
+        "openai-partner",
+        "public-company"
+      ]
+    },
+    {
+      "id": "amazon_aws_ai",
+      "name": "Amazon / AWS AI",
+      "section": "Big Tech AI",
+      "founded": 1994,
+      "hq": "Seattle, WA",
+      "color": "#FF9900",
+      "emoji": "📦",
+      "description": "Amazon's AI portfolio: Bedrock (multi-model API), Q (enterprise assistant), Trainium/Inferentia chips. $4B strategic investment in Anthropic. Now selling Trainium chips externally to challenge Nvidia.",
+      "leadership": [
+        {
+          "name": "Andy Jassy",
+          "title": "CEO, Amazon",
+          "since": "2021-07"
+        },
+        {
+          "name": "Matt Garman",
+          "title": "CEO, AWS",
+          "since": "2024-06"
+        },
+        {
+          "name": "Swami Sivasubramanian",
+          "title": "VP AI & Data, AWS",
+          "since": "2020-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "Amazon Bedrock",
+          "type": "Cloud AI platform",
+          "flagship": true,
+          "description": "Multi-model managed API (Claude, Llama, Titan, Nova)",
+          "launched": "2023-09"
+        },
+        {
+          "name": "Amazon Q",
+          "type": "Enterprise AI assistant",
+          "flagship": false,
+          "description": "Enterprise AI assistant for AWS and business apps",
+          "launched": "2023-11"
+        },
+        {
+          "name": "Trainium / Inferentia",
+          "type": "AI chips",
+          "flagship": false,
+          "description": "Custom ML chips — now sold externally to challenge Nvidia",
+          "launched": "2020-12"
+        },
+        {
+          "name": "Alexa+",
+          "type": "Consumer AI assistant",
+          "flagship": false,
+          "description": "Generative AI-powered Alexa",
+          "launched": "2024-09"
+        },
+        {
+          "name": "Nova (model family)",
+          "type": "LLM",
+          "flagship": false,
+          "description": "Amazon's own foundation model family via Bedrock",
+          "launched": "2024-12"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": null,
+        "valuation_usd_billions": null,
+        "valuation_as_of": null,
+        "public": true,
+        "ticker": "AMZN",
+        "last_round_date": null,
+        "last_round_amount_usd_billions": null,
+        "last_round_type": null,
+        "last_round_investors": []
+      },
+      "funding_rounds_history": [],
+      "model_history": [],
+      "acquisitions": [
+        {
+          "name": "Zoox",
+          "date": "2020-06",
+          "amount_note": "$1.2B",
+          "description": "Autonomous vehicle company; AI safety and robotics research"
+        },
+        {
+          "name": "MGM",
+          "date": "2021-05",
+          "amount_note": "$8.45B",
+          "description": "Content library for Alexa and Prime Video AI personalization"
+        }
+      ],
+      "notable_investors": [
+        "Amazon (public — AMZN)"
+      ],
+      "tags": [
+        "cloud",
+        "enterprise",
+        "chips",
+        "consumer",
+        "anthropic-investor",
+        "public-company"
+      ]
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity AI",
+      "section": "AI Applications",
+      "founded": 2022,
+      "hq": "San Francisco, CA",
+      "color": "#20808D",
+      "emoji": "🔍",
+      "description": "AI-powered search engine combining LLM answers with real-time web citations. Snap $400M search deal dissolved May 2026. Personal Computer app launched for Mac.",
+      "leadership": [
+        {
+          "name": "Aravind Srinivas",
+          "title": "CEO & Co-founder",
+          "since": "2022-08"
+        },
+        {
+          "name": "Denis Yarats",
+          "title": "CTO & Co-founder",
+          "since": "2022-08"
+        },
+        {
+          "name": "Johnny Ho",
+          "title": "President & Co-founder",
+          "since": "2022-08"
+        }
+      ],
+      "products": [
+        {
+          "name": "Perplexity Search",
+          "type": "AI search",
+          "flagship": true,
+          "description": "Answer engine with cited web sources",
+          "launched": "2022-12"
+        },
+        {
+          "name": "Perplexity Pro",
+          "type": "Subscription",
+          "flagship": false,
+          "description": "Premium tier — $20/month",
+          "launched": "2024-01"
+        },
+        {
+          "name": "Perplexity Personal Computer",
+          "type": "Desktop app",
+          "flagship": false,
+          "description": "Mac app for AI-powered personal knowledge management",
+          "launched": "2026-05"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 0.5,
+        "valuation_usd_billions": 9.0,
+        "valuation_as_of": "2024-06",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2024-06",
+        "last_round_amount_usd_billions": 0.25,
+        "last_round_type": "Series C",
+        "last_round_investors": [
+          "Nvidia",
+          "Bezos Expeditions",
+          "IVP"
+        ]
+      },
+      "funding_rounds_history": [],
+      "model_history": [],
+      "acquisitions": [],
+      "notable_investors": [
+        "Nvidia",
+        "Bezos Expeditions",
+        "IVP",
+        "NEA",
+        "Databricks"
+      ],
+      "tags": [
+        "search",
+        "consumer",
+        "real-time",
+        "citations"
+      ]
+    },
+    {
+      "id": "hugging_face",
+      "name": "Hugging Face",
+      "section": "AI Applications",
+      "founded": 2016,
+      "hq": "New York, NY / Paris, France",
+      "color": "#B8860B",
+      "emoji": "🤗",
+      "description": "The 'GitHub of AI' — 500K+ models, 150K+ datasets. Pivoting into robotics with Reachy Mini robot and humanoid acquisitions.",
+      "leadership": [
+        {
+          "name": "Clément Delangue",
+          "title": "CEO & Co-founder",
+          "since": "2016-01"
+        },
+        {
+          "name": "Julien Chaumond",
+          "title": "CTO & Co-founder",
+          "since": "2016-01"
+        },
+        {
+          "name": "Thomas Wolf",
+          "title": "CSO & Co-founder",
+          "since": "2016-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "Hub",
+          "type": "Platform",
+          "flagship": true,
+          "description": "Host and discover 500K+ open models, datasets, and demos",
+          "launched": "2019-01"
+        },
+        {
+          "name": "Transformers",
+          "type": "Open-source library",
+          "flagship": false,
+          "description": "Most widely used ML library — 130K+ GitHub stars",
+          "launched": "2018-10"
+        },
+        {
+          "name": "Spaces",
+          "type": "Demo hosting",
+          "flagship": false,
+          "description": "Free hosting for Gradio/Streamlit AI demos",
+          "launched": "2021-07"
+        },
+        {
+          "name": "Reachy Mini",
+          "type": "Robotics",
+          "flagship": false,
+          "description": "Desktop robot for AI interaction research",
+          "launched": "2025-07"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 0.395,
+        "valuation_usd_billions": 4.5,
+        "valuation_as_of": "2023-08",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2023-08",
+        "last_round_amount_usd_billions": 0.235,
+        "last_round_type": "Series D",
+        "last_round_investors": [
+          "Google",
+          "Amazon",
+          "Nvidia",
+          "Salesforce",
+          "AMD"
+        ]
+      },
+      "funding_rounds_history": [],
+      "model_history": [],
+      "acquisitions": [
+        {
+          "name": "Pollen Robotics",
+          "date": "2025-04",
+          "amount_note": "undisclosed",
+          "description": "French humanoid robotics startup; builds Reachy robot"
+        }
+      ],
+      "notable_investors": [
+        "Google",
+        "Amazon",
+        "Nvidia",
+        "Salesforce Ventures",
+        "AMD",
+        "Intel Capital",
+        "Lux Capital"
+      ],
+      "tags": [
+        "open-source",
+        "platform",
+        "community",
+        "models",
+        "datasets",
+        "robotics"
+      ]
+    },
+    {
+      "id": "stability_ai",
+      "name": "Stability AI",
+      "section": "AI Applications",
+      "founded": 2020,
+      "hq": "London, UK",
+      "color": "#7B2D8B",
+      "emoji": "🎨",
+      "description": "Pioneer of open-source image generation. Getty lawsuit largely dropped Jun 2025. New CEO Sean McClure stabilizing the company after Emad Mostaque's 2024 departure.",
+      "leadership": [
+        {
+          "name": "Sean McClure",
+          "title": "CEO",
+          "since": "2024-07"
+        },
+        {
+          "name": "Emad Mostaque",
+          "title": "Founder (departed)",
+          "since": "2020-01",
+          "departed": "2024-03"
+        }
+      ],
+      "products": [
+        {
+          "name": "Stable Diffusion 3",
+          "type": "Image generation",
+          "flagship": true,
+          "description": "Open-weight text-to-image model",
+          "launched": "2024-06"
+        },
+        {
+          "name": "Stable Audio 2",
+          "type": "Audio generation",
+          "flagship": false,
+          "description": "Songs up to 6 minutes; improved quality",
+          "launched": "2026-05"
+        },
+        {
+          "name": "Stable Video Diffusion",
+          "type": "Video generation",
+          "flagship": false,
+          "description": "Image-to-video model",
+          "launched": "2023-11"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 0.101,
+        "valuation_usd_billions": 1.0,
+        "valuation_as_of": "2024-06",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2022-10",
+        "last_round_amount_usd_billions": 0.101,
+        "last_round_type": "Seed",
+        "last_round_investors": [
+          "Coatue",
+          "Lightspeed"
+        ]
+      },
+      "funding_rounds_history": [],
+      "model_history": [],
+      "acquisitions": [],
+      "notable_investors": [
+        "Coatue",
+        "Lightspeed Venture Partners",
+        "O'Shaughnessy Ventures"
+      ],
+      "tags": [
+        "image-generation",
+        "open-source",
+        "creative",
+        "distressed"
+      ]
+    },
+    {
+      "id": "nvidia",
+      "name": "Nvidia",
+      "section": "AI Infrastructure",
+      "founded": 1993,
+      "hq": "Santa Clara, CA",
+      "color": "#76B900",
+      "emoji": "🟩",
+      "description": "Dominant AI chip maker. Blackwell GPUs shipping. Now targeting $200B CPU market with AI agent PCs. FY2025 revenue ~$130B. Amazon selling Trainium chips as direct competitor.",
+      "leadership": [
+        {
+          "name": "Jensen Huang",
+          "title": "CEO & Co-founder",
+          "since": "1993-01"
+        },
+        {
+          "name": "Colette Kress",
+          "title": "CFO",
+          "since": "2013-09"
+        }
+      ],
+      "products": [
+        {
+          "name": "Blackwell (GB200)",
+          "type": "AI training GPU",
+          "flagship": true,
+          "description": "Next-gen GPU: 30x inference vs H100; shipping 2025",
+          "launched": "2024-03"
+        },
+        {
+          "name": "H100 / H200",
+          "type": "AI training GPU",
+          "flagship": false,
+          "description": "Dominant LLM training GPUs — ~80% market share",
+          "launched": "2022-09"
+        },
+        {
+          "name": "CUDA",
+          "type": "Software platform",
+          "flagship": false,
+          "description": "GPU programming ecosystem — ~30M developers",
+          "launched": "2007-06"
+        },
+        {
+          "name": "NIM Microservices",
+          "type": "AI inference software",
+          "flagship": false,
+          "description": "Containerized AI model deployment",
+          "launched": "2024-03"
+        },
+        {
+          "name": "Nvidia AI Agent PCs",
+          "type": "PC platform",
+          "flagship": false,
+          "description": "AI agent PC platform with Microsoft, Dell, HP",
+          "launched": "2026-06"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": null,
+        "valuation_usd_billions": 3000.0,
+        "valuation_as_of": "2024-06",
+        "public": true,
+        "ticker": "NVDA",
+        "last_round_date": null,
+        "last_round_amount_usd_billions": null,
+        "last_round_type": null,
+        "last_round_investors": []
+      },
+      "funding_rounds_history": [],
+      "model_history": [],
+      "acquisitions": [
+        {
+          "name": "Mellanox",
+          "date": "2020-04",
+          "amount_note": "$6.9B",
+          "description": "High-speed networking; critical for GPU cluster interconnects"
+        },
+        {
+          "name": "Arm (attempted, blocked)",
+          "date": "2022-02",
+          "amount_note": "$40B (blocked)",
+          "description": "Attempted acquisition blocked by global regulators in Feb 2022"
+        }
+      ],
+      "notable_investors": [
+        "Nvidia (public — NVDA)"
+      ],
+      "tags": [
+        "chips",
+        "hardware",
+        "cuda",
+        "infrastructure",
+        "datacenter",
+        "public-company"
+      ]
+    },
+    {
+      "id": "scale_ai",
+      "name": "Scale AI",
+      "section": "AI Infrastructure",
+      "founded": 2016,
+      "hq": "San Francisco, CA",
+      "color": "#FF4500",
+      "emoji": "⚖️",
+      "description": "Data labeling and AI evaluation platform. CEO Alexandr Wang departed Jun 2025 to join Meta's superintelligence lab. Meta made significant investment. 14% layoff in Jul 2025.",
+      "leadership": [
+        {
+          "name": "Alexandr Wang",
+          "title": "Founder (departed to Meta)",
+          "since": "2016-01",
+          "departed": "2025-06"
+        },
+        {
+          "name": "Lucy Guo",
+          "title": "Co-founder (departed)",
+          "since": "2016-01",
+          "departed": "2017-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "Scale Data Engine",
+          "type": "Data platform",
+          "flagship": true,
+          "description": "End-to-end data labeling, curation, and RLHF pipelines",
+          "launched": "2016-01"
+        },
+        {
+          "name": "Donovan",
+          "type": "Defense AI",
+          "flagship": false,
+          "description": "AI decision-making platform for US DoD",
+          "launched": "2023-09"
+        },
+        {
+          "name": "SEAL Leaderboards",
+          "type": "Evaluation",
+          "flagship": false,
+          "description": "Independent third-party LLM benchmarks",
+          "launched": "2024-01"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 1.6,
+        "valuation_usd_billions": 13.8,
+        "valuation_as_of": "2024-05",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2024-05",
+        "last_round_amount_usd_billions": 1.0,
+        "last_round_type": "Series F",
+        "last_round_investors": [
+          "Accel",
+          "Tiger Global",
+          "Meta"
+        ]
+      },
+      "funding_rounds_history": [],
+      "model_history": [],
+      "acquisitions": [],
+      "notable_investors": [
+        "Accel",
+        "Tiger Global",
+        "Meta (strategic)",
+        "Y Combinator",
+        "Founders Fund"
+      ],
+      "tags": [
+        "data-labeling",
+        "rlhf",
+        "evaluation",
+        "defense",
+        "enterprise",
+        "leadership-change"
+      ]
+    },
+    {
+      "id": "together_ai",
+      "name": "Together AI",
+      "section": "AI Infrastructure",
+      "founded": 2022,
+      "hq": "San Francisco, CA",
+      "color": "#6B21A8",
+      "emoji": "🟣",
+      "description": "Open-source AI inference and fine-tuning platform. Fast, cheap inference for Llama, Mistral, and other open models via custom GPU clusters.",
+      "leadership": [
+        {
+          "name": "Vipul Ved Prakash",
+          "title": "CEO & Co-founder",
+          "since": "2022-06"
+        },
+        {
+          "name": "Ce Zhang",
+          "title": "Co-founder",
+          "since": "2022-06"
+        },
+        {
+          "name": "Christopher Ré",
+          "title": "Co-founder",
+          "since": "2022-06"
+        }
+      ],
+      "products": [
+        {
+          "name": "Together Inference",
+          "type": "Inference API",
+          "flagship": true,
+          "description": "Fast open-model inference API (Llama, Mistral, etc.)",
+          "launched": "2023-06"
+        },
+        {
+          "name": "Together Fine-tuning",
+          "type": "Fine-tuning platform",
+          "flagship": false,
+          "description": "Custom model fine-tuning on proprietary data",
+          "launched": "2023-09"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 0.228,
+        "valuation_usd_billions": 1.25,
+        "valuation_as_of": "2024-03",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2024-03",
+        "last_round_amount_usd_billions": 0.106,
+        "last_round_type": "Series A",
+        "last_round_investors": [
+          "Salesforce Ventures",
+          "Nvidia",
+          "NEA"
+        ]
+      },
+      "funding_rounds_history": [],
+      "model_history": [],
+      "acquisitions": [],
+      "notable_investors": [
+        "Salesforce Ventures",
+        "Nvidia",
+        "NEA",
+        "Emergence Capital"
+      ],
+      "tags": [
+        "inference",
+        "open-source",
+        "fine-tuning",
+        "cloud",
+        "cost-efficient"
+      ]
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "section": "AI Startups",
+      "founded": 2022,
+      "hq": "New York, NY",
+      "color": "#6C2BD9",
+      "emoji": "🔊",
+      "description": "Leading synthetic voice AI platform. 1,000+ apps integrated. $180M Series C at $3B+ valuation (Jan 2025). Rapidly expanding into audio production, dubbing, and real-time voice cloning.",
+      "leadership": [
+        {
+          "name": "Mati Staniszewski",
+          "title": "CEO & Co-founder",
+          "since": "2022-01"
+        },
+        {
+          "name": "Piotr Dabkowski",
+          "title": "CTO & Co-founder",
+          "since": "2022-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "ElevenLabs Voice AI",
+          "type": "Speech synthesis API",
+          "flagship": true,
+          "description": "Real-time multilingual TTS with voice cloning — 1000+ app integrations",
+          "launched": "2023-01"
+        },
+        {
+          "name": "ElevenLabs Studio",
+          "type": "Audio production",
+          "flagship": false,
+          "description": "AI-powered audio production suite for publishers and creators",
+          "launched": "2024-01"
+        },
+        {
+          "name": "ElevenReader",
+          "type": "Consumer app",
+          "flagship": false,
+          "description": "App to listen to any text in any voice",
+          "launched": "2024-06"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 0.381,
+        "valuation_usd_billions": 3.3,
+        "valuation_as_of": "2025-01",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2025-01",
+        "last_round_amount_usd_billions": 0.18,
+        "last_round_type": "Series C",
+        "last_round_investors": [
+          "Iconiq",
+          "Andreessen Horowitz",
+          "Sequoia"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2023-06",
+          "amount_usd_billions": 0.019,
+          "type": "Series A",
+          "lead_investor": "Andreessen Horowitz",
+          "valuation_usd_billions": 0.1,
+          "investors": [
+            "Andreessen Horowitz",
+            "Nat Friedman",
+            "Daniel Gross"
+          ]
+        },
+        {
+          "date": "2024-01",
+          "amount_usd_billions": 0.08,
+          "type": "Series B",
+          "lead_investor": "Andreessen Horowitz",
+          "valuation_usd_billions": 1.1,
+          "investors": [
+            "Andreessen Horowitz",
+            "Sequoia",
+            "NEA",
+            "Salesforce Ventures"
+          ]
+        },
+        {
+          "date": "2025-01",
+          "amount_usd_billions": 0.18,
+          "type": "Series C",
+          "lead_investor": "Iconiq",
+          "valuation_usd_billions": 3.3,
+          "investors": [
+            "Iconiq",
+            "Andreessen Horowitz",
+            "Sequoia",
+            "NEA",
+            "Salesforce Ventures"
+          ]
+        }
+      ],
+      "model_history": [
+        {
+          "name": "ElevenLabs V1",
+          "date": "2023-01",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "TTS",
+          "purpose": "Real-time text-to-speech with natural voices; first commercial product",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Launched publicly; early viral moment with voice cloning demos",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "ElevenLabs V2",
+          "date": "2024-03",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "TTS",
+          "purpose": "Improved naturalness; 30+ language support; emotional expressiveness",
+          "context_length_k": null,
+          "notable": false,
+          "notes": "Multilingual expansion; powers major app integrations",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "ElevenLabs V3",
+          "date": "2025-08",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "TTS",
+          "purpose": "Real-time streaming; <500ms latency; 1000+ voice library",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Streaming latency milestone; industry-leading quality",
+          "elo_score": null,
+          "elo_estimated": true
+        }
+      ],
+      "acquisitions": [],
+      "notable_investors": [
+        "Iconiq",
+        "Andreessen Horowitz",
+        "Sequoia",
+        "NEA",
+        "Salesforce Ventures",
+        "Nat Friedman"
+      ],
+      "tags": [
+        "voice-ai",
+        "tts",
+        "voice-cloning",
+        "audio",
+        "consumer",
+        "enterprise"
+      ]
+    },
+    {
+      "id": "runway",
+      "name": "Runway",
+      "section": "AI Startups",
+      "founded": 2018,
+      "hq": "New York, NY",
+      "color": "#0EA5E9",
+      "emoji": "🎬",
+      "description": "Pioneer of AI video generation. Gen-3/Gen-4 models power professional media production. $308M Series D at $3B valuation (Apr 2025). Used by major film studios and content creators.",
+      "leadership": [
+        {
+          "name": "Cristóbal Valenzuela",
+          "title": "CEO & Co-founder",
+          "since": "2018-01"
+        },
+        {
+          "name": "Anastasis Germanidis",
+          "title": "CTO & Co-founder",
+          "since": "2018-01"
+        },
+        {
+          "name": "Alejandro Matamala",
+          "title": "CPO & Co-founder",
+          "since": "2018-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "Gen-4",
+          "type": "Video generation",
+          "flagship": true,
+          "description": "Cinematic AI video; 4K quality; used in professional film production",
+          "launched": "2025-04"
+        },
+        {
+          "name": "Runway Studio",
+          "type": "Creative platform",
+          "flagship": false,
+          "description": "Professional AI creative suite — video, image, audio editing",
+          "launched": "2023-09"
+        },
+        {
+          "name": "Act-One",
+          "type": "Character animation",
+          "flagship": false,
+          "description": "Facial expression and performance transfer for characters",
+          "launched": "2024-10"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 0.836,
+        "valuation_usd_billions": 3.0,
+        "valuation_as_of": "2025-04",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2025-04",
+        "last_round_amount_usd_billions": 0.308,
+        "last_round_type": "Series D",
+        "last_round_investors": [
+          "General Atlantic",
+          "SoftBank",
+          "Nvidia",
+          "Fidelity"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2023-06",
+          "amount_usd_billions": 0.141,
+          "type": "Series C",
+          "lead_investor": "Google",
+          "valuation_usd_billions": 1.5,
+          "investors": [
+            "Google",
+            "Salesforce",
+            "Nvidia",
+            "Coatue",
+            "Felicis"
+          ]
+        },
+        {
+          "date": "2024-02",
+          "amount_usd_billions": 0.1,
+          "type": "Series C Ext.",
+          "lead_investor": "Andreessen Horowitz",
+          "valuation_usd_billions": 1.5,
+          "investors": [
+            "Andreessen Horowitz"
+          ]
+        },
+        {
+          "date": "2025-04",
+          "amount_usd_billions": 0.308,
+          "type": "Series D",
+          "lead_investor": "General Atlantic",
+          "valuation_usd_billions": 3.0,
+          "investors": [
+            "General Atlantic",
+            "SoftBank",
+            "Nvidia",
+            "Fidelity"
+          ]
+        }
+      ],
+      "model_history": [
+        {
+          "name": "Gen-1",
+          "date": "2023-02",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Video generation",
+          "purpose": "Text/image-guided video synthesis; launched text-to-video era",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "First Runway consumer model; viral with short clip demos",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "Gen-2",
+          "date": "2023-06",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Video generation",
+          "purpose": "Improved consistency and motion quality; multi-modal control",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "First production text-to-video widely used by creators",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "Gen-3 Alpha",
+          "date": "2024-06",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Video generation",
+          "purpose": "Photorealistic 1080p; extended motion; competitive with Sora",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Major quality leap; adopted by film and advertising studios",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "Gen-4",
+          "date": "2025-04",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Video generation",
+          "purpose": "Cinematic 4K; consistent characters across scenes; director controls",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "First AI video model used in commercial film production",
+          "elo_score": null,
+          "elo_estimated": true
+        }
+      ],
+      "acquisitions": [],
+      "notable_investors": [
+        "General Atlantic",
+        "SoftBank",
+        "Nvidia",
+        "Fidelity",
+        "Google",
+        "Salesforce",
+        "Coatue",
+        "Andreessen Horowitz"
+      ],
+      "tags": [
+        "video-generation",
+        "creative-ai",
+        "film",
+        "multimodal",
+        "enterprise"
+      ]
+    },
+    {
+      "id": "luma_ai",
+      "name": "Luma AI",
+      "section": "AI Startups",
+      "founded": 2021,
+      "hq": "San Francisco, CA",
+      "color": "#EC4899",
+      "emoji": "✨",
+      "description": "AI video and 3D generation platform. Dream Machine and Ray2 models. $900M Series C at $4B valuation (Nov 2025) led by Humain and a16z. Strong developer API ecosystem.",
+      "leadership": [
+        {
+          "name": "Amit Jain",
+          "title": "CEO & Co-founder",
+          "since": "2021-01"
+        },
+        {
+          "name": "Jianing Liu",
+          "title": "CTO & Co-founder",
+          "since": "2021-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ray2",
+          "type": "Video generation",
+          "flagship": true,
+          "description": "Advanced text-to-video model; improved realism and motion",
+          "launched": "2025-02"
+        },
+        {
+          "name": "Dream Machine",
+          "type": "Video generation",
+          "flagship": false,
+          "description": "Fast text-to-video model; web and API access",
+          "launched": "2024-06"
+        },
+        {
+          "name": "Luma Photon",
+          "type": "Image generation",
+          "flagship": false,
+          "description": "Fast, high-quality image generation API",
+          "launched": "2024-10"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 1.05,
+        "valuation_usd_billions": 4.0,
+        "valuation_as_of": "2025-11",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2025-11",
+        "last_round_amount_usd_billions": 0.9,
+        "last_round_type": "Series C",
+        "last_round_investors": [
+          "Humain",
+          "Andreessen Horowitz",
+          "AMD Ventures"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2023-05",
+          "amount_usd_billions": 0.043,
+          "type": "Series B",
+          "lead_investor": "Andreessen Horowitz",
+          "valuation_usd_billions": 0.2,
+          "investors": [
+            "Andreessen Horowitz",
+            "Kleiner Perkins",
+            "Nvidia"
+          ]
+        },
+        {
+          "date": "2024-05",
+          "amount_usd_billions": 0.043,
+          "type": "Series B Ext.",
+          "lead_investor": "Andreessen Horowitz",
+          "valuation_usd_billions": 0.4,
+          "investors": [
+            "Andreessen Horowitz"
+          ]
+        },
+        {
+          "date": "2025-11",
+          "amount_usd_billions": 0.9,
+          "type": "Series C",
+          "lead_investor": "Humain",
+          "valuation_usd_billions": 4.0,
+          "investors": [
+            "Humain",
+            "Andreessen Horowitz",
+            "AMD Ventures",
+            "Amplify Partners"
+          ]
+        }
+      ],
+      "model_history": [
+        {
+          "name": "Dream Machine",
+          "date": "2024-06",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Video generation",
+          "purpose": "Fast text-to-video with strong motion quality and 120s generations",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Launched same week as Sora; immediate developer adoption",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "Luma Photon",
+          "date": "2024-10",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Image generation",
+          "purpose": "High-quality image generation with strong prompt adherence",
+          "context_length_k": null,
+          "notable": false,
+          "notes": "Fast API-first model for developers",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "Ray2",
+          "date": "2025-02",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Video generation",
+          "purpose": "Improved temporal consistency and realistic physics over Dream Machine",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Significant quality improvement; introduced cinematic motion",
+          "elo_score": null,
+          "elo_estimated": true
+        }
+      ],
+      "acquisitions": [],
+      "notable_investors": [
+        "Humain",
+        "Andreessen Horowitz",
+        "AMD Ventures",
+        "Kleiner Perkins",
+        "Nvidia",
+        "Amplify Partners"
+      ],
+      "tags": [
+        "video-generation",
+        "3d",
+        "image-generation",
+        "creative-ai",
+        "developer-api"
+      ]
+    },
+    {
+      "id": "reka_ai",
+      "name": "Reka AI",
+      "section": "AI Startups",
+      "founded": 2023,
+      "hq": "San Francisco, CA",
+      "color": "#14B8A6",
+      "emoji": "🌊",
+      "description": "Multimodal AI research lab. Reka Core, Flash, and Edge models cover frontier to edge deployment. $110M Series B at $1B valuation (Jul 2025), backed by Snowflake and Nvidia.",
+      "leadership": [
+        {
+          "name": "Dani Yogatama",
+          "title": "CEO & Co-founder",
+          "since": "2023-01"
+        },
+        {
+          "name": "Cyprien de Masson d'Autume",
+          "title": "Co-founder",
+          "since": "2023-01"
+        },
+        {
+          "name": "Yi Tay",
+          "title": "Chief Scientist",
+          "since": "2023-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "Reka Core",
+          "type": "Multimodal LLM API",
+          "flagship": true,
+          "description": "Flagship model; strong vision-language understanding; 128K context",
+          "launched": "2024-11"
+        },
+        {
+          "name": "Reka Flash",
+          "type": "LLM API",
+          "flagship": false,
+          "description": "Fast, efficient model for production workloads",
+          "launched": "2024-06"
+        },
+        {
+          "name": "Reka Edge",
+          "type": "On-device LLM",
+          "flagship": false,
+          "description": "7B model for edge deployment and low-latency inference",
+          "launched": "2024-01"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 0.166,
+        "valuation_usd_billions": 1.0,
+        "valuation_as_of": "2025-07",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2025-07",
+        "last_round_amount_usd_billions": 0.11,
+        "last_round_type": "Series B",
+        "last_round_investors": [
+          "Snowflake",
+          "Nvidia"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2024-04",
+          "amount_usd_billions": 0.058,
+          "type": "Series A",
+          "lead_investor": "DST Global",
+          "valuation_usd_billions": 0.5,
+          "investors": [
+            "DST Global",
+            "Radical Ventures",
+            "Snowflake"
+          ]
+        },
+        {
+          "date": "2025-07",
+          "amount_usd_billions": 0.11,
+          "type": "Series B",
+          "lead_investor": "Snowflake",
+          "valuation_usd_billions": 1.0,
+          "investors": [
+            "Snowflake",
+            "Nvidia"
+          ]
+        }
+      ],
+      "model_history": [
+        {
+          "name": "Reka Edge",
+          "date": "2024-01",
+          "parameters_billions": 7,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "Multimodal LLM",
+          "purpose": "Efficient 7B model for on-device and low-latency deployment",
+          "context_length_k": 32,
+          "notable": false,
+          "notes": "Optimized for edge; competitive with Mistral 7B",
+          "elo_score": 1089,
+          "elo_estimated": true
+        },
+        {
+          "name": "Reka Flash",
+          "date": "2024-06",
+          "parameters_billions": 21,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "Multimodal LLM",
+          "purpose": "Balanced performance-speed; vision and text understanding",
+          "context_length_k": 128,
+          "notable": false,
+          "notes": "Fast inference; strong multimodal benchmarks",
+          "elo_score": 1145,
+          "elo_estimated": true
+        },
+        {
+          "name": "Reka Core",
+          "date": "2024-11",
+          "parameters_billions": 65,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Multimodal LLM",
+          "purpose": "Flagship model; competitive with GPT-4V on vision-language tasks",
+          "context_length_k": 128,
+          "notable": true,
+          "notes": "Competes with Claude 3 Opus on multimodal benchmarks",
+          "elo_score": 1218,
+          "elo_estimated": false
+        }
+      ],
+      "acquisitions": [],
+      "notable_investors": [
+        "Snowflake",
+        "Nvidia",
+        "DST Global",
+        "Radical Ventures"
+      ],
+      "tags": [
+        "multimodal",
+        "llm",
+        "edge",
+        "research",
+        "enterprise"
+      ]
+    },
+    {
+      "id": "cognition_ai",
+      "name": "Cognition AI",
+      "section": "AI Startups",
+      "founded": 2023,
+      "hq": "San Francisco, CA",
+      "color": "#F59E0B",
+      "emoji": "🤖",
+      "description": "Creator of Devin, the world's first AI software engineer. $400M Series C at $10.2B valuation (Sep 2025) led by Founders Fund. Devin autonomously writes and deploys production code.",
+      "leadership": [
+        {
+          "name": "Scott Wu",
+          "title": "CEO & Co-founder",
+          "since": "2023-11"
+        },
+        {
+          "name": "Steven Hao",
+          "title": "Co-founder",
+          "since": "2023-11"
+        },
+        {
+          "name": "Walden Yan",
+          "title": "Co-founder",
+          "since": "2023-11"
+        }
+      ],
+      "products": [
+        {
+          "name": "Devin 2.0",
+          "type": "AI software engineer",
+          "flagship": true,
+          "description": "Autonomous AI agent that codes, debugs, and deploys full projects",
+          "launched": "2025-09"
+        },
+        {
+          "name": "Devin API",
+          "type": "Developer API",
+          "flagship": false,
+          "description": "API access to Devin for CI/CD integration and enterprise workflows",
+          "launched": "2024-09"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 0.421,
+        "valuation_usd_billions": 10.2,
+        "valuation_as_of": "2025-09",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2025-09",
+        "last_round_amount_usd_billions": 0.4,
+        "last_round_type": "Series C",
+        "last_round_investors": [
+          "Founders Fund"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2024-03",
+          "amount_usd_billions": 0.021,
+          "type": "Series A",
+          "lead_investor": "Founders Fund",
+          "valuation_usd_billions": 2.0,
+          "investors": [
+            "Founders Fund",
+            "Peter Thiel",
+            "Elad Gil"
+          ]
+        },
+        {
+          "date": "2025-09",
+          "amount_usd_billions": 0.4,
+          "type": "Series C",
+          "lead_investor": "Founders Fund",
+          "valuation_usd_billions": 10.2,
+          "investors": [
+            "Founders Fund"
+          ]
+        }
+      ],
+      "model_history": [
+        {
+          "name": "Devin 1.0",
+          "date": "2024-03",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Agentic LLM",
+          "purpose": "AI software engineer; writes, runs, and debugs production code autonomously",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "First demo went viral; scored 13.86% on SWE-bench vs 1.96% prior SOTA",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "Devin 2.0",
+          "date": "2025-09",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "",
+          "type": "Agentic LLM",
+          "purpose": "Full project lifecycle — planning, coding, testing, and deployment",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "10x capability improvement; handles multi-file repos end-to-end",
+          "elo_score": null,
+          "elo_estimated": true
+        }
+      ],
+      "acquisitions": [],
+      "notable_investors": [
+        "Founders Fund",
+        "Peter Thiel",
+        "Elad Gil",
+        "SV Angel"
+      ],
+      "tags": [
+        "coding-agent",
+        "software-engineering",
+        "agentic",
+        "enterprise",
+        "developer"
+      ]
+    },
+    {
+      "id": "thinking_machines",
+      "name": "Thinking Machines Lab",
+      "section": "AI Startups",
+      "founded": 2025,
+      "hq": "San Francisco, CA",
+      "color": "#7C3AED",
+      "emoji": "🧪",
+      "description": "Stealth AI research lab founded by Mira Murati (ex-OpenAI CTO) in July 2025. $2B seed round at $12B valuation led by Andreessen Horowitz. Focus on reasoning and inference optimization. No public model releases yet.",
+      "leadership": [
+        {
+          "name": "Mira Murati",
+          "title": "CEO & Founder",
+          "since": "2025-07"
+        },
+        {
+          "name": "Jared Kaplan",
+          "title": "Chief Scientist",
+          "since": "2025-07"
+        }
+      ],
+      "products": [
+        {
+          "name": "TML-1 (unreleased)",
+          "type": "LLM (stealth)",
+          "flagship": true,
+          "description": "Frontier reasoning model in development; no public release yet",
+          "launched": "2026-01"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 2.0,
+        "valuation_usd_billions": 12.0,
+        "valuation_as_of": "2025-07",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2025-07",
+        "last_round_amount_usd_billions": 2.0,
+        "last_round_type": "Seed",
+        "last_round_investors": [
+          "Andreessen Horowitz",
+          "Nvidia",
+          "Accel",
+          "AMD"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2025-07",
+          "amount_usd_billions": 2.0,
+          "type": "Seed",
+          "lead_investor": "Andreessen Horowitz",
+          "valuation_usd_billions": 12.0,
+          "investors": [
+            "Andreessen Horowitz",
+            "Nvidia",
+            "Accel",
+            "AMD"
+          ]
+        }
+      ],
+      "model_history": [],
+      "acquisitions": [],
+      "notable_investors": [
+        "Andreessen Horowitz",
+        "Nvidia",
+        "Accel",
+        "AMD"
+      ],
+      "tags": [
+        "stealth",
+        "research",
+        "reasoning",
+        "frontier",
+        "mira-murati"
+      ]
+    },
+    {
+      "id": "sierra_ai",
+      "name": "Sierra",
+      "section": "AI Startups",
+      "founded": 2023,
+      "hq": "San Francisco, CA",
+      "color": "#10B981",
+      "emoji": "🏔️",
+      "description": "Enterprise AI customer service platform founded by Bret Taylor (ex-Salesforce co-CEO, OpenAI Chair) and Clay Bavor (ex-Google VP). $350M at $10B+ valuation (Sep 2025). Customers include Sonos, Weight Watchers.",
+      "leadership": [
+        {
+          "name": "Bret Taylor",
+          "title": "CEO & Co-founder",
+          "since": "2023-01"
+        },
+        {
+          "name": "Clay Bavor",
+          "title": "Co-founder",
+          "since": "2023-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "Sierra Platform",
+          "type": "AI agent platform",
+          "flagship": true,
+          "description": "Conversational AI agents for customer service and business workflows",
+          "launched": "2024-03"
+        },
+        {
+          "name": "Sierra Nucleus",
+          "type": "Orchestration layer",
+          "flagship": false,
+          "description": "Agent memory, reasoning, and escalation management",
+          "launched": "2024-09"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 0.735,
+        "valuation_usd_billions": 10.0,
+        "valuation_as_of": "2025-09",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2025-09",
+        "last_round_amount_usd_billions": 0.35,
+        "last_round_type": "Series C",
+        "last_round_investors": [
+          "Greenoaks Capital"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2023-10",
+          "amount_usd_billions": 0.11,
+          "type": "Series A",
+          "lead_investor": "Sequoia",
+          "valuation_usd_billions": 1.0,
+          "investors": [
+            "Sequoia",
+            "Benchmark"
+          ]
+        },
+        {
+          "date": "2024-09",
+          "amount_usd_billions": 0.175,
+          "type": "Series B",
+          "lead_investor": "Greenoaks Capital",
+          "valuation_usd_billions": 4.5,
+          "investors": [
+            "Greenoaks Capital",
+            "Sequoia",
+            "Benchmark"
+          ]
+        },
+        {
+          "date": "2025-09",
+          "amount_usd_billions": 0.35,
+          "type": "Series C",
+          "lead_investor": "Greenoaks Capital",
+          "valuation_usd_billions": 10.0,
+          "investors": [
+            "Greenoaks Capital"
+          ]
+        }
+      ],
+      "model_history": [],
+      "acquisitions": [],
+      "notable_investors": [
+        "Greenoaks Capital",
+        "Sequoia",
+        "Benchmark"
+      ],
+      "tags": [
+        "customer-service",
+        "enterprise",
+        "agents",
+        "bret-taylor",
+        "cx"
+      ]
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor (Anysphere)",
+      "section": "AI Startups",
+      "founded": 2022,
+      "hq": "San Francisco, CA",
+      "color": "#2563EB",
+      "emoji": "⌨️",
+      "description": "Fastest-growing AI coding tool. $2.3B raised in 2025; $29.3B valuation by Nov 2025. Millions of developers using Cursor for AI-assisted coding. Pioneered 'vibe coding' — natural language to full applications.",
+      "leadership": [
+        {
+          "name": "Michael Truell",
+          "title": "CEO & Co-founder",
+          "since": "2022-01"
+        },
+        {
+          "name": "Sualeh Asif",
+          "title": "Co-founder",
+          "since": "2022-01"
+        },
+        {
+          "name": "Aman Sanger",
+          "title": "Co-founder",
+          "since": "2022-01"
+        },
+        {
+          "name": "Arvid Lunnemark",
+          "title": "Co-founder",
+          "since": "2022-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "Cursor IDE",
+          "type": "AI code editor",
+          "flagship": true,
+          "description": "AI-first code editor with multi-model support (Claude, GPT-4, Gemini)",
+          "launched": "2023-03"
+        },
+        {
+          "name": "Cursor Agent",
+          "type": "Agentic coding",
+          "flagship": false,
+          "description": "Autonomous coding agent for full-feature implementation",
+          "launched": "2025-01"
+        },
+        {
+          "name": "BugBot",
+          "type": "Code review",
+          "flagship": false,
+          "description": "AI pull request reviewer that catches bugs before merge",
+          "launched": "2025-06"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 3.3,
+        "valuation_usd_billions": 29.3,
+        "valuation_as_of": "2025-11",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2025-11",
+        "last_round_amount_usd_billions": 2.3,
+        "last_round_type": "Series D",
+        "last_round_investors": [
+          "Thrive Capital",
+          "Andreessen Horowitz",
+          "Accel"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2024-01",
+          "amount_usd_billions": 0.06,
+          "type": "Series A",
+          "lead_investor": "Andreessen Horowitz",
+          "valuation_usd_billions": 0.4,
+          "investors": [
+            "Andreessen Horowitz",
+            "OpenAI Startup Fund"
+          ]
+        },
+        {
+          "date": "2025-06",
+          "amount_usd_billions": 0.9,
+          "type": "Series C",
+          "lead_investor": "Thrive Capital",
+          "valuation_usd_billions": 10.0,
+          "investors": [
+            "Thrive Capital",
+            "Andreessen Horowitz",
+            "Accel",
+            "DST Global"
+          ]
+        },
+        {
+          "date": "2025-11",
+          "amount_usd_billions": 2.3,
+          "type": "Series D",
+          "lead_investor": "Thrive Capital",
+          "valuation_usd_billions": 29.3,
+          "investors": [
+            "Thrive Capital",
+            "Andreessen Horowitz",
+            "Accel"
+          ]
+        }
+      ],
+      "model_history": [],
+      "acquisitions": [],
+      "notable_investors": [
+        "Thrive Capital",
+        "Andreessen Horowitz",
+        "Accel",
+        "DST Global",
+        "OpenAI Startup Fund"
+      ],
+      "tags": [
+        "coding",
+        "developer-tools",
+        "vibe-coding",
+        "ide",
+        "agentic"
+      ]
+    },
+    {
+      "id": "harvey_ai",
+      "name": "Harvey",
+      "section": "AI Startups",
+      "founded": 2022,
+      "hq": "San Francisco, CA",
+      "color": "#DC2626",
+      "emoji": "⚖️",
+      "description": "AI platform for the legal industry. Used by leading law firms including A&O Shearman, PwC, and Allen & Overy. $600M raised in 2025 alone; $5B valuation by mid-2025. Backed by OpenAI Startup Fund.",
+      "leadership": [
+        {
+          "name": "Winston Weinberg",
+          "title": "CEO & Co-founder",
+          "since": "2022-11"
+        },
+        {
+          "name": "Gabriel Pereyra",
+          "title": "CTO & Co-founder",
+          "since": "2022-11"
+        }
+      ],
+      "products": [
+        {
+          "name": "Harvey Platform",
+          "type": "Legal AI platform",
+          "flagship": true,
+          "description": "AI for legal research, drafting, due diligence, and contract analysis",
+          "launched": "2023-03"
+        },
+        {
+          "name": "Harvey Document Review",
+          "type": "AI workflow",
+          "flagship": false,
+          "description": "Automated document review for M&A, litigation, and compliance",
+          "launched": "2024-01"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 0.716,
+        "valuation_usd_billions": 5.0,
+        "valuation_as_of": "2025-06",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2025-06",
+        "last_round_amount_usd_billions": 0.3,
+        "last_round_type": "Series E",
+        "last_round_investors": [
+          "Kleiner Perkins",
+          "Coatue"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2023-04",
+          "amount_usd_billions": 0.021,
+          "type": "Series A",
+          "lead_investor": "OpenAI Startup Fund",
+          "valuation_usd_billions": 0.1,
+          "investors": [
+            "OpenAI Startup Fund",
+            "Sequoia"
+          ]
+        },
+        {
+          "date": "2024-05",
+          "amount_usd_billions": 0.08,
+          "type": "Series B",
+          "lead_investor": "Sequoia",
+          "valuation_usd_billions": 0.7,
+          "investors": [
+            "Sequoia",
+            "Kleiner Perkins",
+            "Elad Gil"
+          ]
+        },
+        {
+          "date": "2025-02",
+          "amount_usd_billions": 0.3,
+          "type": "Series D",
+          "lead_investor": "Sequoia",
+          "valuation_usd_billions": 3.0,
+          "investors": [
+            "Sequoia",
+            "OpenAI Startup Fund",
+            "Kleiner Perkins",
+            "Elad Gil"
+          ]
+        },
+        {
+          "date": "2025-06",
+          "amount_usd_billions": 0.3,
+          "type": "Series E",
+          "lead_investor": "Kleiner Perkins",
+          "valuation_usd_billions": 5.0,
+          "investors": [
+            "Kleiner Perkins",
+            "Coatue"
+          ]
+        }
+      ],
+      "model_history": [],
+      "acquisitions": [],
+      "notable_investors": [
+        "Kleiner Perkins",
+        "Coatue",
+        "Sequoia",
+        "OpenAI Startup Fund",
+        "Elad Gil"
+      ],
+      "tags": [
+        "legal-ai",
+        "enterprise",
+        "legaltech",
+        "law-firms",
+        "document-review"
+      ]
+    },
+    {
+      "id": "glean",
+      "name": "Glean",
+      "section": "AI Startups",
+      "founded": 2019,
+      "hq": "Palo Alto, CA",
+      "color": "#0284C7",
+      "emoji": "🔎",
+      "description": "Enterprise AI search and knowledge platform. $150M Series F at $7.25B valuation (Jun 2025). Connects to 100+ enterprise SaaS tools. Used by Duolingo, Databricks, Okta.",
+      "leadership": [
+        {
+          "name": "Arvind Jain",
+          "title": "CEO & Co-founder",
+          "since": "2019-01"
+        },
+        {
+          "name": "T.R. Vishwanath",
+          "title": "Co-founder",
+          "since": "2019-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "Glean Work AI",
+          "type": "Enterprise AI search",
+          "flagship": true,
+          "description": "AI search across all company tools — Slack, Drive, Jira, Salesforce, 100+ more",
+          "launched": "2021-05"
+        },
+        {
+          "name": "Glean Agents",
+          "type": "AI agents",
+          "flagship": false,
+          "description": "Autonomous agents that take action across enterprise systems",
+          "launched": "2025-03"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 0.615,
+        "valuation_usd_billions": 7.25,
+        "valuation_as_of": "2025-06",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2025-06",
+        "last_round_amount_usd_billions": 0.15,
+        "last_round_type": "Series F",
+        "last_round_investors": [
+          "Wellington Management",
+          "Sequoia",
+          "Lightspeed",
+          "Kleiner Perkins"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2022-05",
+          "amount_usd_billions": 0.1,
+          "type": "Series C",
+          "lead_investor": "Sequoia",
+          "valuation_usd_billions": 1.0,
+          "investors": [
+            "Sequoia",
+            "Lightspeed",
+            "General Catalyst",
+            "Kleiner Perkins"
+          ]
+        },
+        {
+          "date": "2023-02",
+          "amount_usd_billions": 0.2,
+          "type": "Series D",
+          "lead_investor": "Kleiner Perkins",
+          "valuation_usd_billions": 2.2,
+          "investors": [
+            "Kleiner Perkins",
+            "Sequoia",
+            "Lightspeed",
+            "Coatue"
+          ]
+        },
+        {
+          "date": "2024-02",
+          "amount_usd_billions": 0.2,
+          "type": "Series E",
+          "lead_investor": "Coatue",
+          "valuation_usd_billions": 4.6,
+          "investors": [
+            "Coatue",
+            "Kleiner Perkins",
+            "Sequoia",
+            "Lightspeed"
+          ]
+        },
+        {
+          "date": "2025-06",
+          "amount_usd_billions": 0.15,
+          "type": "Series F",
+          "lead_investor": "Wellington Management",
+          "valuation_usd_billions": 7.25,
+          "investors": [
+            "Wellington Management",
+            "Sequoia",
+            "Lightspeed",
+            "Kleiner Perkins"
+          ]
+        }
+      ],
+      "model_history": [],
+      "acquisitions": [],
+      "notable_investors": [
+        "Wellington Management",
+        "Kleiner Perkins",
+        "Sequoia",
+        "Lightspeed",
+        "Coatue",
+        "General Catalyst"
+      ],
+      "tags": [
+        "enterprise-search",
+        "knowledge-management",
+        "rag",
+        "saas",
+        "enterprise"
+      ]
+    },
+    {
+      "id": "cerebras",
+      "name": "Cerebras Systems",
+      "section": "AI Startups",
+      "founded": 2016,
+      "hq": "Sunnyvale, CA",
+      "color": "#EA580C",
+      "emoji": "🧠",
+      "description": "AI hardware company building the world's largest chip — the Wafer Scale Engine (WSE-3). $1.1B Series G at $8.1B valuation (Sep 2025). IPO filed Oct 2024; withdrawn. Provides ultra-fast AI inference challenging Nvidia.",
+      "leadership": [
+        {
+          "name": "Andrew Feldman",
+          "title": "CEO & Co-founder",
+          "since": "2016-01"
+        },
+        {
+          "name": "Sean Lie",
+          "title": "Chief Hardware Architect & Co-founder",
+          "since": "2016-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "WSE-3 (Wafer Scale Engine)",
+          "type": "AI chip",
+          "flagship": true,
+          "description": "4 trillion transistors; 44GB on-chip SRAM; world's largest chip",
+          "launched": "2024-03"
+        },
+        {
+          "name": "Cerebras Inference",
+          "type": "Inference API",
+          "flagship": false,
+          "description": "Ultra-fast LLM inference — 1,000+ tokens/sec on Llama models",
+          "launched": "2024-09"
+        },
+        {
+          "name": "Cerebras Cloud",
+          "type": "AI cloud",
+          "flagship": false,
+          "description": "Cloud access to WSE-powered AI compute",
+          "launched": "2023-11"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 1.682,
+        "valuation_usd_billions": 8.1,
+        "valuation_as_of": "2025-09",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2025-09",
+        "last_round_amount_usd_billions": 1.1,
+        "last_round_type": "Series G",
+        "last_round_investors": [
+          "Fidelity",
+          "Atreides Management"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2021-11",
+          "amount_usd_billions": 0.25,
+          "type": "Series F",
+          "lead_investor": "Alpha Wave",
+          "valuation_usd_billions": 4.0,
+          "investors": [
+            "Alpha Wave",
+            "Coatue",
+            "Benchmark"
+          ]
+        },
+        {
+          "date": "2024-08",
+          "amount_usd_billions": 0.1,
+          "type": "Series F Ext.",
+          "lead_investor": "Abu Dhabi Growth Fund",
+          "valuation_usd_billions": 4.0,
+          "investors": [
+            "Abu Dhabi Growth Fund"
+          ]
+        },
+        {
+          "date": "2025-09",
+          "amount_usd_billions": 1.1,
+          "type": "Series G",
+          "lead_investor": "Fidelity",
+          "valuation_usd_billions": 8.1,
+          "investors": [
+            "Fidelity",
+            "Atreides Management"
+          ]
+        }
+      ],
+      "model_history": [
+        {
+          "name": "Cerebras-GPT 1.3B",
+          "date": "2023-03",
+          "parameters_billions": 1.3,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Open-weight model demonstrating linear scaling on Cerebras WSE",
+          "context_length_k": null,
+          "notable": false,
+          "notes": "Released open-weight; showed hardware efficiency advantages",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "Cerebras-GPT 6.7B",
+          "date": "2023-03",
+          "parameters_billions": 6.7,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Medium-scale open model; trained on Pile dataset",
+          "context_length_k": null,
+          "notable": false,
+          "notes": "Part of the first suite of Cerebras open models",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "Cerebras-GPT 13B",
+          "date": "2023-03",
+          "parameters_billions": 13,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "LLM",
+          "purpose": "Largest of original Cerebras open models; competitive with Llama 13B",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Trained in 50% fewer steps than comparable models on GPU clusters",
+          "elo_score": null,
+          "elo_estimated": true
+        }
+      ],
+      "acquisitions": [],
+      "notable_investors": [
+        "Fidelity",
+        "Atreides Management",
+        "Alpha Wave",
+        "Coatue",
+        "Abu Dhabi Growth Fund",
+        "Benchmark"
+      ],
+      "tags": [
+        "ai-chips",
+        "hardware",
+        "inference",
+        "wse",
+        "infrastructure",
+        "ipo-withdrawn"
+      ]
+    },
+    {
+      "id": "groq",
+      "name": "Groq",
+      "section": "AI Startups",
+      "founded": 2016,
+      "hq": "Mountain View, CA",
+      "color": "#F97316",
+      "emoji": "⚡",
+      "description": "AI inference chip company (LPU — Language Processing Unit). $750M Series D at ~$6.9B valuation (Sep 2025). Provides the world's fastest public LLM inference API, serving open-source models at 1000+ tokens/sec.",
+      "leadership": [
+        {
+          "name": "Jonathan Ross",
+          "title": "CEO & Co-founder",
+          "since": "2016-01"
+        }
+      ],
+      "products": [
+        {
+          "name": "GroqCloud API",
+          "type": "Inference API",
+          "flagship": true,
+          "description": "Fastest public LLM API — Llama, Mistral, Gemma at 800-1500 tok/sec",
+          "launched": "2024-03"
+        },
+        {
+          "name": "LPU Inference Engine",
+          "type": "AI chip",
+          "flagship": false,
+          "description": "Language Processing Unit — deterministic, ultra-low-latency inference chip",
+          "launched": "2023-01"
+        },
+        {
+          "name": "GroqRack",
+          "type": "On-prem hardware",
+          "flagship": false,
+          "description": "LPU-based on-premises inference server for enterprise",
+          "launched": "2024-09"
+        }
+      ],
+      "funding_summary": {
+        "total_raised_usd_billions": 1.093,
+        "valuation_usd_billions": 6.9,
+        "valuation_as_of": "2025-09",
+        "public": false,
+        "ticker": null,
+        "last_round_date": "2025-09",
+        "last_round_amount_usd_billions": 0.75,
+        "last_round_type": "Series D",
+        "last_round_investors": [
+          "Disruptive Technology Advisers"
+        ]
+      },
+      "funding_rounds_history": [
+        {
+          "date": "2021-04",
+          "amount_usd_billions": 0.3,
+          "type": "Series C",
+          "lead_investor": "Tiger Global",
+          "valuation_usd_billions": 1.0,
+          "investors": [
+            "Tiger Global",
+            "TDK Ventures",
+            "Geodesic Capital"
+          ]
+        },
+        {
+          "date": "2024-08",
+          "amount_usd_billions": 0.64,
+          "type": "Series D-2",
+          "lead_investor": "BlackRock",
+          "valuation_usd_billions": 2.8,
+          "investors": [
+            "BlackRock",
+            "Neuberger Berman",
+            "Samsung Catalyst"
+          ]
+        },
+        {
+          "date": "2025-09",
+          "amount_usd_billions": 0.75,
+          "type": "Series D-3",
+          "lead_investor": "Disruptive Technology Advisers",
+          "valuation_usd_billions": 6.9,
+          "investors": [
+            "Disruptive Technology Advisers"
+          ]
+        }
+      ],
+      "model_history": [],
+      "acquisitions": [],
+      "notable_investors": [
+        "BlackRock",
+        "Tiger Global",
+        "Disruptive Technology Advisers",
+        "Neuberger Berman",
+        "Samsung Catalyst",
+        "TDK Ventures"
+      ],
+      "tags": [
+        "ai-chips",
+        "inference",
+        "lpu",
+        "hardware",
+        "developer-api",
+        "speed"
+      ]
+    }
+  ],
+  "weekly_snapshots": [
+    {
+      "snapshot_date": "2026-06-18",
+      "entries": [
+        {
+          "company_id": "openai",
+          "headcount_estimate": 3500,
+          "headcount_source": "Training knowledge (as of mid-2025)",
+          "headcount_confidence": "low",
+          "valuation_usd_billions": 157.0,
+          "valuation_source": "Series F Oct 2024 ($6.6B round)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 3.4,
+          "arr_source": "Training knowledge estimate",
+          "arr_confidence": "low",
+          "recent_news": [
+            {
+              "date": "2024-10-02",
+              "headline": "OpenAI closes $6.6B Series F at $157B valuation, largest VC round in history",
+              "type": "funding",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-09-12",
+              "headline": "OpenAI o1 reasoning model released, significantly outperforms GPT-4 on math and science",
+              "type": "model_release",
+              "significance": "high",
+              "url": null
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2024-09-12",
+              "product": "o1",
+              "type": "model_release",
+              "description": "Reasoning model using chain-of-thought, 78th percentile on USAMO math"
+            }
+          ]
+        },
+        {
+          "company_id": "anthropic",
+          "headcount_estimate": 1000,
+          "headcount_source": "Training knowledge estimate",
+          "headcount_confidence": "low",
+          "valuation_usd_billions": 18.0,
+          "valuation_source": "Series E Nov 2024",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 1.0,
+          "arr_source": "Training knowledge estimate",
+          "arr_confidence": "low",
+          "recent_news": [
+            {
+              "date": "2024-11-22",
+              "headline": "Anthropic raises $4B from Amazon in Series E, bringing valuation to $18B",
+              "type": "funding",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-06-20",
+              "headline": "Claude 3.5 Sonnet released, outperforms Claude 3 Opus at 2x the speed",
+              "type": "model_release",
+              "significance": "high",
+              "url": null
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2024-06-20",
+              "product": "Claude 3.5 Sonnet",
+              "type": "model_release",
+              "description": "New flagship model with improved coding, faster, cheaper than Opus"
+            }
+          ]
+        },
+        {
+          "company_id": "xai",
+          "headcount_estimate": 300,
+          "headcount_source": "Training knowledge estimate",
+          "headcount_confidence": "low",
+          "valuation_usd_billions": 50.0,
+          "valuation_source": "Series B May 2024",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2024-05-01",
+              "headline": "xAI raises $6B Series B at $18B valuation from a16z, Sequoia, and others",
+              "type": "funding",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-08-13",
+              "headline": "Grok 2 released with image generation via Aurora model",
+              "type": "model_release",
+              "significance": "medium",
+              "url": null
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2024-08-13",
+              "product": "Grok 2",
+              "type": "model_release",
+              "description": "Updated Grok model with improved capabilities and Aurora image gen"
+            }
+          ]
+        },
+        {
+          "company_id": "mistral",
+          "headcount_estimate": 200,
+          "headcount_source": "Training knowledge estimate",
+          "headcount_confidence": "low",
+          "valuation_usd_billions": 6.0,
+          "valuation_source": "Series B Jun 2024",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2024-06-11",
+              "headline": "Mistral raises €600M Series B at $6B valuation",
+              "type": "funding",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-07-24",
+              "headline": "Mistral Large 2 released — 123B parameter model, matches GPT-4 class",
+              "type": "model_release",
+              "significance": "high",
+              "url": null
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2024-07-24",
+              "product": "Mistral Large 2",
+              "type": "model_release",
+              "description": "123B parameter flagship model, strong multilingual and code capabilities"
+            }
+          ]
+        },
+        {
+          "company_id": "cohere",
+          "headcount_estimate": 500,
+          "headcount_source": "Training knowledge estimate",
+          "headcount_confidence": "low",
+          "valuation_usd_billions": 5.5,
+          "valuation_source": "Series D Jul 2024",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2024-07-22",
+              "headline": "Cohere raises $500M Series D at $5.5B valuation",
+              "type": "funding",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-04-04",
+              "headline": "Command R+ released — 104B model optimized for enterprise RAG",
+              "type": "model_release",
+              "significance": "medium",
+              "url": null
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2024-04-04",
+              "product": "Command R+",
+              "type": "model_release",
+              "description": "Enterprise RAG model with 128K context and tool use"
+            }
+          ]
+        },
+        {
+          "company_id": "google_deepmind",
+          "headcount_estimate": 35000,
+          "headcount_source": "Training knowledge estimate (Google AI divisions combined)",
+          "headcount_confidence": "low",
+          "valuation_usd_billions": null,
+          "valuation_source": "Public company (GOOG)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": "Part of Alphabet ($300B+ total revenue)",
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2024-05-14",
+              "headline": "Google I/O: Gemini 1.5 Pro upgrades, NotebookLM audio, and Project Astra unveiled",
+              "type": "product_launch",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-05-08",
+              "headline": "AlphaFold 3 released, extends protein folding to all biomolecules",
+              "type": "research",
+              "significance": "high",
+              "url": null
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2024-05-14",
+              "product": "Gemini 1.5 Pro (expanded)",
+              "type": "product_launch",
+              "description": "1M token context, video/audio understanding, now generally available"
+            }
+          ]
+        },
+        {
+          "company_id": "meta_ai",
+          "headcount_estimate": 70000,
+          "headcount_source": "Meta Q3 2024 earnings (total company)",
+          "headcount_confidence": "high",
+          "valuation_usd_billions": null,
+          "valuation_source": "Public company (META)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": "Revenue embedded in Meta total ($134B 2024)",
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2024-07-23",
+              "headline": "Meta releases Llama 3.1 405B — first open model to match GPT-4 on many benchmarks",
+              "type": "model_release",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-09-25",
+              "headline": "Meta AI assistant rolls out to 1B+ users across Facebook, Instagram, WhatsApp",
+              "type": "product_launch",
+              "significance": "high",
+              "url": null
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2024-07-23",
+              "product": "Llama 3.1 405B",
+              "type": "model_release",
+              "description": "405B open-weight model — first open model competitive with GPT-4 Turbo"
+            }
+          ]
+        },
+        {
+          "company_id": "microsoft_ai",
+          "headcount_estimate": 220000,
+          "headcount_source": "Microsoft FY2024 annual report (total company)",
+          "headcount_confidence": "high",
+          "valuation_usd_billions": null,
+          "valuation_source": "Public company (MSFT)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": "Azure AI revenue growing 60%+ YoY (embedded in $245B total)",
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2024-03-19",
+              "headline": "Mustafa Suleyman (DeepMind co-founder) joins Microsoft as EVP, CEO of Microsoft AI",
+              "type": "leadership",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-05-20",
+              "headline": "Microsoft Build: Copilot+ PCs announced with on-device AI (NPU-powered)",
+              "type": "product_launch",
+              "significance": "high",
+              "url": null
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2024-04-23",
+              "product": "Phi-3 Mini",
+              "type": "model_release",
+              "description": "3.8B small language model, runs on-device, outperforms Mistral 7B"
+            }
+          ]
+        },
+        {
+          "company_id": "amazon_aws_ai",
+          "headcount_estimate": 1500000,
+          "headcount_source": "Amazon Q3 2024 earnings (total company)",
+          "headcount_confidence": "high",
+          "valuation_usd_billions": null,
+          "valuation_source": "Public company (AMZN)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": "AWS revenue $107B annualized (AI portion not disclosed)",
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2024-11-22",
+              "headline": "Amazon invests additional $4B in Anthropic, total commitment reaches $4B",
+              "type": "partnership",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-09-17",
+              "headline": "AWS re:Invent previews: Trainium2 chips, Nova model family for Bedrock",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": null
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2023-09-28",
+              "product": "Amazon Bedrock (GA)",
+              "type": "product_launch",
+              "description": "Generally available multi-model managed API — Claude, Llama, Titan"
+            }
+          ]
+        },
+        {
+          "company_id": "perplexity",
+          "headcount_estimate": 100,
+          "headcount_source": "Training knowledge estimate",
+          "headcount_confidence": "low",
+          "valuation_usd_billions": 9.0,
+          "valuation_source": "Series C Jun 2024",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 0.05,
+          "arr_source": "Training knowledge estimate",
+          "arr_confidence": "low",
+          "recent_news": [
+            {
+              "date": "2024-06-13",
+              "headline": "Perplexity raises $250M Series C at $3B valuation (up from $520M Dec 2023)",
+              "type": "funding",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-05-30",
+              "headline": "Perplexity Pages launches — AI-generated long-form content with citations",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": null
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2024-05-30",
+              "product": "Perplexity Pages",
+              "type": "product_launch",
+              "description": "AI-generated long-form articles and reports with cited sources"
+            }
+          ]
+        },
+        {
+          "company_id": "hugging_face",
+          "headcount_estimate": 200,
+          "headcount_source": "Training knowledge estimate",
+          "headcount_confidence": "low",
+          "valuation_usd_billions": 4.5,
+          "valuation_source": "Series D Aug 2023",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2023-08-24",
+              "headline": "Hugging Face raises $235M Series D at $4.5B valuation",
+              "type": "funding",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-04-08",
+              "headline": "HF Hub surpasses 500K models hosted, 150K datasets, largest open AI repository",
+              "type": "business",
+              "significance": "medium",
+              "url": null
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "stability_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "Training knowledge estimate (post-layoffs 2024)",
+          "headcount_confidence": "low",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "Estimated, substantially reduced from $4B peak",
+          "valuation_confidence": "low",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2024-03-23",
+              "headline": "Emad Mostaque resigns as CEO amid company turmoil and unpaid bills",
+              "type": "leadership",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-06-12",
+              "headline": "Stable Diffusion 3 released as open model after controversial API-only period",
+              "type": "model_release",
+              "significance": "medium",
+              "url": null
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2024-06-12",
+              "product": "Stable Diffusion 3",
+              "type": "model_release",
+              "description": "Open-weight image gen model with improved text rendering"
+            }
+          ]
+        },
+        {
+          "company_id": "nvidia",
+          "headcount_estimate": 36000,
+          "headcount_source": "Nvidia FY2025 annual report",
+          "headcount_confidence": "high",
+          "valuation_usd_billions": 3000.0,
+          "valuation_source": "Market cap Jun 2024 peak (NVDA)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 130.0,
+          "arr_source": "Nvidia FY2025 revenue ~$130B",
+          "arr_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2024-03-18",
+              "headline": "Nvidia GTC: Blackwell (B200) GPU architecture announced — 30x inference vs H100",
+              "type": "product_launch",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-06-10",
+              "headline": "Nvidia briefly becomes world's most valuable company at $3.3T market cap",
+              "type": "business",
+              "significance": "high",
+              "url": null
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2024-03-18",
+              "product": "Blackwell GB200",
+              "type": "product_launch",
+              "description": "Next-gen GPU: 192GB HBM3e, NVLink 5.0, 30x LLM inference vs H100"
+            }
+          ]
+        },
+        {
+          "company_id": "scale_ai",
+          "headcount_estimate": 1000,
+          "headcount_source": "Training knowledge estimate",
+          "headcount_confidence": "low",
+          "valuation_usd_billions": 13.8,
+          "valuation_source": "Series F May 2024",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2024-05-21",
+              "headline": "Scale AI raises $1B at $13.8B valuation; Meta becomes a customer",
+              "type": "funding",
+              "significance": "high",
+              "url": null
+            },
+            {
+              "date": "2024-01-01",
+              "headline": "Scale SEAL Leaderboards launch — independent third-party LLM evaluation",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": null
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2024-01-01",
+              "product": "SEAL Leaderboards",
+              "type": "product_launch",
+              "description": "Independent LLM evaluation benchmarks with real-world task assessment"
+            }
+          ]
+        },
+        {
+          "company_id": "together_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "Training knowledge estimate",
+          "headcount_confidence": "low",
+          "valuation_usd_billions": 1.25,
+          "valuation_source": "Series A Mar 2024",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2024-03-01",
+              "headline": "Together AI raises $106M Series A at $1.25B valuation",
+              "type": "funding",
+              "significance": "medium",
+              "url": null
+            },
+            {
+              "date": "2024-06-01",
+              "headline": "Together AI launches FlashAttention-3, 2x faster than FA-2 on H100",
+              "type": "research",
+              "significance": "medium",
+              "url": null
+            }
+          ],
+          "product_releases": []
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-06-20",
+      "entries": [
+        {
+          "company_id": "openai",
+          "headcount_estimate": 3500,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 157.0,
+          "valuation_source": "Series F Oct 2024 (IPO filing Jun 2026 may revise)",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": 3.4,
+          "arr_source": "prior week (carried forward)",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-06-08",
+              "headline": "OpenAI files confidentially for IPO, targeting September 2026 debut",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/openai/"
+            },
+            {
+              "date": "2026-06-16",
+              "headline": "ChatGPT market share slips below 50% for first time as competition intensifies",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/openai/"
+            },
+            {
+              "date": "2026-06-18",
+              "headline": "OpenAI recruiting high-profile talent ahead of anticipated IPO",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/openai/"
+            },
+            {
+              "date": "2026-06-06",
+              "headline": "OpenAI unveils Lockdown Mode to protect enterprise users from prompt injection attacks",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/openai/"
+            },
+            {
+              "date": "2026-06-02",
+              "headline": "OpenAI launches Codex tools targeting white-collar professional workflows",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/openai/"
+            },
+            {
+              "date": "2026-06-13",
+              "headline": "OpenAI faces investigation from multiple state attorneys general",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/openai/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-06-06",
+              "product": "Lockdown Mode",
+              "type": "product_launch",
+              "description": "Enterprise security feature blocking prompt injection and data exfiltration"
+            },
+            {
+              "date": "2026-06-02",
+              "product": "Codex Tools",
+              "type": "product_launch",
+              "description": "Professional workflow automation tools for white-collar tasks"
+            }
+          ]
+        },
+        {
+          "company_id": "anthropic",
+          "headcount_estimate": 1000,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 18.0,
+          "valuation_source": "Series E Nov 2024 (IPO filed Jun 2026, new valuation pending)",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": 1.0,
+          "arr_source": "prior week (carried forward)",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-06-09",
+              "headline": "Claude Fable 5 launches — accessible model capable of generating playable video games",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/anthropic/"
+            },
+            {
+              "date": "2026-06-12",
+              "headline": "US government restricts Anthropic's most powerful models following safety warnings",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/anthropic/"
+            },
+            {
+              "date": "2026-06-01",
+              "headline": "Anthropic files for IPO — hot AI IPO summer alongside OpenAI",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/anthropic/"
+            },
+            {
+              "date": "2026-06-11",
+              "headline": "Anthropic partners with Tata Consultancy Services (TCS) to expand enterprise AI deployments",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/anthropic/"
+            },
+            {
+              "date": "2026-06-20",
+              "headline": "Nobel laureate John Jumper (AlphaFold) departs DeepMind to join Anthropic",
+              "type": "leadership",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/anthropic/"
+            },
+            {
+              "date": "2026-06-02",
+              "headline": "Claude Mythos deployed to critical infrastructure across 15+ countries",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/anthropic/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-06-09",
+              "product": "Claude Fable 5",
+              "type": "model_release",
+              "description": "Accessible Claude model capable of generating playable video games; based on Mythos architecture"
+            }
+          ]
+        },
+        {
+          "company_id": "xai",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 50.0,
+          "valuation_source": "Series B May 2024 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-06-16",
+              "headline": "DOJ claims xAI's unpermitted gas turbines at Memphis data center are a national security issue",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/xai/"
+            },
+            {
+              "date": "2026-06-10",
+              "headline": "xAI fired engineer who raised Grok safety alarms; lawsuit filed alleging wrongful termination",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/xai/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "mistral",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 22.0,
+          "valuation_source": "Rumored €3B raise at €20B valuation (~$22B USD) — TechCrunch Jun 12 2026",
+          "valuation_confidence": "low",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-06-12",
+              "headline": "Mistral AI rumored to be raising €3B at €20B (~$22B) valuation",
+              "type": "funding",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/mistral-ai/"
+            },
+            {
+              "date": "2026-03-30",
+              "headline": "Mistral secures $830M in debt financing to build Paris-area data center",
+              "type": "funding",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/mistral-ai/"
+            },
+            {
+              "date": "2026-03-17",
+              "headline": "Mistral launches Forge enterprise platform at NVIDIA GTC, competing with OpenAI and Anthropic",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/mistral-ai/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-03-17",
+              "product": "Mistral Forge",
+              "type": "product_launch",
+              "description": "Enterprise AI platform for deployment and management, launched at NVIDIA GTC 2026"
+            }
+          ]
+        },
+        {
+          "company_id": "cohere",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 7.0,
+          "valuation_source": "TechCrunch — $7B valuation Sep 2025",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": 0.24,
+          "arr_source": "TechCrunch Feb 2026 — $240M ARR reported",
+          "arr_confidence": "medium",
+          "recent_news": [
+            {
+              "date": "2026-04-24",
+              "headline": "Cohere merges with Germany's Aleph Alpha, creating transatlantic enterprise AI company",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/cohere/"
+            },
+            {
+              "date": "2026-02-13",
+              "headline": "Cohere reports $240M in annual revenue, eyes IPO",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/cohere/"
+            },
+            {
+              "date": "2026-03-26",
+              "headline": "Cohere launches Transcribe — open-source voice transcription model",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/cohere/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-03-26",
+              "product": "Cohere Transcribe",
+              "type": "product_launch",
+              "description": "Open-source voice transcription model built for enterprise accuracy"
+            }
+          ]
+        },
+        {
+          "company_id": "google_deepmind",
+          "headcount_estimate": 35000,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "Public company (GOOG)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": "Part of Alphabet (~$350B+ total revenue 2025)",
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-03-24",
+              "headline": "Google DeepMind partners with Agile Robots on humanoid robotics AI",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/google-deepmind/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "meta_ai",
+          "headcount_estimate": 70000,
+          "headcount_source": "Meta Q3 2024 earnings (carried forward — 2025 figure not yet confirmed)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "Public company (META)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": "Revenue embedded in Meta total",
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-06-15",
+              "headline": "Meta launches AI Mode on Facebook, drawing from public data across Meta platforms",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/meta/"
+            },
+            {
+              "date": "2026-06-10",
+              "headline": "Meta signs first AI data center agreement in India with Reliance",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/meta/"
+            },
+            {
+              "date": "2026-06-04",
+              "headline": "Meta adopts Tesla-style tactic, constructing data centers inside tents to accelerate AI buildout",
+              "type": "business",
+              "significance": "low",
+              "url": "https://techcrunch.com/tag/meta/"
+            },
+            {
+              "date": "2026-06-03",
+              "headline": "Meta AI agent for WhatsApp Business now available globally",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/meta/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-06-15",
+              "product": "Facebook AI Mode",
+              "type": "product_launch",
+              "description": "AI assistant mode on Facebook drawing from public platform data"
+            },
+            {
+              "date": "2026-06-03",
+              "product": "WhatsApp Business AI Agent",
+              "type": "product_launch",
+              "description": "Globally available AI agent for WhatsApp Business customers"
+            }
+          ]
+        },
+        {
+          "company_id": "microsoft_ai",
+          "headcount_estimate": 220000,
+          "headcount_source": "Microsoft FY2024 annual report (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "Public company (MSFT)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": "20M+ paid Copilot users as of Apr 2026 (TechCrunch)",
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-06-02",
+              "headline": "Microsoft launches Scout — OpenClaw-inspired personal AI assistant",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/microsoft/"
+            },
+            {
+              "date": "2026-06-05",
+              "headline": "Reid Hoffman departs Microsoft board to pursue startup Manus in 'founder mode'",
+              "type": "leadership",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/microsoft/"
+            },
+            {
+              "date": "2026-04-29",
+              "headline": "Microsoft reports 20M+ paid Copilot users with strong active engagement",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/microsoft/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-06-02",
+              "product": "Microsoft Scout",
+              "type": "product_launch",
+              "description": "Personal AI assistant, OpenClaw-inspired, for consumer and professional use"
+            }
+          ]
+        },
+        {
+          "company_id": "amazon_aws_ai",
+          "headcount_estimate": 1500000,
+          "headcount_source": "Amazon 2024 annual report (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "Public company (AMZN)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": "AWS revenue soaring as of Feb 2026 (exact figure not disclosed)",
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-06-18",
+              "headline": "Amazon moves to sell its AI chips externally, challenging Nvidia more directly",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/nvidia/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "perplexity",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 9.0,
+          "valuation_source": "Series C Jun 2024 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.05,
+          "arr_source": "prior week estimate (carried forward)",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-05-07",
+              "headline": "Perplexity Personal Computer app now available to everyone on Mac",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/perplexity/"
+            },
+            {
+              "date": "2026-05-06",
+              "headline": "Snap's $400M deal with Perplexity to power Snapchat search amicably ends",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/perplexity/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-05-07",
+              "product": "Perplexity Personal Computer (Mac)",
+              "type": "product_launch",
+              "description": "AI-powered personal computer app for Mac, broadly available May 2026"
+            }
+          ]
+        },
+        {
+          "company_id": "hugging_face",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.5,
+          "valuation_source": "Series D Aug 2023 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-06-04",
+              "headline": "Hugging Face releases robotics AI model that can run on a MacBook",
+              "type": "model_release",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/hugging-face/"
+            },
+            {
+              "date": "2026-05-06",
+              "headline": "Hugging Face releases free agentic AI tool comparable to OpenAI Operator",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/hugging-face/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-06-04",
+              "product": "HF Robotics Model",
+              "type": "model_release",
+              "description": "Robotics AI model optimized to run on consumer hardware (MacBook)"
+            }
+          ]
+        },
+        {
+          "company_id": "stability_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "Estimate (prior week, carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-05-20",
+              "headline": "Stability AI launches audio model capable of generating songs up to 6 minutes long",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/stability-ai/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-05-20",
+              "product": "Stable Audio 2",
+              "type": "product_launch",
+              "description": "Audio generation model supporting songs up to 6 minutes; improved quality"
+            }
+          ]
+        },
+        {
+          "company_id": "nvidia",
+          "headcount_estimate": 36000,
+          "headcount_source": "Nvidia FY2025 annual report (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 3000.0,
+          "valuation_source": "Market cap estimate Jun 2026 (NVDA — carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 130.0,
+          "arr_source": "Nvidia FY2025 revenue ~$130B (carried forward)",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-06-01",
+              "headline": "Nvidia targets $200B CPU market with AI agent PCs in partnership with Microsoft, Dell, HP",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/tag/nvidia/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-06-01",
+              "product": "Nvidia AI Agent PCs",
+              "type": "product_launch",
+              "description": "Nvidia-powered AI agent PC platform targeting $200B CPU market with Microsoft, Dell, HP"
+            }
+          ]
+        },
+        {
+          "company_id": "scale_ai",
+          "headcount_estimate": 860,
+          "headcount_source": "14% layoff in Jul 2025 from ~1,000 — TechCrunch Jul 16 2025",
+          "headcount_confidence": "medium",
+          "valuation_usd_billions": 13.8,
+          "valuation_source": "Series F May 2024 (carried forward; Meta investment may revise)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2025-06-13",
+              "headline": "Alexandr Wang departs Scale AI to join Meta's superintelligence lab; Meta makes significant investment",
+              "type": "leadership",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/scale-ai/"
+            },
+            {
+              "date": "2025-07-16",
+              "headline": "Scale AI lays off 14% of staff, cuts concentrated in data-labeling business",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/scale-ai/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "together_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.25,
+          "valuation_source": "Series A Mar 2024 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        }
+      ]
+    }
+  ]
+}
