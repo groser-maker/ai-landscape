@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "last_updated": "2026-06-25",
+  "last_updated": "2026-06-29",
   "companies": [
     {
       "id": "openai",
@@ -3369,7 +3369,7 @@
       ],
       "funding_summary": {
         "total_raised_usd_billions": 0.735,
-        "valuation_usd_billions": 10.0,
+        "valuation_usd_billions": 15.0,
         "valuation_as_of": "2025-09",
         "public": false,
         "ticker": null,
@@ -3378,7 +3378,10 @@
         "last_round_type": "Series C",
         "last_round_investors": [
           "Greenoaks Capital"
-        ]
+        ],
+        "latest_round": "Series D",
+        "latest_round_date": "2026-05-04",
+        "latest_round_amount_usd_millions": 950
       },
       "funding_rounds_history": [
         {
@@ -3486,7 +3489,7 @@
       ],
       "funding_summary": {
         "total_raised_usd_billions": 3.3,
-        "valuation_usd_billions": 29.3,
+        "valuation_usd_billions": 60.0,
         "valuation_as_of": "2025-11",
         "public": false,
         "ticker": null,
@@ -3497,7 +3500,9 @@
           "Thrive Capital",
           "Andreessen Horowitz",
           "Accel"
-        ]
+        ],
+        "latest_round": "SpaceX acquisition (pending Q3 2026)",
+        "latest_round_date": "2026-06-16"
       },
       "funding_rounds_history": [
         {
@@ -5152,6 +5157,603 @@
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 1.25,
           "valuation_source": "Series A Mar 2024 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-06-29",
+      "entries": [
+        {
+          "company_id": "openai",
+          "headcount_estimate": 3500,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 157.0,
+          "valuation_source": "Series F Oct 2024 (IPO filed Jun 2026, valuation pending)",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": 3.4,
+          "arr_source": "prior week (carried forward)",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-06-26",
+              "headline": "OpenAI limits GPT-5.6 rollout after White House request over cybersecurity safety concerns",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/"
+            },
+            {
+              "date": "2026-06-26",
+              "headline": "OpenAI releases GPT-5.6 in three tiers: Sol (flagship), Terra (balanced), Luna (fast) — restricted preview",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/06/25/the-white-house-is-asking-openai-to-slow-roll-the-release-of-its-new-model-over-safety-concerns/"
+            },
+            {
+              "date": "2026-06-24",
+              "headline": "OpenAI unveils Jalapeño — its first custom inference chip co-developed with Broadcom",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/"
+            },
+            {
+              "date": "2026-06-27",
+              "headline": "Apple Vision Pro exec Paul Meade reportedly leaving to join OpenAI hardware team",
+              "type": "leadership",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/06/27/apple-vision-pro-exec-is-reportedly-leaving-for-openai/"
+            },
+            {
+              "date": "2026-06-26",
+              "headline": "OpenAI hires Uber India president Prabhjeet Singh as first India Managing Director",
+              "type": "leadership",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/06/26/openai-poaches-uber-india-chief-to-lead-its-biggest-market-outside-the-u-s/"
+            },
+            {
+              "date": "2026-06-22",
+              "headline": "OpenAI launches 'Patch the Planet' open source security initiative with Trail of Bits",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/06/22/openai-launches-new-initiative-to-help-find-and-patch-open-source-bugs/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-06-26",
+              "product": "GPT-5.6 (Sol / Terra / Luna)",
+              "type": "model_release",
+              "description": "Three-tier lineup: Sol (flagship, $5/$30 per 1M), Terra (balanced, $2.50/$15), Luna (fast, $1/$6). Enhanced agentic performance in coding, biology, cybersecurity. Government-restricted limited preview rollout."
+            },
+            {
+              "date": "2026-06-24",
+              "product": "Jalapeño (custom inference chip)",
+              "type": "product_launch",
+              "description": "OpenAI's first proprietary AI accelerator, co-developed with Broadcom. Inference-optimized, better perf-per-watt than Nvidia H100/H200. Aims to reduce Nvidia dependency."
+            }
+          ]
+        },
+        {
+          "company_id": "anthropic",
+          "headcount_estimate": 1000,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 18.0,
+          "valuation_source": "Series E Nov 2024 (IPO expected 2026; new valuation not yet confirmed)",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": 1.4,
+          "arr_source": "Indagari credit card data via TechCrunch Jun 25 2026 — ~75% paid consumer revenue growth since Jan 2026",
+          "arr_confidence": "low",
+          "recent_news": [
+            {
+              "date": "2026-06-26",
+              "headline": "Trump administration restores Mythos 5 access for 100+ U.S. companies and agencies defending critical infrastructure",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/"
+            },
+            {
+              "date": "2026-06-27",
+              "headline": "Asian AI startups launch Mythos-like models as Anthropic's export ban drags on",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/"
+            },
+            {
+              "date": "2026-06-25",
+              "headline": "Claude shows ~75% paid consumer revenue growth since January 2026, gaining on ChatGPT",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/"
+            },
+            {
+              "date": "2026-06-23",
+              "headline": "Anthropic launches Claude Tag — always-on Slack-embedded AI teammate with persistent org memory",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/06/23/anthropics-claude-tag-is-learning-your-company-one-slack-message-at-a-time/"
+            },
+            {
+              "date": "2026-06-23",
+              "headline": "Menlo Ventures raises $3B fund; its Anthropic stake now worth ~$14B (from ~$500M Series D bet)",
+              "type": "funding",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/06/23/after-betting-the-firm-on-anthropic-menlo-ventures-raises-victorious-3b-fund/"
+            },
+            {
+              "date": "2026-06-22",
+              "headline": "Anthropic updates privacy policy to allow government-issued ID verification for flagged accounts",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/06/22/anthropic-says-claude-may-want-to-see-your-id/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-06-23",
+              "product": "Claude Tag",
+              "type": "product_launch",
+              "description": "Always-on Claude embedded in Slack. Builds persistent organizational memory by reading channel history. Proactive ambient mode. Beta for Enterprise and Team tiers. Competes with Copilot and Glean."
+            }
+          ]
+        },
+        {
+          "company_id": "xai",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 50.0,
+          "valuation_source": "Series B May 2024 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-06-16",
+              "headline": "DOJ claims xAI's unpermitted gas turbines at Memphis data center are a matter of national economic and energy security",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/06/16/doj-claims-xais-unpermitted-gas-turbines-are-a-matter-of-national-economic-and-energy-security/"
+            },
+            {
+              "date": "2026-06-10",
+              "headline": "xAI fired engineer who raised internal alarms about Grok safety (discrimination, WMD info, political bias) — lawsuit filed",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/06/10/xai-fired-an-engineer-who-raised-alarms-about-grok-safety-new-lawsuit-claims/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "google_deepmind",
+          "headcount_estimate": 35000,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "Public company (GOOG)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "Part of Alphabet (~$350B+ total revenue 2025)",
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "meta_ai",
+          "headcount_estimate": 70000,
+          "headcount_source": "Meta Q3 2024 earnings (carried forward — 2025 figure not yet confirmed)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "Public company (META)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "Revenue embedded in Meta total",
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "mistral",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 22.0,
+          "valuation_source": "Rumored €3B raise at €20B valuation (~$22B USD) — TechCrunch Jun 12 2026",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cohere",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 7.0,
+          "valuation_source": "TechCrunch — $7B valuation Sep 2025",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.24,
+          "arr_source": "TechCrunch Feb 2026 — $240M ARR reported",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "microsoft_ai",
+          "headcount_estimate": 220000,
+          "headcount_source": "Microsoft FY2024 annual report (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "Public company (MSFT)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "20M+ paid Copilot users as of Apr 2026 (TechCrunch)",
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "amazon_aws_ai",
+          "headcount_estimate": 1500000,
+          "headcount_source": "Amazon 2024 annual report (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "Public company (AMZN)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "AWS revenue soaring as of Feb 2026 (exact figure not disclosed)",
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "perplexity",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 9.0,
+          "valuation_source": "Series C Jun 2024 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.05,
+          "arr_source": "prior week estimate (carried forward)",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "hugging_face",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.5,
+          "valuation_source": "Series D Aug 2023 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "stability_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "Estimate (prior week, carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "nvidia",
+          "headcount_estimate": 36000,
+          "headcount_source": "Nvidia FY2025 annual report (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 3000.0,
+          "valuation_source": "Market cap estimate Jun 2026 (NVDA — carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 130.0,
+          "arr_source": "Nvidia FY2025 revenue ~$130B (carried forward)",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "scale_ai",
+          "headcount_estimate": 860,
+          "headcount_source": "14% layoff in Jul 2025 from ~1,000 — TechCrunch Jul 16 2025",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 13.8,
+          "valuation_source": "Series F May 2024 (carried forward; Meta investment may revise)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "together_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.25,
+          "valuation_source": "Series A Mar 2024 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "elevenlabs",
+          "headcount_estimate": 200,
+          "headcount_source": "LinkedIn estimate (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 3.3,
+          "valuation_source": "Series C Jan 2024 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "runway",
+          "headcount_estimate": 100,
+          "headcount_source": "LinkedIn estimate (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 3.0,
+          "valuation_source": "Series D Dec 2023 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "luma_ai",
+          "headcount_estimate": 150,
+          "headcount_source": "LinkedIn estimate (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.0,
+          "valuation_source": "Series C Nov 2025 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "reka_ai",
+          "headcount_estimate": 80,
+          "headcount_source": "LinkedIn estimate (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "Series B Jul 2025 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cognition_ai",
+          "headcount_estimate": 50,
+          "headcount_source": "LinkedIn estimate (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 10.2,
+          "valuation_source": "Series C Sep 2025 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "thinking_machines",
+          "headcount_estimate": 100,
+          "headcount_source": "LinkedIn estimate (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.0,
+          "valuation_source": "a16z-led Series A Jul 2025 ($2B raise at $12B); $50B talks Nov 2025 unconfirmed closed",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-05-11",
+              "headline": "Thinking Machines Lab releases Interaction Models — fully-duplex real-time multi-modal AI collaboration system",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://thinkingmachines.ai/blog/interaction-models/"
+            },
+            {
+              "date": "2026-03-10",
+              "headline": "Thinking Machines Lab and Nvidia announce gigawatt-scale strategic chip partnership; Nvidia makes 'significant' equity investment",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://www.siliconrepublic.com/business/nvidia-thinking-machines-lab-chip-deal-vera-rubin"
+            },
+            {
+              "date": "2026-01-14",
+              "headline": "Thinking Machines Lab loses two co-founders (Barret Zoph, Nick Metz) back to OpenAI; third co-founder already left for Meta",
+              "type": "leadership",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/01/14/mira-muratis-startup-thinking-machines-lab-is-losing-two-of-its-co-founders-to-openai/"
+            },
+            {
+              "date": "2025-11-13",
+              "headline": "Thinking Machines Lab in funding talks at $50B valuation",
+              "type": "funding",
+              "significance": "medium",
+              "url": "https://www.bloomberg.com/news/articles/2025-11-13/murati-s-thinking-machines-in-funding-talks-at-50b"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-05-11",
+              "product": "Interaction Models",
+              "type": "model_release",
+              "description": "Fully-duplex multi-stream micro-turn AI for real-time human-AI collaboration — continuous audio, video, text processing. First major model from TML."
+            },
+            {
+              "date": "2025-10-01",
+              "product": "Tinker",
+              "type": "product_launch",
+              "description": "Fine-tuning API for open-source models (Llama, Qwen, DeepSeek, Kimi)."
+            }
+          ]
+        },
+        {
+          "company_id": "sierra_ai",
+          "headcount_estimate": 200,
+          "headcount_source": "LinkedIn estimate (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 15.0,
+          "valuation_source": "Series D May 4 2026 — $950M raised at $15B+ valuation, Tiger Global + GV led",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-05-04",
+              "headline": "Sierra raises $950M Series D at $15B+ valuation led by Tiger Global and GV; serves 40%+ of Fortune 50",
+              "type": "funding",
+              "significance": "high",
+              "url": "https://sierra.ai/blog/better-customer-experiences-built-on-sierra"
+            },
+            {
+              "date": "2026-03-28",
+              "headline": "Sierra acquires Opera Tech in Japan, expanding enterprise AI agent presence in Asia",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://sierra.ai/blog/sierra-acquires-opera-tech-in-japan"
+            },
+            {
+              "date": "2026-03-26",
+              "headline": "Sierra launches GhostWriter — Agents-as-a-Service offering",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://sierra.ai/blog/agents-as-a-service"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-03-26",
+              "product": "GhostWriter",
+              "type": "product_launch",
+              "description": "Agents-as-a-Service — deploy AI agents without deep platform integration."
+            }
+          ]
+        },
+        {
+          "company_id": "cursor",
+          "headcount_estimate": 200,
+          "headcount_source": "LinkedIn estimate (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 60.0,
+          "valuation_source": "SpaceX all-stock acquisition agreed Jun 16 2026 at $60B; deal expected Q3 2026 close",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-06-16",
+              "headline": "SpaceX agrees to acquire Cursor (Anysphere) for $60B in stock, days after SpaceX blockbuster IPO; closes Q3 2026",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/"
+            },
+            {
+              "date": "2026-06-18",
+              "headline": "SpaceX stock falls 20%+ from peak, wiping ~$620B in market cap, as Cursor acquisition spooks investors on dilution and AI risk",
+              "type": "business",
+              "significance": "high",
+              "url": "https://www.forbes.com/sites/tylerroush/2026/06/18/spacex-stock-plunge-wipes-out-600-billion-after-cursor-deal-spooks-investors/"
+            },
+            {
+              "date": "2026-04-21",
+              "headline": "SpaceX and Cursor first reported in acquisition talks; $10B break-up fee if deal falls apart",
+              "type": "business",
+              "significance": "high",
+              "url": "https://www.theverge.com/science/916427/spacex-cursor-potential-deal-acquisition"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "harvey_ai",
+          "headcount_estimate": 500,
+          "headcount_source": "LinkedIn estimate (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 5.0,
+          "valuation_source": "Series D Feb 2025 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "glean",
+          "headcount_estimate": 700,
+          "headcount_source": "LinkedIn estimate (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 7.25,
+          "valuation_source": "Series E Aug 2024 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cerebras",
+          "headcount_estimate": 500,
+          "headcount_source": "IPO filing (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 8.1,
+          "valuation_source": "Pre-IPO estimate 2024 (carried forward)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "groq",
+          "headcount_estimate": 300,
+          "headcount_source": "LinkedIn estimate (carried forward)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 6.9,
+          "valuation_source": "Series D Aug 2024 (carried forward)",
           "valuation_confidence": "carried_forward",
           "arr_usd_billions": null,
           "arr_source": null,
