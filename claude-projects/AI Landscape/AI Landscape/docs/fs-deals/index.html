@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPS Field Service — Demo Activity Report</title>
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-light: #0f2040;
+    --navy-mid: #162a50;
+    --navy-card: #1a3060;
+    --navy-border: #243d6e;
+    --accent: #0ea5e9;
+    --accent-glow: rgba(14,165,233,0.15);
+    --text: #e8edf5;
+    --text-muted: #8da0bf;
+    --text-dim: #5a7099;
+    --green: #22c55e;
+    --amber: #f59e0b;
+    --red: #ef4444;
+    --purple: #a855f7;
+    --teal: #14b8a6;
+    --indigo: #6366f1;
+    --orange: #f97316;
+    --badge-se: #0ea5e9;
+    --badge-task: #a855f7;
+    --badge-event: #14b8a6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--navy);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; opacity: 0.85; }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-mid) 100%);
+    border-bottom: 1px solid var(--navy-border);
+    padding: 28px 32px 24px;
+  }
+  .header-inner { max-width: 1700px; margin: 0 auto; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.3px;
+  }
+  .header h1 span { color: var(--accent); }
+  .header .subtitle {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .header-badge {
+    background: var(--accent-glow);
+    border: 1px solid rgba(14,165,233,0.3);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  /* Summary cards */
+  .summary-row {
+    max-width: 1700px;
+    margin: 24px auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+    gap: 12px;
+  }
+  .card {
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 10px 10px 0 0;
+  }
+  .card.blue::before  { background: var(--accent); }
+  .card.purple::before { background: var(--purple); }
+  .card.teal::before  { background: var(--teal); }
+  .card.green::before { background: var(--green); }
+  .card.amber::before { background: var(--amber); }
+  .card.indigo::before { background: var(--indigo); }
+  .card-label { font-size: 11px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .card-value { font-size: 28px; font-weight: 800; color: #fff; margin-top: 4px; line-height: 1; }
+  .card-value.sm { font-size: 20px; }
+  .card-sub { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+
+  /* Controls */
+  .controls {
+    max-width: 1700px;
+    margin: 0 auto 16px;
+    padding: 0 32px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .search-wrap { position: relative; flex: 1; min-width: 240px; max-width: 380px; }
+  .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-dim); pointer-events: none; width: 14px; height: 14px; }
+  #searchInput {
+    width: 100%;
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    border-radius: 7px;
+    padding: 8px 12px 8px 34px;
+    color: var(--text);
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  #searchInput:focus { border-color: var(--accent); }
+  #searchInput::placeholder { color: var(--text-dim); }
+  .filter-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filter-btn {
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    color: var(--text-muted);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { background: rgba(14,165,233,0.08); border-color: rgba(14,165,233,0.3); color: var(--text); }
+  .filter-btn.active { background: var(--accent-glow); border-color: rgba(14,165,233,0.4); color: var(--accent); }
+  .results-count { margin-left: auto; font-size: 12px; color: var(--text-dim); white-space: nowrap; }
+
+  /* Table wrapper */
+  .table-wrap { max-width: 1700px; margin: 0 auto; padding: 0 32px 48px; }
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  thead { background: var(--navy-mid); }
+  th {
+    padding: 11px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--navy-border);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.15s;
+  }
+  th:hover { color: var(--text); }
+  th.sorted-asc::after  { content: ' \2191'; color: var(--accent); }
+  th.sorted-desc::after { content: ' \2193'; color: var(--accent); }
+  th.th-acv { text-align: right; }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(36,61,110,0.5);
+    vertical-align: middle;
+  }
+  tbody tr.data-row { cursor: pointer; transition: background 0.12s; }
+  tbody tr.data-row:hover > td { background: rgba(14,165,233,0.05); }
+  tbody tr.detail-row > td { border-bottom: 1px solid rgba(36,61,110,0.5); padding: 0; }
+  tbody tr.data-row:last-of-type > td { border-bottom: none; }
+
+  /* Detail panel */
+  .detail-panel {
+    display: none;
+    background: rgba(10,22,40,0.55);
+    border-top: 1px solid var(--navy-border);
+    padding: 16px 20px;
+  }
+  .detail-panel.open { display: block; }
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 960px) { .detail-grid { grid-template-columns: 1fr; } }
+  .detail-section h4 {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+  .snippet-item {
+    background: var(--navy-light);
+    border: 1px solid var(--navy-border);
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .snippet-field {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 3px;
+  }
+  .activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 6px 8px;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    font-size: 12px;
+    transition: background 0.1s;
+  }
+  .activity-item:hover { background: rgba(255,255,255,0.03); }
+  .activity-date {
+    font-size: 11px;
+    color: var(--text-dim);
+    white-space: nowrap;
+    min-width: 75px;
+    font-variant-numeric: tabular-nums;
+  }
+  .activity-subject { color: var(--text); flex: 1; line-height: 1.4; }
+  .activity-src { font-size: 10px; padding: 2px 6px; border-radius: 4px; white-space: nowrap; font-weight: 600; flex-shrink: 0; }
+  .src-task   { background: rgba(168,85,247,0.15); color: var(--badge-task); }
+  .src-event  { background: rgba(20,184,166,0.15); color: var(--badge-event); }
+  .activity-type { font-size: 10px; padding: 2px 6px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; }
+  .type-pres  { background: rgba(99,102,241,0.15); color: #818cf8; }
+  .type-dry   { background: rgba(245,158,11,0.15); color: var(--amber); }
+  .type-other { background: rgba(14,165,233,0.1);  color: var(--text-dim); }
+
+  /* Badges */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    margin: 2px 2px 2px 0;
+  }
+  .badge-se    { background: rgba(14,165,233,0.15);  color: var(--badge-se);   border: 1px solid rgba(14,165,233,0.25); }
+  .badge-task  { background: rgba(168,85,247,0.15);  color: var(--badge-task); border: 1px solid rgba(168,85,247,0.25); }
+  .badge-event { background: rgba(20,184,166,0.15);  color: var(--badge-event);border: 1px solid rgba(20,184,166,0.25); }
+
+  .recent-dot {
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    margin-right: 4px;
+    vertical-align: middle;
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.5; transform: scale(1.35); }
+  }
+  .badge-recent-inline {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    background: rgba(34,197,94,0.2);
+    color: var(--green);
+    border: 1px solid rgba(34,197,94,0.35);
+    vertical-align: middle;
+    margin-left: 3px;
+    letter-spacing: 0.04em;
+  }
+  .activity-recent {
+    background: rgba(34,197,94,0.06);
+    border-left: 2px solid var(--green);
+    padding-left: 8px;
+    margin-left: -10px;
+  }
+
+  .stage-badge {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .s01 { background: rgba(100,116,139,0.2); color: #94a3b8; border: 1px solid rgba(100,116,139,0.3); }
+  .s02 { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+  .s03 { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+  .s04 { background: rgba(249,115,22,0.15); color: #fb923c; border: 1px solid rgba(249,115,22,0.3); }
+  .s05 { background: rgba(34,197,94,0.15);  color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+  .s06 { background: rgba(168,85,247,0.15); color: #c084fc; border: 1px solid rgba(168,85,247,0.3); }
+  .sna { background: rgba(100,116,139,0.1); color: #64748b; border: 1px solid rgba(100,116,139,0.2); }
+
+  .acv-val  { font-variant-numeric: tabular-nums; font-weight: 600; color: #fff; }
+  .acv-none { color: var(--text-dim); font-size: 11px; }
+
+  .region-chip {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-top: 3px;
+  }
+  .r-amer { background: rgba(34,197,94,0.12);  color: #4ade80; }
+  .r-emea { background: rgba(99,102,241,0.12); color: #818cf8; }
+  .r-apac { background: rgba(245,158,11,0.12); color: #fbbf24; }
+
+  .acct-name { font-weight: 600; color: var(--text); }
+  .opp-link  { font-size: 12px; color: var(--accent); line-height: 1.35; display: block; margin-top: 2px; }
+  .opp-link:hover { text-decoration: underline; }
+
+  .chevron {
+    width: 14px; height: 14px;
+    transition: transform 0.2s;
+    color: var(--text-dim);
+    flex-shrink: 0;
+  }
+  tr.row-open .chevron { transform: rotate(90deg); }
+
+  .no-results { text-align: center; padding: 48px; color: var(--text-dim); font-size: 14px; }
+
+  /* Section divider */
+  .divider {
+    max-width: 1700px;
+    margin: 0 auto 20px;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .divider-label { font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+  .divider-line  { flex: 1; height: 1px; background: var(--navy-border); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <h1>GPS Field Service &#8212; <span>Demo Activity Report</span></h1>
+        <div class="subtitle">Dave Rey Hierarchy &nbsp;&bull;&nbsp; Open Opportunities &nbsp;&bull;&nbsp; As of June 30, 2026</div>
+      </div>
+      <div class="header-badge">Field Service Cloud &amp; SFS</div>
+    </div>
+  </div>
+</div>
+
+<div class="summary-row" id="summaryRow"></div>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-label">All Opportunities with Demo Evidence</div>
+  <div class="divider-line"></div>
+</div>
+
+<div class="controls">
+  <div class="search-wrap">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input type="text" id="searchInput" placeholder="Search account, opportunity, owner&hellip;">
+  </div>
+  <div class="filter-btns" id="filterBtns">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="se">SE Comments</button>
+    <button class="filter-btn" data-filter="task">Tasks</button>
+    <button class="filter-btn" data-filter="event">Events</button>
+    <button class="filter-btn" data-filter="AMER">AMER</button>
+    <button class="filter-btn" data-filter="EMEA">EMEA</button>
+    <button class="filter-btn" data-filter="APAC">APAC</button>
+    <button class="filter-btn" data-filter="recent14d" style="border-color:rgba(34,197,94,0.4);color:var(--green)"><span class="recent-dot" style="animation:none"></span>Recent 14d</button>
+  </div>
+  <div class="results-count" id="resultsCount"></div>
+</div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th style="width:20px; padding-left:16px;"></th>
+        <th data-col="account">Account</th>
+        <th data-col="opp">Opportunity</th>
+        <th data-col="stage">Stage</th>
+        <th data-col="acv" class="th-acv">ACV</th>
+        <th data-col="evidence">Demo Evidence</th>
+        <th data-col="recent">Most Recent Demo Activity</th>
+        <th data-col="owner">Owner</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+  <div id="noResults" class="no-results" style="display:none">No opportunities match your current filters.</div>
+</div>
+
+<script>
+// ── DATA ─────────────────────────────────────────────────────────────────────
+const OPPS = [
+  {
+    id:"0060M000016LIADQA4", acct:"Sacramento Municipal Utility District - SMUD",
+    opp:"SMUD - FSL Transition #UTILITIES #BDS-2JB",
+    owner:"Jason Reliford", stage:"03 - Validating Benefits & Value", acv:266725.20,
+    region:"AMER", hasSE:true, hasTask:false, hasEvent:false,
+    snippets:{"SE Comments":"Awaiting detailed technical requirements for opportunity to demo / work with partner","SE Next Steps":"Awaiting detailed technical requirements for opportunity to demo / work with partner"},
+    tasks:[], events:[]
+  },
+  {
+    id:"0063y000016pf7UAAQ", acct:"Hydro-Quebec",
+    opp:"Hydro-Quebec - Click to SFS +3500EE (Phase I) #BB",
+    owner:"Michel Carbonneau", stage:"02 - Determining Problem, Impact, Ideal", acv:721420.80,
+    region:"AMER", hasSE:true, hasTask:false, hasEvent:false,
+    snippets:{"SE Comments":"Demo delivered March 16th (2023)","SE Next Steps":"Demo delivered - awaiting on customer for next steps"},
+    tasks:[], events:[]
+  },
+  {
+    id:"0063y0000174IH8AAM", acct:"Utah Department of Natural Resources",
+    opp:"Utah DNR - OGM - (PSF LPI/ SFS) #LPI",
+    owner:"Brian Maxwell", stage:"01 - Identifying an Opportunity", acv:166023,
+    region:"AMER", hasSE:true, hasTask:false, hasEvent:false,
+    snippets:{"SE Next Steps":"Demo went very well, Erin to follow up with the customer and introduce a few implementation partners"},
+    tasks:[], events:[]
+  },
+  {
+    id:"0063y000019C5PeAAK", acct:"Hydro-Quebec",
+    opp:"Hydro-Quebec - Click to SFS +3500EE (Phase II)",
+    owner:"Michel Carbonneau", stage:"02 - Determining Problem, Impact, Ideal", acv:1800000,
+    region:"AMER", hasSE:true, hasTask:false, hasEvent:false,
+    snippets:{"SE Comments":"Demo delivered March 16th","SE Next Steps":"Demo delivered - awaiting on customer for next steps"},
+    tasks:[], events:[]
+  },
+  {
+    id:"0063y000019S8VeAAK", acct:"Electric Power Board of Chattanooga",
+    opp:"EPB: SC to E&U/Comms Cloud #UTILITIES",
+    owner:"Harrison Longhurst", stage:"03 - Validating Benefits & Value", acv:2322325.30,
+    region:"AMER", hasSE:true, hasTask:false, hasEvent:true,
+    snippets:{"SE Comments":"Delivered end-to-end Comms/E&U/SFS demo in early April 2025."},
+    tasks:[],
+    events:[{date:"2025-05-07",subj:"EPB Chatt - SC to Comms/E&U - Demo Video",type:"Solution Creation"}]
+  },
+  {
+    id:"006ed000007kzsVAAQ", acct:"Texas Animal Health Commission",
+    opp:"Texas Animal Health Commission Investigative Case Mgmt #PH",
+    owner:"Jonathan Downing", stage:"03 - Validating Benefits & Value", acv:411074.40,
+    region:"AMER", hasSE:true, hasTask:true, hasEvent:false,
+    snippets:{"SE Comments":"POV Demo looking to retire multiple legacy databases. Demoed to Leadership 2/21 for Fiscal Year Planning"},
+    tasks:[{date:"2025-02-21",subj:"Salesforce Demo",type:"Customer Meeting"},{date:"2025-02-18",subj:"Salesforce Demo email chain",type:"Email"}],
+    events:[]
+  },
+  {
+    id:"006ed00000BrdZZAAZ", acct:"Network Rail (OPAS)",
+    opp:"UK - Network Rail EAM RFI #UKIBIG",
+    owner:"Mark Crocker", stage:"02 - Determining Problem, Impact, Ideal", acv:510720,
+    region:"EMEA", hasSE:true, hasTask:false, hasEvent:true,
+    snippets:{"SE Comments":"22/06/2026 RS: EAM Demo delivered as part of the RFI Process. Await next steps. Elipse is incumbent.","SE Next Steps":"22/06/2026 RS: None at this stage - EAM demo presented. v. good feedback"},
+    tasks:[],
+    events:[{date:"2025-07-07",subj:"#Demo - NR EAM",type:"Customer Presentation"},{date:"2025-07-03",subj:"NR Demo Prep",type:"Account Planning"}]
+  },
+  {
+    id:"006ed00000C2eP3AAJ", acct:"REGION ILE DE FRANCE",
+    opp:"FR - REGION ILE DE FRANCE - FSC for SI-Auto (+100EE) #AI #ENGAGE #BDS-PW",
+    owner:"Maxime Briant", stage:"05 - Negotiating $$ & Mutual Plan", acv:100000,
+    region:"EMEA", hasSE:true, hasTask:true, hasEvent:true,
+    snippets:{"SE Comments":"CMA | After the demo we received a very positive feedback and now the customer has validated the budget"},
+    tasks:[{date:"2025-06-13",subj:"Demo onsite",type:"On-Site"}],
+    events:[{date:"2025-06-20",subj:"#demo | [CRB] Démo IA Salesforce",type:"Customer Presentation"},{date:"2025-06-12",subj:"#demo | [CRIDF] - Démo Salesforce FSM - SI Auto",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed00000D1IxtAAF", acct:"ABBANOA S.P.A",
+    opp:"IT - Abbanoa - Field Service - (34)+34 SvC - [BDR]",
+    owner:"Manila Petrone", stage:"04 - Confirming Value With Power", acv:170358,
+    region:"EMEA", hasSE:true, hasTask:false, hasEvent:true,
+    snippets:{"SE Comments":"S: demo was successful.","SE Next Steps":"RN 7-7-2025: demo was successful. Customer asked for an initial budgetary estimate"},
+    tasks:[],
+    events:[{date:"2026-03-20",subj:"Salesforce & Abbanoa - #Demo Field Service - Confirmed",type:"Customer Presentation"},{date:"2025-07-01",subj:"#afdemo Salesforce",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed00000ESXFVAA5", acct:"Network Rail Intelligent Infrastructure",
+    opp:"NEST - Asset Exam System (AES) #UKIBIG",
+    owner:"Mark Crocker", stage:"02 - Determining Problem, Impact, Ideal", acv:213264,
+    region:"EMEA", hasSE:true, hasTask:false, hasEvent:true,
+    snippets:{"SE Comments":"01/03/2026 RS: FSL Demo conducted. A: Cog to follow up with license volumes.","SE Next Steps":"01/03/2026 RS: FSL Demo conducted. Reply with responses to follow up questions."},
+    tasks:[],
+    events:[{date:"2026-02-26",subj:"AES Requirements & FSL Demo",type:"Customer Discovery"}]
+  },
+  {
+    id:"006ed00000MrwcIAAR", acct:"Sante Quebec",
+    opp:"Sante Quebec - Provincial GMAO - Field Service + ASLM #PANCAN #BDS-KH",
+    owner:"Mélissa Beauparlant", stage:"02 - Determining Problem, Impact, Ideal", acv:798000,
+    region:"AMER", hasSE:true, hasTask:false, hasEvent:false,
+    snippets:{"SE Comments":"11-18 | CP - Demo delivered to CIUSS de Laval (GMAO) (10-02) as part of an RFI."},
+    tasks:[], events:[]
+  },
+  {
+    id:"006ed00000OFrUPAA1", acct:"North Carolina Department of Agriculture",
+    opp:"NC Department of Agriculture - Disaster Grants Management #GRANTS",
+    owner:"Morgan Lemon", stage:"02 - Determining Problem, Impact, Ideal", acv:60265,
+    region:"AMER", hasSE:true, hasTask:true, hasEvent:true,
+    snippets:{"SE Comments":"Demo provided"},
+    tasks:[{date:"2025-11-21",subj:"Disaster grants demo (email)",type:"Email"},{date:"2025-11-14",subj:"Disaster grants demo follow-up",type:"Email"}],
+    events:[{date:"2025-11-21",subj:"NC Ag/Salesforce Disaster Grants Demo (#DEMO)",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed00000OVrgXAAT", acct:"Helsingin Seudun Ympäristöpalvelut - HSY",
+    opp:"FI-HSY-Waste FSL Phase2 - [BDR] #CASE",
+    owner:"Tommi Pekonen", stage:"02 - Determining Problem, Impact, Ideal", acv:745600,
+    region:"EMEA", hasSE:true, hasTask:false, hasEvent:false,
+    snippets:{"SE Next Steps":"Customer demo 2.6."},
+    tasks:[], events:[]
+  },
+  {
+    id:"006ed00000P3sgbAAB", acct:"Austin Energy",
+    opp:"Austin Energy - Field Service RFI #UTILITIES",
+    owner:"Sean Duffy", stage:"04 - Confirming Value With Power", acv:375000,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:false,
+    snippets:{}, tasks:[], events:[]
+  },
+  {
+    id:"006ed00000PnJO5AAN", acct:"INSTITUTO NACIONAL DE SAÚDE DOUTOR RICARDO JORGE",
+    opp:"PT - INSA - Field Service + Asset Management [BDR]",
+    owner:"Marcelo Silva", stage:"02 - Determining Problem, Impact, Ideal", acv:50225,
+    region:"EMEA", hasSE:true, hasTask:false, hasEvent:false,
+    snippets:{"SE Next Steps":"Demo"},
+    tasks:[], events:[]
+  },
+  {
+    id:"006ed00000SeopBAAR", acct:"Cubic Corporation",
+    opp:"Cubic Corporation - CTS/ITS Field Service #agentforce",
+    owner:"ELIZABETH CHAVEZ", stage:"06 - Finalizing Closure", acv:280164,
+    region:"AMER", hasSE:true, hasTask:true, hasEvent:true,
+    snippets:{"SE Next Steps":"Demo is scheduled for Friday 10/24/25."},
+    tasks:[{date:"2025-10-24",subj:"Demo is scheduled for Friday 10/24/25",type:"Customer Meeting"}],
+    events:[{date:"2025-10-24",subj:"Cubic CTS - ITS Demonstration",type:"Customer Presentation"},{date:"2025-10-23",subj:"Cubic Demo Prep",type:"Dry Run"}]
+  },
+  {
+    id:"006ed00000WTf5PAAT", acct:"Northrop Grumman Systems Corporation",
+    opp:"NGC Strategic AELA FY27 #AGENTFORCE #ITSM #HAM #MCI",
+    owner:"Kevin Van Horn", stage:"03 - Validating Benefits & Value", acv:1500000,
+    region:"AMER", hasSE:true, hasTask:true, hasEvent:true,
+    snippets:{"SE Next Steps":"Building out a demo data model for this use case. Jason happy to do demo and cost analysis"},
+    tasks:[{date:"2026-06-09",subj:"Discussion for demo timing / meeting",type:"Customer Meeting"}],
+    events:[{date:"2026-04-10",subj:"NG Event Management Demo",type:"Customer Discovery"},{date:"2026-02-19",subj:"Demo Build",type:"Solution Creation"}]
+  },
+  {
+    id:"006ed00000X7MQdAAN", acct:"Islington Council",
+    opp:"UK | Islington Council | Estate Services | #ASSET & #CASE management",
+    owner:"Mary Jane Toohey", stage:"03 - Validating Benefits & Value", acv:103704,
+    region:"EMEA", hasSE:true, hasTask:true, hasEvent:true,
+    snippets:{"SE Comments":"S: demo/BOM for caretaker mngt done","SE Next Steps":"demo planned for 4 July (led by Alscient)"},
+    tasks:[{date:"2026-04-23",subj:"In person demo @ Islington Council office",type:"On-Site"}],
+    events:[{date:"2026-04-23",subj:"ES / Salesforce demo meeting #AFdemo",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed00000XZRqMAAX", acct:"Network Rail (OPAS)",
+    opp:"UK - Network Rail - ELA Rewrite & Uplift #UKIBIG #BDS-JB",
+    owner:"Mark Crocker", stage:"04 - Confirming Value With Power", acv:1125400,
+    region:"EMEA", hasSE:true, hasTask:false, hasEvent:true,
+    snippets:{"SE Comments":"23/06/2026 RS: CAPEX Agent built and demo delivered. Await confirmation if we need to demo to further stakeholders","SE Next Steps":"23/06/2026 RS: CAPEX Agent demo'd to Simon Callow. Small tweaks made. Await next steps"},
+    tasks:[],
+    events:[{date:"2026-06-16",subj:"Network Rail Capex Agent Demo Tomorrow",type:"Dry Run"},{date:"2026-04-22",subj:"#Demo AF Asset Management for Network Rail",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed00000ZNX0jAAH", acct:"Memphis Shelby County Schools",
+    opp:"Memphis Shelby County Schools - +80(80)FSL+Tab #FIELD",
+    owner:"Daniel Martin", stage:"04 - Confirming Value With Power", acv:121602,
+    region:"AMER", hasSE:true, hasTask:true, hasEvent:true,
+    snippets:{"SE Next Steps":"KB 6/1 demo delivered 5/14, AE to conduct contract review"},
+    tasks:[{date:"2026-05-20",subj:"Demo Recap and NS Conversation",type:"Customer Meeting"},{date:"2026-05-07",subj:"Demo Planning Call",type:"Customer Meeting"}],
+    events:[{date:"2026-05-14",subj:"Salesforce <> Memphis Shelby Demo",type:"Customer Presentation"},{date:"2026-05-14",subj:"Prep for demo",type:"Dry Run"}]
+  },
+  {
+    id:"006ed00000agOduAAE", acct:"Orleans Parish Civil District Court",
+    opp:"Orleans Parish Civil District Court-Case Management - #justice (+134)134",
+    owner:"Chitua Short", stage:"04 - Confirming Value With Power", acv:153622,
+    region:"AMER", hasSE:true, hasTask:false, hasEvent:true,
+    snippets:{"SE Comments":"SE attended current system demo with T3 Tech on 5/11."},
+    tasks:[],
+    events:[{date:"2026-05-19",subj:"Internal Demo - T3 - Orleans CDC",type:"Customer Presentation"},{date:"2026-05-11",subj:"Salesforce/Orleans CDC Meeting - Current System Demo",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed00000bKsF3AAK", acct:"Textron Aviation Inc.",
+    opp:"Textron Aviation Inc. - #expand",
+    owner:"Michelle Beverley", stage:"02 - Determining Problem, Impact, Ideal", acv:141120,
+    region:"AMER", hasSE:true, hasTask:true, hasEvent:false,
+    snippets:{"SE Comments":"05/20 FT: Conducted field service discovery. Demo to follow."},
+    tasks:[{date:"2026-05-01",subj:"Email: Karolyn Hewitt just started watching your demo",type:"Email"}],
+    events:[]
+  },
+  {
+    id:"006ed00000bjlWvAAI", acct:"Alcohol and Gaming Commission of Ontario (AGCO)",
+    opp:"Alcohol Gaming Commission - Field Inspection #LPI",
+    owner:"Jamie Wilson", stage:"04 - Confirming Value With Power", acv:268900,
+    region:"AMER", hasSE:true, hasTask:false, hasEvent:false,
+    snippets:{"Description":"The July 2026 executive demo (target July 9 or 23) is the pivotal milestone for full C-suite buy-in"},
+    tasks:[], events:[]
+  },
+  {
+    id:"006ed00000cB5PuAAK", acct:"Empresa Municipal De Transportes Valencia Sa",
+    opp:"ES - EMT Valencia - Agentforce (BDR) #contact",
+    owner:"Claudia Carrera", stage:"02 - Determining Problem, Impact, Ideal", acv:100000,
+    region:"EMEA", hasSE:true, hasTask:false, hasEvent:false,
+    snippets:{"SE Next Steps":"Demo on-site"},
+    tasks:[], events:[]
+  },
+  {
+    id:"006ed00000c0LxpAAE", acct:"Fairbanks Morse Engine Division",
+    opp:"Fairbanks Morse Engine Division - Asset Management & After Market Management #FIELDSERVICE",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:false,
+    snippets:{},
+    tasks:[{date:"2026-06-08",subj:"Field Service Demo",type:"Customer Meeting"},{date:"2026-06-04",subj:"Salesforce Demo",type:"Customer Meeting"}],
+    events:[]
+  },
+  {
+    id:"006ed00000WECRtAAP", acct:"CA Dept of Housing and Community Development",
+    opp:"HCD Field Service - #FIELD",
+    owner:"Cindy Biando", stage:"02 - Determining Problem, Impact, Ideal", acv:null,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:false,
+    snippets:{},
+    tasks:[{date:"2026-05-05",subj:"Demo",type:"Partner Enablement"},{date:"2026-04-09",subj:"Demo",type:"Call/Mtg Prep"}],
+    events:[]
+  },
+  // Events-only opps
+  {
+    id:"0060M000012cyb2QAA", acct:"City of Los Angeles Bureau of Sanitation",
+    opp:"City of Los Angeles Bureau of Sanitation -- CRM (+300) 300 UE",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2026-04-22",subj:"Voice demo prep",type:"Solution Creation"}]
+  },
+  {
+    id:"0063y000019XFc7AAG", acct:"Oklahoma DOT",
+    opp:"OK ODOT Management PSF #TRANSPORT #BDS-CQ #BDI-PB",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2025-10-21",subj:"OK DOC demo system work",type:"Solution Creation"}]
+  },
+  {
+    id:"0063y00001AQy2SAAT", acct:"Sarpsborg Kommune",
+    opp:"NO - Sarpsborg Kommune - PSS A1E (+57) 127, SFS+ (+5) 12, SFS Tech (+38) 86 #FIELD",
+    owner:"Lars Oskar Heer Amlie", stage:"", acv:null,
+    region:"EMEA", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2026-06-19",subj:"Slack Agentforce D360 Demo #BB-EI",type:"Customer Presentation"},{date:"2026-02-13",subj:"Sarpsborg Agentic IT service and HR Demo",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed000000pYu5AAE", acct:"Texas Comptroller of Public Accounts",
+    opp:"Texas CPA Taxpayer Compliance & Enforcement Mgmt #TAX",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:true,
+    snippets:{},
+    tasks:[{date:"2026-03-17",subj:"Demo",type:"On-Site"},{date:"2025-12-16",subj:"Demo",type:"Virtual"}],
+    events:[{date:"2026-03-17",subj:"Salesforce PowerBuilder Reverse Demo",type:"Customer Presentation"},{date:"2026-02-20",subj:"Salesforce Demo preparation",type:"Customer Discovery"}]
+  },
+  {
+    id:"006ed000003gfcvAAA", acct:"APS (Italy)",
+    opp:"IT - APS - Gestione Investimenti #newlogo",
+    owner:"", stage:"", acv:null,
+    region:"EMEA", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2026-03-24",subj:"Salesforce & APS - Confirmed #demo",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed0000048tUrAAI", acct:"Helsingin Seudun Ympäristöpalvelut - HSY",
+    opp:"FI-HSY-Water FSL - [BDR] #ENGAGE",
+    owner:"Tommi Pekonen", stage:"", acv:null,
+    region:"EMEA", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2025-06-02",subj:"#BB-SFS Salesforce-demo/HSY",type:"Customer Presentation"},{date:"2025-05-30",subj:"#BB-SFS Demo build HSY",type:"Solution Creation"}]
+  },
+  {
+    id:"006ed00000AofgYAAR", acct:"Tennessee Valley Authority",
+    opp:"TVA-Transmission-Field Services #BDI-2JB",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:true,
+    snippets:{},
+    tasks:[{date:"2025-07-17",subj:"Field Services Demo",type:"On-Site"},{date:"2025-04-15",subj:"DEMO Services Field",type:"On-Site"}],
+    events:[{date:"2025-07-17",subj:"Demo Prep",type:"Dry Run"},{date:"2025-07-15",subj:"Prep TVA Demo",type:"Solution Creation"}]
+  },
+  {
+    id:"006ed00000ArVEPAA3", acct:"Ministry of Natural Resources & Forestry (Canada)",
+    opp:"MNRF AFFES PIMS #FIELD",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2026-03-10",subj:"Request for Salesforce Demo Aligned to PIMS Requirements #bb-sfs",type:"Customer Discovery"}]
+  },
+  {
+    id:"006ed00000DHOo1AAH", acct:"San Antonio Water System (SAWS)",
+    opp:"SAWS - +230 FS #utilities #field",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:true,
+    snippets:{},
+    tasks:[{date:"2025-07-17",subj:"Field Service Demo (email)",type:"Email"}],
+    events:[{date:"2026-02-13",subj:"SAWS - Salesforce Field Service Demo Hold #DEMO",type:"Customer Presentation"},{date:"2025-09-05",subj:"(Onsite) SAWS Salesforce Field Service Demo #DEMO",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed00000FmIbVAAV", acct:"City of West Palm Beach",
+    opp:"City of West Palm Beach - Field Service",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:false,
+    snippets:{},
+    tasks:[{date:"2025-07-09",subj:"Thank you / Demo Scheduling",type:"Email"}],
+    events:[]
+  },
+  {
+    id:"006ed00000HNdV7AAL", acct:"Virginia DMV",
+    opp:"COV - VaDMV - Law Enforcement Div - Rebuilt Vehicle Inspection",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:true,
+    snippets:{},
+    tasks:[{date:"2025-08-20",subj:"Capability Demo to DMV Law Enforcement Team",type:"Virtual"}],
+    events:[{date:"2025-08-20",subj:"DMV-Salesforce Demo #DEMO #AGENTFORCE",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed00000J4GhZAAV", acct:"County of Hawaii",
+    opp:"County of Hawaii - Planning, Building Permits, Code (+160)",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2025-09-19",subj:"HOLD: Hawaii County <> Salesforce TVR (Short Term Rentals) Demo",type:"Customer Presentation"},{date:"2025-09-10",subj:"Hawaii County <> Salesforce/Vivid: Transient Vacation Rentals Demo",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed00000JWA4XAAX", acct:"County of Hawaii",
+    opp:"County of Hawaii - Short Term Rentals - (+82)82UE #LPI #BDS-",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2026-03-20",subj:"RFP 26-0042 Digital Platform for Registration, Compliance Monitoring",type:"RFx"}]
+  },
+  {
+    id:"006ed00000NvuJZAAZ", acct:"Räddningstjänsten Storgöteborg",
+    opp:"SE - Räddningstjänsten Storgöteborg - #NEWLOGO #SAFE #RFI",
+    owner:"", stage:"", acv:null,
+    region:"EMEA", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2025-11-11",subj:"Räddningstjänsten Gbg #demo",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed00000QN6P8AAL", acct:"Metropolitan Water District of Southern California",
+    opp:"Metropolitan Water District of Southern California - Rebate Program",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2026-02-10",subj:"MWD + Salesforce | Energy Rebate Demonstration",type:"Customer Presentation"},{date:"2026-02-04",subj:"MWD Demo prep",type:"Solution Creation"}]
+  },
+  {
+    id:"006ed00000SQN0rAAH", acct:"City of Loveland",
+    opp:"City of Loveland - Department of Water & Power - Field Service",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2026-03-26",subj:"Loveland/Salesforce - Field Services Demo",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed00000SrXqXAAV", acct:"North Dakota Dept of Corrections",
+    opp:"ND DOCR RFP - Service to Sovereignty Response #FIELD",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2026-03-30",subj:"ND DOCR / Partner #demo",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed00000U1NcQAAV", acct:"San Antonio Water System (SAWS)",
+    opp:"SAWS - FSL +300 Collections and Distribution Team #utilities",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2026-02-13",subj:"SAWS - Salesforce Field Service Demo Hold",type:"Customer Presentation"}]
+  },
+  {
+    id:"006ed00000UXf4kAAD", acct:"Virginia Army National Guard",
+    opp:"US Army - VA ARNG - CFMO - #Field Service",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:true,
+    snippets:{},
+    tasks:[{date:"2026-02-13",subj:"Salesforce Demo Links (email)",type:"Email"}],
+    events:[{date:"2026-02-13",subj:"VA ARNG Demo Video Search",type:"Solution Creation"}]
+  },
+  {
+    id:"006ed00000VRwPRAA1", acct:"NSW Dept of Education",
+    opp:"AU - NSW - DoE Cleaning Services FSL & Agentforce #WT",
+    owner:"Rasika Perera", stage:"", acv:null,
+    region:"APAC", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2026-04-28",subj:"DoE Slack Demo",type:"Dry Run"},{date:"2026-04-22",subj:"Dry run - DoE Exec preso and demo",type:"Dry Run"},{date:"2026-03-27",subj:"DOE FSL Demo",type:"Solution Creation"}]
+  },
+  {
+    id:"006ed00000WwKX0AAN", acct:"Cherry Creek Public School District",
+    opp:"Cherry Creek Public School District - Service Cloud - Preventive Maintenance #OPS",
+    owner:"Rachel Wiemeier", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2026-05-15",subj:"Salesforce Preventive Maintenance Demo",type:"Customer Presentation"},{date:"2026-05-06",subj:"Sync before Salesforce PM demo on 5/8",type:"Customer Discovery"}]
+  },
+  {
+    id:"006ed00000YFXzNAAX", acct:"Poarch Band of Creek Indians",
+    opp:"Poarch Band of Creek Indians - Public Works - (+30) Service Cloud",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    snippets:{}, tasks:[],
+    events:[{date:"2026-04-09",subj:"PCI Demo Prep",type:"Customer Discovery"},{date:"2026-04-01",subj:"Poarch Indians Field Service Demo",type:"Customer Discovery"}]
+  },
+  {
+    id:"0063y00001APJ0eAAH", acct:"US Navy NAVSUP",
+    opp:"US Navy NAVSUP - Fleet Logistics Center",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:false,
+    snippets:{},
+    tasks:[{date:"2024-08-14",subj:"MHE Demo",type:"Customer Meeting"},{date:"2024-03-15",subj:"FLC Pearl Demo",type:"Customer Meeting"}],
+    events:[]
+  },
+  {
+    id:"0063y00001BOi4uAAD", acct:"US Navy NIWC Atlantic",
+    opp:"US Navy NIWC Atlantic - Field Service",
+    owner:"Rishil Patel", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:false,
+    snippets:{},
+    tasks:[{date:"2024-08-21",subj:"FS Demo",type:"Virtual"},{date:"2024-08-20",subj:"FS Demo",type:"Virtual"}],
+    events:[]
+  },
+  {
+    id:"006ed000005kURdAAM", acct:"Tarion Warranty Corporation",
+    opp:"Tarion Warranty Corporation - Agentforce",
+    owner:"", stage:"", acv:null,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:false,
+    snippets:{},
+    tasks:[{date:"2026-02-01",subj:"Agentforce demos and next steps (email)",type:"Email"}],
+    events:[]
+  }
+];
+
+// ── RECENCY ───────────────────────────────────────────────────────────────────
+const TODAY    = '2026-06-30';
+const CUTOFF   = '2026-06-16'; // 14 days before today
+
+function parseDate(s) {
+  if (!s) return null;
+  let m = s.match(/(\d{4})-(\d{2})-(\d{2})/);
+  if (m) return m[0];
+  m = s.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  if (m) {
+    const a = parseInt(m[1]), b = parseInt(m[2]), yr = m[3];
+    if (a > 12) return yr + '-' + String(b).padStart(2,'0') + '-' + String(a).padStart(2,'0');
+    return yr + '-' + String(a).padStart(2,'0') + '-' + String(b).padStart(2,'0');
+  }
+  m = s.match(/\b(\d{1,2})\.(\d{1,2})\.\b/);
+  if (m) return '2026-' + String(parseInt(m[2])).padStart(2,'0') + '-' + String(parseInt(m[1])).padStart(2,'0');
+  return null;
+}
+
+function extractDatesFromText(text) {
+  if (!text) return [];
+  const dates = [];
+  const isoRx = /\b(\d{4}-\d{2}-\d{2})\b/g;
+  let m;
+  while ((m = isoRx.exec(text)) !== null) dates.push(m[1]);
+  const dmyRx = /\b(\d{1,2})\/(\d{1,2})\/(\d{4})\b/g;
+  while ((m = dmyRx.exec(text)) !== null) { const d = parseDate(m[0]); if (d) dates.push(d); }
+  const finRx = /\b(\d{1,2})\.(\d{1,2})\.\b/g;
+  while ((m = finRx.exec(text)) !== null) { const d = parseDate(m[0]); if (d) dates.push(d); }
+  return dates;
+}
+
+function isRecent(dateStr) {
+  if (!dateStr) return false;
+  return dateStr >= CUTOFF && dateStr <= TODAY;
+}
+
+function getRecency(o) {
+  let hasRecentSE = false, hasRecentTask = false, hasRecentEvent = false;
+  let allDates = [];
+  Object.values(o.snippets).forEach(function(text) {
+    var dates = extractDatesFromText(text);
+    dates.forEach(function(d) { if (isRecent(d)) hasRecentSE = true; allDates.push(d); });
+  });
+  o.tasks.forEach(function(t) {
+    if (isRecent(t.date)) hasRecentTask = true;
+    if (t.date) allDates.push(t.date);
+  });
+  o.events.forEach(function(e) {
+    if (isRecent(e.date)) hasRecentEvent = true;
+    if (e.date) allDates.push(e.date);
+  });
+  allDates = allDates.filter(Boolean).sort().reverse();
+  return {
+    hasRecentSE: hasRecentSE,
+    hasRecentTask: hasRecentTask,
+    hasRecentEvent: hasRecentEvent,
+    hasAnyRecent: hasRecentSE || hasRecentTask || hasRecentEvent,
+    lastDate: allDates[0] || null
+  };
+}
+
+// ── HELPERS ───────────────────────────────────────────────────────────────────
+function stageNum(s) {
+  if (!s) return -1;
+  const m = s.match(/^0?(\d)/);
+  return m ? parseInt(m[1]) : -1;
+}
+
+function fmtACV(v) {
+  if (v == null) return '<span class="acv-none">—</span>';
+  return '<span class="acv-val">$' + Math.round(v).toLocaleString('en-US') + '</span>';
+}
+
+function stageBadge(s) {
+  if (!s) return '<span class="stage-badge sna">—</span>';
+  const n = stageNum(s);
+  const cls = (n >= 1 && n <= 6) ? 's0' + n : 'sna';
+  return '<span class="stage-badge ' + cls + '">' + s.replace(/^0/, '') + '</span>';
+}
+
+function regionChip(r) {
+  const cls = { AMER:'r-amer', EMEA:'r-emea', APAC:'r-apac' }[r] || 'r-amer';
+  return '<span class="region-chip ' + cls + '">' + r + '</span>';
+}
+
+function evidenceBadges(o) {
+  const rec = getRecency(o);
+  let b = '';
+  if (o.hasSE)    b += '<span class="badge badge-se">'    + (rec.hasRecentSE    ? '<span class="recent-dot"></span>' : '') + 'SE Comments</span>';
+  if (o.hasTask)  b += '<span class="badge badge-task">'  + (rec.hasRecentTask  ? '<span class="recent-dot"></span>' : '') + 'Task</span>';
+  if (o.hasEvent) b += '<span class="badge badge-event">' + (rec.hasRecentEvent ? '<span class="recent-dot"></span>' : '') + 'Event</span>';
+  return b || '<span style="color:var(--text-dim);font-size:11px;">—</span>';
+}
+
+function activityTypeBadge(t) {
+  if (!t) return '';
+  if (t === 'Customer Presentation' || t === 'On-Site') return '<span class="activity-type type-pres">' + t + '</span>';
+  if (t === 'Dry Run') return '<span class="activity-type type-dry">' + t + '</span>';
+  return '<span class="activity-type type-other">' + t + '</span>';
+}
+
+function getMostRecent(o) {
+  let all = [];
+  o.events.forEach(e => all.push({ date: e.date, desc: e.subj, src: 'event' }));
+  o.tasks.forEach(t => all.push({ date: t.date, desc: t.subj, src: 'task' }));
+  if (!all.length) return null;
+  all.sort((a, b) => b.date.localeCompare(a.date));
+  return all[0];
+}
+
+function trunc(s, n) { return s && s.length > n ? s.slice(0, n) + '…' : (s || ''); }
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let sortCol = null, sortDir = -1;
+let activeFilter = 'all';
+let searchQ = '';
+
+// ── RENDER SUMMARY ────────────────────────────────────────────────────────────
+function renderSummary() {
+  const total = OPPS.length;
+  const seCount = OPPS.filter(o => o.hasSE).length;
+  const taskCount = OPPS.filter(o => o.hasTask).length;
+  const eventCount = OPPS.filter(o => o.hasEvent).length;
+  const amer = OPPS.filter(o => o.region === 'AMER').length;
+  const emea = OPPS.filter(o => o.region === 'EMEA').length;
+  const apac = OPPS.filter(o => o.region === 'APAC').length;
+  const totalACV = OPPS.filter(o => o.acv).reduce((s, o) => s + o.acv, 0);
+  document.getElementById('summaryRow').innerHTML =
+    card('blue',   total,          'Total Opps',      'with demo evidence') +
+    card('blue',   '$' + (totalACV/1e6).toFixed(1) + 'M', 'Total ACV', 'where amount known', true) +
+    card('blue',   seCount,        'SE Comments',     'opp text field match') +
+    card('purple', taskCount,      'Tasks',           '"demo" in subject') +
+    card('teal',   eventCount,     'Events',          '"demo" in subject') +
+    card('green',  amer,           'AMER',            'opportunities') +
+    card('indigo', emea,           'EMEA',            'opportunities') +
+    card('amber',  apac,           'APAC',            'opportunities');
+}
+function card(color, val, label, sub, sm) {
+  return '<div class="card ' + color + '">' +
+    '<div class="card-label">' + label + '</div>' +
+    '<div class="card-value' + (sm ? ' sm' : '') + '">' + val + '</div>' +
+    '<div class="card-sub">' + sub + '</div>' +
+    '</div>';
+}
+
+// ── FILTER & SORT ─────────────────────────────────────────────────────────────
+function getFiltered() {
+  let d = OPPS.slice();
+  if (activeFilter === 'se')    d = d.filter(o => o.hasSE);
+  else if (activeFilter === 'task')  d = d.filter(o => o.hasTask);
+  else if (activeFilter === 'event') d = d.filter(o => o.hasEvent);
+  else if (activeFilter === 'AMER')  d = d.filter(o => o.region === 'AMER');
+  else if (activeFilter === 'EMEA')  d = d.filter(o => o.region === 'EMEA');
+  else if (activeFilter === 'APAC')  d = d.filter(o => o.region === 'APAC');
+  else if (activeFilter === 'recent14d') d = d.filter(function(o) { return getRecency(o).hasAnyRecent; });
+
+  if (searchQ) {
+    const q = searchQ.toLowerCase();
+    d = d.filter(o =>
+      o.acct.toLowerCase().includes(q) ||
+      o.opp.toLowerCase().includes(q) ||
+      o.owner.toLowerCase().includes(q) ||
+      o.region.toLowerCase().includes(q) ||
+      Object.values(o.snippets).some(s => s.toLowerCase().includes(q))
+    );
+  }
+  return doSort(d);
+}
+
+function doSort(d) {
+  if (!sortCol) {
+    return d.sort((a, b) => {
+      const diff = stageNum(b.stage) - stageNum(a.stage);
+      if (diff !== 0) return diff;
+      return (b.acv || 0) - (a.acv || 0);
+    });
+  }
+  return d.sort((a, b) => {
+    let va, vb;
+    if (sortCol === 'account') { va = a.acct.toLowerCase(); vb = b.acct.toLowerCase(); }
+    else if (sortCol === 'opp') { va = a.opp.toLowerCase(); vb = b.opp.toLowerCase(); }
+    else if (sortCol === 'stage') { va = stageNum(a.stage); vb = stageNum(b.stage); }
+    else if (sortCol === 'acv')   { va = a.acv || 0; vb = b.acv || 0; }
+    else if (sortCol === 'owner') { va = a.owner.toLowerCase(); vb = b.owner.toLowerCase(); }
+    else if (sortCol === 'recent') {
+      const ra = getMostRecent(a), rb = getMostRecent(b);
+      va = ra ? ra.date : '0000'; vb = rb ? rb.date : '0000';
+    }
+    else { return 0; }
+    if (va < vb) return -sortDir;
+    if (va > vb) return  sortDir;
+    return 0;
+  });
+}
+
+// ── RENDER DETAIL ─────────────────────────────────────────────────────────────
+function renderDetail(o) {
+  const hasS = Object.keys(o.snippets).length > 0;
+  const hasA = o.tasks.length + o.events.length > 0;
+  if (!hasS && !hasA) return '<div style="color:var(--text-dim);font-size:12px;padding:4px 0;">No additional detail available.</div>';
+
+  let sHtml = '';
+  if (hasS) {
+    sHtml = '<div class="detail-section"><h4><span class="dot" style="background:var(--badge-se)"></span>SE Field Notes</h4>' +
+      Object.entries(o.snippets).map(([f, t]) =>
+        '<div class="snippet-item"><div class="snippet-field">' + f + '</div><div>' + t + '</div></div>'
+      ).join('') + '</div>';
+  }
+
+  let aHtml = '';
+  if (hasA) {
+    const all = [
+      ...o.events.map(e => ({ ...e, src: 'event' })),
+      ...o.tasks.map(t => ({ ...t, src: 'task' }))
+    ].sort((a, b) => b.date.localeCompare(a.date));
+    aHtml = '<div class="detail-section"><h4><span class="dot" style="background:var(--badge-event)"></span>Demo Tasks &amp; Events</h4>' +
+      all.map(function(a) {
+        const hot = isRecent(a.date);
+        return '<div class="activity-item' + (hot ? ' activity-recent' : '') + '">' +
+        '<div class="activity-date" style="' + (hot ? 'color:var(--green);font-weight:700' : '') + '">' + a.date + (hot ? ' <span class="badge-recent-inline">14d</span>' : '') + '</div>' +
+        '<div class="activity-subject">' + a.subj + '</div>' +
+        '<span class="activity-src src-' + a.src + '">' + (a.src === 'event' ? 'Event' : 'Task') + '</span>' +
+        activityTypeBadge(a.type) +
+        '</div>';
+      }).join('') + '</div>';
+  }
+
+  if (sHtml && aHtml) return '<div class="detail-grid">' + sHtml + aHtml + '</div>';
+  return sHtml + aHtml;
+}
+
+// ── RENDER TABLE ──────────────────────────────────────────────────────────────
+function renderTable() {
+  const filtered = getFiltered();
+  document.getElementById('resultsCount').textContent = filtered.length + ' of ' + OPPS.length + ' opportunities';
+
+  if (!filtered.length) {
+    document.getElementById('tableBody').innerHTML = '';
+    document.getElementById('noResults').style.display = 'block';
+    return;
+  }
+  document.getElementById('noResults').style.display = 'none';
+
+  const rows = filtered.map((o, i) => {
+    const recent = getMostRecent(o);
+    const rec = getRecency(o);
+    let recentCell = '';
+    if (recent) {
+      const dateColor = isRecent(recent.date) ? 'var(--green)' : 'var(--text)';
+      const recentTag = isRecent(recent.date) ? ' <span class="badge-recent-inline">NEW</span>' : '';
+      recentCell = '<div style="font-size:12px;font-weight:600;color:' + dateColor + '">' + recent.date + recentTag + '</div>' +
+        '<div style="font-size:11px;color:var(--text-muted);margin-top:2px">' + trunc(recent.desc, 58) + '</div>';
+    } else if (Object.keys(o.snippets).length) {
+      const snipText = Object.values(o.snippets)[0];
+      const snipDates = extractDatesFromText(snipText).sort().reverse();
+      const snipRecent = snipDates.length && isRecent(snipDates[0]);
+      const recentTag = snipRecent ? ' <span class="badge-recent-inline">NEW</span>' : '';
+      recentCell = '<div style="font-size:11px;color:' + (snipRecent ? 'var(--green)' : 'var(--text-muted)') + '">' + trunc(snipText, 58) + recentTag + '</div>';
+    } else {
+      recentCell = '<span style="color:var(--text-dim);font-size:11px">—</span>';
+    }
+
+    const hasDetail = Object.keys(o.snippets).length + o.tasks.length + o.events.length > 0;
+    const orgUrl = 'https://org62.lightning.force.com/lightning/r/Opportunity/' + o.id + '/view';
+
+    return '<tr class="data-row" data-i="' + i + '" onclick="toggleRow(' + i + ',this)">' +
+      '<td style="padding:8px 8px 8px 16px">' +
+        (hasDetail ? '<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>' : '') +
+      '</td>' +
+      '<td><div class="acct-name">' + o.acct + '</div>' + regionChip(o.region) + '</td>' +
+      '<td><a class="opp-link" href="' + orgUrl + '" target="_blank" onclick="event.stopPropagation()">' + trunc(o.opp, 68) + '</a></td>' +
+      '<td>' + stageBadge(o.stage) + '</td>' +
+      '<td style="text-align:right">' + fmtACV(o.acv) + '</td>' +
+      '<td>' + evidenceBadges(o) + '</td>' +
+      '<td>' + recentCell + '</td>' +
+      '<td style="color:var(--text-muted);font-size:12px">' + (o.owner || '—') + '</td>' +
+      '</tr>' +
+      '<tr class="detail-row" id="dr-' + i + '">' +
+        '<td colspan="8" style="padding:0;border-bottom:1px solid rgba(36,61,110,0.5)">' +
+          '<div class="detail-panel" id="dp-' + i + '">' + renderDetail(o) + '</div>' +
+        '</td>' +
+      '</tr>';
+  });
+
+  document.getElementById('tableBody').innerHTML = rows.join('');
+
+  // Update sort header indicators
+  document.querySelectorAll('th[data-col]').forEach(th => {
+    th.classList.remove('sorted-asc','sorted-desc');
+    if (th.dataset.col === sortCol) th.classList.add(sortDir === 1 ? 'sorted-asc' : 'sorted-desc');
+  });
+}
+
+function toggleRow(i, row) {
+  const dp = document.getElementById('dp-' + i);
+  if (!dp) return;
+  const open = dp.classList.toggle('open');
+  row.classList.toggle('row-open', open);
+}
+
+// ── EVENTS ────────────────────────────────────────────────────────────────────
+document.querySelectorAll('th[data-col]').forEach(th => {
+  th.addEventListener('click', () => {
+    const col = th.dataset.col;
+    if (sortCol === col) { sortDir = -sortDir; }
+    else { sortCol = col; sortDir = (col === 'acv' || col === 'stage' || col === 'recent') ? -1 : 1; }
+    renderTable();
+  });
+});
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchQ = e.target.value.trim();
+  renderTable();
+});
+
+document.getElementById('filterBtns').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = btn.dataset.filter;
+  renderTable();
+});
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+renderSummary();
+renderTable();
+</script>
+</body>
+</html>
