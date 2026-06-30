@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SubType__c</fullName>
+    <label>Sub-Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account SE</fullName>
+                <default>false</default>
+                <label>Account SE</label>
+            </value>
+            <value>
+                <fullName>Specialist</fullName>
+                <default>false</default>
+                <label>Specialist</label>
+            </value>
+            <value>
+                <fullName>Strategic SE</fullName>
+                <default>false</default>
+                <label>Strategic SE</label>
+            </value>
+            <value>
+                <fullName>Technical Architect</fullName>
+                <default>false</default>
+                <label>Technical Architect</label>
+            </value>
+            <value>
+                <fullName>Enterprise Architect</fullName>
+                <default>false</default>
+                <label>Enterprise Architect</label>
+            </value>
+            <value>
+                <fullName>BVS</fullName>
+                <default>false</default>
+                <label>BVS</label>
+            </value>
+            <value>
+                <fullName>Industry Advisor</fullName>
+                <default>false</default>
+                <label>Industry Advisor</label>
+            </value>
+            <value>
+                <fullName>BizCon</fullName>
+                <default>false</default>
+                <label>BizCon</label>
+            </value>
+            <value>
+                <fullName>Deployment Strategist</fullName>
+                <default>false</default>
+                <label>Deployment Strategist</label>
+            </value>
+            <value>
+                <fullName>FDE</fullName>
+                <default>false</default>
+                <label>FDE</label>
+            </value>
+            <value>
+                <fullName>Graduate Builder</fullName>
+                <default>false</default>
+                <label>Graduate Builder</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

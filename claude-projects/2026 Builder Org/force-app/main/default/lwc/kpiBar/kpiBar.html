@@ -1,0 +1,85 @@
+<template>
+    <div class="kpi-bar">
+        <div class="kpi-section kpi-section--primary">
+            <div class="kpi-tile kpi-tile--inseat">
+                <span class="kpi-value">{inSeatCount}</span>
+                <span class="kpi-label">In-Seat</span>
+            </div>
+            <div class="kpi-tile kpi-tile--backfill">
+                <span class="kpi-value">{backfillCount}</span>
+                <span class="kpi-label">Backfill</span>
+            </div>
+            <div class="kpi-tile kpi-tile--netnew">
+                <span class="kpi-value">{netNewCount}</span>
+                <span class="kpi-label">Net New</span>
+            </div>
+            <div class="kpi-tile kpi-tile--total">
+                <span class="kpi-value">{totalCount}</span>
+                <span class="kpi-label">Total</span>
+            </div>
+        </div>
+
+        <div class="kpi-divider"></div>
+
+        <div class="kpi-section kpi-section--target">
+            <div class="kpi-tile kpi-tile--target">
+                <template if:true={editingTarget}>
+                    <input
+                        type="number"
+                        class="target-input"
+                        value={targetOrgNumber}
+                        onblur={handleTargetBlur}
+                        onkeydown={handleTargetKeydown}
+                        data-id="target-input"
+                    />
+                </template>
+                <template if:false={editingTarget}>
+                    <span class="kpi-value kpi-value--editable" onclick={startEditTarget}>{targetOrgNumber}</span>
+                </template>
+                <span class="kpi-label">Target <lightning-icon icon-name="utility:edit" size="xx-small" class="edit-icon" onclick={startEditTarget}></lightning-icon></span>
+            </div>
+            <div class="kpi-tile kpi-tile--gap" data-positive={gapPositive}>
+                <span class="kpi-value">{gapDisplay}</span>
+                <span class="kpi-label">Gap</span>
+            </div>
+        </div>
+
+        <div class="kpi-divider"></div>
+
+        <div class="kpi-section kpi-section--roles">
+            <div class="kpi-tile">
+                <span class="kpi-value">{managersCount}</span>
+                <span class="kpi-label">Managers</span>
+            </div>
+            <div class="kpi-tile">
+                <span class="kpi-value">{icCount}</span>
+                <span class="kpi-label">ICs</span>
+            </div>
+            <div class="kpi-tile">
+                <span class="kpi-value">{eaCount}</span>
+                <span class="kpi-label">EAs</span>
+            </div>
+            <div class="kpi-tile">
+                <span class="kpi-value">{internCount}</span>
+                <span class="kpi-label">Interns</span>
+            </div>
+            <div class="kpi-tile">
+                <span class="kpi-value">{otherCount}</span>
+                <span class="kpi-label">Other</span>
+            </div>
+        </div>
+
+        <div class="kpi-divider"></div>
+
+        <div class="kpi-section kpi-section--types">
+            <div class="kpi-tile kpi-tile--solutions">
+                <span class="kpi-value">{solutionsCount}</span>
+                <span class="kpi-label">Solutions</span>
+            </div>
+            <div class="kpi-tile kpi-tile--builder">
+                <span class="kpi-value">{builderCount}</span>
+                <span class="kpi-label">Builder</span>
+            </div>
+        </div>
+    </div>
+</template>

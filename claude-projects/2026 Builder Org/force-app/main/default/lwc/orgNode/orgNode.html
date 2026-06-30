@@ -1,0 +1,44 @@
+<template>
+    <div class={nodeClass}>
+        <div class="node-row" onclick={toggleExpand}>
+            <template if:true={hasChildren}>
+                <lightning-icon
+                    icon-name={chevronIcon}
+                    size="xx-small"
+                    class="chevron"
+                    aria-hidden="true"
+                ></lightning-icon>
+            </template>
+            <template if:false={hasChildren}>
+                <span class="chevron-spacer"></span>
+            </template>
+
+            <span class="node-name" onclick={handlePersonClick} data-id={person.Id}>{person.Name}</span>
+            <span class="node-title">{person.Title__c}</span>
+            <span class={statusBadgeClass}>{person.Status__c}</span>
+
+            <template if:true={hasChildren}>
+                <span class="node-counts">
+                    <span class="count-total">{subtreeTotals.total}</span>
+                    <span class="count-inseat" title="In-Seat">{subtreeTotals.inSeat}</span>
+                    <span class="count-backfill" title="Backfill">{subtreeTotals.backfill}</span>
+                    <span class="count-netnew" title="Net New">{subtreeTotals.netNew}</span>
+                </span>
+            </template>
+        </div>
+
+        <template if:true={isExpanded}>
+            <div class="node-children">
+                <template for:each={children} for:item="child">
+                    <c-org-node
+                        key={child.person.Id}
+                        person={child.person}
+                        children={child.children}
+                        depth={nextDepth}
+                        onpersonclick={bubblePersonClick}
+                    ></c-org-node>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>
