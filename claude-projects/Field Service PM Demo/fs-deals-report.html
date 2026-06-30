@@ -270,7 +270,8 @@
   }
   .badge-se    { background: rgba(14,165,233,0.15);  color: var(--badge-se);   border: 1px solid rgba(14,165,233,0.25); }
   .badge-task  { background: rgba(168,85,247,0.15);  color: var(--badge-task); border: 1px solid rgba(168,85,247,0.25); }
-  .badge-event { background: rgba(20,184,166,0.15);  color: var(--badge-event);border: 1px solid rgba(20,184,166,0.25); }
+  .badge-event    { background: rgba(20,184,166,0.15);  color: var(--badge-event);  border: 1px solid rgba(20,184,166,0.25); }
+  .badge-mixpanel { background: rgba(245,158,11,0.15); color: var(--amber);         border: 1px solid rgba(245,158,11,0.3); }
 
   .recent-dot {
     display: inline-block;
@@ -400,6 +401,7 @@
     <button class="filter-btn" data-filter="AMER">AMER</button>
     <button class="filter-btn" data-filter="EMEA">EMEA</button>
     <button class="filter-btn" data-filter="APAC">APAC</button>
+    <button class="filter-btn" data-filter="mixpanel" style="border-color:rgba(245,158,11,0.4);color:var(--amber)">Mixpanel SE</button>
     <button class="filter-btn" data-filter="recent14d" style="border-color:rgba(34,197,94,0.4);color:var(--green)"><span class="recent-dot" style="animation:none"></span>Recent 14d</button>
   </div>
   <div class="results-count" id="resultsCount"></div>
@@ -463,7 +465,8 @@ const OPPS = [
     id:"0063y000019S8VeAAK", acct:"Electric Power Board of Chattanooga",
     opp:"EPB: SC to E&U/Comms Cloud #UTILITIES",
     owner:"Harrison Longhurst", stage:"03 - Validating Benefits & Value", acv:2322325.30,
-    region:"AMER", hasSE:true, hasTask:false, hasEvent:true,
+    region:"AMER", hasSE:true, hasTask:false, hasEvent:true, hasMixpanel:true,
+    mixpanel:[{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2025-03-06",subj:"EPB Chattanooga demo chat"},{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2024-11-08",subj:"EPCB Debrief - Internal Huddle"},{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2024-11-07",subj:"EPB internal discussion"},{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2024-11-04",subj:"E&U/Comms Cloud discussion w/EPB"}],
     snippets:{"SE Comments":"Delivered end-to-end Comms/E&U/SFS demo in early April 2025."},
     tasks:[],
     events:[{date:"2025-05-07",subj:"EPB Chatt - SC to Comms/E&U - Demo Video",type:"Solution Creation"}]
@@ -499,7 +502,8 @@ const OPPS = [
     id:"006ed00000D1IxtAAF", acct:"ABBANOA S.P.A",
     opp:"IT - Abbanoa - Field Service - (34)+34 SvC - [BDR]",
     owner:"Manila Petrone", stage:"04 - Confirming Value With Power", acv:170358,
-    region:"EMEA", hasSE:true, hasTask:false, hasEvent:true,
+    region:"EMEA", hasSE:true, hasTask:false, hasEvent:true, hasMixpanel:true,
+    mixpanel:[{se:"Fares Tello",email:"ftello@salesforce.com",date:"2026-03-19",subj:"#bb-sfs rafaella help with RFI"},{se:"Fares Tello",email:"ftello@salesforce.com",date:"2026-03-17",subj:"#BB-SFS Fares / Raffaella RFI discussion for ABBANOA"}],
     snippets:{"SE Comments":"S: demo was successful.","SE Next Steps":"RN 7-7-2025: demo was successful. Customer asked for an initial budgetary estimate"},
     tasks:[],
     events:[{date:"2026-03-20",subj:"Salesforce & Abbanoa - #Demo Field Service - Confirmed",type:"Customer Presentation"},{date:"2025-07-01",subj:"#afdemo Salesforce",type:"Customer Presentation"}]
@@ -542,7 +546,8 @@ const OPPS = [
     id:"006ed00000P3sgbAAB", acct:"Austin Energy",
     opp:"Austin Energy - Field Service RFI #UTILITIES",
     owner:"Sean Duffy", stage:"04 - Confirming Value With Power", acv:375000,
-    region:"AMER", hasSE:false, hasTask:false, hasEvent:false,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:false, hasMixpanel:true,
+    mixpanel:[{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2025-12-04",subj:"Red Team || Austin Energy - Field Service RFI"},{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2025-12-01",subj:"Pink Team || Austin Energy - Field Service RFI"},{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2025-11-20",subj:"Kickoff || Austin Energy - Field Service RFI"}],
     snippets:{}, tasks:[], events:[]
   },
   {
@@ -557,7 +562,8 @@ const OPPS = [
     id:"006ed00000SeopBAAR", acct:"Cubic Corporation",
     opp:"Cubic Corporation - CTS/ITS Field Service #agentforce",
     owner:"ELIZABETH CHAVEZ", stage:"06 - Finalizing Closure", acv:280164,
-    region:"AMER", hasSE:true, hasTask:true, hasEvent:true,
+    region:"AMER", hasSE:true, hasTask:true, hasEvent:true, hasMixpanel:true,
+    mixpanel:[{se:"Fares Tello",email:"ftello@salesforce.com",date:"2026-04-23",subj:"answer cubic BB request #bb-sfs"},{se:"Bill Bodziak",email:"bbodziak@salesforce.com",date:"2025-10-24",subj:"Cubic CTS - ITS Demonstration"},{se:"Bill Bodziak",email:"bbodziak@salesforce.com",date:"2025-10-17",subj:"Cubic Demo Prep #BB-SFS"}],
     snippets:{"SE Next Steps":"Demo is scheduled for Friday 10/24/25."},
     tasks:[{date:"2025-10-24",subj:"Demo is scheduled for Friday 10/24/25",type:"Customer Meeting"}],
     events:[{date:"2025-10-24",subj:"Cubic CTS - ITS Demonstration",type:"Customer Presentation"},{date:"2025-10-23",subj:"Cubic Demo Prep",type:"Dry Run"}]
@@ -636,7 +642,8 @@ const OPPS = [
     id:"006ed00000c0LxpAAE", acct:"Fairbanks Morse Engine Division",
     opp:"Fairbanks Morse Engine Division - Asset Management & After Market Management #FIELDSERVICE",
     owner:"", stage:"", acv:null,
-    region:"AMER", hasSE:false, hasTask:true, hasEvent:false,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:false, hasMixpanel:true,
+    mixpanel:[{se:"John Schneider",email:"j.schneider@salesforce.com",date:"2026-05-14",subj:"Fairbanks FUP"},{se:"John Schneider",email:"j.schneider@salesforce.com",date:"2026-05-04",subj:"Salesforce & Fairbanks Morse Engine Discussion"}],
     snippets:{},
     tasks:[{date:"2026-06-08",subj:"Field Service Demo",type:"Customer Meeting"},{date:"2026-06-04",subj:"Salesforce Demo",type:"Customer Meeting"}],
     events:[]
@@ -663,7 +670,8 @@ const OPPS = [
     id:"0063y000019XFc7AAG", acct:"Oklahoma DOT",
     opp:"OK ODOT Management PSF #TRANSPORT #BDS-CQ #BDI-PB",
     owner:"", stage:"", acv:null,
-    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true, hasMixpanel:true,
+    mixpanel:[{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2025-10-21",subj:"OK DOC demo system work"},{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2025-10-20",subj:"ODOC | SF Visitation discovery"},{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2025-09-30",subj:"ODOT RFP BOM"}],
     snippets:{}, tasks:[],
     events:[{date:"2025-10-21",subj:"OK DOC demo system work",type:"Solution Creation"}]
   },
@@ -721,7 +729,8 @@ const OPPS = [
     id:"006ed00000DHOo1AAH", acct:"San Antonio Water System (SAWS)",
     opp:"SAWS - +230 FS #utilities #field",
     owner:"", stage:"", acv:null,
-    region:"AMER", hasSE:false, hasTask:true, hasEvent:true,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:true, hasMixpanel:true,
+    mixpanel:[{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2026-02-13",subj:"SAWS - Salesforce Field Service Demo Hold #DEMO"},{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2026-02-11",subj:"SAWS - Salesforce Field Service Dry Run"},{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2025-09-05",subj:"(Onsite) SAWS Salesforce Field Service Demo"}],
     snippets:{},
     tasks:[{date:"2025-07-17",subj:"Field Service Demo (email)",type:"Email"}],
     events:[{date:"2026-02-13",subj:"SAWS - Salesforce Field Service Demo Hold #DEMO",type:"Customer Presentation"},{date:"2025-09-05",subj:"(Onsite) SAWS Salesforce Field Service Demo #DEMO",type:"Customer Presentation"}]
@@ -796,7 +805,8 @@ const OPPS = [
     id:"006ed00000U1NcQAAV", acct:"San Antonio Water System (SAWS)",
     opp:"SAWS - FSL +300 Collections and Distribution Team #utilities",
     owner:"", stage:"", acv:null,
-    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true, hasMixpanel:true,
+    mixpanel:[{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2026-02-13",subj:"SAWS - Salesforce Field Service Demo Hold"},{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2026-02-11",subj:"SAWS - Salesforce Field Service Dry Run"},{se:"Jeffrey Quade",email:"jquade@salesforce.com",date:"2026-01-29",subj:"SAWS - Salesforce Field Service Demo Prep"}],
     snippets:{}, tasks:[],
     events:[{date:"2026-02-13",subj:"SAWS - Salesforce Field Service Demo Hold",type:"Customer Presentation"}]
   },
@@ -813,7 +823,8 @@ const OPPS = [
     id:"006ed00000VRwPRAA1", acct:"NSW Dept of Education",
     opp:"AU - NSW - DoE Cleaning Services FSL & Agentforce #WT",
     owner:"Rasika Perera", stage:"", acv:null,
-    region:"APAC", hasSE:false, hasTask:false, hasEvent:true,
+    region:"APAC", hasSE:false, hasTask:false, hasEvent:true, hasMixpanel:true,
+    mixpanel:[{se:"Ashish Dhamija",email:"adhamija@salesforce.com",date:"2026-04-22",subj:"Tab Next"},{se:"Ashish Dhamija",email:"adhamija@salesforce.com",date:"2026-03-17",subj:"Ras/ Ashish - Tab"},{se:"Ashish Dhamija",email:"adhamija@salesforce.com",date:"2026-03-16",subj:"DOE Demo build"}],
     snippets:{}, tasks:[],
     events:[{date:"2026-04-28",subj:"DoE Slack Demo",type:"Dry Run"},{date:"2026-04-22",subj:"Dry run - DoE Exec preso and demo",type:"Dry Run"},{date:"2026-03-27",subj:"DOE FSL Demo",type:"Solution Creation"}]
   },
@@ -821,7 +832,8 @@ const OPPS = [
     id:"006ed00000WwKX0AAN", acct:"Cherry Creek Public School District",
     opp:"Cherry Creek Public School District - Service Cloud - Preventive Maintenance #OPS",
     owner:"Rachel Wiemeier", stage:"", acv:null,
-    region:"AMER", hasSE:false, hasTask:false, hasEvent:true,
+    region:"AMER", hasSE:false, hasTask:false, hasEvent:true, hasMixpanel:true,
+    mixpanel:[{se:"Fares Tello",email:"ftello@salesforce.com",date:"2026-04-29",subj:"Internal Sync/Prep- CCreek PM/Field Service demo #bb-sfs"},{se:"Fares Tello",email:"ftello@salesforce.com",date:"2026-04-20",subj:"Salesforce- Preventive Maintenance- Requirement Discussion #BB-SFS"},{se:"Fares Tello",email:"ftello@salesforce.com",date:"2026-04-20",subj:"Cherry Creek Schools SFS Disco Prep #BB-SFS"}],
     snippets:{}, tasks:[],
     events:[{date:"2026-05-15",subj:"Salesforce Preventive Maintenance Demo",type:"Customer Presentation"},{date:"2026-05-06",subj:"Sync before Salesforce PM demo on 5/8",type:"Customer Discovery"}]
   },
@@ -837,7 +849,8 @@ const OPPS = [
     id:"0063y00001APJ0eAAH", acct:"US Navy NAVSUP",
     opp:"US Navy NAVSUP - Fleet Logistics Center",
     owner:"", stage:"", acv:null,
-    region:"AMER", hasSE:false, hasTask:true, hasEvent:false,
+    region:"AMER", hasSE:false, hasTask:true, hasEvent:false, hasMixpanel:true,
+    mixpanel:[{se:"Jake Paiva",email:"jake.paiva@salesforce.com",date:"2025-03-27",subj:"CRMA Issue #BB-AN"},{se:"Jake Paiva",email:"jake.paiva@salesforce.com",date:"2025-03-26",subj:"Navy prep #BB-AN"},{se:"Jake Paiva",email:"jake.paiva@salesforce.com",date:"2025-03-14",subj:"Prep: Navy #BB-AN"}],
     snippets:{},
     tasks:[{date:"2024-08-14",subj:"MHE Demo",type:"Customer Meeting"},{date:"2024-03-15",subj:"FLC Pearl Demo",type:"Customer Meeting"}],
     events:[]
@@ -953,7 +966,8 @@ function evidenceBadges(o) {
   let b = '';
   if (o.hasSE)    b += '<span class="badge badge-se">'    + (rec.hasRecentSE    ? '<span class="recent-dot"></span>' : '') + 'SE Comments</span>';
   if (o.hasTask)  b += '<span class="badge badge-task">'  + (rec.hasRecentTask  ? '<span class="recent-dot"></span>' : '') + 'Task</span>';
-  if (o.hasEvent) b += '<span class="badge badge-event">' + (rec.hasRecentEvent ? '<span class="recent-dot"></span>' : '') + 'Event</span>';
+  if (o.hasEvent)     b += '<span class="badge badge-event">'    + (rec.hasRecentEvent ? '<span class="recent-dot"></span>' : '') + 'Event</span>';
+  if (o.hasMixpanel)  b += '<span class="badge badge-mixpanel">Mixpanel SE</span>';
   return b || '<span style="color:var(--text-dim);font-size:11px;">—</span>';
 }
 
@@ -986,6 +1000,7 @@ function renderSummary() {
   const seCount = OPPS.filter(o => o.hasSE).length;
   const taskCount = OPPS.filter(o => o.hasTask).length;
   const eventCount = OPPS.filter(o => o.hasEvent).length;
+  const mixpanelCount = OPPS.filter(o => o.hasMixpanel).length;
   const amer = OPPS.filter(o => o.region === 'AMER').length;
   const emea = OPPS.filter(o => o.region === 'EMEA').length;
   const apac = OPPS.filter(o => o.region === 'APAC').length;
@@ -995,7 +1010,8 @@ function renderSummary() {
     card('blue',   '$' + (totalACV/1e6).toFixed(1) + 'M', 'Total ACV', 'where amount known', true) +
     card('blue',   seCount,        'SE Comments',     'opp text field match') +
     card('purple', taskCount,      'Tasks',           '"demo" in subject') +
-    card('teal',   eventCount,     'Events',          '"demo" in subject') +
+    card('teal',   eventCount,      'Events',          '"demo" in subject') +
+    card('amber',  mixpanelCount,  'Mixpanel SE',     'GPS SE demo org access') +
     card('green',  amer,           'AMER',            'opportunities') +
     card('indigo', emea,           'EMEA',            'opportunities') +
     card('amber',  apac,           'APAC',            'opportunities');
@@ -1017,6 +1033,7 @@ function getFiltered() {
   else if (activeFilter === 'AMER')  d = d.filter(o => o.region === 'AMER');
   else if (activeFilter === 'EMEA')  d = d.filter(o => o.region === 'EMEA');
   else if (activeFilter === 'APAC')  d = d.filter(o => o.region === 'APAC');
+  else if (activeFilter === 'mixpanel')  d = d.filter(function(o) { return o.hasMixpanel; });
   else if (activeFilter === 'recent14d') d = d.filter(function(o) { return getRecency(o).hasAnyRecent; });
 
   if (searchQ) {
@@ -1062,22 +1079,22 @@ function doSort(d) {
 function renderDetail(o) {
   const hasS = Object.keys(o.snippets).length > 0;
   const hasA = o.tasks.length + o.events.length > 0;
-  if (!hasS && !hasA) return '<div style="color:var(--text-dim);font-size:12px;padding:4px 0;">No additional detail available.</div>';
+  const hasM = o.hasMixpanel && o.mixpanel && o.mixpanel.length > 0;
+  if (!hasS && !hasA && !hasM) return '<div style="color:var(--text-dim);font-size:12px;padding:4px 0;">No additional detail available.</div>';
 
   let sHtml = '';
   if (hasS) {
     sHtml = '<div class="detail-section"><h4><span class="dot" style="background:var(--badge-se)"></span>SE Field Notes</h4>' +
-      Object.entries(o.snippets).map(([f, t]) =>
-        '<div class="snippet-item"><div class="snippet-field">' + f + '</div><div>' + t + '</div></div>'
-      ).join('') + '</div>';
+      Object.entries(o.snippets).map(function(entry) {
+        return '<div class="snippet-item"><div class="snippet-field">' + entry[0] + '</div><div>' + entry[1] + '</div></div>';
+      }).join('') + '</div>';
   }
 
   let aHtml = '';
   if (hasA) {
-    const all = [
-      ...o.events.map(e => ({ ...e, src: 'event' })),
-      ...o.tasks.map(t => ({ ...t, src: 'task' }))
-    ].sort((a, b) => b.date.localeCompare(a.date));
+    const all = o.events.map(function(e) { return Object.assign({}, e, {src:'event'}); })
+      .concat(o.tasks.map(function(t) { return Object.assign({}, t, {src:'task'}); }))
+      .sort(function(a, b) { return b.date.localeCompare(a.date); });
     aHtml = '<div class="detail-section"><h4><span class="dot" style="background:var(--badge-event)"></span>Demo Tasks &amp; Events</h4>' +
       all.map(function(a) {
         const hot = isRecent(a.date);
@@ -1090,8 +1107,21 @@ function renderDetail(o) {
       }).join('') + '</div>';
   }
 
-  if (sHtml && aHtml) return '<div class="detail-grid">' + sHtml + aHtml + '</div>';
-  return sHtml + aHtml;
+  let mHtml = '';
+  if (hasM) {
+    mHtml = '<div class="detail-section"><h4><span class="dot" style="background:var(--amber)"></span>Mixpanel — GPS SE Demo Org Activity</h4>' +
+      o.mixpanel.map(function(m) {
+        return '<div class="activity-item">' +
+          '<div class="activity-date">' + m.date + '</div>' +
+          '<div class="activity-subject">' + m.subj + '</div>' +
+          '<span class="badge badge-mixpanel" style="font-size:10px;padding:1px 6px">' + m.se + '</span>' +
+          '</div>';
+      }).join('') + '</div>';
+  }
+
+  const cols = [sHtml, aHtml, mHtml].filter(Boolean);
+  if (cols.length >= 2) return '<div class="detail-grid">' + cols.join('') + '</div>';
+  return cols.join('');
 }
 
 // ── RENDER TABLE ──────────────────────────────────────────────────────────────
