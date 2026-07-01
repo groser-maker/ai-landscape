@@ -47,7 +47,7 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    background: var(--navy);
+    background: #e8f1fb;
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
     font-size: 13px;
@@ -117,28 +117,46 @@
   }
 
   /* Summary cards */
-  .summary-row {
+  .summary-section {
     max-width: 1700px;
-    margin: 24px auto;
-    padding: 0 32px;
+    margin: 0 auto;
+    padding: 20px 32px 0;
+  }
+  .summary-row-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #5a7aab;
+    margin-bottom: 8px;
+    padding-left: 2px;
+  }
+  .summary-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
-    gap: 12px;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .summary-row.row-pipeline { grid-template-columns: repeat(5, 1fr); }
+  .summary-row.row-evidence { grid-template-columns: repeat(5, 1fr); }
+  @media (max-width: 1100px) {
+    .summary-row.row-pipeline,
+    .summary-row.row-evidence { grid-template-columns: repeat(3, 1fr); }
   }
   .card {
     background: var(--navy-card);
     border: 1px solid var(--navy-border);
-    border-radius: 10px;
-    padding: 16px 18px;
+    border-radius: 12px;
+    padding: 20px 22px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 2px 12px rgba(1,22,57,0.25);
   }
   .card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 3px;
-    border-radius: 10px 10px 0 0;
+    height: 4px;
+    border-radius: 12px 12px 0 0;
   }
   .card.blue::before   { background: linear-gradient(90deg, var(--sf-blue) 0%, var(--sf-blue-light) 100%); }
   .card.purple::before { background: var(--purple); }
@@ -147,9 +165,9 @@
   .card.amber::before  { background: var(--amber); }
   .card.indigo::before { background: linear-gradient(90deg, var(--sf-blue-dark) 0%, var(--sf-blue) 100%); }
   .card-label { font-size: 10px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; }
-  .card-value { font-size: 28px; font-weight: 800; color: #fff; margin-top: 4px; line-height: 1; }
-  .card-value.sm { font-size: 20px; }
-  .card-sub { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+  .card-value { font-size: 35px; font-weight: 800; color: #fff; margin-top: 6px; line-height: 1; }
+  .card-value.sm { font-size: 26px; }
+  .card-sub { font-size: 11px; color: var(--text-dim); margin-top: 6px; }
 
   /* Controls */
   .controls {
@@ -190,7 +208,7 @@
   }
   .filter-btn:hover { background: rgba(27,150,255,0.1); border-color: rgba(27,150,255,0.35); color: #fff; }
   .filter-btn.active { background: rgba(1,118,211,0.2); border-color: var(--sf-blue); color: var(--sf-blue-light); font-weight: 600; }
-  .results-count { margin-left: auto; font-size: 12px; color: var(--text-dim); white-space: nowrap; }
+  .results-count { margin-left: auto; font-size: 12px; color: #5a7aab; white-space: nowrap; }
 
   /* Table wrapper */
   .table-wrap { max-width: 1700px; margin: 0 auto; padding: 0 32px 48px; }
@@ -403,8 +421,8 @@
     align-items: center;
     gap: 12px;
   }
-  .divider-label { font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
-  .divider-line  { flex: 1; height: 1px; background: var(--navy-border); }
+  .divider-label { font-size: 11px; font-weight: 700; color: #5a7aab; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+  .divider-line  { flex: 1; height: 1px; background: rgba(1,118,211,0.2); }
 </style>
 </head>
 <body>
@@ -447,7 +465,12 @@
   </div>
 </div>
 
-<div class="summary-row" id="summaryRow"></div>
+<div class="summary-section">
+  <div class="summary-row-label">Pipeline Overview</div>
+  <div class="summary-row row-pipeline" id="summaryPipeline"></div>
+  <div class="summary-row-label">Demo Evidence</div>
+  <div class="summary-row row-evidence" id="summaryEvidence"></div>
+</div>
 
 <div class="divider">
   <div class="divider-line"></div>
@@ -1066,24 +1089,29 @@ let searchQ = '';
 // ── RENDER SUMMARY ────────────────────────────────────────────────────────────
 function renderSummary() {
   const total = OPPS.length;
-  const seCount = OPPS.filter(o => o.hasSE).length;
-  const taskCount = OPPS.filter(o => o.hasTask).length;
-  const eventCount = OPPS.filter(o => o.hasEvent).length;
-  const mixpanelCount = OPPS.filter(o => o.hasMixpanel).length;
-  const amer = OPPS.filter(o => o.region === 'AMER').length;
-  const emea = OPPS.filter(o => o.region === 'EMEA').length;
-  const apac = OPPS.filter(o => o.region === 'APAC').length;
-  const totalACV = OPPS.filter(o => o.acv).reduce((s, o) => s + o.acv, 0);
-  document.getElementById('summaryRow').innerHTML =
-    card('blue',   total,          'Total Opps',      'with demo evidence') +
-    card('blue',   '$' + (totalACV/1e6).toFixed(1) + 'M', 'Total ACV', 'where amount known', true) +
-    card('blue',   seCount,        'SE Comments',     'opp text field match') +
-    card('purple', taskCount,      'Tasks',           '"demo" in subject') +
-    card('teal',   eventCount,      'Events',          '"demo" in subject') +
-    card('amber',  mixpanelCount,  'Mixpanel SE',     'GPS SE demo org access') +
-    card('green',  amer,           'AMER',            'opportunities') +
-    card('indigo', emea,           'EMEA',            'opportunities') +
-    card('amber',  apac,           'APAC',            'opportunities');
+  const seCount = OPPS.filter(function(o) { return o.hasSE; }).length;
+  const taskCount = OPPS.filter(function(o) { return o.hasTask; }).length;
+  const eventCount = OPPS.filter(function(o) { return o.hasEvent; }).length;
+  const mixpanelCount = OPPS.filter(function(o) { return o.hasMixpanel; }).length;
+  const amer = OPPS.filter(function(o) { return o.region === 'AMER'; }).length;
+  const emea = OPPS.filter(function(o) { return o.region === 'EMEA'; }).length;
+  const apac = OPPS.filter(function(o) { return o.region === 'APAC'; }).length;
+  const totalACV = OPPS.filter(function(o) { return o.acv; }).reduce(function(s, o) { return s + o.acv; }, 0);
+  const recentCount = OPPS.filter(function(o) { return getRecency(o).hasAnyRecent; }).length;
+
+  document.getElementById('summaryPipeline').innerHTML =
+    card('blue',   total,                                     'Total Opps',   'GPS Field Service pipeline') +
+    card('blue',   '$' + (totalACV/1e6).toFixed(1) + 'M',   'Total ACV',    'where amount is known', true) +
+    card('green',  amer,                                      'AMER',         'opportunities') +
+    card('indigo', emea,                                      'EMEA',         'opportunities') +
+    card('amber',  apac,                                      'APAC',         'opportunities');
+
+  document.getElementById('summaryEvidence').innerHTML =
+    card('blue',   seCount,        'SE Comments',   'opp text field match') +
+    card('purple', taskCount,      'Tasks',         '"demo" in subject') +
+    card('teal',   eventCount,     'Events',        '"demo" in subject') +
+    card('amber',  mixpanelCount,  'Mixpanel SE',   'GPS SE demo org access') +
+    card('green',  recentCount,    'Active (14d)',  'demo activity this fortnight');
 }
 function card(color, val, label, sub, sm) {
   return '<div class="card ' + color + '">' +
