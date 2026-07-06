@@ -1,0 +1,67 @@
+<template>
+    <div
+        class={cardClass}
+        style={cardStyle}
+        onpointerdown={handlePointerDown}
+        role="button"
+        tabindex="0"
+        aria-label={person.Name}
+        onkeydown={handleKeyDown}
+    >
+        <div class="card-header">
+            <span class={typeDot} aria-hidden="true"></span>
+            <span class="card-name">{person.Name}</span>
+        </div>
+        <div class="card-meta">
+            <span class="card-title">{shortTitle}</span>
+            <span class={statusDotClass} aria-label={person.Status__c}></span>
+        </div>
+    </div>
+
+    <template if:true={showPopover}>
+        <div class="popover-backdrop" onclick={closePopover}></div>
+        <div class="popover" role="dialog" aria-label="Edit person">
+            <div class="popover-header">
+                <span class="popover-name">{person.Name}</span>
+                <lightning-button-icon
+                    icon-name="utility:close"
+                    variant="bare"
+                    size="small"
+                    onclick={closePopover}
+                    alternative-text="Close"
+                ></lightning-button-icon>
+            </div>
+            <div class="popover-body">
+                <lightning-combobox
+                    label="Status"
+                    value={editStatus}
+                    options={statusOptions}
+                    onchange={handleStatusChange}
+                ></lightning-combobox>
+                <lightning-combobox
+                    label="Role"
+                    value={editRole}
+                    options={roleOptions}
+                    onchange={handleRoleChange}
+                ></lightning-combobox>
+                <lightning-combobox
+                    label="Type"
+                    value={editType}
+                    options={typeOptions}
+                    onchange={handleTypeChange}
+                ></lightning-combobox>
+                <lightning-combobox
+                    label="Sub-Type"
+                    value={editSubType}
+                    options={subTypeOptions}
+                    onchange={handleSubTypeChange}
+                ></lightning-combobox>
+            </div>
+            <div class="popover-footer">
+                <lightning-button label="View Record" onclick={navigateToRecord}></lightning-button>
+                <lightning-button label="Cancel" onclick={closePopover}></lightning-button>
+                <lightning-button label="Save" variant="brand" onclick={handleSave}></lightning-button>
+            </div>
+        </div>
+    </template>
+</template>

@@ -1,0 +1,63 @@
+<template>
+    <div class="planner-shell">
+        <template if:true={isLoading}>
+            <div class="loading-overlay">
+                <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+            </div>
+        </template>
+
+        <template if:false={isLoading}>
+            <c-kpi-bar
+                people={people}
+                target-org-number={targetOrgNumber}
+                ontargetchange={handleTargetChange}
+                class="kpi-strip"
+            ></c-kpi-bar>
+
+            <div class="split-view">
+                <div class="panel panel--tree">
+                    <div class="panel-header">
+                        <span class="panel-title">Org Chart</span>
+                        <span class="panel-count">{totalCount} people</span>
+                    </div>
+                    <div class="panel-body panel-body--scroll">
+                        <template if:true={rootNode}>
+                            <c-org-node
+                                person={rootNode.person}
+                                children={rootNode.children}
+                                depth={DEPTH_START}
+                                onpersonclick={handlePersonClick}
+                            ></c-org-node>
+                        </template>
+                    </div>
+                </div>
+
+                <div class="panel panel--canvas" onpointermove={handleCanvasMove}>
+                    <div class="panel-header">
+                        <span class="panel-title">Canvas</span>
+                        <div class="canvas-actions">
+                            <lightning-button
+                                label="Auto-Arrange"
+                                icon-name="utility:matrix"
+                                onclick={handleAutoArrange}
+                            ></lightning-button>
+                        </div>
+                    </div>
+                    <div class="canvas-scroll" onscroll={handleCanvasScroll}>
+                        <div class="canvas-surface" style={canvasSurfaceStyle}>
+                            <template for:each={people} for:item="person">
+                                <c-person-card
+                                    key={person.Id}
+                                    person={person}
+                                    oncardmove={handleCardMove}
+                                    oncarddrop={handleCardDrop}
+                                    onpersonedit={handlePersonEdit}
+                                ></c-person-card>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

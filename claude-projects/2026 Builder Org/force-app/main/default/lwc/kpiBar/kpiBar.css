@@ -1,0 +1,83 @@
+.kpi-bar {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: var(--slds-g-color-neutral-base-15, #16325c);
+    padding: 0 1rem;
+    height: 56px;
+    overflow-x: auto;
+    flex-shrink: 0;
+}
+
+.kpi-section {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.kpi-divider {
+    width: 1px;
+    height: 32px;
+    background: var(--slds-g-color-neutral-base-50, rgba(255,255,255,0.2));
+    margin: 0 0.75rem;
+    flex-shrink: 0;
+    opacity: 0.3;
+}
+
+.kpi-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0.75rem;
+    cursor: default;
+}
+
+.kpi-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--slds-g-color-neutral-base-100, #fff);
+    line-height: 1.2;
+}
+
+.kpi-value--editable {
+    cursor: pointer;
+    border-bottom: 1px dashed var(--slds-g-color-neutral-base-80, rgba(255,255,255,0.5));
+}
+
+.kpi-label {
+    font-size: 0.65rem;
+    color: var(--slds-g-color-neutral-base-70, rgba(255,255,255,0.6));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.edit-icon {
+    cursor: pointer;
+    --slds-c-icon-color-foreground-default: var(--slds-g-color-neutral-base-70, rgba(255,255,255,0.5));
+}
+
+.kpi-tile--inseat .kpi-value { color: var(--slds-g-color-success-base-50, #4bca81); }
+.kpi-tile--backfill .kpi-value { color: var(--slds-g-color-warning-base-50, #ffb75d); }
+.kpi-tile--netnew .kpi-value { color: var(--slds-g-color-info-base-50, #54a0ff); }
+.kpi-tile--solutions .kpi-value { color: var(--slds-g-color-info-base-70, #7ec8e3); }
+.kpi-tile--builder .kpi-value { color: var(--slds-g-color-warning-base-60, #ffb347); }
+
+.kpi-tile--gap[data-positive="true"] .kpi-value { color: var(--slds-g-color-success-base-50, #4bca81); }
+.kpi-tile--gap[data-positive="false"] .kpi-value { color: var(--slds-g-color-error-base-50, #ff6b6b); }
+
+.target-input {
+    width: 60px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--slds-g-color-neutral-base-100, #fff);
+    background: var(--slds-g-color-neutral-base-20, rgba(255,255,255,0.15));
+    border: 1px solid var(--slds-g-color-neutral-base-60, rgba(255,255,255,0.4));
+    border-radius: 3px;
+    text-align: center;
+    padding: 0 4px;
+    line-height: 1.4;
+}

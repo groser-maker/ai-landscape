@@ -1,0 +1,93 @@
+.planner-shell {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--slds-g-color-neutral-base-95, #f3f3f3);
+}
+
+.loading-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.kpi-strip {
+    flex: 0 0 auto;
+    border-bottom: 1px solid var(--slds-g-color-neutral-base-85, #dddbda);
+}
+
+.split-view {
+    display: flex;
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.panel--tree {
+    flex: 0 0 40%;
+    border-right: 1px solid var(--slds-g-color-neutral-base-85, #dddbda);
+    background: var(--slds-g-color-neutral-base-100, #fff);
+}
+
+.panel--canvas {
+    flex: 0 0 60%;
+    background: var(--slds-g-color-neutral-base-95, #f3f3f3);
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--slds-g-color-neutral-base-85, #dddbda);
+    background: var(--slds-g-color-neutral-base-100, #fff);
+    flex: 0 0 auto;
+}
+
+.panel-title {
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--slds-g-color-neutral-base-10, #080707);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.panel-count {
+    font-size: 0.75rem;
+    color: var(--slds-g-color-neutral-base-40, #747474);
+}
+
+.panel-body {
+    flex: 1 1 auto;
+}
+
+.panel-body--scroll {
+    overflow-y: auto;
+    padding: 0.5rem;
+}
+
+.canvas-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.canvas-scroll {
+    flex: 1 1 auto;
+    overflow: auto;
+    position: relative;
+    cursor: default;
+    background-image:
+        radial-gradient(circle, var(--slds-g-color-neutral-base-70, #b0adab) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.canvas-surface {
+    position: relative;
+}
