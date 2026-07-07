@@ -343,7 +343,7 @@ def build_card(c):
     fs = c["funding_summary"]
     leaders = [l for l in c.get("leadership",[]) if not l.get("departed")][:3]
     flagship = next((p for p in c.get("products",[]) if p.get("flagship")), None)
-    other_products = [p for p in c.get("products",[]) if not p.get("flagship")][:2]
+    other_products = [p for p in c.get("products",[]) if not p.get("flagship")][:6]
 
     # Financial rows
     fin = []
