@@ -326,7 +326,7 @@ def scoreboard_rows():
                      '<span class="news-0">—</span>')
         rows.append(
             f'<tr data-section="{c["section"]}">'
-            f'<td><span class="co-emoji">{c["emoji"]}</span><span class="co-name">{c["name"]}</span></td>'
+            f'<td><a href="#card-{c["id"]}" class="co-link"><span class="co-emoji">{c["emoji"]}</span><span class="co-name">{c["name"]}</span></a></td>'
             f'<td><span class="section-badge">{c["section"]}</span></td>'
             f'<td>{get_ceo(c)}</td>'
             f'<td>{hc}</td>'
@@ -549,9 +549,9 @@ for sec in SECTIONS_ORDER:
     for c in cos:
         jump_links_html += f'<a href="#card-{c["id"]}" class="jump-link" onclick="togglePanel()"><span class="jump-emoji">{c["emoji"]}</span>{c["name"]}</a>'
 
-# Section filter checkboxes
+# Section filter pills (all active by default)
 filters_html = "".join(
-    f'<label class="filter-item"><input type="checkbox" checked onchange="filterSection()" data-section="{sec}"> {sec}</label>'
+    f'<button class="filter-pill active" data-section="{sec}" onclick="toggleFilter(this)">{SECTION_ICONS.get(sec,"")} {sec}</button>'
     for sec in SECTIONS_ORDER if companies_in(sec)
 )
 
@@ -576,8 +576,10 @@ body{{background:#F4F6F9;color:#16325C;font-family:-apple-system,BlinkMacSystemF
 #sidepanel h3{{font-size:.8rem;font-weight:700;color:#0070D2;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;margin-top:18px;padding-top:14px;border-top:1px solid #E4E9F0}}
 #sidepanel h3:first-child{{margin-top:0;padding-top:0;border-top:none}}
 .sp-section-label{{font-size:.7rem;font-weight:700;color:#706E6B;text-transform:uppercase;letter-spacing:.06em;margin:10px 0 4px;padding-left:4px}}
-.filter-item{{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:.88rem;cursor:pointer;padding:3px 4px;border-radius:4px}}
-.filter-item:hover{{background:#F4F6F9}}
+#section-filters{{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}}
+.filter-pill{{font-size:.78rem;padding:5px 12px;border-radius:16px;border:1.5px solid #0070D2;background:white;color:#0070D2;cursor:pointer;font-weight:600;transition:background .15s,color .15s;user-select:none}}
+.filter-pill.active{{background:#0070D2;color:white}}
+.filter-pill:hover{{background:#E8F4FF}}.filter-pill.active:hover{{background:#005FB2}}
 .jump-link{{display:block;padding:4px 8px;color:#0070D2;text-decoration:none;font-size:.84rem;border-radius:4px;margin-bottom:1px}}
 .jump-link:hover{{background:#E8F4FF}}
 .jump-emoji{{margin-right:5px}}
@@ -601,6 +603,8 @@ body{{background:#F4F6F9;color:#16325C;font-family:-apple-system,BlinkMacSystemF
 .scoreboard tbody td{{padding:9px 11px;border-bottom:1px solid #E4E9F0;vertical-align:middle}}
 .scoreboard tbody tr:nth-child(odd){{background:#F8FAFC}}
 .scoreboard tbody tr:hover{{background:#E8F4FF}}
+.co-link{{text-decoration:none;color:inherit;display:flex;align-items:center}}
+.co-link:hover .co-name{{color:#0070D2;text-decoration:underline}}
 .co-name{{font-weight:700;color:#16325C}}
 .co-emoji{{margin-right:5px}}
 .section-badge{{font-size:.7rem;background:#E8F4FF;color:#0070D2;padding:2px 6px;border-radius:10px;white-space:nowrap;display:inline-block}}
@@ -696,8 +700,6 @@ body{{background:#F4F6F9;color:#16325C;font-family:-apple-system,BlinkMacSystemF
 </div>
 <div id="overlay" onclick="togglePanel()"></div>
 <div id="sidepanel">
-  <h3>Filter by Section</h3>
-  <div id="section-filters">{filters_html}</div>
   <h3>Jump to Company</h3>
   {jump_links_html}
 </div>
@@ -710,6 +712,7 @@ body{{background:#F4F6F9;color:#16325C;font-family:-apple-system,BlinkMacSystemF
 </div>
 <div class="content-section">
   <h2>📊 Company Scoreboard</h2>
+  <div id="section-filters">{filters_html}</div>
   <p style="font-size:.75rem;color:#706E6B;font-style:italic;margin-bottom:12px">⚠ Seed data from research; figures approximate. Click column headers to sort.</p>
   <div style="overflow-x:auto">
     <table class="scoreboard" id="scoreboard">
@@ -743,10 +746,11 @@ function togglePanel(){{
   document.getElementById('sidepanel').classList.toggle('open');
   document.getElementById('overlay').classList.toggle('open');
 }}
-function filterSection(){{
-  const checked=new Set([...document.querySelectorAll('#section-filters input:checked')].map(i=>i.dataset.section));
-  document.querySelectorAll('.company-section-wrapper').forEach(el=>{{el.style.display=checked.has(el.dataset.section)?'':'none';}});
-  document.querySelectorAll('#scoreboard tbody tr').forEach(tr=>{{tr.style.display=checked.has(tr.dataset.section)?'':'none';}});
+function toggleFilter(btn){{
+  btn.classList.toggle('active');
+  const active=new Set([...document.querySelectorAll('#section-filters .filter-pill.active')].map(b=>b.dataset.section));
+  document.querySelectorAll('.company-section-wrapper').forEach(el=>{{el.style.display=active.has(el.dataset.section)?'':'none';}});
+  document.querySelectorAll('#scoreboard tbody tr').forEach(tr=>{{tr.style.display=active.has(tr.dataset.section)?'':'none';}});
 }}
 let sortCol=-1,sortAsc=true;
 function sortTable(col){{
