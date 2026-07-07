@@ -540,15 +540,6 @@ def build_trend_charts():
 
 DATA_JSON = json.dumps(data, separators=(",",":"), ensure_ascii=False)
 
-# Jump links grouped by section
-jump_links_html = ""
-for sec in SECTIONS_ORDER:
-    cos = companies_in(sec)
-    if not cos: continue
-    jump_links_html += f'<div class="sp-section-label">{sec}</div>'
-    for c in cos:
-        jump_links_html += f'<a href="#card-{c["id"]}" class="jump-link" onclick="togglePanel()"><span class="jump-emoji">{c["emoji"]}</span>{c["name"]}</a>'
-
 # Section filter pills (none active by default = show all)
 filters_html = "".join(
     f'<button class="filter-pill" data-section="{sec}" onclick="toggleFilter(this)">{SECTION_ICONS.get(sec,"")} {sec}</button>'
@@ -567,22 +558,10 @@ body{{background:#F4F6F9;color:#16325C;font-family:-apple-system,BlinkMacSystemF
 #topbar{{position:fixed;top:0;left:0;right:0;height:52px;background:#0070D2;color:white;display:flex;align-items:center;padding:0 24px;z-index:100;gap:12px;box-shadow:0 2px 8px rgba(0,0,0,.2)}}
 #topbar h1{{font-size:1.1rem;font-weight:700}}
 #topbar .meta{{font-size:.78rem;opacity:.8;margin-left:4px}}
-#hamburger{{margin-left:auto;background:none;border:none;color:white;font-size:1.4rem;cursor:pointer;padding:4px 8px;border-radius:4px}}
-#hamburger:hover{{background:rgba(255,255,255,.15)}}
-#overlay{{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:98}}
-#overlay.open{{display:block}}
-#sidepanel{{position:fixed;top:52px;right:-320px;width:300px;height:calc(100vh - 52px);background:white;box-shadow:-2px 0 12px rgba(0,0,0,.15);transition:right .25s;z-index:99;overflow-y:auto;padding:20px}}
-#sidepanel.open{{right:0}}
-#sidepanel h3{{font-size:.8rem;font-weight:700;color:#0070D2;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;margin-top:18px;padding-top:14px;border-top:1px solid #E4E9F0}}
-#sidepanel h3:first-child{{margin-top:0;padding-top:0;border-top:none}}
-.sp-section-label{{font-size:.7rem;font-weight:700;color:#706E6B;text-transform:uppercase;letter-spacing:.06em;margin:10px 0 4px;padding-left:4px}}
 #section-filters{{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}}
 .filter-pill{{font-size:.78rem;padding:5px 12px;border-radius:16px;border:1.5px solid #0070D2;background:white;color:#0070D2;cursor:pointer;font-weight:600;transition:background .15s,color .15s;user-select:none}}
 .filter-pill.active{{background:#0070D2;color:white}}
 .filter-pill:hover{{background:#E8F4FF}}.filter-pill.active:hover{{background:#005FB2}}
-.jump-link{{display:block;padding:4px 8px;color:#0070D2;text-decoration:none;font-size:.84rem;border-radius:4px;margin-bottom:1px}}
-.jump-link:hover{{background:#E8F4FF}}
-.jump-emoji{{margin-right:5px}}
 #main{{padding-top:52px;max-width:1200px;margin:0 auto}}
 #hero{{background:linear-gradient(135deg,#003778 0%,#0070D2 55%,#00A1E0 100%);color:white;padding:44px 40px 36px}}
 #hero .eyebrow{{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.72;margin-bottom:8px}}
@@ -696,12 +675,6 @@ body{{background:#F4F6F9;color:#16325C;font-family:-apple-system,BlinkMacSystemF
 <div id="topbar">
   <h1>🌐 AI Landscape</h1>
   <span class="meta">{len(companies)} companies · Updated {last_updated}</span>
-  <button id="hamburger" onclick="togglePanel()">☰</button>
-</div>
-<div id="overlay" onclick="togglePanel()"></div>
-<div id="sidepanel">
-  <h3>Jump to Company</h3>
-  {jump_links_html}
 </div>
 <div id="main">
 <div id="hero">
@@ -742,10 +715,6 @@ body{{background:#F4F6F9;color:#16325C;font-family:-apple-system,BlinkMacSystemF
 </div>
 
 <script>
-function togglePanel(){{
-  document.getElementById('sidepanel').classList.toggle('open');
-  document.getElementById('overlay').classList.toggle('open');
-}}
 function toggleFilter(btn){{
   btn.classList.toggle('active');
   const active=new Set([...document.querySelectorAll('#section-filters .filter-pill.active')].map(b=>b.dataset.section));
