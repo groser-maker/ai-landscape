@@ -549,9 +549,9 @@ for sec in SECTIONS_ORDER:
     for c in cos:
         jump_links_html += f'<a href="#card-{c["id"]}" class="jump-link" onclick="togglePanel()"><span class="jump-emoji">{c["emoji"]}</span>{c["name"]}</a>'
 
-# Section filter pills (all active by default)
+# Section filter pills (none active by default = show all)
 filters_html = "".join(
-    f'<button class="filter-pill active" data-section="{sec}" onclick="toggleFilter(this)">{SECTION_ICONS.get(sec,"")} {sec}</button>'
+    f'<button class="filter-pill" data-section="{sec}" onclick="toggleFilter(this)">{SECTION_ICONS.get(sec,"")} {sec}</button>'
     for sec in SECTIONS_ORDER if companies_in(sec)
 )
 
@@ -749,8 +749,9 @@ function togglePanel(){{
 function toggleFilter(btn){{
   btn.classList.toggle('active');
   const active=new Set([...document.querySelectorAll('#section-filters .filter-pill.active')].map(b=>b.dataset.section));
-  document.querySelectorAll('.company-section-wrapper').forEach(el=>{{el.style.display=active.has(el.dataset.section)?'':'none';}});
-  document.querySelectorAll('#scoreboard tbody tr').forEach(tr=>{{tr.style.display=active.has(tr.dataset.section)?'':'none';}});
+  const showAll=active.size===0;
+  document.querySelectorAll('.company-section-wrapper').forEach(el=>{{el.style.display=(showAll||active.has(el.dataset.section))?'':'none';}});
+  document.querySelectorAll('#scoreboard tbody tr').forEach(tr=>{{tr.style.display=(showAll||active.has(tr.dataset.section))?'':'none';}});
 }}
 let sortCol=-1,sortAsc=true;
 function sortTable(col){{
