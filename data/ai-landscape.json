@@ -278,6 +278,20 @@
           "notes": "Released alongside ChatGPT agent mode expansion",
           "elo_score": 1460,
           "elo_estimated": true
+        },
+        {
+          "name": "GPT-5.6 (Sol/Terra/Luna)",
+          "date": "2026-07",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "Multimodal LLM",
+          "purpose": "Three-tier flagship: Sol (fast/cheap), Terra (balanced), Luna (most capable) \u2014 first tiered GPT release",
+          "context_length_k": 256,
+          "notable": true,
+          "notes": "Released Jul 2026 alongside ChatGPT Work for enterprise",
+          "elo_score": 1490,
+          "elo_estimated": true
         }
       ],
       "acquisitions": [
