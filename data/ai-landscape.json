@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "last_updated": "2026-07-06",
+  "last_updated": "2026-07-13",
   "companies": [
     {
       "id": "openai",
@@ -30,9 +30,16 @@
       ],
       "products": [
         {
-          "name": "GPT-4o",
+          "name": "GPT-5.6",
           "type": "LLM API",
           "flagship": true,
+          "description": "Three-tier model: Sol (enterprise-gated), Terra, Luna. Preferred model in Microsoft 365 Copilot.",
+          "launched": "2026-07"
+        },
+        {
+          "name": "GPT-4o",
+          "type": "LLM API",
+          "flagship": false,
           "description": "Omni model \u2014 text, vision, audio natively",
           "launched": "2024-05"
         },
@@ -70,6 +77,13 @@
           "flagship": false,
           "description": "Cloud-based coding agent integrated into ChatGPT; writes, tests, and debugs code autonomously in sandboxed environments. Relaunched May 2026.",
           "launched": "2026-05-16"
+        },
+        {
+          "name": "ChatGPT Work",
+          "type": "Agentic tool",
+          "flagship": false,
+          "description": "Agentic tool designed to carry out complete jobs autonomously.",
+          "launched": "2026-07"
         }
       ],
       "funding_summary": {
@@ -652,9 +666,16 @@
       ],
       "products": [
         {
+          "name": "Grok 4.5",
+          "type": "LLM API",
+          "flagship": true,
+          "description": "Opus-class model for coding and agentic tasks. $2/M input tokens. Co-developed with Cursor.",
+          "launched": "2026-07"
+        },
+        {
           "name": "Grok 3",
           "type": "LLM",
-          "flagship": true,
+          "flagship": false,
           "description": "Frontier model with real-time web access and deep research mode",
           "launched": "2025-02"
         },
@@ -1053,9 +1074,16 @@
       ],
       "products": [
         {
+          "name": "Muse Spark 1.1",
+          "type": "LLM API",
+          "flagship": true,
+          "description": "Agentic model for coding and computer use. Multi-agent capable. Aggressive API pricing vs. competitors.",
+          "launched": "2026-07"
+        },
+        {
           "name": "Llama 4",
           "type": "Open model",
-          "flagship": true,
+          "flagship": false,
           "description": "Multimodal open-source frontier model (Scout/Maverick variants)",
           "launched": "2025-04"
         },
@@ -1839,6 +1867,13 @@
           "flagship": false,
           "description": "Small language model family for on-device AI",
           "launched": "2024-04"
+        },
+        {
+          "name": "MAI models",
+          "type": "In-house LLM",
+          "flagship": false,
+          "description": "Seven proprietary Microsoft AI models deployed in Copilot 365 (Excel, Word), including agentic coder and text-to-image.",
+          "launched": "2026-07"
         }
       ],
       "funding_summary": {
@@ -2458,18 +2493,16 @@
         }
       ],
       "funding_summary": {
-        "total_raised_usd_billions": 0.228,
-        "valuation_usd_billions": 1.25,
-        "valuation_as_of": "2024-03",
-        "public": false,
-        "ticker": null,
-        "last_round_date": "2024-03",
-        "last_round_amount_usd_billions": 0.106,
-        "last_round_type": "Series A",
-        "last_round_investors": [
-          "Salesforce Ventures",
+        "total_raised_usd_billions": 1.5,
+        "latest_round": "Series C \u2014 $800M at $8.3B valuation",
+        "latest_round_date": "2026-07-01",
+        "investors": [
+          "Aramco Ventures",
+          "Vista Equity Partners",
+          "General Catalyst",
+          "Emergence Capital",
           "Nvidia",
-          "NEA"
+          "March Capital"
         ]
       },
       "funding_rounds_history": [],
@@ -6326,6 +6359,644 @@
               "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/"
             }
           ],
+          "product_releases": []
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-07-13",
+      "entries": [
+        {
+          "company_id": "openai",
+          "headcount_estimate": 3500,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 852.0,
+          "valuation_source": "Implied from 5% US gov stake proposal at $42.6B (Crypto Briefing / Barron's, Jul 2026)",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": 3.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-09",
+              "headline": "OpenAI releases GPT-5.6 in three tiers (Sol, Terra, Luna) with ChatGPT Work",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://openai.com/blog/gpt-5-6"
+            },
+            {
+              "date": "2026-07-10",
+              "headline": "Apple sues OpenAI and io Products, accusing it of stealing hardware trade secrets",
+              "type": "regulatory",
+              "significance": "high",
+              "url": ""
+            },
+            {
+              "date": "2026-07-09",
+              "headline": "Fidji Simo, OpenAI's AGI deployment chief, steps down due to chronic illness; Greg Brockman taking over product",
+              "type": "leadership",
+              "significance": "high",
+              "url": ""
+            },
+            {
+              "date": "2026-07-12",
+              "headline": "OpenAI's head of safety announces departure",
+              "type": "leadership",
+              "significance": "medium",
+              "url": ""
+            },
+            {
+              "date": "2026-07-07",
+              "headline": "OpenAI proposes 5% stake to US government, implying ~$852B valuation; eyes $730B\u2013$1T IPO",
+              "type": "business",
+              "significance": "high",
+              "url": ""
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-09",
+              "product": "GPT-5.6",
+              "type": "model_release",
+              "description": "Three-tier model: Sol (enterprise-gated, ~20 firms), Terra, Luna. Preferred model in Microsoft 365 Copilot."
+            },
+            {
+              "date": "2026-07-09",
+              "product": "ChatGPT Work",
+              "type": "product_launch",
+              "description": "Agentic tool designed to carry out complete jobs autonomously."
+            }
+          ]
+        },
+        {
+          "company_id": "anthropic",
+          "headcount_estimate": 1000,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 18.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-06",
+              "headline": "Anthropic signs $19B, 20-year data center lease with TeraWulf in Kentucky",
+              "type": "partnership",
+              "significance": "high",
+              "url": ""
+            },
+            {
+              "date": "2026-07-07",
+              "headline": "Anthropic extends Claude Fable 5 free access for paid subscribers through July 19",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": ""
+            },
+            {
+              "date": "2026-07-07",
+              "headline": "Claude Code's hidden tracker was an 'experiment,' says Anthropic",
+              "type": "business",
+              "significance": "medium",
+              "url": ""
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-07",
+              "product": "Claude Fable 5 (extended access)",
+              "type": "product_launch",
+              "description": "Paid subscribers get continued free access through July 19; Opus 5 rumored imminent."
+            }
+          ]
+        },
+        {
+          "company_id": "xai",
+          "headcount_estimate": 300,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 50.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.5,
+          "arr_source": "StartupHub.ai Jul 2026 \u2014 $500M ARR vs $1B/month burn",
+          "arr_confidence": "medium",
+          "recent_news": [
+            {
+              "date": "2026-07-08",
+              "headline": "xAI (SpaceXAI) launches Grok 4.5 for coding and agentic tasks at $2/M input tokens, built with Cursor",
+              "type": "model_release",
+              "significance": "high",
+              "url": ""
+            },
+            {
+              "date": "2026-07-11",
+              "headline": "Grok users file FTC complaints over content and data practices",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://gizmodo.com"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-08",
+              "product": "Grok 4.5",
+              "type": "model_release",
+              "description": "Opus-class model for coding and agentic tasks. $2/M input tokens. Co-developed with Cursor. Not available in EU at launch."
+            }
+          ]
+        },
+        {
+          "company_id": "google_deepmind",
+          "headcount_estimate": 35000,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (GOOG)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "public company",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-07",
+              "headline": "Google delays Gemini 3.5 Pro to July 17 for full architectural rebuild",
+              "type": "model_release",
+              "significance": "high",
+              "url": ""
+            },
+            {
+              "date": "2026-07-12",
+              "headline": "Google lets Gemini agents run background tasks without breaking connections",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": ""
+            },
+            {
+              "date": "2026-07-09",
+              "headline": "Google DeepMind director behind Gemini leaves for Hong Kong university after 20 years",
+              "type": "leadership",
+              "significance": "medium",
+              "url": ""
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-12",
+              "product": "Gemini agents background task support",
+              "type": "product_launch",
+              "description": "Gemini agents can now run persistent background tasks without dropping connections."
+            }
+          ]
+        },
+        {
+          "company_id": "meta_ai",
+          "headcount_estimate": 70000,
+          "headcount_source": "carried forward (post-8,000 layoff est.)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (META)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "public company",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-09",
+              "headline": "Meta releases Muse Spark 1.1, an agentic model targeting coding and computer use with aggressive API pricing",
+              "type": "model_release",
+              "significance": "high",
+              "url": ""
+            },
+            {
+              "date": "2026-07-07",
+              "headline": "Meta AI app adds image generation, powering WhatsApp and Instagram features",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": ""
+            },
+            {
+              "date": "2026-07-07",
+              "headline": "Zuckerberg admits Meta's AI 'hasn't really accelerated' after laying off 8,000 employees",
+              "type": "business",
+              "significance": "medium",
+              "url": ""
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-09",
+              "product": "Muse Spark 1.1",
+              "type": "model_release",
+              "description": "Flagship agentic model for coding and computer use. Multi-agent capable. Developer preview open. Aggressive API pricing vs Claude and GPT."
+            },
+            {
+              "date": "2026-07-07",
+              "product": "Meta AI image generation",
+              "type": "product_launch",
+              "description": "Image generation added to Meta AI app, integrated with WhatsApp and Instagram."
+            }
+          ]
+        },
+        {
+          "company_id": "mistral",
+          "headcount_estimate": 200,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 23.15,
+          "valuation_source": "Rumored \u20ac3B raise at $23.15B valuation (TechCrunch Jun 2026, unconfirmed close)",
+          "valuation_confidence": "low",
+          "arr_usd_billions": 0.4,
+          "arr_source": "TechCrunch \u2014 ARR surpassed $400M as of Feb 2026",
+          "arr_confidence": "medium",
+          "recent_news": [
+            {
+              "date": "2026-07-04",
+              "headline": "Mistral AI rumored to be raising ~\u20ac3B (~$3.5B) at $23.15B valuation (unconfirmed)",
+              "type": "funding",
+              "significance": "medium",
+              "url": ""
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "cohere",
+          "headcount_estimate": 500,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 20.0,
+          "valuation_source": "Combined Cohere + Aleph Alpha merger term sheet (Apr 2026, close unconfirmed); Schwarz Group lead investor",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": 0.24,
+          "arr_source": "TechCrunch Feb 2026",
+          "arr_confidence": "medium",
+          "recent_news": [
+            {
+              "date": "2026-04-24",
+              "headline": "Cohere merges with Aleph Alpha to form transatlantic AI powerhouse at ~$20B combined valuation",
+              "type": "funding",
+              "significance": "high",
+              "url": ""
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "microsoft_ai",
+          "headcount_estimate": 215000,
+          "headcount_source": "~228K pre-2025 minus ~4,800 Jul 6 layoffs (multiple rounds since 2025)",
+          "headcount_confidence": "low",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (MSFT)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "public company",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-06",
+              "headline": "Microsoft lays off ~4,800 employees (2.1% of workforce); Xbox hardest hit",
+              "type": "business",
+              "significance": "high",
+              "url": ""
+            },
+            {
+              "date": "2026-07-07",
+              "headline": "Microsoft shifts to proprietary MAI models in Copilot 365 (Excel, Word) to reduce OpenAI/Anthropic reliance",
+              "type": "product_launch",
+              "significance": "high",
+              "url": ""
+            },
+            {
+              "date": "2026-07-02",
+              "headline": "Microsoft launches $2.5B 'Frontier Company' AI deployment unit with 6,000 experts for enterprise clients",
+              "type": "business",
+              "significance": "high",
+              "url": ""
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-07",
+              "product": "MAI models for Copilot 365",
+              "type": "product_launch",
+              "description": "Seven new in-house MAI models deployed in Excel and Word, including agentic coder and text-to-image. Reduces OpenAI/Anthropic API dependency."
+            }
+          ]
+        },
+        {
+          "company_id": "amazon_aws_ai",
+          "headcount_estimate": 1500000,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (AMZN)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "public company",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-05",
+              "headline": "Amazon halts new Mechanical Turk sign-ups, signaling decline of crowdsourced AI training labor",
+              "type": "business",
+              "significance": "medium",
+              "url": ""
+            },
+            {
+              "date": "2026-06-30",
+              "headline": "Amazon launches $1B Forward Deployed Engineering organization for enterprise AI",
+              "type": "business",
+              "significance": "high",
+              "url": ""
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "perplexity",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 9.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.05,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "hugging_face",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.5,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-10",
+              "headline": "Hugging Face CEO: ~half of Fortune 500 use the platform; companies done 'renting' AI; open source more important than ever",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/10/hugging-faces-ceo-on-why-companies-are-done-renting-their-ai/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "stability_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "nvidia",
+          "headcount_estimate": 36000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 2550.0,
+          "valuation_source": "TechCrunch Jul 9 2026 \u2014 stock down ~15% from May 2026 peak (~$3T); approx $2.55T",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": 130.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-09",
+              "headline": "Nvidia stock down ~15% from May peak as GPU spot prices decline and major customers build rival chips",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/09/nvidia-is-a-victim-of-the-compute-marketplace-it-created/"
+            },
+            {
+              "date": "2026-07-09",
+              "headline": "Nvidia backs $100M seed round for Paris-based AI voice startup Gradium",
+              "type": "partnership",
+              "significance": "low",
+              "url": "https://techcrunch.com/2026/07/09/paris-based-ai-voice-startup-gradium-raises-100m-seed-backed-by-nvidia/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "scale_ai",
+          "headcount_estimate": 860,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 13.8,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "together_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 8.3,
+          "valuation_source": "TechCrunch Jul 1 2026 \u2014 $800M Series C, $8.3B valuation, lead Aramco Ventures",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 1.15,
+          "arr_source": "TechCrunch Jul 1 2026 \u2014 annual bookings exceed $1.15B",
+          "arr_confidence": "medium",
+          "recent_news": [
+            {
+              "date": "2026-07-01",
+              "headline": "Together AI raises $800M Series C at $8.3B valuation led by Aramco Ventures; annual bookings exceed $1.15B",
+              "type": "funding",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/01/neocloud-together-ai-raises-800m-leaps-to-8-3b-valuation/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "elevenlabs",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 3.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "runway",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 3.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "luma_ai",
+          "headcount_estimate": 150,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "reka_ai",
+          "headcount_estimate": 80,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cognition_ai",
+          "headcount_estimate": 50,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 10.2,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "thinking_machines",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "sierra_ai",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 15.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cursor",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 60.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "harvey_ai",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "glean",
+          "headcount_estimate": 700,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 7.25,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.3,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cerebras",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 8.1,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "groq",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 6.9,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
           "product_releases": []
         }
       ]
