@@ -636,6 +636,20 @@
           "notes": "Based on Mythos architecture, tuned for creative generation",
           "elo_score": 1425,
           "elo_estimated": true
+        },
+        {
+          "name": "Claude Sonnet 5",
+          "date": "2026-07",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "LLM",
+          "purpose": "Agentic mid-tier model: $2/M input, $10/M output; autonomous coding focus",
+          "context_length_k": 200,
+          "notable": true,
+          "notes": "Released through Anthropic API Jul 2026",
+          "elo_score": 1420,
+          "elo_estimated": true
         }
       ],
       "acquisitions": [],
@@ -818,6 +832,20 @@
           "notable": false,
           "notes": "",
           "elo_score": 1302,
+          "elo_estimated": true
+        },
+        {
+          "name": "Grok 4.5",
+          "date": "2026-07",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "LLM",
+          "purpose": "Coding and agentic tasks; /M input, co-developed with Cursor",
+          "context_length_k": 128,
+          "notable": true,
+          "notes": "Opus-class pricing competitor; SpaceXAI co-brand",
+          "elo_score": 1440,
           "elo_estimated": true
         }
       ],
@@ -1260,6 +1288,20 @@
           "notable": true,
           "notes": "Beats GPT-4o and Gemini 2.0 Flash on benchmarks",
           "elo_score": 1352,
+          "elo_estimated": true
+        },
+        {
+          "name": "Muse Spark 1.1",
+          "date": "2026-07",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "Agentic LLM",
+          "purpose": "Flagship agentic model for coding and computer use; aggressive API pricing vs Claude/GPT",
+          "context_length_k": 128,
+          "notable": true,
+          "notes": "Multi-agent capable; released Jul 2026",
+          "elo_score": 1430,
           "elo_estimated": true
         }
       ],
@@ -1902,7 +1944,22 @@
         "last_round_investors": []
       },
       "funding_rounds_history": [],
-      "model_history": [],
+      "model_history": [
+        {
+          "name": "Phi-3 Mini",
+          "date": "2024-04",
+          "parameters_billions": 3.8,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "Small LLM",
+          "purpose": "On-device 3.8B model; outperforms Mistral 7B and Llama 3 8B on benchmarks",
+          "context_length_k": 128,
+          "notable": true,
+          "notes": "First Microsoft model to run on-device including mobile",
+          "elo_score": 1220,
+          "elo_estimated": true
+        }
+      ],
       "acquisitions": [
         {
           "name": "Activision Blizzard",
@@ -2273,7 +2330,22 @@
         ]
       },
       "funding_rounds_history": [],
-      "model_history": [],
+      "model_history": [
+        {
+          "name": "Stable Diffusion 3",
+          "date": "2024-06",
+          "parameters_billions": 8.0,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "Image generation",
+          "purpose": "Open-weight image model with improved text rendering and composition",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Released open after controversial API-only period",
+          "elo_score": null,
+          "elo_estimated": true
+        }
+      ],
       "acquisitions": [],
       "notable_investors": [
         "Coatue",
@@ -3368,7 +3440,22 @@
           ]
         }
       ],
-      "model_history": [],
+      "model_history": [
+        {
+          "name": "Interaction Models",
+          "date": "2026-05",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "Multimodal LLM",
+          "purpose": "Fully-duplex multi-stream micro-turn AI for real-time human-AI collaboration",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "First product launch from Thinking Machines Lab",
+          "elo_score": null,
+          "elo_estimated": true
+        }
+      ],
       "acquisitions": [],
       "notable_investors": [
         "Andreessen Horowitz",
