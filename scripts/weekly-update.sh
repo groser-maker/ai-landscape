@@ -40,6 +40,8 @@ if [[ $EXIT_CODE -eq 0 ]]; then
     echo "— No file changes to commit" >> "$LOG_FILE"
   fi
 
+  git fetch origin main >> "$LOG_FILE" 2>&1
+  git merge origin/main -m "Merge remote before weekly push" >> "$LOG_FILE" 2>&1 || true
   git push origin main >> "$LOG_FILE" 2>&1
   PUSH_CODE=$?
   if [[ $PUSH_CODE -eq 0 ]]; then
