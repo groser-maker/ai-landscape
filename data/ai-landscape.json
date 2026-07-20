@@ -7292,9 +7292,19 @@
               "type": "business",
               "significance": "high",
               "url": "https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/"
+            },
+            {
+              "date": "2026-07-19",
+              "headline": "Satya Nadella publicly criticizes Anthropic's Fable AI for over-restrictive content filtering, despite Microsoft's $5B investment in Anthropic",
+              "type": "business",
+              "significance": "high",
+              "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-criticizes-anthropic-fable-031452921.html"
             }
           ],
-          "product_releases": []
+          "product_releases": [],
+          "arr_usd_billions": 37.0,
+          "arr_source": "Q1 FY2026 earnings Apr 2026; AI annual run rate $37B up 123% YoY",
+          "arr_confidence": "high"
         },
         {
           "company_id": "amazon_aws_ai",
@@ -7304,8 +7314,19 @@
           "market_cap_usd_billions": 2659.0,
           "market_cap_source": "Yahoo Finance AMZN Jul 17, 2026",
           "market_cap_confidence": "high",
-          "recent_news": [],
-          "product_releases": []
+          "recent_news": [
+            {
+              "date": "2026-07-17",
+              "headline": "Amazon fixing billing bug that over-charged some AWS customers billions of dollars",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/17/amazon-fixing-bug-that-billed-some-aws-customers-billions-of-dollars/"
+            }
+          ],
+          "product_releases": [],
+          "arr_usd_billions": 15.0,
+          "arr_source": "AWS AI run rate Q1 FY2026 (Apr 2026); $225B+ Trainium commitments",
+          "arr_confidence": "medium"
         },
         {
           "company_id": "perplexity",
