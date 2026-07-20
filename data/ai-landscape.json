@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "last_updated": "2026-07-13",
+  "last_updated": "2026-07-20",
   "companies": [
     {
       "id": "openai",
@@ -9,7 +9,7 @@
       "founded": 2015,
       "hq": "San Francisco, CA",
       "color": "#10A37F",
-      "emoji": "\ud83d\udfe2",
+      "emoji": "🟢",
       "description": "Developer of GPT and o-series models. ChatGPT is the world's most-used AI product. Restructured from nonprofit to capped-profit in 2019; IPO filing confidentially submitted Jun 2026.",
       "leadership": [
         {
@@ -40,7 +40,7 @@
           "name": "GPT-4o",
           "type": "LLM API",
           "flagship": false,
-          "description": "Omni model \u2014 text, vision, audio natively",
+          "description": "Omni model — text, vision, audio natively",
           "launched": "2024-05"
         },
         {
@@ -202,7 +202,7 @@
           "parameters_estimated": true,
           "parameters_note": "",
           "type": "LLM",
-          "purpose": "Small, fast, cheap \u2014 replaced GPT-3.5 Turbo in most use cases",
+          "purpose": "Small, fast, cheap — replaced GPT-3.5 Turbo in most use cases",
           "context_length_k": 128,
           "notable": false,
           "notes": "",
@@ -286,7 +286,7 @@
           "parameters_estimated": true,
           "parameters_note": "undisclosed",
           "type": "Multimodal LLM",
-          "purpose": "Three-tier flagship: Sol (fast/cheap), Terra (balanced), Luna (most capable) \u2014 first tiered GPT release",
+          "purpose": "Three-tier flagship: Sol (fast/cheap), Terra (balanced), Luna (most capable) — first tiered GPT release",
           "context_length_k": 256,
           "notable": true,
           "notes": "Released Jul 2026 alongside ChatGPT Work for enterprise",
@@ -340,7 +340,7 @@
       "founded": 2021,
       "hq": "San Francisco, CA",
       "color": "#CC785C",
-      "emoji": "\ud83d\udfe4",
+      "emoji": "🟤",
       "description": "Safety-focused AI lab founded by former OpenAI researchers. Pioneered Constitutional AI. Claude Mythos deployed to critical infrastructure globally. IPO filed Jun 2026.",
       "leadership": [
         {
@@ -678,7 +678,7 @@
       "founded": 2023,
       "hq": "Memphis, TN / Austin, TX",
       "color": "#1A1A1A",
-      "emoji": "\u26ab",
+      "emoji": "⚫",
       "description": "AI startup founded by Elon Musk. Grok integrated into X (Twitter). Operates Colossus supercomputer cluster. Under DOJ scrutiny for unpermitted Memphis data center turbines.",
       "leadership": [
         {
@@ -873,7 +873,7 @@
       "founded": 2010,
       "hq": "London, UK / Mountain View, CA",
       "color": "#4285F4",
-      "emoji": "\ud83d\udd37",
+      "emoji": "🔷",
       "description": "Alphabet's consolidated AI division (DeepMind + Google Brain merged 2023). Leads Gemini frontier models, AlphaFold science, and AI integration across Google's 3B+ user products.",
       "leadership": [
         {
@@ -904,7 +904,7 @@
           "name": "Gemini (Google apps)",
           "type": "Consumer AI",
           "flagship": false,
-          "description": "AI assistant in Search, Workspace, Android \u2014 3B+ users",
+          "description": "AI assistant in Search, Workspace, Android — 3B+ users",
           "launched": "2024-02"
         },
         {
@@ -1095,7 +1095,7 @@
       "founded": 2013,
       "hq": "Menlo Park, CA",
       "color": "#0866FF",
-      "emoji": "\ud83c\udf10",
+      "emoji": "🌐",
       "description": "Meta's AI division. Llama open-source models are the most widely deployed in the world. AI integrated across Facebook, Instagram, WhatsApp. Building superintelligence lab (with Alexandr Wang from Scale AI).",
       "leadership": [
         {
@@ -1133,7 +1133,7 @@
           "name": "Meta AI Assistant",
           "type": "Consumer AI",
           "flagship": false,
-          "description": "AI assistant across FB/Instagram/WhatsApp/Ray-Ban \u2014 1B+ user reach",
+          "description": "AI assistant across FB/Instagram/WhatsApp/Ray-Ban — 1B+ user reach",
           "launched": "2023-09"
         },
         {
@@ -1333,8 +1333,8 @@
       "founded": 2023,
       "hq": "Paris, France",
       "color": "#FF7000",
-      "emoji": "\ud83d\udfe0",
-      "description": "European open-weight model lab. Pioneer of efficient MoE architecture. Rumored \u20ac3B raise at \u20ac20B valuation (Jun 2026). Secured $830M debt for Paris data center. First acquisition: Koyeb.",
+      "emoji": "🟠",
+      "description": "European open-weight model lab. Pioneer of efficient MoE architecture. Rumored €3B raise at €20B valuation (Jun 2026). Secured $830M debt for Paris data center. First acquisition: Koyeb.",
       "leadership": [
         {
           "name": "Arthur Mensch",
@@ -1342,7 +1342,7 @@
           "since": "2023-04"
         },
         {
-          "name": "Timoth\u00e9e Lacroix",
+          "name": "Timothée Lacroix",
           "title": "CTO & Co-founder",
           "since": "2023-04"
         },
@@ -1632,7 +1632,7 @@
       "founded": 2019,
       "hq": "Toronto, Canada / Berlin, Germany",
       "color": "#39579A",
-      "emoji": "\ud83d\udd35",
+      "emoji": "🔵",
       "description": "Enterprise NLP platform. Merged with Germany's Aleph Alpha (Apr 2026) creating a transatlantic AI powerhouse. $240M ARR. Joelle Pineau (ex-Meta AI research head) as Chief AI Officer. IPO candidate.",
       "leadership": [
         {
@@ -1869,7 +1869,7 @@
       "founded": 1975,
       "hq": "Redmond, WA",
       "color": "#00BCF2",
-      "emoji": "\ud83e\ude9f",
+      "emoji": "🪟",
       "description": "Microsoft's AI division. $13B+ invested in OpenAI. Copilot across all products. 20M+ paid Copilot users (Apr 2026). Azure OpenAI Service dominant enterprise AI platform.",
       "leadership": [
         {
@@ -1893,7 +1893,7 @@
           "name": "Copilot",
           "type": "AI assistant",
           "flagship": true,
-          "description": "AI in Windows, Office 365, Edge, Bing \u2014 20M+ paid users",
+          "description": "AI in Windows, Office 365, Edge, Bing — 20M+ paid users",
           "launched": "2023-11"
         },
         {
@@ -1907,7 +1907,7 @@
           "name": "GitHub Copilot",
           "type": "Developer tool",
           "flagship": false,
-          "description": "AI code completion in IDEs \u2014 millions of developers",
+          "description": "AI code completion in IDEs — millions of developers",
           "launched": "2022-06"
         },
         {
@@ -1975,7 +1975,7 @@
         }
       ],
       "notable_investors": [
-        "Microsoft (public \u2014 MSFT)"
+        "Microsoft (public — MSFT)"
       ],
       "tags": [
         "enterprise",
@@ -1993,7 +1993,7 @@
       "founded": 1994,
       "hq": "Seattle, WA",
       "color": "#FF9900",
-      "emoji": "\ud83d\udce6",
+      "emoji": "📦",
       "description": "Amazon's AI portfolio: Bedrock (multi-model API), Q (enterprise assistant), Trainium/Inferentia chips. $4B strategic investment in Anthropic. Now selling Trainium chips externally to challenge Nvidia.",
       "leadership": [
         {
@@ -2031,7 +2031,7 @@
           "name": "Trainium / Inferentia",
           "type": "AI chips",
           "flagship": false,
-          "description": "Custom ML chips \u2014 now sold externally to challenge Nvidia",
+          "description": "Custom ML chips — now sold externally to challenge Nvidia",
           "launched": "2020-12"
         },
         {
@@ -2077,7 +2077,7 @@
         }
       ],
       "notable_investors": [
-        "Amazon (public \u2014 AMZN)"
+        "Amazon (public — AMZN)"
       ],
       "tags": [
         "cloud",
@@ -2095,7 +2095,7 @@
       "founded": 2022,
       "hq": "San Francisco, CA",
       "color": "#20808D",
-      "emoji": "\ud83d\udd0d",
+      "emoji": "🔍",
       "description": "AI-powered search engine combining LLM answers with real-time web citations. Snap $400M search deal dissolved May 2026. Personal Computer app launched for Mac.",
       "leadership": [
         {
@@ -2126,7 +2126,7 @@
           "name": "Perplexity Pro",
           "type": "Subscription",
           "flagship": false,
-          "description": "Premium tier \u2014 $20/month",
+          "description": "Premium tier — $20/month",
           "launched": "2024-01"
         },
         {
@@ -2176,11 +2176,11 @@
       "founded": 2016,
       "hq": "New York, NY / Paris, France",
       "color": "#B8860B",
-      "emoji": "\ud83e\udd17",
-      "description": "The 'GitHub of AI' \u2014 500K+ models, 150K+ datasets. Pivoting into robotics with Reachy Mini robot and humanoid acquisitions.",
+      "emoji": "🤗",
+      "description": "The 'GitHub of AI' — 500K+ models, 150K+ datasets. Pivoting into robotics with Reachy Mini robot and humanoid acquisitions.",
       "leadership": [
         {
-          "name": "Cl\u00e9ment Delangue",
+          "name": "Clément Delangue",
           "title": "CEO & Co-founder",
           "since": "2016-01"
         },
@@ -2207,7 +2207,7 @@
           "name": "Transformers",
           "type": "Open-source library",
           "flagship": false,
-          "description": "Most widely used ML library \u2014 130K+ GitHub stars",
+          "description": "Most widely used ML library — 130K+ GitHub stars",
           "launched": "2018-10"
         },
         {
@@ -2277,7 +2277,7 @@
       "founded": 2020,
       "hq": "London, UK",
       "color": "#7B2D8B",
-      "emoji": "\ud83c\udfa8",
+      "emoji": "🎨",
       "description": "Pioneer of open-source image generation. Getty lawsuit largely dropped Jun 2025. New CEO Sean McClure stabilizing the company after Emad Mostaque's 2024 departure.",
       "leadership": [
         {
@@ -2366,7 +2366,7 @@
       "founded": 1993,
       "hq": "Santa Clara, CA",
       "color": "#76B900",
-      "emoji": "\ud83d\udfe9",
+      "emoji": "🟩",
       "description": "Dominant AI chip maker. Blackwell GPUs shipping. Now targeting $200B CPU market with AI agent PCs. FY2025 revenue ~$130B. Amazon selling Trainium chips as direct competitor.",
       "leadership": [
         {
@@ -2392,14 +2392,14 @@
           "name": "H100 / H200",
           "type": "AI training GPU",
           "flagship": false,
-          "description": "Dominant LLM training GPUs \u2014 ~80% market share",
+          "description": "Dominant LLM training GPUs — ~80% market share",
           "launched": "2022-09"
         },
         {
           "name": "CUDA",
           "type": "Software platform",
           "flagship": false,
-          "description": "GPU programming ecosystem \u2014 ~30M developers",
+          "description": "GPU programming ecosystem — ~30M developers",
           "launched": "2007-06"
         },
         {
@@ -2445,7 +2445,7 @@
         }
       ],
       "notable_investors": [
-        "Nvidia (public \u2014 NVDA)"
+        "Nvidia (public — NVDA)"
       ],
       "tags": [
         "chips",
@@ -2463,7 +2463,7 @@
       "founded": 2016,
       "hq": "San Francisco, CA",
       "color": "#FF4500",
-      "emoji": "\u2696\ufe0f",
+      "emoji": "⚖️",
       "description": "Data labeling and AI evaluation platform. CEO Alexandr Wang departed Jun 2025 to join Meta's superintelligence lab. Meta made significant investment. 14% layoff in Jul 2025.",
       "leadership": [
         {
@@ -2543,7 +2543,7 @@
       "founded": 2022,
       "hq": "San Francisco, CA",
       "color": "#6B21A8",
-      "emoji": "\ud83d\udfe3",
+      "emoji": "🟣",
       "description": "Open-source AI inference and fine-tuning platform. Fast, cheap inference for Llama, Mistral, and other open models via custom GPU clusters.",
       "leadership": [
         {
@@ -2557,7 +2557,7 @@
           "since": "2022-06"
         },
         {
-          "name": "Christopher R\u00e9",
+          "name": "Christopher Ré",
           "title": "Co-founder",
           "since": "2022-06"
         }
@@ -2580,7 +2580,7 @@
       ],
       "funding_summary": {
         "total_raised_usd_billions": 1.5,
-        "latest_round": "Series C \u2014 $800M at $8.3B valuation",
+        "latest_round": "Series C — $800M at $8.3B valuation",
         "latest_round_date": "2026-07-01",
         "investors": [
           "Aramco Ventures",
@@ -2615,7 +2615,7 @@
       "founded": 2022,
       "hq": "New York, NY",
       "color": "#6C2BD9",
-      "emoji": "\ud83d\udd0a",
+      "emoji": "🔊",
       "description": "Leading synthetic voice AI platform. 1,000+ apps integrated. $180M Series C at $3B+ valuation (Jan 2025). Rapidly expanding into audio production, dubbing, and real-time voice cloning.",
       "leadership": [
         {
@@ -2634,7 +2634,7 @@
           "name": "ElevenLabs Voice AI",
           "type": "Speech synthesis API",
           "flagship": true,
-          "description": "Real-time multilingual TTS with voice cloning \u2014 1000+ app integrations",
+          "description": "Real-time multilingual TTS with voice cloning — 1000+ app integrations",
           "launched": "2023-01"
         },
         {
@@ -2777,11 +2777,11 @@
       "founded": 2018,
       "hq": "New York, NY",
       "color": "#0EA5E9",
-      "emoji": "\ud83c\udfac",
+      "emoji": "🎬",
       "description": "Pioneer of AI video generation. Gen-3/Gen-4 models power professional media production. $308M Series D at $3B valuation (Apr 2025). Used by major film studios and content creators.",
       "leadership": [
         {
-          "name": "Crist\u00f3bal Valenzuela",
+          "name": "Cristóbal Valenzuela",
           "title": "CEO & Co-founder",
           "since": "2018-01"
         },
@@ -2808,7 +2808,7 @@
           "name": "Runway Studio",
           "type": "Creative platform",
           "flagship": false,
-          "description": "Professional AI creative suite \u2014 video, image, audio editing",
+          "description": "Professional AI creative suite — video, image, audio editing",
           "launched": "2023-09"
         },
         {
@@ -2958,7 +2958,7 @@
       "founded": 2021,
       "hq": "San Francisco, CA",
       "color": "#EC4899",
-      "emoji": "\u2728",
+      "emoji": "✨",
       "description": "AI video and 3D generation platform. Dream Machine and Ray2 models. $900M Series C at $4B valuation (Nov 2025) led by Humain and a16z. Strong developer API ecosystem.",
       "leadership": [
         {
@@ -3115,7 +3115,7 @@
       "founded": 2023,
       "hq": "San Francisco, CA",
       "color": "#14B8A6",
-      "emoji": "\ud83c\udf0a",
+      "emoji": "🌊",
       "description": "Multimodal AI research lab. Reka Core, Flash, and Edge models cover frontier to edge deployment. $110M Series B at $1B valuation (Jul 2025), backed by Snowflake and Nvidia.",
       "leadership": [
         {
@@ -3262,7 +3262,7 @@
       "founded": 2023,
       "hq": "San Francisco, CA",
       "color": "#F59E0B",
-      "emoji": "\ud83e\udd16",
+      "emoji": "🤖",
       "description": "Creator of Devin, the world's first AI software engineer. $400M Series C at $10.2B valuation (Sep 2025) led by Founders Fund. Devin autonomously writes and deploys production code.",
       "leadership": [
         {
@@ -3356,7 +3356,7 @@
           "parameters_estimated": true,
           "parameters_note": "",
           "type": "Agentic LLM",
-          "purpose": "Full project lifecycle \u2014 planning, coding, testing, and deployment",
+          "purpose": "Full project lifecycle — planning, coding, testing, and deployment",
           "context_length_k": null,
           "notable": true,
           "notes": "10x capability improvement; handles multi-file repos end-to-end",
@@ -3386,7 +3386,7 @@
       "founded": 2025,
       "hq": "San Francisco, CA",
       "color": "#7C3AED",
-      "emoji": "\ud83e\uddea",
+      "emoji": "🧪",
       "description": "Stealth AI research lab founded by Mira Murati (ex-OpenAI CTO) in July 2025. $2B seed round at $12B valuation led by Andreessen Horowitz. Focus on reasoning and inference optimization. No public model releases yet.",
       "leadership": [
         {
@@ -3478,7 +3478,7 @@
       "founded": 2023,
       "hq": "San Francisco, CA",
       "color": "#10B981",
-      "emoji": "\ud83c\udfd4\ufe0f",
+      "emoji": "🏔️",
       "description": "Enterprise AI customer service platform founded by Bret Taylor (ex-Salesforce co-CEO, OpenAI Chair) and Clay Bavor (ex-Google VP). $350M at $10B+ valuation (Sep 2025). Customers include Sonos, Weight Watchers.",
       "leadership": [
         {
@@ -3581,8 +3581,8 @@
       "founded": 2022,
       "hq": "San Francisco, CA",
       "color": "#2563EB",
-      "emoji": "\u2328\ufe0f",
-      "description": "Fastest-growing AI coding tool. $2.3B raised in 2025; $29.3B valuation by Nov 2025. Millions of developers using Cursor for AI-assisted coding. Pioneered 'vibe coding' \u2014 natural language to full applications.",
+      "emoji": "⌨️",
+      "description": "Fastest-growing AI coding tool. $2.3B raised in 2025; $29.3B valuation by Nov 2025. Millions of developers using Cursor for AI-assisted coding. Pioneered 'vibe coding' — natural language to full applications.",
       "leadership": [
         {
           "name": "Michael Truell",
@@ -3707,7 +3707,7 @@
       "founded": 2022,
       "hq": "San Francisco, CA",
       "color": "#DC2626",
-      "emoji": "\u2696\ufe0f",
+      "emoji": "⚖️",
       "description": "AI platform for the legal industry. Used by leading law firms including A&O Shearman, PwC, and Allen & Overy. $600M raised in 2025 alone; $11B valuation confirmed Mar 2026 (Sequoia tripled down). Backed by OpenAI Startup Fund.",
       "leadership": [
         {
@@ -3823,7 +3823,7 @@
       "founded": 2019,
       "hq": "Palo Alto, CA",
       "color": "#0284C7",
-      "emoji": "\ud83d\udd0e",
+      "emoji": "🔎",
       "description": "Enterprise AI search and knowledge platform. $150M Series F at $7.25B valuation (Jun 2025). ARR crossed $300M (May 2026). Connects to 100+ enterprise SaaS tools. Used by Duolingo, Databricks, Okta.",
       "leadership": [
         {
@@ -3842,7 +3842,7 @@
           "name": "Glean Work AI",
           "type": "Enterprise AI search",
           "flagship": true,
-          "description": "AI search across all company tools \u2014 Slack, Drive, Jira, Salesforce, 100+ more",
+          "description": "AI search across all company tools — Slack, Drive, Jira, Salesforce, 100+ more",
           "launched": "2021-05"
         },
         {
@@ -3948,8 +3948,8 @@
       "founded": 2016,
       "hq": "Sunnyvale, CA",
       "color": "#EA580C",
-      "emoji": "\ud83e\udde0",
-      "description": "AI hardware company building the world's largest chip \u2014 the Wafer Scale Engine (WSE-3). $1.1B Series G at $8.1B valuation (Sep 2025). IPO filed Oct 2024; withdrawn. Provides ultra-fast AI inference challenging Nvidia.",
+      "emoji": "🧠",
+      "description": "AI hardware company building the world's largest chip — the Wafer Scale Engine (WSE-3). $1.1B Series G at $8.1B valuation (Sep 2025). IPO filed Oct 2024; withdrawn. Provides ultra-fast AI inference challenging Nvidia.",
       "leadership": [
         {
           "name": "Andrew Feldman",
@@ -3974,7 +3974,7 @@
           "name": "Cerebras Inference",
           "type": "Inference API",
           "flagship": false,
-          "description": "Ultra-fast LLM inference \u2014 1,000+ tokens/sec on Llama models",
+          "description": "Ultra-fast LLM inference — 1,000+ tokens/sec on Llama models",
           "launched": "2024-09"
         },
         {
@@ -4103,8 +4103,8 @@
       "founded": 2016,
       "hq": "Mountain View, CA",
       "color": "#F97316",
-      "emoji": "\u26a1",
-      "description": "AI inference chip company (LPU \u2014 Language Processing Unit). Confirmed $650M raise Jun 2026 after Nvidia's $20B not-acqui-hire deal. Re-staffing after deal. Provides the world's fastest public LLM inference API, serving open-source models at 1000+ tokens/sec.",
+      "emoji": "⚡",
+      "description": "AI inference chip company (LPU — Language Processing Unit). Confirmed $650M raise Jun 2026 after Nvidia's $20B not-acqui-hire deal. Re-staffing after deal. Provides the world's fastest public LLM inference API, serving open-source models at 1000+ tokens/sec.",
       "leadership": [
         {
           "name": "Jonathan Ross",
@@ -4117,14 +4117,14 @@
           "name": "GroqCloud API",
           "type": "Inference API",
           "flagship": true,
-          "description": "Fastest public LLM API \u2014 Llama, Mistral, Gemma at 800-1500 tok/sec",
+          "description": "Fastest public LLM API — Llama, Mistral, Gemma at 800-1500 tok/sec",
           "launched": "2024-03"
         },
         {
           "name": "LPU Inference Engine",
           "type": "AI chip",
           "flagship": false,
-          "description": "Language Processing Unit \u2014 deterministic, ultra-low-latency inference chip",
+          "description": "Language Processing Unit — deterministic, ultra-low-latency inference chip",
           "launched": "2023-01"
         },
         {
@@ -4330,14 +4330,14 @@
           "recent_news": [
             {
               "date": "2024-06-11",
-              "headline": "Mistral raises \u20ac600M Series B at $6B valuation",
+              "headline": "Mistral raises €600M Series B at $6B valuation",
               "type": "funding",
               "significance": "high",
               "url": null
             },
             {
               "date": "2024-07-24",
-              "headline": "Mistral Large 2 released \u2014 123B parameter model, matches GPT-4 class",
+              "headline": "Mistral Large 2 released — 123B parameter model, matches GPT-4 class",
               "type": "model_release",
               "significance": "high",
               "url": null
@@ -4373,7 +4373,7 @@
             },
             {
               "date": "2024-04-04",
-              "headline": "Command R+ released \u2014 104B model optimized for enterprise RAG",
+              "headline": "Command R+ released — 104B model optimized for enterprise RAG",
               "type": "model_release",
               "significance": "medium",
               "url": null
@@ -4438,7 +4438,7 @@
           "recent_news": [
             {
               "date": "2024-07-23",
-              "headline": "Meta releases Llama 3.1 405B \u2014 first open model to match GPT-4 on many benchmarks",
+              "headline": "Meta releases Llama 3.1 405B — first open model to match GPT-4 on many benchmarks",
               "type": "model_release",
               "significance": "high",
               "url": null
@@ -4456,7 +4456,7 @@
               "date": "2024-07-23",
               "product": "Llama 3.1 405B",
               "type": "model_release",
-              "description": "405B open-weight model \u2014 first open model competitive with GPT-4 Turbo"
+              "description": "405B open-weight model — first open model competitive with GPT-4 Turbo"
             }
           ]
         },
@@ -4528,7 +4528,7 @@
               "date": "2023-09-28",
               "product": "Amazon Bedrock (GA)",
               "type": "product_launch",
-              "description": "Generally available multi-model managed API \u2014 Claude, Llama, Titan"
+              "description": "Generally available multi-model managed API — Claude, Llama, Titan"
             }
           ]
         },
@@ -4553,7 +4553,7 @@
             },
             {
               "date": "2024-05-30",
-              "headline": "Perplexity Pages launches \u2014 AI-generated long-form content with citations",
+              "headline": "Perplexity Pages launches — AI-generated long-form content with citations",
               "type": "product_launch",
               "significance": "medium",
               "url": null
@@ -4647,7 +4647,7 @@
           "recent_news": [
             {
               "date": "2024-03-18",
-              "headline": "Nvidia GTC: Blackwell (B200) GPU architecture announced \u2014 30x inference vs H100",
+              "headline": "Nvidia GTC: Blackwell (B200) GPU architecture announced — 30x inference vs H100",
               "type": "product_launch",
               "significance": "high",
               "url": null
@@ -4690,7 +4690,7 @@
             },
             {
               "date": "2024-01-01",
-              "headline": "Scale SEAL Leaderboards launch \u2014 independent third-party LLM evaluation",
+              "headline": "Scale SEAL Leaderboards launch — independent third-party LLM evaluation",
               "type": "product_launch",
               "significance": "medium",
               "url": null
@@ -4823,7 +4823,7 @@
           "recent_news": [
             {
               "date": "2026-06-09",
-              "headline": "Claude Fable 5 launches \u2014 accessible model capable of generating playable video games",
+              "headline": "Claude Fable 5 launches — accessible model capable of generating playable video games",
               "type": "model_release",
               "significance": "high",
               "url": "https://techcrunch.com/tag/anthropic/"
@@ -4837,7 +4837,7 @@
             },
             {
               "date": "2026-06-01",
-              "headline": "Anthropic files for IPO \u2014 hot AI IPO summer alongside OpenAI",
+              "headline": "Anthropic files for IPO — hot AI IPO summer alongside OpenAI",
               "type": "business",
               "significance": "high",
               "url": "https://techcrunch.com/tag/anthropic/"
@@ -4908,7 +4908,7 @@
           "headcount_source": "prior week (carried forward)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 22.0,
-          "valuation_source": "Rumored \u20ac3B raise at \u20ac20B valuation (~$22B USD) \u2014 TechCrunch Jun 12 2026",
+          "valuation_source": "Rumored €3B raise at €20B valuation (~$22B USD) — TechCrunch Jun 12 2026",
           "valuation_confidence": "low",
           "arr_usd_billions": null,
           "arr_source": null,
@@ -4916,7 +4916,7 @@
           "recent_news": [
             {
               "date": "2026-06-12",
-              "headline": "Mistral AI rumored to be raising \u20ac3B at \u20ac20B (~$22B) valuation",
+              "headline": "Mistral AI rumored to be raising €3B at €20B (~$22B) valuation",
               "type": "funding",
               "significance": "high",
               "url": "https://techcrunch.com/tag/mistral-ai/"
@@ -4951,10 +4951,10 @@
           "headcount_source": "prior week (carried forward)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 7.0,
-          "valuation_source": "TechCrunch \u2014 $7B valuation Sep 2025",
+          "valuation_source": "TechCrunch — $7B valuation Sep 2025",
           "valuation_confidence": "medium",
           "arr_usd_billions": 0.24,
-          "arr_source": "TechCrunch Feb 2026 \u2014 $240M ARR reported",
+          "arr_source": "TechCrunch Feb 2026 — $240M ARR reported",
           "arr_confidence": "medium",
           "recent_news": [
             {
@@ -4973,7 +4973,7 @@
             },
             {
               "date": "2026-03-26",
-              "headline": "Cohere launches Transcribe \u2014 open-source voice transcription model",
+              "headline": "Cohere launches Transcribe — open-source voice transcription model",
               "type": "product_launch",
               "significance": "medium",
               "url": "https://techcrunch.com/tag/cohere/"
@@ -5013,7 +5013,7 @@
         {
           "company_id": "meta_ai",
           "headcount_estimate": 70000,
-          "headcount_source": "Meta Q3 2024 earnings (carried forward \u2014 2025 figure not yet confirmed)",
+          "headcount_source": "Meta Q3 2024 earnings (carried forward — 2025 figure not yet confirmed)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": null,
           "valuation_source": "Public company (META)",
@@ -5080,7 +5080,7 @@
           "recent_news": [
             {
               "date": "2026-06-02",
-              "headline": "Microsoft launches Scout \u2014 OpenClaw-inspired personal AI assistant",
+              "headline": "Microsoft launches Scout — OpenClaw-inspired personal AI assistant",
               "type": "product_launch",
               "significance": "medium",
               "url": "https://techcrunch.com/tag/microsoft/"
@@ -5238,7 +5238,7 @@
           "headcount_source": "Nvidia FY2025 annual report (carried forward)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 3000.0,
-          "valuation_source": "Market cap estimate Jun 2026 (NVDA \u2014 carried forward)",
+          "valuation_source": "Market cap estimate Jun 2026 (NVDA — carried forward)",
           "valuation_confidence": "carried_forward",
           "arr_usd_billions": 130.0,
           "arr_source": "Nvidia FY2025 revenue ~$130B (carried forward)",
@@ -5264,7 +5264,7 @@
         {
           "company_id": "scale_ai",
           "headcount_estimate": 860,
-          "headcount_source": "14% layoff in Jul 2025 from ~1,000 \u2014 TechCrunch Jul 16 2025",
+          "headcount_source": "14% layoff in Jul 2025 from ~1,000 — TechCrunch Jul 16 2025",
           "headcount_confidence": "medium",
           "valuation_usd_billions": 13.8,
           "valuation_source": "Series F May 2024 (carried forward; Meta investment may revise)",
@@ -5330,14 +5330,14 @@
             },
             {
               "date": "2026-06-26",
-              "headline": "OpenAI releases GPT-5.6 in three tiers: Sol (flagship), Terra (balanced), Luna (fast) \u2014 restricted preview",
+              "headline": "OpenAI releases GPT-5.6 in three tiers: Sol (flagship), Terra (balanced), Luna (fast) — restricted preview",
               "type": "model_release",
               "significance": "high",
               "url": "https://techcrunch.com/2026/06/25/the-white-house-is-asking-openai-to-slow-roll-the-release-of-its-new-model-over-safety-concerns/"
             },
             {
               "date": "2026-06-24",
-              "headline": "OpenAI unveils Jalape\u00f1o \u2014 its first custom inference chip co-developed with Broadcom",
+              "headline": "OpenAI unveils Jalapeño — its first custom inference chip co-developed with Broadcom",
               "type": "product_launch",
               "significance": "high",
               "url": "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/"
@@ -5373,7 +5373,7 @@
             },
             {
               "date": "2026-06-24",
-              "product": "Jalape\u00f1o (custom inference chip)",
+              "product": "Jalapeño (custom inference chip)",
               "type": "product_launch",
               "description": "OpenAI's first proprietary AI accelerator, co-developed with Broadcom. Inference-optimized, better perf-per-watt than Nvidia H100/H200. Aims to reduce Nvidia dependency."
             }
@@ -5388,7 +5388,7 @@
           "valuation_source": "Series E Nov 2024 (IPO expected 2026; new valuation not yet confirmed)",
           "valuation_confidence": "medium",
           "arr_usd_billions": 1.4,
-          "arr_source": "Indagari credit card data via TechCrunch Jun 25 2026 \u2014 ~75% paid consumer revenue growth since Jan 2026",
+          "arr_source": "Indagari credit card data via TechCrunch Jun 25 2026 — ~75% paid consumer revenue growth since Jan 2026",
           "arr_confidence": "low",
           "recent_news": [
             {
@@ -5414,7 +5414,7 @@
             },
             {
               "date": "2026-06-23",
-              "headline": "Anthropic launches Claude Tag \u2014 always-on Slack-embedded AI teammate with persistent org memory",
+              "headline": "Anthropic launches Claude Tag — always-on Slack-embedded AI teammate with persistent org memory",
               "type": "product_launch",
               "significance": "high",
               "url": "https://techcrunch.com/2026/06/23/anthropics-claude-tag-is-learning-your-company-one-slack-message-at-a-time/"
@@ -5464,7 +5464,7 @@
             },
             {
               "date": "2026-06-10",
-              "headline": "xAI fired engineer who raised internal alarms about Grok safety (discrimination, WMD info, political bias) \u2014 lawsuit filed",
+              "headline": "xAI fired engineer who raised internal alarms about Grok safety (discrimination, WMD info, political bias) — lawsuit filed",
               "type": "business",
               "significance": "high",
               "url": "https://techcrunch.com/2026/06/10/xai-fired-an-engineer-who-raised-alarms-about-grok-safety-new-lawsuit-claims/"
@@ -5489,7 +5489,7 @@
         {
           "company_id": "meta_ai",
           "headcount_estimate": 70000,
-          "headcount_source": "Meta Q3 2024 earnings (carried forward \u2014 2025 figure not yet confirmed)",
+          "headcount_source": "Meta Q3 2024 earnings (carried forward — 2025 figure not yet confirmed)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": null,
           "valuation_source": "Public company (META)",
@@ -5506,7 +5506,7 @@
           "headcount_source": "prior week (carried forward)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 22.0,
-          "valuation_source": "Rumored \u20ac3B raise at \u20ac20B valuation (~$22B USD) \u2014 TechCrunch Jun 12 2026",
+          "valuation_source": "Rumored €3B raise at €20B valuation (~$22B USD) — TechCrunch Jun 12 2026",
           "valuation_confidence": "carried_forward",
           "arr_usd_billions": null,
           "arr_source": null,
@@ -5520,10 +5520,10 @@
           "headcount_source": "prior week (carried forward)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 7.0,
-          "valuation_source": "TechCrunch \u2014 $7B valuation Sep 2025",
+          "valuation_source": "TechCrunch — $7B valuation Sep 2025",
           "valuation_confidence": "carried_forward",
           "arr_usd_billions": 0.24,
-          "arr_source": "TechCrunch Feb 2026 \u2014 $240M ARR reported",
+          "arr_source": "TechCrunch Feb 2026 — $240M ARR reported",
           "arr_confidence": "carried_forward",
           "recent_news": [],
           "product_releases": []
@@ -5604,7 +5604,7 @@
           "headcount_source": "Nvidia FY2025 annual report (carried forward)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 3000.0,
-          "valuation_source": "Market cap estimate Jun 2026 (NVDA \u2014 carried forward)",
+          "valuation_source": "Market cap estimate Jun 2026 (NVDA — carried forward)",
           "valuation_confidence": "carried_forward",
           "arr_usd_billions": 130.0,
           "arr_source": "Nvidia FY2025 revenue ~$130B (carried forward)",
@@ -5615,7 +5615,7 @@
         {
           "company_id": "scale_ai",
           "headcount_estimate": 860,
-          "headcount_source": "14% layoff in Jul 2025 from ~1,000 \u2014 TechCrunch Jul 16 2025",
+          "headcount_source": "14% layoff in Jul 2025 from ~1,000 — TechCrunch Jul 16 2025",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 13.8,
           "valuation_source": "Series F May 2024 (carried forward; Meta investment may revise)",
@@ -5724,7 +5724,7 @@
           "recent_news": [
             {
               "date": "2026-05-11",
-              "headline": "Thinking Machines Lab releases Interaction Models \u2014 fully-duplex real-time multi-modal AI collaboration system",
+              "headline": "Thinking Machines Lab releases Interaction Models — fully-duplex real-time multi-modal AI collaboration system",
               "type": "product_launch",
               "significance": "high",
               "url": "https://thinkingmachines.ai/blog/interaction-models/"
@@ -5756,7 +5756,7 @@
               "date": "2026-05-11",
               "product": "Interaction Models",
               "type": "model_release",
-              "description": "Fully-duplex multi-stream micro-turn AI for real-time human-AI collaboration \u2014 continuous audio, video, text processing. First major model from TML."
+              "description": "Fully-duplex multi-stream micro-turn AI for real-time human-AI collaboration — continuous audio, video, text processing. First major model from TML."
             },
             {
               "date": "2025-10-01",
@@ -5772,7 +5772,7 @@
           "headcount_source": "LinkedIn estimate (carried forward)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 15.0,
-          "valuation_source": "Series D May 4 2026 \u2014 $950M raised at $15B+ valuation, Tiger Global + GV led",
+          "valuation_source": "Series D May 4 2026 — $950M raised at $15B+ valuation, Tiger Global + GV led",
           "valuation_confidence": "high",
           "arr_usd_billions": null,
           "arr_source": null,
@@ -5794,7 +5794,7 @@
             },
             {
               "date": "2026-03-26",
-              "headline": "Sierra launches GhostWriter \u2014 Agents-as-a-Service offering",
+              "headline": "Sierra launches GhostWriter — Agents-as-a-Service offering",
               "type": "product_launch",
               "significance": "medium",
               "url": "https://sierra.ai/blog/agents-as-a-service"
@@ -5805,7 +5805,7 @@
               "date": "2026-03-26",
               "product": "GhostWriter",
               "type": "product_launch",
-              "description": "Agents-as-a-Service \u2014 deploy AI agents without deep platform integration."
+              "description": "Agents-as-a-Service — deploy AI agents without deep platform integration."
             }
           ]
         },
@@ -5927,7 +5927,7 @@
             },
             {
               "date": "2026-06-30",
-              "headline": "OpenClaw \u2014 OpenAI's open-source AI agent platform \u2014 is now available on Android and iOS",
+              "headline": "OpenClaw — OpenAI's open-source AI agent platform — is now available on Android and iOS",
               "type": "product_launch",
               "significance": "medium",
               "url": "https://techcrunch.com/2026/06/30/openclaw-is-finally-available-on-android-and-ios/"
@@ -5938,7 +5938,7 @@
               "date": "2026-06-30",
               "product": "OpenClaw (Android + iOS)",
               "type": "product_launch",
-              "description": "OpenAI's open-source AI agent platform \u2014 created by Peter Steinberger who joined OpenAI \u2014 now on mobile, enabling agent tasks (coding, meal planning, etc.) from phone via OpenClaw Gateway."
+              "description": "OpenAI's open-source AI agent platform — created by Peter Steinberger who joined OpenAI — now on mobile, enabling agent tasks (coding, meal planning, etc.) from phone via OpenClaw Gateway."
             }
           ]
         },
@@ -5970,14 +5970,14 @@
             },
             {
               "date": "2026-06-30",
-              "headline": "Anthropic launches Claude Sonnet 5 \u2014 cheaper agentic model for autonomous coding and knowledge tasks",
+              "headline": "Anthropic launches Claude Sonnet 5 — cheaper agentic model for autonomous coding and knowledge tasks",
               "type": "model_release",
               "significance": "high",
               "url": "https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/"
             },
             {
               "date": "2026-06-30",
-              "headline": "Anthropic launches Claude Science \u2014 AI platform for scientific research workflows",
+              "headline": "Anthropic launches Claude Science — AI platform for scientific research workflows",
               "type": "product_launch",
               "significance": "medium",
               "url": "https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/"
@@ -6019,7 +6019,7 @@
           "recent_news": [
             {
               "date": "2026-07-01",
-              "headline": "SpaceX developing AI device prototype \u2014 slim, phone-like \u2014 integrating xAI technology on proprietary OS",
+              "headline": "SpaceX developing AI device prototype — slim, phone-like — integrating xAI technology on proprietary OS",
               "type": "product_launch",
               "significance": "medium",
               "url": "https://techcrunch.com/2026/07/01/spacex-has-an-ai-device-prototype-and-it-sure-sounds-phone-ish/"
@@ -6062,7 +6062,7 @@
             },
             {
               "date": "2026-07-01",
-              "headline": "Meta plans 'Meta Compute' cloud business to monetize $182.9B AI infrastructure investment \u2014 led by Daniel Gross",
+              "headline": "Meta plans 'Meta Compute' cloud business to monetize $182.9B AI infrastructure investment — led by Daniel Gross",
               "type": "business",
               "significance": "high",
               "url": "https://techcrunch.com/2026/07/01/meta-like-spacex-looks-to-turn-excess-ai-compute-into-cash/"
@@ -6076,7 +6076,7 @@
           "headcount_source": "prior week (carried forward)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 22.0,
-          "valuation_source": "Rumored Series C at ~$22B USD \u2014 TechCrunch Jun 2026 (carried forward)",
+          "valuation_source": "Rumored Series C at ~$22B USD — TechCrunch Jun 2026 (carried forward)",
           "valuation_confidence": "carried_forward",
           "arr_usd_billions": null,
           "arr_source": null,
@@ -6090,10 +6090,10 @@
           "headcount_source": "prior week (carried forward)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 7.0,
-          "valuation_source": "TechCrunch \u2014 $7B valuation Sep 2025 (carried forward)",
+          "valuation_source": "TechCrunch — $7B valuation Sep 2025 (carried forward)",
           "valuation_confidence": "carried_forward",
           "arr_usd_billions": 0.24,
-          "arr_source": "TechCrunch Feb 2026 \u2014 $240M ARR (carried forward)",
+          "arr_source": "TechCrunch Feb 2026 — $240M ARR (carried forward)",
           "arr_confidence": "carried_forward",
           "recent_news": [],
           "product_releases": []
@@ -6112,7 +6112,7 @@
           "recent_news": [
             {
               "date": "2026-07-02",
-              "headline": "Microsoft launches 'Microsoft Frontier Company' \u2014 $2.5B AI deployment business with 6,000 engineers to embed in Fortune 500 enterprises",
+              "headline": "Microsoft launches 'Microsoft Frontier Company' — $2.5B AI deployment business with 6,000 engineers to embed in Fortune 500 enterprises",
               "type": "business",
               "significance": "high",
               "url": "https://techcrunch.com/2026/07/02/microsoft-launches-its-own-ai-deployment-company-with-2-5-billion-commitment/"
@@ -6141,14 +6141,14 @@
           "recent_news": [
             {
               "date": "2026-07-05",
-              "headline": "Amazon closes Mechanical Turk to new customers \u2014 crowdsourced data labeling platform being wound down",
+              "headline": "Amazon closes Mechanical Turk to new customers — crowdsourced data labeling platform being wound down",
               "type": "business",
               "significance": "medium",
               "url": "https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk/"
             },
             {
               "date": "2026-06-30",
-              "headline": "Amazon launches $1B forward-deployed engineering (FDE) org \u2014 AWS engineers embed in client companies to build AI solutions",
+              "headline": "Amazon launches $1B forward-deployed engineering (FDE) org — AWS engineers embed in client companies to build AI solutions",
               "type": "product_launch",
               "significance": "high",
               "url": "https://techcrunch.com/2026/06/30/amazon-launches-new-1-billion-fde-org-following-openai-and-anthropic/"
@@ -6211,7 +6211,7 @@
           "headcount_source": "Nvidia FY2025 annual report (carried forward)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 3000.0,
-          "valuation_source": "Market cap estimate Jul 2026 (NVDA \u2014 carried forward)",
+          "valuation_source": "Market cap estimate Jul 2026 (NVDA — carried forward)",
           "valuation_confidence": "carried_forward",
           "arr_usd_billions": 130.0,
           "arr_source": "Nvidia FY2025 revenue ~$130B (carried forward)",
@@ -6219,7 +6219,7 @@
           "recent_news": [
             {
               "date": "2026-06-26",
-              "headline": "Industry-wide shift: OpenAI, SpaceX, Amazon building own AI chips \u2014 putting pressure on Nvidia's dominance",
+              "headline": "Industry-wide shift: OpenAI, SpaceX, Amazon building own AI chips — putting pressure on Nvidia's dominance",
               "type": "business",
               "significance": "medium",
               "url": "https://techcrunch.com/2026/06/26/why-everyone-from-openai-to-spacex-is-building-their-own-chips-and-turning-up-the-heat-on-nvidia/"
@@ -6241,7 +6241,7 @@
           "recent_news": [
             {
               "date": "2026-07-05",
-              "headline": "Amazon shutting Mechanical Turk to new customers \u2014 signals end of crowdsourced data labeling, impacting Scale AI's market",
+              "headline": "Amazon shutting Mechanical Turk to new customers — signals end of crowdsourced data labeling, impacting Scale AI's market",
               "type": "business",
               "significance": "medium",
               "url": "https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk/"
@@ -6353,7 +6353,7 @@
           "headcount_source": "LinkedIn estimate (carried forward)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 15.0,
-          "valuation_source": "Series D May 2026 \u2014 $950M at $15B+ valuation (carried forward)",
+          "valuation_source": "Series D May 2026 — $950M at $15B+ valuation (carried forward)",
           "valuation_confidence": "carried_forward",
           "arr_usd_billions": null,
           "arr_source": null,
@@ -6375,7 +6375,7 @@
           "recent_news": [
             {
               "date": "2026-06-29",
-              "headline": "Cursor launches mobile app \u2014 developers can now guide AI coding agent from iOS and Android",
+              "headline": "Cursor launches mobile app — developers can now guide AI coding agent from iOS and Android",
               "type": "product_launch",
               "significance": "medium",
               "url": "https://techcrunch.com/2026/06/29/cursor-now-has-a-mobile-app-for-guiding-your-coding-agent-on-the-go/"
@@ -6396,7 +6396,7 @@
           "headcount_source": "LinkedIn estimate (carried forward)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 11.0,
-          "valuation_source": "Sequoia-led round confirmed Mar 25 2026 at $11B valuation \u2014 TechCrunch",
+          "valuation_source": "Sequoia-led round confirmed Mar 25 2026 at $11B valuation — TechCrunch",
           "valuation_confidence": "medium",
           "arr_usd_billions": null,
           "arr_source": null,
@@ -6413,7 +6413,7 @@
           "valuation_source": "Series F Aug 2024 (carried forward); ARR crossed $300M May 2026",
           "valuation_confidence": "carried_forward",
           "arr_usd_billions": 0.3,
-          "arr_source": "TechCrunch May 28 2026 \u2014 Glean ARR crosses $300M",
+          "arr_source": "TechCrunch May 28 2026 — Glean ARR crosses $300M",
           "arr_confidence": "medium",
           "recent_news": [],
           "product_releases": []
@@ -6424,7 +6424,7 @@
           "headcount_source": "IPO filing estimate (carried forward)",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 8.1,
-          "valuation_source": "Pre-IPO estimate 2024 (stock plunged Jun 24 after earnings \u2014 CEO misunderstood margins)",
+          "valuation_source": "Pre-IPO estimate 2024 (stock plunged Jun 24 after earnings — CEO misunderstood margins)",
           "valuation_confidence": "low",
           "arr_usd_billions": null,
           "arr_source": null,
@@ -6509,7 +6509,7 @@
             },
             {
               "date": "2026-07-07",
-              "headline": "OpenAI proposes 5% stake to US government, implying ~$852B valuation; eyes $730B\u2013$1T IPO",
+              "headline": "OpenAI proposes 5% stake to US government, implying ~$852B valuation; eyes $730B–$1T IPO",
               "type": "business",
               "significance": "high",
               "url": ""
@@ -6582,7 +6582,7 @@
           "valuation_source": "prior week",
           "valuation_confidence": "carried_forward",
           "arr_usd_billions": 0.5,
-          "arr_source": "StartupHub.ai Jul 2026 \u2014 $500M ARR vs $1B/month burn",
+          "arr_source": "StartupHub.ai Jul 2026 — $500M ARR vs $1B/month burn",
           "arr_confidence": "medium",
           "recent_news": [
             {
@@ -6707,15 +6707,15 @@
           "headcount_source": "carried forward",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 23.15,
-          "valuation_source": "Rumored \u20ac3B raise at $23.15B valuation (TechCrunch Jun 2026, unconfirmed close)",
+          "valuation_source": "Rumored €3B raise at $23.15B valuation (TechCrunch Jun 2026, unconfirmed close)",
           "valuation_confidence": "low",
           "arr_usd_billions": 0.4,
-          "arr_source": "TechCrunch \u2014 ARR surpassed $400M as of Feb 2026",
+          "arr_source": "TechCrunch — ARR surpassed $400M as of Feb 2026",
           "arr_confidence": "medium",
           "recent_news": [
             {
               "date": "2026-07-04",
-              "headline": "Mistral AI rumored to be raising ~\u20ac3B (~$3.5B) at $23.15B valuation (unconfirmed)",
+              "headline": "Mistral AI rumored to be raising ~€3B (~$3.5B) at $23.15B valuation (unconfirmed)",
               "type": "funding",
               "significance": "medium",
               "url": ""
@@ -6873,7 +6873,7 @@
           "headcount_source": "prior week",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 2550.0,
-          "valuation_source": "TechCrunch Jul 9 2026 \u2014 stock down ~15% from May 2026 peak (~$3T); approx $2.55T",
+          "valuation_source": "TechCrunch Jul 9 2026 — stock down ~15% from May 2026 peak (~$3T); approx $2.55T",
           "valuation_confidence": "medium",
           "arr_usd_billions": 130.0,
           "arr_source": "prior week",
@@ -6916,10 +6916,10 @@
           "headcount_source": "prior week",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 8.3,
-          "valuation_source": "TechCrunch Jul 1 2026 \u2014 $800M Series C, $8.3B valuation, lead Aramco Ventures",
+          "valuation_source": "TechCrunch Jul 1 2026 — $800M Series C, $8.3B valuation, lead Aramco Ventures",
           "valuation_confidence": "high",
           "arr_usd_billions": 1.15,
-          "arr_source": "TechCrunch Jul 1 2026 \u2014 annual bookings exceed $1.15B",
+          "arr_source": "TechCrunch Jul 1 2026 — annual bookings exceed $1.15B",
           "arr_confidence": "medium",
           "recent_news": [
             {
@@ -7097,6 +7097,453 @@
           "arr_usd_billions": null,
           "arr_source": "prior week",
           "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-07-20",
+      "entries": [
+        {
+          "company_id": "openai",
+          "headcount_estimate": 3500,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 852.0,
+          "valuation_source": "prior week (implied from 5% US gov stake proposal, Jul 2026)",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 3.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-14",
+              "headline": "OpenAI's first hardware device reported as screenless smart speaker with moving parts, built with former Apple engineers",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/14/openais-first-hardware-device-is-reportedly-a-screenless-speaker-that-can-move/"
+            },
+            {
+              "date": "2026-07-15",
+              "headline": "OpenAI releases $230 Codex Micro keyboard for managing AI coding agents",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/15/amid-hardware-legal-battle-openai-releases-a-230-keyboard-for-codex/"
+            },
+            {
+              "date": "2026-07-19",
+              "headline": "Apple lawsuit against OpenAI over hardware trade secrets could complicate IPO and device plans",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/19/can-an-apple-lawsuit-derail-openais-hardware-plans/"
+            },
+            {
+              "date": "2026-07-15",
+              "headline": "Microsoft reportedly coaching salespeople to undercut OpenAI, reflecting post-exclusivity competitive shift",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-15",
+              "product": "Codex Micro Keyboard",
+              "type": "product_launch",
+              "description": "$230 light-up keyboard co-designed with Work Louder; agent status keys, joystick, reasoning dial for ChatGPT desktop app."
+            }
+          ]
+        },
+        {
+          "company_id": "anthropic",
+          "headcount_estimate": 1000,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 18.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-15",
+              "headline": "Anthropic and Blackstone launch 'Ode' joint venture valued at $1.5B targeting AI implementation services",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/"
+            },
+            {
+              "date": "2026-07-15",
+              "headline": "Microsoft salespeople instructed to position Copilot against Claude, claiming Anthropic model is slower and less secure",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "xai",
+          "headcount_estimate": 300,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 50.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.5,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "google_deepmind",
+          "headcount_estimate": 35000,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "market_cap_usd_billions": 4230.0,
+          "market_cap_source": "Yahoo Finance GOOGL Jul 17, 2026",
+          "market_cap_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2026-07-16",
+              "headline": "Google AI Mode gains app integrations with Instacart, Canva, and YouTube Music for task completion",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/16/googles-ai-mode-now-lets-you-link-and-interact-with-select-apps/"
+            },
+            {
+              "date": "2026-07-16",
+              "headline": "Google Vids lets users appear in AI-generated video content",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/16/google-vids-now-lets-you-star-in-your-own-ai-videos/"
+            },
+            {
+              "date": "2026-07-16",
+              "headline": "Apple Intelligence approved for China launch via Alibaba Qwen and Baidu partnerships",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/16/apple-intelligence-approved-for-launch-in-china-with-alibabas-qwen-ai/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-16",
+              "product": "Google AI Mode App Integrations",
+              "type": "product_launch",
+              "description": "Third-party app task completion in AI Mode: Instacart shopping, Canva design, YouTube Music playlists."
+            }
+          ]
+        },
+        {
+          "company_id": "meta_ai",
+          "headcount_estimate": 70000,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "market_cap_usd_billions": 1640.0,
+          "market_cap_source": "Yahoo Finance META Jul 17, 2026",
+          "market_cap_confidence": "high",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "mistral",
+          "headcount_estimate": 200,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 23.15,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cohere",
+          "headcount_estimate": 500,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 20.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.24,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "microsoft_ai",
+          "headcount_estimate": 215000,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "market_cap_usd_billions": 2925.0,
+          "market_cap_source": "Yahoo Finance MSFT Jul 17, 2026",
+          "market_cap_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2026-07-15",
+              "headline": "Microsoft coaches salespeople to pitch Copilot over OpenAI and Anthropic, reflecting post-exclusivity strategy",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "amazon_aws_ai",
+          "headcount_estimate": 1500000,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "market_cap_usd_billions": 2659.0,
+          "market_cap_source": "Yahoo Finance AMZN Jul 17, 2026",
+          "market_cap_confidence": "high",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "perplexity",
+          "headcount_estimate": 100,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 9.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.05,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "hugging_face",
+          "headcount_estimate": 200,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.5,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-14",
+              "headline": "Hugging Face hosts 3M+ public models; open-weight models now preferred by 50% of Fortune 500, Chinese models 41% of downloads",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/14/the-real-ai-race-may-no-longer-be-at-the-frontier-open-models-hugging-face/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "stability_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "nvidia",
+          "headcount_estimate": 36000,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "market_cap_usd_billions": 4912.0,
+          "market_cap_source": "Yahoo Finance NVDA Jul 17, 2026 ($202.81/share)",
+          "market_cap_confidence": "high",
+          "arr_usd_billions": 253.49,
+          "arr_source": "Yahoo Finance TTM revenue Jul 2026",
+          "arr_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2026-07-15",
+              "headline": "Jensen Huang visits Tokyo; announces Noetra sovereign AI initiative with ¥1T government funding and ~44 Japanese firms including SoftBank, Sony, NEC",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/"
+            },
+            {
+              "date": "2026-07-15",
+              "headline": "Nvidia unveils Cosmos 3 Edge for Jetson Thor; Toyota, Fanuc, Yaskawa, Kawasaki, Sony join robotics coalition",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-15",
+              "product": "Cosmos 3 Edge",
+              "type": "product_launch",
+              "description": "Edge-optimized robotics foundation model for Jetson Thor chips; deployed by Japanese manufacturing coalition targeting 10M AI robots by 2040."
+            }
+          ]
+        },
+        {
+          "company_id": "scale_ai",
+          "headcount_estimate": 860,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 13.8,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "together_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 8.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.15,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "elevenlabs",
+          "headcount_estimate": 200,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 3.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "runway",
+          "headcount_estimate": 100,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 3.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "luma_ai",
+          "headcount_estimate": 150,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "reka_ai",
+          "headcount_estimate": 80,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cognition_ai",
+          "headcount_estimate": 50,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 10.2,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "thinking_machines",
+          "headcount_estimate": 100,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "sierra_ai",
+          "headcount_estimate": 200,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 15.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cursor",
+          "headcount_estimate": 200,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 60.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "harvey_ai",
+          "headcount_estimate": 500,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "glean",
+          "headcount_estimate": 700,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 7.25,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.3,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cerebras",
+          "headcount_estimate": 500,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 8.1,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "groq",
+          "headcount_estimate": 300,
+          "headcount_source": "carried forward",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 6.9,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
           "recent_news": [],
           "product_releases": []
         }
