@@ -2654,17 +2654,15 @@
       ],
       "funding_summary": {
         "total_raised_usd_billions": 0.381,
-        "valuation_usd_billions": 3.3,
-        "valuation_as_of": "2025-01",
+        "valuation_usd_billions": 11.0,
+        "valuation_as_of": "2026-02",
         "public": false,
         "ticker": null,
-        "last_round_date": "2025-01",
-        "last_round_amount_usd_billions": 0.18,
-        "last_round_type": "Series C",
+        "last_round_date": "2026-02",
+        "last_round_amount_usd_billions": 0.5,
+        "last_round_type": "Series D",
         "last_round_investors": [
-          "Iconiq",
-          "Andreessen Horowitz",
-          "Sequoia"
+          "Sequoia Capital"
         ]
       },
       "funding_rounds_history": [
@@ -2821,12 +2819,12 @@
       ],
       "funding_summary": {
         "total_raised_usd_billions": 0.836,
-        "valuation_usd_billions": 3.0,
-        "valuation_as_of": "2025-04",
+        "valuation_usd_billions": 5.3,
+        "valuation_as_of": "2026-02",
         "public": false,
         "ticker": null,
-        "last_round_date": "2025-04",
-        "last_round_amount_usd_billions": 0.308,
+        "last_round_date": "2026-02",
+        "last_round_amount_usd_billions": 0.315,
         "last_round_type": "Series D",
         "last_round_investors": [
           "General Atlantic",
@@ -3299,12 +3297,12 @@
       ],
       "funding_summary": {
         "total_raised_usd_billions": 0.421,
-        "valuation_usd_billions": 10.2,
-        "valuation_as_of": "2025-09",
+        "valuation_usd_billions": 25.0,
+        "valuation_as_of": "2026-05",
         "public": false,
         "ticker": null,
-        "last_round_date": "2025-09",
-        "last_round_amount_usd_billions": 0.4,
+        "last_round_date": "2026-05",
+        "last_round_amount_usd_billions": 1.0,
         "last_round_type": "Series C",
         "last_round_investors": [
           "Founders Fund"
@@ -3402,11 +3400,25 @@
       ],
       "products": [
         {
+          "name": "Inkling",
+          "type": "Open-weight multimodal LLM",
+          "flagship": true,
+          "description": "975B-param MoE model; multimodal (text/image/audio/video); calibrated uncertainty; adjustable thinking effort",
+          "launched": "2026-07"
+        },
+        {
           "name": "TML-1 (unreleased)",
           "type": "LLM (stealth)",
           "flagship": true,
           "description": "Frontier reasoning model in development; no public release yet",
           "launched": "2026-01"
+        },
+        {
+          "name": "Tinker",
+          "type": "Fine-tuning platform",
+          "flagship": false,
+          "description": "Fine-tuning platform for Inkling; primary revenue vehicle",
+          "launched": "2026-07"
         }
       ],
       "funding_summary": {
@@ -3452,6 +3464,20 @@
           "context_length_k": null,
           "notable": true,
           "notes": "First product launch from Thinking Machines Lab",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "Inkling",
+          "date": "2026-07",
+          "parameters_billions": 975,
+          "parameters_estimated": false,
+          "parameters_note": "975B total params, 41B active (MoE)",
+          "type": "Multimodal LLM",
+          "purpose": "First open-weight model from Thinking Machines Lab — multimodal MoE with calibrated uncertainty and adjustable reasoning effort",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Trained on 45T tokens (text/image/audio/video); Nvidia Vera Rubin 1GW compute partnership; Bridgewater domain fine-tune scored 84.7% on financial reasoning at ~14x lower cost vs proprietary; launched with Tinker fine-tuning platform",
           "elo_score": null,
           "elo_estimated": true
         }
@@ -3989,8 +4015,8 @@
         "total_raised_usd_billions": 1.682,
         "valuation_usd_billions": 8.1,
         "valuation_as_of": "2025-09",
-        "public": false,
-        "ticker": null,
+        "public": true,
+        "ticker": "CBRS",
         "last_round_date": "2025-09",
         "last_round_amount_usd_billions": 1.1,
         "last_round_type": "Series G",
@@ -4107,9 +4133,36 @@
       "description": "AI inference chip company (LPU — Language Processing Unit). Confirmed $650M raise Jun 2026 after Nvidia's $20B not-acqui-hire deal. Re-staffing after deal. Provides the world's fastest public LLM inference API, serving open-source models at 1000+ tokens/sec.",
       "leadership": [
         {
+          "name": "Doug Wightman",
+          "title": "CEO",
+          "since": "2026-06"
+        },
+        {
+          "name": "Alan Rice",
+          "title": "COO",
+          "since": "2026-06"
+        },
+        {
+          "name": "Sinclair Schuller",
+          "title": "CTO",
+          "since": "2026-06"
+        },
+        {
+          "name": "Rakesh Malhotra",
+          "title": "CPO",
+          "since": "2026-06"
+        },
+        {
           "name": "Jonathan Ross",
-          "title": "CEO & Co-founder",
-          "since": "2016-01"
+          "title": "Founder (departed)",
+          "since": "2016-01",
+          "departed": "2025-12-24"
+        },
+        {
+          "name": "Sunny Madra",
+          "title": "President (departed)",
+          "since": "2021-01",
+          "departed": "2025-12-24"
         }
       ],
       "products": [
@@ -7438,9 +7491,9 @@
           "headcount_estimate": 200,
           "headcount_source": "carried forward",
           "headcount_confidence": "carried_forward",
-          "valuation_usd_billions": 3.3,
-          "valuation_source": "prior week",
-          "valuation_confidence": "carried_forward",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "Series D Feb 2026 — $500M from Sequoia at $11B valuation (TechCrunch)",
+          "valuation_confidence": "medium",
           "recent_news": [],
           "product_releases": []
         },
@@ -7449,9 +7502,9 @@
           "headcount_estimate": 100,
           "headcount_source": "carried forward",
           "headcount_confidence": "carried_forward",
-          "valuation_usd_billions": 3.0,
-          "valuation_source": "prior week",
-          "valuation_confidence": "carried_forward",
+          "valuation_usd_billions": 5.3,
+          "valuation_source": "Series D Feb 2026 — $315M raise at $5.3B valuation (TechCrunch)",
+          "valuation_confidence": "medium",
           "recent_news": [],
           "product_releases": []
         },
@@ -7482,22 +7535,43 @@
           "headcount_estimate": 50,
           "headcount_source": "carried forward",
           "headcount_confidence": "carried_forward",
-          "valuation_usd_billions": 10.2,
-          "valuation_source": "prior week",
-          "valuation_confidence": "carried_forward",
+          "valuation_usd_billions": 25.0,
+          "valuation_source": "May 2026 — $1B raise at $25B pre-money valuation (TechCrunch)",
+          "valuation_confidence": "medium",
           "recent_news": [],
           "product_releases": []
         },
         {
           "company_id": "thinking_machines",
-          "headcount_estimate": 100,
-          "headcount_source": "carried forward",
-          "headcount_confidence": "carried_forward",
+          "headcount_estimate": 200,
+          "headcount_source": "TechCrunch Jul 15 2026 (Inkling launch article)",
+          "headcount_confidence": "medium",
           "valuation_usd_billions": 12.0,
           "valuation_source": "prior week",
           "valuation_confidence": "carried_forward",
-          "recent_news": [],
-          "product_releases": []
+          "recent_news": [
+            {
+              "date": "2026-07-15",
+              "headline": "Thinking Machines releases Inkling: 975B-parameter open-weight MoE model trained on 45T tokens (text/image/audio/video), plus Tinker fine-tuning platform",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-15",
+              "product": "Inkling",
+              "type": "model_release",
+              "description": "First open-weight model from Mira Murati's lab. 975B total params, 41B active (MoE), 45T token training corpus covering text/image/audio/video. Calibrated uncertainty and adjustable thinking effort. Bridgewater fine-tuned version scored 84.7% on financial reasoning at ~14x lower cost vs proprietary models."
+            },
+            {
+              "date": "2026-07-15",
+              "product": "Tinker",
+              "type": "product_launch",
+              "description": "Fine-tuning platform for customizing Inkling on domain-specific data; primary revenue vehicle for Thinking Machines."
+            }
+          ]
         },
         {
           "company_id": "sierra_ai",
@@ -7541,8 +7615,8 @@
           "valuation_source": "prior week",
           "valuation_confidence": "carried_forward",
           "arr_usd_billions": 0.3,
-          "arr_source": "prior week",
-          "arr_confidence": "carried_forward",
+          "arr_source": "ARR crossed $300M, TechCrunch May 28 2026",
+          "arr_confidence": "medium",
           "recent_news": [],
           "product_releases": []
         },
@@ -7551,11 +7625,16 @@
           "headcount_estimate": 500,
           "headcount_source": "carried forward",
           "headcount_confidence": "carried_forward",
-          "valuation_usd_billions": 8.1,
           "valuation_source": "prior week",
           "valuation_confidence": "carried_forward",
           "recent_news": [],
-          "product_releases": []
+          "product_releases": [],
+          "market_cap_usd_billions": 50.0,
+          "market_cap_source": "Post-IPO market cap May 2026; ~20% drop after Q1 earnings Jun 24 2026",
+          "market_cap_confidence": "medium",
+          "arr_usd_billions": 0.772,
+          "arr_source": "Q1 2026 revenue $193M (+94% YoY), annualized; TechCrunch Jun 24 2026",
+          "arr_confidence": "medium"
         },
         {
           "company_id": "groq",
@@ -7563,8 +7642,8 @@
           "headcount_source": "carried forward",
           "headcount_confidence": "carried_forward",
           "valuation_usd_billions": 6.9,
-          "valuation_source": "prior week",
-          "valuation_confidence": "carried_forward",
+          "valuation_source": "Sep 2025 round $6.9B; $650M new raise announced Jun 22 2026, post-round valuation undisclosed",
+          "valuation_confidence": "low",
           "recent_news": [],
           "product_releases": []
         }
