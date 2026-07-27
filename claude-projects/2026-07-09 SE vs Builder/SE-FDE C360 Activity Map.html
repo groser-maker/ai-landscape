@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPS Solutions × Builders — C360 Activity Map</title>
+<style>
+  /* ── SLDS Design Tokens ─────────────────────────────────────
+     Blue:   #032d60 → #014486 → #0b5cab → #0176d3 → #1b96ff → #d8e6fe → #eef4ff
+     Green:  #194e31 → #2e844a → #cdefc4 → #ebf7e6
+     Gold:   #825101 → #a86403 → #ca8501 → #f9e3b6 → #fbf3e0
+     Neutral:#181818 → #444 → #706e6b → #dddbda → #f3f3f3
+  ──────────────────────────────────────────────────────────── */
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 100%; height: 100%;
+    background: #1a1a2e;
+    display: flex; align-items: center; justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  /* ── Fixed 16:9 slide canvas ──────────────────────── */
+  .slide {
+    width: 1244px;
+    height: 700px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.40);
+  }
+
+  /* ── Slide header strip ───────────────────────────── */
+  .slide-header {
+    background: #032d60;
+    padding: 8px 16px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-shrink: 0;
+    gap: 12px;
+  }
+  .slide-header h1 {
+    font-size: 14px; font-weight: 700; color: #fff;
+    letter-spacing: -0.1px; white-space: nowrap;
+  }
+  .slide-header .sub {
+    font-size: 9px; color: rgba(255,255,255,.55); margin-top: 1px;
+  }
+  .reveal-controls {
+    display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+  }
+  #reveal-status { font-size: 10px; color: rgba(255,255,255,.65); font-style: italic; white-space: nowrap; }
+  #reveal-btn {
+    background: #0176d3; color: #fff;
+    border: 1px solid #014486; border-radius: 4px;
+    padding: 5px 11px; font-size: 11px; font-weight: 700;
+    cursor: pointer; white-space: nowrap; font-family: inherit;
+    transition: background .15s;
+  }
+  #reveal-btn:hover  { background: #014486; }
+  #reveal-btn:active { background: #1b96ff; }
+
+  /* ── Cell / header callout popover ───────────────── */
+  .callout {
+    position: fixed; z-index: 9999;
+    background: #fff; border-radius: 8px;
+    border: 1px solid #dddbda;
+    box-shadow: 0 2px 8px rgba(0,0,0,.18);
+    padding: 0 0 12px; width: 340px; overflow: hidden;
+  }
+  .callout.hidden { display: none; }
+  .callout-titlebar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 9px 12px 8px; background: var(--ccolor, #0176d3); margin-bottom: 9px;
+  }
+  .callout-titlebar h3 { font-size: 11px; font-weight: 700; color: #fff; line-height: 1.3; flex: 1; }
+  .callout-close {
+    background: rgba(255,255,255,.22); border: none; color: #fff;
+    font-size: 10px; font-weight: 700; cursor: pointer;
+    border-radius: 50%; width: 18px; height: 18px; line-height: 18px;
+    text-align: center; flex-shrink: 0; margin-left: 8px; font-family: inherit;
+  }
+  .callout-close:hover { background: rgba(255,255,255,.40); }
+  /* paragraph style for header callouts */
+  .callout-para { font-size: 11px; line-height: 1.55; color: #444; padding: 0 13px; }
+  /* section style for cell callouts */
+  .callout-section { padding: 0 13px; }
+  .callout-section-title {
+    font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
+    color: var(--ccolor, #0176d3); margin-bottom: 4px;
+  }
+  .callout-bullets { list-style: none; padding: 0; margin: 0; }
+  .callout-bullets li {
+    font-size: 10.5px; line-height: 1.45; color: #444;
+    display: flex; gap: 5px; margin-bottom: 3px;
+  }
+  .callout-bullets li:last-child { margin-bottom: 0; }
+  .callout-bullets li::before {
+    content: '›'; font-size: 13px; font-weight: 700;
+    color: var(--ccolor, #0176d3); flex-shrink: 0; line-height: 1.1;
+  }
+  .callout-divider { border: none; border-top: 1px solid #e8e8e8; margin: 7px 0; }
+  .callout-tip { font-size: 9.5px; color: #b0adab; padding: 7px 13px 0; font-style: italic; }
+  .callout::before {
+    content: ''; position: absolute; top: -7px; left: var(--arrow-left, 24px);
+    width: 14px; height: 7px; background: var(--ccolor, #0176d3);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  th[data-callout] { cursor: pointer; }
+  th[data-callout]:hover { filter: brightness(1.12); }
+  th[data-callout] .ci { display: inline-block; font-size: 8px; opacity: .80; margin-left: 3px; vertical-align: middle; }
+
+  /* ── Table wrapper ────────────────────────────────── */
+  .scroll-wrap {
+    flex: 1;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+  }
+
+  /* ── Must Win Zone overlay ────────────────────────── */
+  #mwz-overlay {
+    position: absolute;
+    display: none;
+    pointer-events: none;
+    background: rgba(46, 132, 74, 0.50);
+    border: 2px solid rgba(46, 132, 74, 0.80);
+    border-radius: 4px;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+  }
+  #mwz-overlay.visible { display: flex; }
+  #mwz-overlay-text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.35;
+    text-shadow: 0 1px 3px rgba(0,0,0,.35);
+    padding: 8px 16px;
+  }
+  table {
+    border-collapse: collapse; table-layout: fixed;
+    width: 1244px;
+    height: 100%;
+  }
+  col.c-label { width: 60px; }
+  col.c-stage { width: 84px; }
+  col.c-phase { width: 128px; }
+
+  /* ── Row label cells ──────────────────────────────── */
+  td.rlabel, th.rlabel {
+    background: #032d60;
+    color: #fff; font-size: 8px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.6px;
+    text-align: center; vertical-align: middle;
+    padding: 5px 3px; line-height: 1.4;
+    border: 1px solid rgba(255,255,255,.15);
+  }
+  .r-sol   td.rlabel { background: #014486; }
+  .r-poc   td.rlabel { background: #014486; }
+  .r-both  td.rlabel { background: #194e31; border-bottom: none; }
+  .r-bld   td.rlabel { background: #a86403; }
+
+  /* Rotate content-row labels 90° and enlarge */
+  tr.r-sol td.rlabel,
+  tr.r-poc td.rlabel,
+  tr.r-both td.rlabel,
+  tr.r-bld td.rlabel {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding: 6px 0;
+  }
+
+  /* ── GTM 2.0 phase header ─────────────────────────── */
+  tr.r-gtm { height: 42px; }
+  tr.r-gtm th {
+    text-align: center; padding: 3px 4px;
+    font-size: 16px; font-weight: 800; color: #fff;
+    letter-spacing: 1.4px; text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,.20);
+    cursor: pointer;
+  }
+  th.gtm-label {
+    background: #1e1052; font-size: 8px !important; letter-spacing: 0.4px;
+    text-transform: none; font-weight: 700; line-height: 1.3;
+    padding: 3px 2px !important; cursor: default;
+  }
+  th.gtm-identify { background: #5867e8; }
+  th.gtm-commit   { background: #7b2fbe; }
+  th.gtm-deploy   { background: #2e7d9c; }
+  th.gtm-consume  { background: #0a6651; }
+
+  /* ── C360 phase header ────────────────────────────── */
+  tr.r-c360 { height: 42px; }
+  th.ph {
+    text-align: center; padding: 5px 4px;
+    font-size: 16px; font-weight: 700; color: #fff;
+    border: 1px solid rgba(255,255,255,.20); letter-spacing: 0.1px;
+    cursor: pointer;
+  }
+  th.ph-listen     { background: #0176d3; }
+  th.ph-buildtrust { background: #014486; }
+  th.ph-partner    { background: #032d60; }
+  th.ph-succeed    { background: #a86403; }
+
+  /* ── Stage / phase sub-header ─────────────────────── */
+  tr.r-stage { height: 46px; }
+  th.sh {
+    text-align: center; padding: 4px 3px;
+    font-size: 9px; font-weight: 700; color: #fff;
+    border: 1px solid rgba(255,255,255,.18);
+    vertical-align: middle; line-height: 1.2; letter-spacing: 0.2px;
+    cursor: pointer; white-space: nowrap;
+  }
+  th.sh-listen     { background: #1b96ff; }
+  th.sh-buildtrust { background: #0176d3; }
+  th.sh-partner    { background: #0b5cab; }
+  th.sh-succeed    { background: #ca8501; }
+  .sn { display: block; font-size: 8px; font-weight: 600; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 2px; }
+  .sname { display: block; font-size: 11.5px; font-weight: 800; line-height: 1.2; white-space: nowrap; }
+
+  /* ── Content cells ────────────────────────────────── */
+  td.cc {
+    vertical-align: middle; text-align: center; padding: 2px;
+    border: 1px solid #dddbda;
+    transition: opacity .35s ease;
+    height: 1px;
+  }
+
+  /* ── White (out-of-scope) cells ──────────────────── */
+  td.cc-white { background: #fff !important; }
+
+  /* ── Row reveal ───────────────────────────────────── */
+  tr.row-hidden td.cc { opacity: 0; pointer-events: none; }
+
+  /* ── Row background colors ────────────────────────── */
+  .r-sol  td.cc { background: #cfe0ff; }
+  .r-poc  td.cc { background: #b8cef9; }
+  .r-both td.cc { background: #d4edcc; border-bottom: none; }
+  .r-bld  td.cc { background: #f5e4b8; }
+
+  /* ── Cell checklist button ────────────────────────── */
+  .cell-icons {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 100%;
+  }
+  .icon-btn {
+    background: none; border: none; cursor: pointer; padding: 6px;
+    border-radius: 6px; line-height: 1; font-family: inherit;
+    transition: background .12s, transform .1s;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0.72;
+  }
+  .icon-btn:hover { background: rgba(0,0,0,.10); transform: scale(1.15); opacity: 1; }
+  .r-sol  .icon-btn { color: #014486; }
+  .r-poc  .icon-btn { color: #014486; }
+  .r-both .icon-btn { color: #194e31; }
+  .r-bld  .icon-btn { color: #825101; }
+
+  /* ── SE POC bar (sub-row of Solutions) ───────────── */
+  tr.r-poc-bar td {
+    padding: 0; height: 18px;
+    border-top: none;
+    border-bottom: 1px solid #a8c4f0;
+    border-left: 1px solid #a8c4f0;
+    border-right: 1px solid #a8c4f0;
+  }
+  td.poc-empty { background: #cfe0ff; border-color: #a8c4f0; }
+  td.poc-span {
+    background: #b8cef9;
+    vertical-align: middle; padding: 0;
+    border: 1px solid #a8c4f0; border-top: none;
+  }
+  .poc-span-inner {
+    display: flex; align-items: center; justify-content: flex-start;
+    height: 100%; padding: 0 4px 0 8px;
+  }
+  td.poc-span .poc-label {
+    font-size: 12px; font-weight: 800; color: #014486;
+    letter-spacing: 1.4px; text-transform: uppercase;
+    white-space: nowrap;
+  }
+  td.poc-cell {
+    background: #b8cef9; vertical-align: middle; text-align: center; padding: 0;
+    border: 1px solid #a8c4f0; border-top: none;
+  }
+  tr.r-poc-bar .icon-btn { color: #014486; padding: 3px; }
+  tr.row-hidden td.poc-empty,
+  tr.row-hidden td.poc-span,
+  tr.row-hidden td.poc-cell { opacity: 0; pointer-events: none; }
+
+  /* ── Must Win Zone row ────────────────────────────── */
+  tr.r-mwz td {
+    padding: 0; height: 17px;
+    border-top: none;
+    border-bottom: 1px solid #dddbda;
+    border-left: 1px solid #dddbda;
+    border-right: 1px solid #dddbda;
+  }
+  td.mwz-empty-sol { background: #fff; border-color: #dddbda; }
+  td.mwz-empty-bld { background: #fff; border-color: #dddbda; }
+  td.mwz-span {
+    background: #2e844a;
+    text-align: center; vertical-align: middle;
+    color: #fff; font-size: 12px; font-weight: 800;
+    letter-spacing: 2px; text-transform: uppercase;
+    white-space: nowrap;
+    border-left: none; border-right: none;
+    border-top: none; border-bottom: 1px solid #194e31;
+  }
+
+  /* ── Mindset footer ───────────────────────────────── */
+  tr.r-mindset { height: 38px; }
+  tr.r-mindset td {
+    text-align: center; font-size: 13px; font-weight: 700;
+    font-style: italic; color: #fff; padding: 5px 5px;
+    border: 1px solid rgba(255,255,255,.18);
+  }
+  td.ms-label { background: #032d60; font-style: normal !important; font-size: 8px !important; text-transform: uppercase; letter-spacing: 0.4px; overflow: hidden; white-space: nowrap; }
+  td.ms-sol   { background: #0176d3; }
+  td.ms-both  { background: #2e844a; }
+  td.ms-build { background: #a86403; }
+</style>
+</head>
+<body>
+<div class="slide">
+
+<div class="slide-header">
+  <div>
+    <h1>GPS Solutions × Builders — C360 Activity Map</h1>
+    <div class="sub">Customer 360 Methodology · 8 Opportunity Stages · 4 FDE Success Phases · click header cells for phase details · click ☑ for activities &amp; deliverables</div>
+  </div>
+  <div class="reveal-controls">
+    <span id="reveal-status">All rows visible</span>
+    <button id="reveal-btn" onclick="advanceReveal()">▶ Start reveal sequence</button>
+  </div>
+</div>
+
+<!-- Unified callout popover (headers + cell checklist) -->
+<div id="callout" class="callout hidden">
+  <div class="callout-titlebar">
+    <h3 id="callout-title"></h3>
+    <button class="callout-close" id="callout-close">✕</button>
+  </div>
+  <!-- header mode: single paragraph -->
+  <p id="callout-body" class="callout-para"></p>
+  <!-- cell mode: activities section + divider + deliverables section -->
+  <div id="callout-cell" style="display:none">
+    <div class="callout-section" id="callout-acts-section">
+      <div class="callout-section-title">Activities</div>
+      <ul class="callout-bullets" id="callout-acts-list"></ul>
+    </div>
+    <hr class="callout-divider">
+    <div class="callout-section" id="callout-dels-section">
+      <div class="callout-section-title">Deliverables</div>
+      <ul class="callout-bullets" id="callout-dels-list"></ul>
+    </div>
+  </div>
+  <p class="callout-tip">Click again or anywhere outside to close</p>
+</div>
+
+<div class="scroll-wrap">
+<div id="mwz-overlay"><span id="mwz-overlay-text">Solutions and Builders<br>Working Together</span></div>
+<table>
+  <colgroup>
+    <col class="c-label">
+    <col class="c-stage"><col class="c-stage">
+    <col class="c-stage"><col class="c-stage"><col class="c-stage">
+    <col class="c-stage"><col class="c-stage"><col class="c-stage">
+    <col class="c-phase"><col class="c-phase"><col class="c-phase"><col class="c-phase">
+  </colgroup>
+
+  <!-- ROW 0 — GTM 2.0 Phases -->
+  <tr class="r-gtm">
+    <th class="gtm-label">GTM 2.0</th>
+    <th class="gtm-identify" colspan="2" data-callout="gtm-identify">Identify</th>
+    <th class="gtm-commit"   colspan="3" data-callout="gtm-commit">Commit</th>
+    <th class="gtm-deploy"   colspan="5" data-callout="gtm-deploy">Deploy</th>
+    <th class="gtm-consume"  colspan="2" data-callout="gtm-consume">Consume</th>
+  </tr>
+
+  <!-- ROW 1 — C360 Phases -->
+  <tr class="r-c360">
+    <th class="rlabel">C360<br>Method</th>
+    <th class="ph ph-listen"     colspan="2" data-callout="listen">Listen</th>
+    <th class="ph ph-buildtrust" colspan="3" data-callout="buildtrust">Build Trust</th>
+    <th class="ph ph-partner"    colspan="3" data-callout="partner">Partner</th>
+    <th class="ph ph-succeed"    colspan="4" data-callout="succeed">Succeed</th>
+  </tr>
+
+  <!-- ROW 2 — Stages / Success Phases -->
+  <tr class="r-stage">
+    <th class="rlabel">Oppty Stage /<br>Success Phase</th>
+    <th class="sh sh-listen"     data-callout="s1"><span class="sn">Stage 1</span><span class="sname">Research</span></th>
+    <th class="sh sh-listen"     data-callout="s2"><span class="sn">Stage 2</span><span class="sname">Qualify</span></th>
+    <th class="sh sh-buildtrust" data-callout="s3"><span class="sn">Stage 3</span><span class="sname">Discover</span></th>
+    <th class="sh sh-buildtrust" data-callout="s4"><span class="sn">Stage 4</span><span class="sname">Recommend</span></th>
+    <th class="sh sh-buildtrust" data-callout="s5"><span class="sn">Stage 5</span><span class="sname">Validate</span></th>
+    <th class="sh sh-partner"    data-callout="s6"><span class="sn">Stage 6</span><span class="sname">Resolve</span></th>
+    <th class="sh sh-partner"    data-callout="s7"><span class="sn">Stage 7</span><span class="sname">Propose</span></th>
+    <th class="sh sh-partner"    data-callout="s8"><span class="sn">Stage 8</span><span class="sname">Close</span></th>
+    <th class="sh sh-succeed"    data-callout="p1"><span class="sn">Phase 1</span><span class="sname">Evaluate</span></th>
+    <th class="sh sh-succeed"    data-callout="p2"><span class="sn">Phase 2</span><span class="sname">Onboard</span></th>
+    <th class="sh sh-succeed"    data-callout="p3"><span class="sn">Phase 3</span><span class="sname">Build</span></th>
+    <th class="sh sh-succeed"    data-callout="p4"><span class="sn">Phase 4</span><span class="sname">Adopt</span></th>
+  </tr>
+
+  <!-- ROW 3 — Solutions -->
+  <tr class="r-sol">
+    <td class="rlabel" rowspan="2">Solutions</td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="sol-s1" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="sol-s2" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="sol-s3" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="sol-s4" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="sol-s5" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="sol-s6" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="sol-s7" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="sol-s8" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"></td><td class="cc cc-white"></td><td class="cc cc-white"></td><td class="cc cc-white"></td>
+  </tr>
+
+  <!-- ROW 3b — SE POC bar (rlabel col covered by rowspan="2" on Solutions above) -->
+  <tr class="r-poc-bar">
+    <td class="poc-empty"></td>
+    <td class="poc-span"><div class="poc-span-inner"><span class="poc-label">SE POC</span></div></td>
+    <td class="poc-cell"><div class="cell-icons"><button class="icon-btn" data-cell="poc-s23" title="Activities &amp; Deliverables"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="poc-cell"><div class="cell-icons"><button class="icon-btn" data-cell="poc-s4" title="Activities &amp; Deliverables"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="poc-cell" colspan="2"><div class="cell-icons"><button class="icon-btn" data-cell="poc-s56" title="Activities &amp; Deliverables"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="poc-empty"></td>
+    <td class="poc-cell"><div class="cell-icons"><button class="icon-btn" data-cell="poc-s8" title="Activities &amp; Deliverables"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="poc-empty"></td><td class="poc-empty cc-white"></td><td class="poc-empty cc-white"></td><td class="poc-empty cc-white"></td>
+  </tr>
+
+  <!-- ROW 4 — Both Solutions and Builders -->
+  <tr class="r-both">
+    <td class="rlabel" rowspan="2">BOTH</td>
+    <td class="cc cc-white"></td><td class="cc cc-white"></td><td class="cc cc-white"></td><td class="cc cc-white"></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="both-s5" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="both-s6" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="both-s7" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="both-s8" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="both-p1" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc cc-white"></td><td class="cc cc-white"></td><td class="cc cc-white"></td>
+  </tr>
+
+  <!-- ROW 4b — Must Win Zone banner (rlabel col covered by rowspan="2" above) -->
+  <tr class="r-mwz">
+    <td class="mwz-empty-sol"></td>
+    <td class="mwz-empty-sol"></td>
+    <td class="mwz-empty-sol"></td>
+    <td class="mwz-empty-sol"></td>
+    <td class="mwz-span" colspan="5">⬡ &nbsp; THE MUST WIN ZONE &nbsp; ⬡</td>
+    <td class="mwz-empty-bld"></td>
+    <td class="mwz-empty-bld"></td>
+    <td class="mwz-empty-bld"></td>
+  </tr>
+
+  <!-- ROW 5 — Builders (Activities + Deliverables) -->
+  <tr class="r-bld">
+    <td class="rlabel">Builders</td>
+    <td class="cc cc-white"></td><td class="cc cc-white"></td><td class="cc cc-white"></td><td class="cc cc-white"></td>
+    <td class="cc"></td><td class="cc"></td><td class="cc"></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="bld-s8" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="bld-p1" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="bld-p2" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="bld-p3" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+    <td class="cc"><div class="cell-icons"><button class="icon-btn" data-cell="bld-p4" title="Activities &amp; Deliverables"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 4.8 L3.1 7.3 L6.8 1.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="3.2" width="10" height="2.8" rx="1.4" fill="currentColor"/><path d="M1 11.5 L3.1 14 L6.8 8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="9.9" width="10" height="2.8" rx="1.4" fill="currentColor"/><rect x="1" y="15.2" width="5.2" height="4.8" rx="1.4" fill="currentColor"/><rect x="9" y="16.3" width="10" height="2.8" rx="1.4" fill="currentColor"/></svg></button></div></td>
+  </tr>
+
+  <!-- ROW 6 — Mindset -->
+  <tr class="r-mindset">
+    <td class="ms-label">Mindset</td>
+    <td class="ms-sol"   colspan="5">"Confidence to Buy"</td>
+    <td class="ms-both"  colspan="3">"Confidence to Build"</td>
+    <td class="ms-build" colspan="4">"Confidence to Operate"</td>
+  </tr>
+
+</table>
+</div>
+
+<script>
+// ── Header callout data ────────────────────────────────────────
+const CALLOUTS = {
+  'gtm-identify': { title: 'GTM 2.0 — Identify', color: '#5867e8', body: 'The phase where AEs build pipeline and key relationships while Solutions Engineers establish technical credibility. The team conducts account research, maps the Salesforce ecosystem, opens opportunity scorecards, performs technical qualification, and gates the opportunity. The goal is to establish whether the customer has a problem worth solving — and whether Salesforce is the right partner to solve it.' },
+  'gtm-commit':   { title: 'GTM 2.0 — Commit', color: '#7b2fbe', body: 'The phase where the customer moves from evaluation to decision. Solutions leads discovery workshops, defines current and future state, designs solution architecture, runs tailored demos and Proofs of Value, handles technical objections, and produces a handoff package. This is also where Builders enter the engagement — Agentforce fit-gap analysis, agent POC assets, and prompt and guardrail design begin in parallel with the close motion. The close is not the finish line; it\'s the baton pass.' },
+  'gtm-deploy':   { title: 'GTM 2.0 — Deploy', color: '#2e7d9c', body: 'The phase where the signed deal becomes a running system. Builders own this phase: technical readiness audits, standing up sandboxes and CI/CD pipelines, configuring Data Cloud and identity resolution, building and deploying production Agentforce agents, and partnering with R&D on platform blockers. The target window is 30–180 days from signed contract to self-sufficient customer. Sold does not equal deployed.' },
+  'gtm-consume':  { title: 'GTM 2.0 — Consume', color: '#0a6651', body: 'The phase where deployed becomes value-realized. Success, CSMs, and Strategic Builders monitor production adoption metrics, run hypercare and token optimization, train customer admins, transfer ownership, and graduate to CSM and Partner. The phase feeds back into Identify for expansion, making the model a continuous loop.' },
+  listen: { title: 'C360 Phase 1 — Listen', color: '#0176d3', body: 'The SE builds an account point of view before any customer contact. Research the business model, map the Salesforce and technology footprint, and determine whether the opportunity is technically worth pursuing. Goal: arrive at Stage 3 with a clear, testable hypothesis about the customer\'s challenges.' },
+  buildtrust: { title: 'C360 Phase 2 — Build Trust', color: '#014486', body: 'The SE\'s highest-intensity phase. Lead discovery workshops, design the solution architecture, and prove the value through tailored demos and Proof of Value engagements. This is where technical credibility — and the deal — is won.' },
+  partner: { title: 'C360 Phase 3 — Partner', color: '#032d60', body: 'Remove the final barriers to a decision. Resolve technical objections, validate the proposal against the Bill of Materials, and build a clean handoff package. Commercial ownership shifts to the AE. The SE\'s job is to eliminate remaining technical risk and ensure a smooth close.' },
+  succeed: { title: 'C360 Phase 4 — Succeed', color: '#a86403', body: 'The post-sales world. The Builder/FDE Pod takes ownership to deploy working Agentforce agents, drive sustained adoption, and graduate the customer to full self-sufficiency. Measured by production go-live and 3 consecutive weeks of steady-state adoption.' },
+  s1: { title: 'Stage 1 — Research', color: '#1b96ff', body: 'Build the account POV before any customer contact. Map the Salesforce footprint and full technology ecosystem (BuiltWith, HG Insights), identify executive priorities, and develop a hypothesis about customer challenges. Initiate the SE Opportunity Scorecard.' },
+  s2: { title: 'Stage 2 — Qualify', color: '#1b96ff', body: 'Determine whether this deal is worth pursuing. Validate technical fit, assess data and integration complexity, and complete the Solutions Judgment Field. Flag showstoppers before investing in deep discovery.' },
+  s3: { title: 'Stage 3 — Discover', color: '#0176d3', body: 'Lead technical discovery workshops. Map current-state processes and define the desired future state, scope data models, integration points, and AI opportunities. Initiate DSRs to engage specialists — Data Cloud, MuleSoft, EA, Security — as complexity warrants. SE intensity peaks here.' },
+  s4: { title: 'Stage 4 — Recommend', color: '#0176d3', body: 'Translate discovery findings into a governed solution architecture. Orchestrate DSR specialists into a coherent multi-cloud blueprint and design the demo strategy. The SE owns the technical narrative going into Stage 5.' },
+  s5: { title: 'Stage 5 — Validate', color: '#0176d3', body: 'Prove the vision is real. Deliver a tailored demo or Proof of Value using SDOs or scratch orgs. Validate AI use cases, confirm success criteria, and refine the architecture based on customer feedback. This is the SE\'s peak intensity stage — and where the Both/FDE overlap begins.' },
+  s6: { title: 'Stage 6 — Resolve', color: '#0b5cab', body: 'Remove technical blockers. Respond to security questionnaires, compliance objections, and architecture concerns from customer IT and review boards. Coordinate Security Specialists and Enterprise Architects to close remaining gaps before proposal.' },
+  s7: { title: 'Stage 7 — Propose', color: '#0b5cab', body: 'Validate the final proposal. Ensure the solution architecture and Bill of Materials align exactly with the commercial quote. Confirm scope, implementation phasing, and all assumptions. SE intensity begins to wind down as the AE takes the commercial lead.' },
+  s8: { title: 'Stage 8 — Close', color: '#0b5cab', body: 'Execute the handoff. Compile discovery logs, architecture diagrams, and scorecard insights for ProServ, the SI partner, and the FDE Pod. Close the SE Opportunity Scorecard and Solutions Judgment Field. The FDE Pod nomination process begins here.' },
+  p1: { title: 'Success Phase P1 — Evaluate', color: '#ca8501', body: 'Technical readiness audit. The FDE Pod reviews data, APIs, and integration feasibility, designs the target agent architecture, validates executive sponsorship and timeline, and makes a go/no-go decision. FDEs are empowered to delay or disqualify if production success is unlikely. Entry criteria: Agentforce + D360 licensing, exec sponsorship, $0 SOW, 30–180 day target.' },
+  p2: { title: 'Success Phase P2 — Onboard', color: '#ca8501', body: 'Prepare to build. Stand up sandboxes and scratch orgs, configure Data Cloud and identity resolution, establish a CI/CD pipeline, run security validation, and set sprint cadence with customer SMEs. Define KPIs and build the sprint backlog.' },
+  p3: { title: 'Success Phase P3 — Build', color: '#ca8501', body: 'Peak FDE engineering intensity. Configure Agentforce, build and deploy production agents, write custom Apex actions, develop the grounding strategy, optimize vector DB and the orchestration loop, debug reasoning paths and hallucinations, and go live. FDEs partner directly with Salesforce R&D on platform blockers.' },
+  p4: { title: 'Success Phase P4 — Adopt', color: '#ca8501', body: 'Graduate the customer. Monitor production adoption, run hypercare tuning, optimize token consumption, train administrators, and transfer ownership using the driver-navigator model. Graduation requires 3 consecutive weeks of steady-state adoption and full team self-sufficiency. Formal handoff to CSM/Success Architect and Partner/ProServ.' }
+};
+
+// ── Combined cell data: activities (bullets) + deliverables ────
+const CELL_DATA = {
+  'sol-s1': { title: 'Solutions — Stage 1: Research', color: '#014486',
+    acts: ['Build the account POV before any customer contact', 'Map full Salesforce footprint & tech ecosystem (BuiltWith, HG Insights)', 'Research business model, exec priorities, and recent news', 'Open SE Opportunity Scorecard; develop challenge hypothesis', 'Identify internal stakeholders to brief before Stage 2'],
+    dels: ['Account POV deck', 'Preliminary tech strategy'] },
+  'sol-s2': { title: 'Solutions — Stage 2: Qualify', color: '#014486',
+    acts: ['Validate technical fit and BANT criteria', 'Complete the Solutions Judgment Field on the Scorecard', 'Assess data quality, integration complexity, platform maturity', 'Flag showstoppers early: incumbents, budget gaps, timeline risk', 'Gate the deal before investing in deep discovery'],
+    dels: ['Qualification checklist', 'Challenge summary', 'Updated scorecard'] },
+  'sol-s3': { title: 'Solutions — Stage 3: Discover', color: '#014486',
+    acts: ['Lead structured discovery workshops with customer stakeholders', 'Document current-state processes, pain points, tech landscape', 'Define future-state requirements and architecture intent', 'Initiate DSRs: Data Cloud, MuleSoft, EA, Security as warranted', 'Produce DSR scoping brief aligning scope, risk, and resources'],
+    dels: ['Discovery docs & process flows', 'Technical requirements map', 'DSR scoping brief'] },
+  'sol-s4': { title: 'Solutions — Stage 4: Recommend', color: '#014486',
+    acts: ['Design governed solution architecture from discovery findings', 'Orchestrate DSR specialists into a multi-cloud blueprint', 'Build tailored demo mapping Salesforce capabilities to challenges', 'Present Recommended Solution with current → future state path', 'Begin surfacing technical objections ahead of Validate'],
+    dels: ['Solution architecture diagram', 'Custom demo script'] },
+  'sol-s5': { title: 'Solutions — Stage 5: Validate', color: '#014486',
+    acts: ['Run formal Proof of Value or SE POC (SDO or GCP org)', 'Validate solution design against real customer data & success criteria', 'Collaborate with SE POC Builder on Agentforce POC asset', 'Capture joint fit-gap analysis with Builder on production feasibility', 'Refine architecture and update success criteria from POC findings'],
+    dels: ['Demo environment (SDO/GCP)', 'POC / PoV sign-off', 'Refined architecture & updated success criteria'] },
+  'sol-s6': { title: 'Solutions — Stage 6: Resolve', color: '#014486',
+    acts: ['Neutralize technical objections with documented responses', 'Complete security review and compliance questionnaires', 'Align Bill of Materials and commercial scope with AE', 'Validate implementation assumptions against proposal', 'Establish consumption baseline; identify expansion signals'],
+    dels: ['Objection & security responses', 'Risk mitigation plan'] },
+  'sol-s7': { title: 'Solutions — Stage 7: Propose', color: '#014486',
+    acts: ['Finalize technical proposal and architecture appendix', 'Validate scope & assumptions with customer\'s technical team', 'Align ProServ and Partner delivery resources', 'Complete FDE nomination paperwork if engagement qualifies', 'Maintain technical credibility through commercial close'],
+    dels: ['Technical proposal & architecture appendix', 'Scope validation & implementation assumptions'] },
+  'sol-s8': { title: 'Solutions — Stage 8: Close', color: '#014486',
+    acts: ['Deliver internal handover package to FDE pod or ProServ', 'Brief receiving team: context, success criteria, environment, history', 'Close SE Opportunity Scorecard; capture lessons learned', 'Confirm licensing, entitlements, and $0 SOW alignment in Org62', 'SE engagement ends when FDE pod has everything it needs'],
+    dels: ['Internal handover package', 'Final scorecard closed', 'Lessons learned'] },
+  // SE POC row
+  'poc-s23': { title: 'SE POC — Request & Qualify', color: '#014486',
+    acts: ['AE, RVP, or SE submits formal POC Builder request to SE Manager', 'ELT / SE Manager approves: ACV ($250K+), BANT, feasibility, availability', 'Secondary technical qualification: scopes use case vs. GCP/GCPD constraints', 'Confirms 2–6 week delivery window is achievable', 'Builder assigned from available pool'],
+    dels: ['POC request submitted to SE Manager', 'ELT approval confirmation', 'Initial technical feasibility memo'] },
+  'poc-s4': { title: 'SE POC — Discover & Plan', color: '#014486',
+    acts: ['SE POC Builder leads discovery with customer stakeholders', 'Define measurable success criteria (e.g. "80% correct case routing")', 'Collect customer artifacts: sample data, process flows, API specs', 'Quote Agentforce POC Quickstart $0 SKU on opportunity (legal gate)', 'Produce GPS Project Briefing Document'],
+    dels: ['GPS Project Briefing Document', 'Scoped use case & success criteria', 'Agentforce POC Quickstart $0 SKU on quote', 'Customer artifacts collected (data, process docs, system docs)'] },
+  'poc-s56': { title: 'SE POC — Build & Test', color: '#014486',
+    acts: ['Build working Agentforce POC in GCP/GCPD org over 2–6 week sprint', 'Load realistic, representative customer data', 'Configure agents end-to-end: topics, actions, guardrails, channels', 'Provision customer and partner logins for direct environment access', 'Achieve 75–100% Apex code coverage; pass Checkmarx scan', 'Run peer testing with builders and account SE'],
+    dels: ['GCP/GCPD org with working Agentforce build', 'Customer & partner logins provisioned', 'Code coverage 75–100% + Checkmarx scan passed', 'Peer test sign-off (builders + account SE)', 'POC Slack channel + GitHub repo created'] },
+  'poc-s8': { title: 'SE POC — Hand-Off', color: '#014486',
+    acts: ['Create customer-accepted Handover Document', 'Attach unmanaged pkg link or Git repo zip to Org62 opportunity', 'Provision org login & credentials for FDE Pod or Services', 'Deliver demo videos, walkthrough scripts, architecture diagrams', 'Attend joint handover meeting: SE, AE, and FDE pod'],
+    dels: ['Customer-accepted Handover Document', 'Unmanaged package install link or Git repo zip on Org62 opp', 'Org login / access credentials for FDE Pod or Services', 'Demo videos, scripts & architecture docs'] },
+  // Both row
+  'both-s5': { title: 'Both Roles — Stage 5: Fit-Gap', color: '#194e31',
+    acts: ['SE + Builder jointly run Agentforce fit-gap analysis', 'SE validates commercial viability: budget, timeline, exec commitment', 'Builder assesses production Agentforce technical feasibility', 'Together scope agent POC concept and define prompt & guardrail principles', 'Produce shared evidence base for the commercial proposal'],
+    dels: ['Agentforce fit-gap analysis (joint SE + Builder)', 'Agent POC concept & scope brief', 'Prompt and guardrail design principles', 'Commercial feasibility confirmation'] },
+  'both-s6': { title: 'Both Roles — Stage 6: Baseline & Alignment', color: '#194e31',
+    acts: ['Establish consumption baseline: what does post-deployment success look like?', 'Identify attrition and expansion signals surfaced during POC', 'SE handles commercial objection responses aligned with BOM', 'Builder validates technical mitigation approaches for gaps', 'Document FDE pod nomination criteria and confirm entry requirements'],
+    dels: ['Consumption baseline document', 'Attrition & expansion signal report', 'Technical objection responses (Builder-validated)', 'FDE entry criteria checklist (draft)'] },
+  'both-s7': { title: 'Both Roles — Stage 7: Delivery Alignment', color: '#194e31',
+    acts: ['Align ProServ, Partner, and FDE pod resources with confirmed scope', 'SE + Builder jointly select delivery model: pod vs. ProServ vs. SI', 'Builder produces FDE nomination recommendation with technical evidence', 'SE ensures proposal accurately reflects delivery approach & resource commitment', 'Obtain AVP approval for FDE pod activation'],
+    dels: ['FDE pod nomination recommendation (Builder-authored)', 'Delivery model decision (pod vs. ProServ vs. Partner)', 'AVP approval for pod activation', 'Updated technical proposal with delivery approach'] },
+  'both-s8': { title: 'Both Roles — Stage 8: Deployment Readiness', color: '#194e31',
+    acts: ['Builder validates technical prerequisites: data access, sandbox, auth, APIs', 'SE drives $0 SOW alignment with Legal and Deal Desk', 'Both confirm exec sponsor commitment is documented', 'Licensing and Org62 entitlements confirmed by both roles', 'Green-light environment confirmed for Day 1 post-close'],
+    dels: ['Deployment readiness checklist (signed off by Builder)', 'Technical prerequisites confirmed (data, auth, sandbox)', '$0 SOW aligned with Legal & Deal Desk', 'Exec sponsor commitment documented', 'Org62 entitlements & licensing confirmed'] },
+  'both-p1': { title: 'Both Roles — Phase 1: Baton Pass', color: '#194e31',
+    acts: ['SE formally briefs FDE pod: context, environment, criteria, risks, open items', 'FDE pod is activated; assigned Builder takes technical ownership', 'Licensing and entry criteria confirmed in Org62', 'Open items log transferred to pod for resolution', 'SE remains available for relationship support during Evaluate'],
+    dels: ['Formal SE-to-FDE briefing deck', 'Customer context & success criteria handed to pod', 'FDE pod activation record in Org62', 'Licensing & entry criteria signed off', 'Open items log transferred to pod'] },
+  // Builders row
+  'bld-s8': { title: 'Builders — Stage 8: Pod Nomination', color: '#825101',
+    acts: ['Attend pod nomination review alongside SE and AE', 'Review FDE entry criteria vs. customer profile: ACV, sponsorship, readiness', 'Assess 30–180 day timeline feasibility and data accessibility', 'Determine if engagement is "pod-ready" or needs pre-conditions met', 'Nominate for activation or defer with documented criteria'],
+    dels: ['Pod nomination recommendation & evidence package', 'FDE entry criteria gap analysis', 'Go/defer decision documented in Org62'] },
+  'bld-p1': { title: 'Builders — Phase 1: Evaluate', color: '#825101',
+    acts: ['Conduct comprehensive technical readiness audit of customer environment', 'Inventory data sources, APIs, and infrastructure Agentforce will touch', 'Assess identity/auth complexity, org config, and integration patterns', 'Design target agent architecture: agents, topics, actions, channels', 'Define delivery scope, sprint cadence, KPIs, and production success metrics', 'Build technical risk register and detailed fit-gap analysis', 'Qualify or disqualify the engagement — disqualify early rather than fail late'],
+    dels: ['Technical Readiness Assessment', 'Agent target architecture', 'Delivery scope & success metrics definition', 'Technical risk register & fit-gap analysis'] },
+  'bld-p2': { title: 'Builders — Phase 2: Onboard', color: '#825101',
+    acts: ['Stand up sandboxes, scratch orgs, and CI/CD pipeline (SFDX, Copado, etc.)', 'Configure Data Cloud, identity resolution, and external integrations', 'Establish sprint cadence with customer SMEs (2-wk sprints, weekly demos)', 'Define security model; run initial Checkmarx/SAST validation', 'Build sprint backlog; define all agent topics, actions, and channels', 'Produce engagement charter, governance plan, and architecture baseline'],
+    dels: ['Engagement charter & delivery plan', 'Sprint backlog & architecture baseline', 'Prompt & guardrail framework', 'Governance plan & risk log'] },
+  'bld-p3': { title: 'Builders — Phase 3: Build', color: '#825101',
+    acts: ['Configure production Agentforce: topics, actions, guardrails, channels', 'Write custom Apex actions, LWC components, and external API integrations', 'Apply grounding strategy: Data Cloud RAG, vector DB tuning, prompt engineering', 'Debug reasoning paths, hallucinations, and orchestration failures via session traces', 'Run driver-navigator sprints — Builder drives, customer engineers navigate', 'Partner with Salesforce R&D on platform blockers via builder Slack channel'],
+    dels: ['Production-ready agent', 'Prompt library', 'Agent config docs & performance report', 'Test & evaluation results', 'R&D bug & feature reports'] },
+  'bld-p4': { title: 'Builders — Phase 4: Adopt', color: '#825101',
+    acts: ['Monitor production metrics: active users, sessions, deflection rate, CSAT', 'Run hypercare: tune token usage, fix edge cases, optimize prompt chains', 'Train customer admins and IT on agent management and platform monitoring', 'Transfer ownership via driver-navigator reversal: customer leads, Builder navigates', 'Lead graduation review: 3 consecutive weeks of steady-state adoption required', 'Produce graduation report; hand off expansion recommendations to CSM'],
+    dels: ['Graduation report (3-wk adoption)', 'As-built architecture & runbook', 'Knowledge transfer package', 'Adoption dashboard & product retro', 'Expansion recommendations → CSM'] }
+};
+
+// ── Unified callout logic ──────────────────────────────────────
+let activeCallout = null;
+const calloutEl = document.getElementById('callout');
+const calloutBodyEl  = document.getElementById('callout-body');
+const calloutCellEl  = document.getElementById('callout-cell');
+const calloutActsList = document.getElementById('callout-acts-list');
+const calloutDelsList = document.getElementById('callout-dels-list');
+
+// Header cells: data-callout → paragraph mode
+document.querySelectorAll('[data-callout]').forEach(el => {
+  el.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const id = this.dataset.callout;
+    if (activeCallout === id) { hideCallout(); return; }
+    showHeaderCallout(id, this);
+  });
+});
+
+// Content cells: data-cell → bullet mode
+document.querySelectorAll('[data-cell]').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const id = this.dataset.cell;
+    if (activeCallout === id) { hideCallout(); return; }
+    showCellCallout(id, this);
+  });
+});
+
+document.getElementById('callout-close').addEventListener('click', e => { e.stopPropagation(); hideCallout(); });
+document.addEventListener('click', () => { hideCallout(); });
+calloutEl.addEventListener('click', e => e.stopPropagation());
+
+function showHeaderCallout(id, anchorEl) {
+  const data = CALLOUTS[id];
+  if (!data) return;
+  calloutEl.style.setProperty('--ccolor', data.color);
+  document.getElementById('callout-title').textContent = data.title;
+  calloutBodyEl.textContent = data.body;
+  calloutBodyEl.style.display = '';
+  calloutCellEl.style.display = 'none';
+  calloutEl.classList.remove('hidden');
+  positionPopup(calloutEl, anchorEl, 340, '--arrow-left');
+  activeCallout = id;
+}
+
+function showCellCallout(id, anchorEl) {
+  const data = CELL_DATA[id];
+  if (!data) return;
+  calloutEl.style.setProperty('--ccolor', data.color);
+  document.getElementById('callout-title').textContent = data.title;
+  calloutBodyEl.style.display = 'none';
+  calloutCellEl.style.display = '';
+  // populate activities
+  calloutActsList.innerHTML = '';
+  data.acts.forEach(a => { const li = document.createElement('li'); li.textContent = a; calloutActsList.appendChild(li); });
+  // populate deliverables
+  calloutDelsList.innerHTML = '';
+  data.dels.forEach(d => { const li = document.createElement('li'); li.textContent = d; calloutDelsList.appendChild(li); });
+  calloutEl.classList.remove('hidden');
+  positionPopup(calloutEl, anchorEl, 340, '--arrow-left');
+  activeCallout = id;
+}
+
+function hideCallout() { calloutEl.classList.add('hidden'); activeCallout = null; }
+
+// ── Shared popup positioning ───────────────────────────────────
+function positionPopup(popupEl, anchorEl, boxW, arrowVar) {
+  const rect = anchorEl.getBoundingClientRect();
+  let left = rect.left + rect.width / 2 - boxW / 2;
+  left = Math.max(8, Math.min(left, window.innerWidth - boxW - 8));
+  const top = rect.bottom + window.scrollY + 8;
+  popupEl.style.left = left + 'px';
+  popupEl.style.top  = top  + 'px';
+  const arrowLeft = Math.max(10, Math.min(rect.left + rect.width / 2 - left - 7, boxW - 22));
+  popupEl.style.setProperty(arrowVar, arrowLeft + 'px');
+}
+
+// ── Reveal sequence ────────────────────────────────────────────
+const ROWS = ['r-sol', 'r-poc-bar', 'r-both', 'r-bld'];
+
+const STATES = [
+  { status: 'All rows visible',              btn: '▶ Start reveal sequence',                        show: 4, overlay: false },
+  { status: 'Headers only',                  btn: '▶ Reveal: Solutions',                            show: 0, overlay: false },
+  { status: '+ Solutions',                   btn: '▶ Reveal: SE POC',                               show: 1, overlay: false },
+  { status: '+ SE POC',                      btn: '▶ Reveal: Both Solutions and Builders',          show: 2, overlay: false },
+  { status: '+ Both Solutions and Builders', btn: '▶ Reveal: Builders → all rows',                  show: 3, overlay: false },
+  { status: '+ Builders',                    btn: '▶ Reveal: Must Win Zone',                        show: 4, overlay: false },
+  { status: '+ Must Win Zone',               btn: '▶ Reset',                                        show: 4, overlay: true  },
+];
+
+let revealState = 0;
+
+function positionOverlay() {
+  const wrap  = document.querySelector('.scroll-wrap');
+  const wRect = wrap.getBoundingClientRect();
+  const tl    = document.querySelector('[data-cell="sol-s5"]').closest('td').getBoundingClientRect();
+  const br    = document.querySelector('[data-cell="bld-p1"]').closest('td').getBoundingClientRect();
+  const ov    = document.getElementById('mwz-overlay');
+  ov.style.left   = (tl.left - wRect.left) + 'px';
+  ov.style.top    = (tl.top  - wRect.top)  + 'px';
+  ov.style.width  = (br.right  - tl.left)  + 'px';
+  ov.style.height = (br.bottom - tl.top)   + 'px';
+}
+
+function applyRevealState() {
+  const s = STATES[revealState];
+  ROWS.forEach((cls, i) => {
+    document.querySelectorAll('tr.' + cls).forEach(row => {
+      const visible = s.show === ROWS.length ? true : i < s.show;
+      row.classList.toggle('row-hidden', !visible);
+    });
+  });
+  const ov = document.getElementById('mwz-overlay');
+  if (s.overlay) { positionOverlay(); ov.classList.add('visible'); }
+  else            { ov.classList.remove('visible'); }
+  document.getElementById('reveal-status').textContent = s.status;
+  document.getElementById('reveal-btn').textContent    = s.btn;
+}
+
+function advanceReveal() {
+  revealState = (revealState + 1) % STATES.length;
+  applyRevealState();
+}
+
+applyRevealState();
+</script>
+
+</div><!-- /.slide -->
+</body>
+</html>
