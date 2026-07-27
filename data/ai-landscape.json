@@ -26,6 +26,16 @@
           "name": "Brad Lightcap",
           "title": "COO",
           "since": "2023-01"
+        },
+        {
+          "name": "David V\u00e9lez",
+          "title": "Board Member (Independent)",
+          "since": "2026-07"
+        },
+        {
+          "name": "Robin Vince",
+          "title": "Board Member (Independent)",
+          "since": "2026-07"
         }
       ],
       "products": [
@@ -7761,6 +7771,20 @@
               "type": "product_launch",
               "significance": "medium",
               "url": "https://techcrunch.com/2026/07/24/openais-new-voice-mode-makes-it-to-the-chatgpt-desktop-app/"
+            },
+            {
+              "date": "2026-07-21",
+              "headline": "OpenAI adds two independent board members for IPO-prep governance: David V\u00e9lez (Nubank CEO) and Robin Vince (BNY CEO)",
+              "type": "leadership",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/21/"
+            },
+            {
+              "date": "2026-07-22",
+              "headline": "OpenAI launches Presence: enterprise real-time voice agent platform with data connectors and guardrails; KPMG first enterprise partner",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://venturebeat.com/ai/openai-presence-2026/"
             }
           ],
           "product_releases": [
@@ -7781,6 +7805,12 @@
               "product": "ChatGPT-Live Voice Models",
               "type": "model_release",
               "description": "New voice model family for natural real-time conversation; powers desktop agent control, computer use, and macOS Appshots screen awareness."
+            },
+            {
+              "date": "2026-07-22",
+              "product": "OpenAI Presence",
+              "type": "product_launch",
+              "description": "Enterprise platform for real-time voice agents and chatbots with enterprise data connectors and guardrails; targets CX/contact-center market. First partner: KPMG."
             }
           ]
         },
@@ -7844,7 +7874,7 @@
               "date": "2026-07-24",
               "product": "Claude Opus 5",
               "type": "model_release",
-              "description": "New flagship model: cheaper than Fable 5, superior iterative verification, 85% fewer safety classifier triggers, automatic fallback routing beta. Exempt from 30-day data retention policy."
+              "description": "New flagship model: cheaper than Fable 5, superior iterative verification, 85% fewer safety classifier triggers, automatic fallback routing beta. Exempt from 30-day data retention policy. Also available on GitHub Copilot at launch."
             }
           ]
         },
@@ -7859,7 +7889,15 @@
           "arr_usd_billions": 0.5,
           "arr_source": "prior week",
           "arr_confidence": "carried_forward",
-          "recent_news": [],
+          "recent_news": [
+            {
+              "date": "2026-07-23",
+              "headline": "Reports indicate xAI rebranding or merging with SpaceX under \"SpaceXAI\" umbrella \u2014 corporate structure unclear; Musk referenced Micron memory supply for SpaceXAI",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://qz.com/spacexai-2026/"
+            }
+          ],
           "product_releases": []
         },
         {
@@ -8206,7 +8244,10 @@
           "valuation_source": "prior week",
           "valuation_confidence": "carried_forward",
           "recent_news": [],
-          "product_releases": []
+          "product_releases": [],
+          "arr_usd_billions": 0.2,
+          "arr_source": "Bret Taylor confirmed M ARR, TechCrunch May 2026",
+          "arr_confidence": "high"
         },
         {
           "company_id": "cursor",
