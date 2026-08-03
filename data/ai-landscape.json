@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "last_updated": "2026-07-27",
+  "last_updated": "2026-08-03",
   "companies": [
     {
       "id": "openai",
@@ -35,6 +35,11 @@
         {
           "name": "Robin Vince",
           "title": "Board Member (Independent)",
+          "since": "2026-07"
+        },
+        {
+          "name": "Lilian Weng",
+          "title": "VP Research, Recursive Self-Improvement",
           "since": "2026-07"
         }
       ],
@@ -8309,6 +8314,595 @@
           "valuation_usd_billions": 6.9,
           "valuation_source": "Sep 2025 round .9B; M new raise Jun 2026, post-round valuation undisclosed",
           "valuation_confidence": "low",
+          "recent_news": [],
+          "product_releases": []
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-08-03",
+      "entries": [
+        {
+          "company_id": "openai",
+          "headcount_estimate": 3500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 852.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 3.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-31",
+              "headline": "OpenAI finds evidence more of its agents escaped sandboxes beyond the Hugging Face breach; internal incident expands",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/31/openai-reportedly-finds-evidence-that-more-of-its-agents-ran-amok/"
+            },
+            {
+              "date": "2026-07-29",
+              "headline": "Lilian Weng (Thinking Machines co-founder, former OpenAI VP AI Safety) rejoins OpenAI to lead recursive self-improvement research team",
+              "type": "leadership",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/29/thinking-machines-co-founder-lilian-weng-left-the-company-citing-health-reasons-then-joined-openai/"
+            },
+            {
+              "date": "2026-08-02",
+              "headline": "Sam Altman advocates for pacing AI development after expanding agent escape incident; floats 2027 IPO timeline",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/08/02/sam-altman-and-ais-decel-debate/"
+            },
+            {
+              "date": "2026-07-28",
+              "headline": "Sam Altman signals readiness to decelerate AI development pace amid alignment concerns",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "anthropic",
+          "headcount_estimate": 1000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 18.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-30",
+              "headline": "Anthropic discloses its AI models (Opus 4.7, Mythos 5) breached three real companies during security evaluations",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/30/anthropic-says-its-own-ai-models-breached-three-companies-during-security-tests/"
+            },
+            {
+              "date": "2026-07-30",
+              "headline": "Judge rules Trump administration still lacks evidence for Anthropic 'supply-chain risk' designation",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/30/judge-says-trump-admin-still-lacks-evidence-for-anthropic-supply-chain-risk-label/"
+            },
+            {
+              "date": "2026-07-27",
+              "headline": "Dario Amodei responds to open-weight letter: does not oppose open-weight models but fears Chinese AI gaining military advantage",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/27/anthropics-dario-amodei-responds-doesnt-oppose-open-weight-models-but-fears-chinese-ai/"
+            },
+            {
+              "date": "2026-07-27",
+              "headline": "Shared Claude chats and Artifacts found indexed by Google Search \u2014 potential privacy exposure",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "xai",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 50.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.5,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-01",
+              "headline": "Judge denies xAI's request to block Minnesota's first-in-nation ban on AI nudify apps",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps/"
+            },
+            {
+              "date": "2026-07-31",
+              "headline": "SpaceX won't remove all of xAI's 69 unpermitted gas turbines at Memphis Colossus for another year; NAACP/SELC lawsuit ongoing",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/31/spacex-wont-remove-all-of-xais-unpermitted-turbines-for-another-year/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "google_deepmind",
+          "headcount_estimate": 35000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-31",
+              "headline": "Google pulls Earth AI feature one day after launch amid criticism it would spread misinformation",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/31/google-nixes-its-earth-ai-feature-one-day-after-launch-amid-criticism-it-would-spread-misinformation/"
+            },
+            {
+              "date": "2026-07-27",
+              "headline": "Google's AI Search (AI Mode) rapidly becoming default search experience; crosses 1 billion users",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/27/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-31",
+              "product": "Google pulls Earth AI feature one day af",
+              "type": "product_launch",
+              "description": "Google pulls Earth AI feature one day after launch amid criticism it would spread misinformation"
+            },
+            {
+              "date": "2026-07-27",
+              "product": "Google's AI Search (AI Mode) rapidly bec",
+              "type": "product_launch",
+              "description": "Google's AI Search (AI Mode) rapidly becoming default search experience; crosses 1 billion users"
+            }
+          ]
+        },
+        {
+          "company_id": "meta_ai",
+          "headcount_estimate": 70000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-29",
+              "headline": "Meta Q2 2026 earnings: stock drops ~10% on heavy AI spending; Reality Labs quarterly loss $4.6B; FCF down 91% YoY to $784M; business AI agents adopted by 1M+ businesses on WhatsApp/Messenger",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/29/mark-zuckerberg-predicts-that-billions-of-people-will-have-personal-ai-agents-in-five-years/"
+            },
+            {
+              "date": "2026-07-30",
+              "headline": "Meta launches AI-assisted standalone apps: Forum (Groups), Seller (Marketplace), Pocket (gaming), Instagram Instants; Threads reaches 500M MAU",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/30/meta-says-ai-is-making-it-easier-to-build-new-apps-and-more-are-coming/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-30",
+              "product": "launches AI-assisted standalone apps",
+              "type": "product_launch",
+              "description": "Meta launches AI-assisted standalone apps: Forum (Groups), Seller (Marketplace), Pocket (gaming), Instagram Instants; Threads reaches 500M MAU"
+            }
+          ]
+        },
+        {
+          "company_id": "mistral",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 23.15,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cohere",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 20.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.24,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "microsoft_ai",
+          "headcount_estimate": 223000,
+          "headcount_source": "~5,000 Xbox/commercial sales cuts Jul 2026; TechCrunch",
+          "headcount_confidence": "medium",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 37.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-30",
+              "headline": "Microsoft Q4 FY2026 earnings: revenue $90.01B, net income $35.77B; Azure accelerates on AI demand; $3.2B gain from Anthropic investment",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/microsoft/"
+            },
+            {
+              "date": "2026-07-27",
+              "headline": "Microsoft launches first dedicated cybersecurity AI model plus new agentic cybersecurity system",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/microsoft/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-27",
+              "product": "Microsoft launches first dedicated cyber",
+              "type": "model_release",
+              "description": "Microsoft launches first dedicated cybersecurity AI model plus new agentic cybersecurity system"
+            }
+          ]
+        },
+        {
+          "company_id": "amazon_aws_ai",
+          "headcount_estimate": 1500000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 168.0,
+          "arr_source": "AWS Q2 2026 revenue $42B (+37% YoY), annualized; Amazon earnings Jul 31 2026",
+          "arr_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2026-07-31",
+              "headline": "Amazon Q2 2026: AWS revenue $42B (+37% YoY), stock surges ~15%; Amazon raises full-year capex guidance to $220B",
+              "type": "business",
+              "significance": "high",
+              "url": "https://ir.aboutamazon.com/news-releases/news-release-details/amazoncom-announces-second-quarter-results"
+            },
+            {
+              "date": "2026-07-30",
+              "headline": "Andy Jassy: Bedrock can succeed without its own frontier model; Anthropic compute costs flow through AWS revenue",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/30/investors-love-ai-as-long-as-youre-a-cloud-host/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "perplexity",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 9.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.05,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "hugging_face",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.5,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-27",
+              "headline": "Hugging Face CEO Cl\u00e9ment Delangue demands OpenAI release agent trace data and funds $1M in open-source cyber defenses after breach fallout",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/26/hugging-face-ceo-calls-for-radical-transparency-after-unprecedented-openai-hack/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "stability_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "nvidia",
+          "headcount_estimate": 36000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 253.49,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "scale_ai",
+          "headcount_estimate": 860,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 13.8,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "together_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 8.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.15,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "elevenlabs",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.5,
+          "arr_source": "Surpassed $500M ARR; TechCrunch May 5, 2026",
+          "arr_confidence": "medium",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "runway",
+          "headcount_estimate": 155,
+          "headcount_source": "TechCrunch May 15, 2026: 155 employees",
+          "headcount_confidence": "medium",
+          "valuation_usd_billions": 5.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "luma_ai",
+          "headcount_estimate": 150,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "reka_ai",
+          "headcount_estimate": 80,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cognition_ai",
+          "headcount_estimate": 50,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 25.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "thinking_machines",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-29",
+              "headline": "Thinking Machines co-founder Lilian Weng departs citing health reasons, then joins OpenAI to lead recursive self-improvement research team",
+              "type": "leadership",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/29/thinking-machines-co-founder-lilian-weng-left-the-company-citing-health-reasons-then-joined-openai/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "sierra_ai",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 15.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.2,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cursor",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 60.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-07-27",
+              "headline": "Cursor launches localized India pricing at \u20b9649/month ahead of pending SpaceX acquisition close",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/07/27/cursor-makes-its-biggest-india-push-yet-ahead-of-spacex-acquisition-with-localized-pricing/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-07-27",
+              "product": "Cursor launches localized India pricing ",
+              "type": "product_launch",
+              "description": "Cursor launches localized India pricing at \u20b9649/month ahead of pending SpaceX acquisition close"
+            }
+          ]
+        },
+        {
+          "company_id": "harvey_ai",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "glean",
+          "headcount_estimate": 700,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 7.25,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.3,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cerebras",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 44.3,
+          "valuation_source": "Yahoo Finance CBRS market cap as of 2026-07-31 (public company, NASDAQ: CBRS)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 0.604,
+          "arr_source": "Yahoo Finance TTM revenue $603.88M as of Jul 2026",
+          "arr_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2026-07-28",
+              "headline": "CleanCore Solutions signs AI colocation services agreement with Cerebras Systems for a Minnesota data center campus",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://finance.yahoo.com/quote/CBRS/"
+            },
+            {
+              "date": "2026-07-23",
+              "headline": "AMD and Cerebras announce new hardware partnership blueprint for AI infrastructure",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/23/amd-takes-on-nvidia-with-its-helios-ai-rack-scale-system/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "groq",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 6.9,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
           "recent_news": [],
           "product_releases": []
         }
