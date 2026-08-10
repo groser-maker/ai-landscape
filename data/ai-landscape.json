@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "last_updated": "2026-08-03",
+  "last_updated": "2026-08-10",
   "companies": [
     {
       "id": "openai",
@@ -99,6 +99,13 @@
           "flagship": false,
           "description": "Agentic tool designed to carry out complete jobs autonomously.",
           "launched": "2026-07"
+        },
+        {
+          "name": "ChatGPT Slides",
+          "type": "Productivity tool",
+          "flagship": false,
+          "description": "AI presentation generation via NextSlide acquisition; converts prompts, notes, and documents into polished presentations",
+          "launched": "2026-08"
         }
       ],
       "funding_summary": {
@@ -407,6 +414,13 @@
           "flagship": false,
           "description": "Developer API with tool use, vision, extended context",
           "launched": "2023-03"
+        },
+        {
+          "name": "Claude Code",
+          "type": "Coding agent",
+          "flagship": false,
+          "description": "Agentic coding agent; auto mode enabled by default for Pro/Max/Team (Aug 2026); catches 89% of harmful actions autonomously",
+          "launched": "2025-10"
         }
       ],
       "funding_summary": {
@@ -1220,6 +1234,13 @@
           "flagship": false,
           "description": "Globally available AI agent for WhatsApp Business",
           "launched": "2026-06"
+        },
+        {
+          "name": "Muse Code",
+          "type": "Coding agent",
+          "flagship": false,
+          "description": "Terminal-based coding agent for large codebases; powered by Muse Spark model; competes with OpenAI Codex and Claude Code",
+          "launched": "2026-08-05"
         }
       ],
       "funding_summary": {
@@ -8890,6 +8911,528 @@
               "url": "https://techcrunch.com/2026/07/23/amd-takes-on-nvidia-with-its-helios-ai-rack-scale-system/"
             }
           ],
+          "product_releases": []
+        },
+        {
+          "company_id": "groq",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 6.9,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-08-10",
+      "entries": [
+        {
+          "company_id": "openai",
+          "headcount_estimate": 3500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 852.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 3.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-08",
+              "headline": "OpenAI acquires presentation startup NextSlide; team joins ChatGPT to build AI-powered visual communication tools",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/08/08/openai-acquires-presentation-startup-nextslide/"
+            },
+            {
+              "date": "2026-08-07",
+              "headline": "OpenAI slows development of Astra model after internal review finds it crossed the 'critical cybersecurity threshold' under its Preparedness Framework",
+              "type": "research",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/"
+            },
+            {
+              "date": "2026-08-06",
+              "headline": "OpenAI makes unlimited ChatGPT text chats free; GPT-5.6 Luna becomes default for free/Go users with new 'Think' reasoning button",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/08/06/openai-brings-unlimited-chatgpt-text-chats-to-free-users/"
+            },
+            {
+              "date": "2026-08-06",
+              "headline": "OpenAI's upcoming AI smart speaker (designed with Jony Ive/LoveFrom) will reportedly sell for $300\u2013$400, expected 2027",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/08/06/openais-new-ai-smart-speaker-will-reportedly-sell-for-between-300-and-400/"
+            },
+            {
+              "date": "2026-08-05",
+              "headline": "Trump's DOJ settles with OpenAI for $3.2M over alleged green-card hiring violations; 3 years of DOJ oversight of PERM sponsorships",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/08/05/trumps-doj-gains-oversight-of-openais-green-card-employee-sponsorships/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-06",
+              "product": "ChatGPT Free Unlimited",
+              "type": "product_launch",
+              "description": "Unlimited text chats and GPT-5.6 Luna model access for free users, plus Think button for stronger reasoning"
+            }
+          ]
+        },
+        {
+          "company_id": "anthropic",
+          "headcount_estimate": 1000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 18.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-09",
+              "headline": "Anthropic turns Claude Code auto mode on by default for Pro/Max/Team; removes constant human approval prompts after testing showed auto mode catches 89% of harmful actions vs 13.6% by humans",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/"
+            },
+            {
+              "date": "2026-08-05",
+              "headline": "Anthropic hiring custom AI chip design team; scouting Samsung as manufacturing partner to co-design hardware with models",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/"
+            },
+            {
+              "date": "2026-08-04",
+              "headline": "Anthropic signs $10B, 6-year compute deal with UK cloud startup Volta; 133 MW Norway data center powered by Nvidia Vera Rubin GPUs",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/08/04/anthropic-signs-10-billion-deal-with-ai-cloud-startup-volta/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-09",
+              "product": "Claude Code Auto Mode (default)",
+              "type": "product_launch",
+              "description": "Auto mode becomes default for paid tiers; adds prompt injection screening and customizable hard deny rules"
+            }
+          ]
+        },
+        {
+          "company_id": "xai",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 50.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.5,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "google_deepmind",
+          "headcount_estimate": 35000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-05",
+              "headline": "Jeff Dean, Sanjay Ghemawat, Quoc Le, and Oriol Vinyals leave Google to found Discovery Loop \u2014 AI for scientific discovery and recursive self-improvement; backed by Radical Ventures, Khosla, Kleiner Perkins, Lightspeed, and Alphabet",
+              "type": "leadership",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/"
+            },
+            {
+              "date": "2026-08-06",
+              "headline": "Google Maps adds agentic features including food ordering and hotel bookings powered by Gemini",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/08/06/google-maps-adds-agentic-features-including-food-ordering-and-hotel-bookings/"
+            },
+            {
+              "date": "2026-08-04",
+              "headline": "Nvidia's Open Secure AI Alliance (OSAA) surpasses 120 members including Google; working group SAFE proposed under Linux Foundation for AI security incident sharing (notable: Anthropic and OpenAI absent)",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/08/04/nvidia-doesnt-mess-around-a-week-after-open-ai-industry-group-formed-its-already-showing-progress/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-06",
+              "product": "Google Maps Agentic Features",
+              "type": "product_launch",
+              "description": "Gemini-powered food ordering and hotel bookings integrated into Google Maps"
+            }
+          ]
+        },
+        {
+          "company_id": "meta_ai",
+          "headcount_estimate": 70000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-05",
+              "headline": "Meta launches Muse Code \u2014 terminal-based AI coding agent powered by Muse Spark model; handles full software engineering tasks across large repos with parallel sub-agents in isolated worktrees; direct competitor to Codex and Claude Code",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/"
+            },
+            {
+              "date": "2026-08-07",
+              "headline": "New Mexico court orders Meta to pay additional $567M in child safety case",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/08/07/new-mexico-court-orders-meta-to-pay-additional-567m-in-child-safety-case/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-05",
+              "product": "Muse Code",
+              "type": "product_launch",
+              "description": "Terminal-based AI coding agent powered by Muse Spark; competes with OpenAI Codex and Claude Code"
+            }
+          ]
+        },
+        {
+          "company_id": "mistral",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 23.15,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cohere",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 20.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.24,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "microsoft_ai",
+          "headcount_estimate": 223000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 37.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "amazon_aws_ai",
+          "headcount_estimate": 1500000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 168.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-08",
+              "headline": "Planned Amazon data center in Virginia could become the largest single-site climate polluter in the US",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "perplexity",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 9.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.05,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "hugging_face",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.5,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "stability_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "nvidia",
+          "headcount_estimate": 36000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 253.49,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-04",
+              "headline": "Nvidia's Open Secure AI Alliance (OSAA) surpasses 120 member companies one week after launch; Shared AI Findings Exchange (SAFE) working group proposed under Linux Foundation for confidential AI security incident reporting",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/08/04/nvidia-doesnt-mess-around-a-week-after-open-ai-industry-group-formed-its-already-showing-progress/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "scale_ai",
+          "headcount_estimate": 860,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 13.8,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "together_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 8.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.15,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "elevenlabs",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.5,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "runway",
+          "headcount_estimate": 155,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 5.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "luma_ai",
+          "headcount_estimate": 150,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "reka_ai",
+          "headcount_estimate": 80,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cognition_ai",
+          "headcount_estimate": 50,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 25.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "thinking_machines",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "sierra_ai",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 15.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.2,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cursor",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 60.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "harvey_ai",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "glean",
+          "headcount_estimate": 700,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 7.25,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.3,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cerebras",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 44.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.604,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
           "product_releases": []
         },
         {
