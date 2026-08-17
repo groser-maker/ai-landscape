@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "last_updated": "2026-08-10",
+  "last_updated": "2026-08-17",
   "companies": [
     {
       "id": "openai",
@@ -23,11 +23,6 @@
           "since": "2015-01"
         },
         {
-          "name": "Brad Lightcap",
-          "title": "COO",
-          "since": "2023-01"
-        },
-        {
           "name": "David V\u00e9lez",
           "title": "Board Member (Independent)",
           "since": "2026-07"
@@ -41,6 +36,11 @@
           "name": "Lilian Weng",
           "title": "VP Research, Recursive Self-Improvement",
           "since": "2026-07"
+        },
+        {
+          "name": "Dali Rajic",
+          "title": "Chief Revenue Officer",
+          "since": "2026-08"
         }
       ],
       "products": [
@@ -424,18 +424,19 @@
         }
       ],
       "funding_summary": {
-        "total_raised_usd_billions": 9.45,
-        "valuation_usd_billions": 18.0,
-        "valuation_as_of": "2024-11",
+        "total_raised_usd_billions": 22.45,
+        "valuation_usd_billions": 183.0,
+        "valuation_as_of": "2025-09",
         "public": false,
         "ticker": null,
-        "last_round_date": "2024-11",
-        "last_round_amount_usd_billions": 4.0,
-        "last_round_type": "Series E",
+        "last_round_date": "2025-09",
+        "last_round_amount_usd_billions": 13.0,
+        "last_round_type": "Series F",
         "last_round_investors": [
-          "Amazon",
-          "Google",
-          "Spark Capital"
+          "ICONIQ Capital",
+          "Fidelity",
+          "Lightspeed",
+          "Qatar Investment Authority"
         ]
       },
       "funding_rounds_history": [
@@ -494,6 +495,19 @@
             "Amazon",
             "Google",
             "Spark Capital"
+          ]
+        },
+        {
+          "date": "2025-09",
+          "amount_usd_billions": 13.0,
+          "type": "Series F",
+          "lead_investor": "ICONIQ Capital",
+          "valuation_usd_billions": 183.0,
+          "investors": [
+            "ICONIQ Capital",
+            "Fidelity",
+            "Lightspeed",
+            "Qatar Investment Authority"
           ]
         }
       ],
@@ -890,6 +904,20 @@
           "notes": "Opus-class pricing competitor; SpaceXAI co-brand",
           "elo_score": 1440,
           "elo_estimated": true
+        },
+        {
+          "name": "Grok 4.6",
+          "date": "2026-08",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "Reasoning",
+          "purpose": "Frontier reasoning/coding model, first joint release under SpaceX/Cursor/xAI integration",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Matches GPT-5.6 Sol on Artificial Analysis Intelligence Index; tops GDPVal-AA v2, AA-Briefcase, Harvey LAB leaderboards; rolled into GitHub Copilot",
+          "elo_score": null,
+          "elo_estimated": true
         }
       ],
       "acquisitions": [],
@@ -1145,6 +1173,20 @@
           "notes": "Restricted: governments and trusted partners only via limited pilot",
           "elo_score": null,
           "elo_estimated": true
+        },
+        {
+          "name": "Gemini 3.7 Flash",
+          "date": "2026-08",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "Multimodal LLM",
+          "purpose": "Speed-optimized workhorse model for coding and agentic tasks",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Released just 3 weeks after Gemini 3.6 Flash; lower token pricing; integrated into AI Mode in Search",
+          "elo_score": null,
+          "elo_estimated": true
         }
       ],
       "acquisitions": [
@@ -1394,6 +1436,20 @@
           "notable": true,
           "notes": "Multi-agent capable; released Jul 2026",
           "elo_score": 1430,
+          "elo_estimated": true
+        },
+        {
+          "name": "Muse Glimmer",
+          "date": "2026-08",
+          "parameters_billions": 30,
+          "parameters_estimated": false,
+          "parameters_note": "",
+          "type": "Multimodal LLM",
+          "purpose": "Offline-capable open agentic model that reads screens and calls tools without cloud dependency",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Apache 2.0 license; runs on a single consumer GPU; built by Meta Superintelligence Labs",
+          "elo_score": null,
           "elo_estimated": true
         }
       ],
@@ -2507,6 +2563,13 @@
           "flagship": false,
           "description": "AI agent PC platform with Microsoft, Dell, HP",
           "launched": "2026-06"
+        },
+        {
+          "name": "Nemotron 3.5 Lightning",
+          "type": "Open model",
+          "flagship": false,
+          "description": "30B-param open MoE (3B active), up to 4x output speed vs similar-sized models, OpenMDW-1.1 license",
+          "launched": "2026-08"
         }
       ],
       "funding_summary": {
@@ -2556,7 +2619,7 @@
       "hq": "San Francisco, CA",
       "color": "#FF4500",
       "emoji": "\u2696\ufe0f",
-      "description": "Data labeling and AI evaluation platform. CEO Alexandr Wang departed Jun 2025 to join Meta's superintelligence lab. Meta made significant investment. 14% layoff in Jul 2025.",
+      "description": "Data labeling and AI evaluation platform. Francis deSouza (ex-Google Cloud COO) named CEO effective Aug 2026, succeeding interim CEO Jason Droege. Founder Alexandr Wang departed Jun 2025 to join Meta's superintelligence lab; Meta made significant investment.",
       "leadership": [
         {
           "name": "Alexandr Wang",
@@ -2569,6 +2632,11 @@
           "title": "Co-founder (departed)",
           "since": "2016-01",
           "departed": "2017-01"
+        },
+        {
+          "name": "Francis deSouza",
+          "title": "CEO",
+          "since": "2026-08"
         }
       ],
       "products": [
@@ -3090,6 +3158,13 @@
           "flagship": false,
           "description": "Fast, high-quality image generation API",
           "launched": "2024-10"
+        },
+        {
+          "name": "Luma Scenes",
+          "type": "Video generation",
+          "flagship": false,
+          "description": "Storyboard-first video workflow with consistent keyframe sequences; Ray 3.2 or Seedance 2 render engines",
+          "launched": "2026-08"
         }
       ],
       "funding_summary": {
@@ -3721,7 +3796,7 @@
       "hq": "San Francisco, CA",
       "color": "#2563EB",
       "emoji": "\u2328\ufe0f",
-      "description": "Fastest-growing AI coding tool. $2.3B raised in 2025; $29.3B valuation by Nov 2025. Millions of developers using Cursor for AI-assisted coding. Pioneered 'vibe coding' \u2014 natural language to full applications.",
+      "description": "AI coding tool acquired by SpaceX in a $60B all-stock deal that closed Aug 14, 2026 (announced Apr 2026, agreement Jun 2026). Millions of developers using Cursor for AI-assisted coding. Pioneered 'vibe coding' \u2014 natural language to full applications.",
       "leadership": [
         {
           "name": "Michael Truell",
@@ -3781,8 +3856,8 @@
           "Andreessen Horowitz",
           "Accel"
         ],
-        "latest_round": "SpaceX acquisition (pending Q3 2026)",
-        "latest_round_date": "2026-06-16"
+        "latest_round": "SpaceX acquisition (closed)",
+        "latest_round_date": "2026-08-14"
       },
       "funding_rounds_history": [
         {
@@ -4243,12 +4318,12 @@
       "hq": "Mountain View, CA",
       "color": "#F97316",
       "emoji": "\u26a1",
-      "description": "AI inference neocloud on proprietary LPU chips. Nvidia licensed Groq IP for B (Dec 2025). M raise (Jun 2026). New CEO Doug Wightman (co-founder); rebuilt exec team.",
+      "description": "AI inference neocloud on proprietary LPU chips. Founder Jonathan Ross departed via Nvidia IP-licensing deal (Dec 2025); Adam Winter (joined 2024, ran international business) named CEO Aug 2026.",
       "leadership": [
         {
-          "name": "Doug Wightman",
-          "title": "CEO (co-founder)",
-          "since": "2026-06"
+          "name": "Adam Winter",
+          "title": "CEO",
+          "since": "2026-08"
         },
         {
           "name": "Alan Rice",
@@ -9447,6 +9522,717 @@
           "arr_source": "prior week",
           "arr_confidence": "carried_forward",
           "recent_news": [],
+          "product_releases": []
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-08-17",
+      "entries": [
+        {
+          "company_id": "openai",
+          "headcount_estimate": 3500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 852.0,
+          "valuation_source": "OpenAI $7B employee tender offer priced at Mar 2026 round valuation; CNBC Aug 11 2026",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 40.0,
+          "arr_source": "CFO Sarah Friar investor update; CNBC Aug 14 2026",
+          "arr_confidence": "medium",
+          "recent_news": [
+            {
+              "date": "2026-08-13",
+              "headline": "OpenAI launches 'Ultrafast' mode for GPT-5.6 Sol \u2014 750 tokens/sec (14x speed) on Cerebras hardware, API-only preview for select customers",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://openai.com/index/previewing-ultrafast/"
+            },
+            {
+              "date": "2026-08-11",
+              "headline": "COO Brad Lightcap departs after 8 years to start a new venture",
+              "type": "leadership",
+              "significance": "high",
+              "url": "https://www.cnbc.com/2026/08/11/longtime-openai-executive-brad-lightcap-leaves.html"
+            },
+            {
+              "date": "2026-08-13",
+              "headline": "CRO Denise Dresser departs after ~8 months; replaced by Dali Rajic, ex-president of Wiz",
+              "type": "leadership",
+              "significance": "high",
+              "url": "https://openai.com/index/dali-rajic-chief-revenue-officer/"
+            },
+            {
+              "date": "2026-08-14",
+              "headline": "CFO Sarah Friar: enterprise revenue now exceeds consumer revenue for first time, ARR run-rate ~$40B",
+              "type": "business",
+              "significance": "high",
+              "url": "https://www.cnbc.com/2026/08/14/"
+            },
+            {
+              "date": "2026-08-11",
+              "headline": "OpenAI completes $7B employee tender offer at same $852B valuation as March 2026 round",
+              "type": "funding",
+              "significance": "medium",
+              "url": "https://www.cnbc.com/2026/08/11/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-13",
+              "product": "GPT-5.6 Sol (Ultrafast mode)",
+              "type": "product_launch",
+              "description": "750 tok/sec inference on Cerebras hardware, 14x standard speed, limited preview"
+            }
+          ]
+        },
+        {
+          "company_id": "anthropic",
+          "headcount_estimate": 1000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 183.0,
+          "valuation_source": "Series F Sep 2025 ($13B raised, ICONIQ Capital-led) \u2014 tracker was carrying a stale Nov 2024 figure",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 47.0,
+          "arr_source": "Bloomberg, citing leaked investor documents (Q2 2026 revenue ~$11.5B, up 14x YoY), Aug 2026",
+          "arr_confidence": "medium",
+          "recent_news": [
+            {
+              "date": "2026-08-14",
+              "headline": "Anthropic raises company-wide AI misalignment risk rating from 'very low' to 'low' after security-testing incidents; report discloses unreleased internal 'Model 2' and confirms Claude writes most of Anthropic's own code",
+              "type": "research",
+              "significance": "high",
+              "url": "https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk"
+            },
+            {
+              "date": "2026-08-13",
+              "headline": "Anthropic Frontier Red Team publishes multi-agent systems research: 45-agent peer-review swarm found 266 vulnerabilities vs 21 for independent agents; documents agent conformity failures and one instance of self-replicating malware built during conflicting-goal tests",
+              "type": "research",
+              "significance": "high",
+              "url": "https://www.anthropic.com/research/multiagent-systems"
+            },
+            {
+              "date": "2026-08-13",
+              "headline": "CFO Krishna Rao leads early pre-IPO investor meetings; no valuation set",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://www.cnbc.com/2026/08/13/anthropic-cfo-early-ipo-meetings-valuation.html"
+            },
+            {
+              "date": "2026-08-02",
+              "headline": "Claude rolls out AI-text watermarking and C2PA signed provenance metadata for generated files, tied to EU AI Act Article 50(2) compliance",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-02",
+              "product": "Claude AI-content watermarking",
+              "type": "product_launch",
+              "description": "Token-level text watermark + C2PA signed metadata for generated files across Claude Platform, Claude Code, Claude Cowork"
+            }
+          ]
+        },
+        {
+          "company_id": "xai",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 50.0,
+          "valuation_source": "Standalone Series B figure retained; xAI now operates under 'SpaceXAI' branding within a combined SpaceX+xAI valuation (~$1.25T combined, ~$250B implied for xAI, per Feb 2026 merger) \u2014 flagged for structural review",
+          "valuation_confidence": "low",
+          "arr_usd_billions": 0.5,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-12",
+              "headline": "xAI/SpaceXAI releases Grok 4.6 \u2014 matches GPT-5.6 Sol on Artificial Analysis Intelligence Index, 1 point behind Claude Fable 5; tops GDPVal-AA v2, AA-Briefcase, and Harvey LAB leaderboards; released alongside SpaceX's acquisition of Cursor",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://cursor.com/blog/joining-spacex"
+            },
+            {
+              "date": "2026-08-14",
+              "headline": "SpaceX officially closes its $60B all-stock acquisition of Cursor (Anysphere); Grok 4.6 is first model built jointly under the combined SpaceXAI umbrella",
+              "type": "business",
+              "significance": "high",
+              "url": "https://cursor.com/blog/joining-spacex"
+            },
+            {
+              "date": "2026-08-14",
+              "headline": "Grok 4.6 rolled out across 8 development surfaces in GitHub Copilot",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://unite.ai/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-12",
+              "product": "Grok 4.6",
+              "type": "model_release",
+              "description": "Frontier model matching GPT-5.6 Sol on intelligence benchmarks, released jointly with SpaceX/Cursor integration"
+            }
+          ]
+        },
+        {
+          "company_id": "google_deepmind",
+          "headcount_estimate": 35000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-14",
+              "headline": "Google releases Gemini 3.7 Flash \u2014 speed-focused agentic/coding model, rolled into AI Mode in Search for Pro/Ultra subscribers, lower token pricing; flagship top-tier Gemini model remains delayed",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/"
+            },
+            {
+              "date": "2026-08-12",
+              "headline": "Gemini adds toggle to disable visible watermark on generated images/video/music; invisible SynthID and C2PA metadata remain",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://x.com/GeminiApp/status/2088277477672255830"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-14",
+              "product": "Gemini 3.7 Flash",
+              "type": "model_release",
+              "description": "Speed/cost-optimized model for coding and agentic workloads; integrated into AI Mode in Search"
+            }
+          ]
+        },
+        {
+          "company_id": "meta_ai",
+          "headcount_estimate": 70000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-11",
+              "headline": "Meta open-sources 'Muse Glimmer' \u2014 30B-param, Apache 2.0-licensed agentic model with native vision input designed to run locally on a single consumer GPU without a data center",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-11",
+              "product": "Muse Glimmer",
+              "type": "model_release",
+              "description": "Open-weight, locally-runnable agentic model with vision input, built by Meta Superintelligence Labs"
+            }
+          ]
+        },
+        {
+          "company_id": "mistral",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 23.15,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-11",
+              "headline": "Mistral announces expanded European sovereign AI infrastructure \u2014 in-region inference and new EU compute commitments",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://mistral.ai/news/regional-inference-open-models-new-compute/"
+            },
+            {
+              "date": "2026-08-16",
+              "headline": "CEO Arthur Mensch meets India PM Modi at G7 sidelines to discuss sovereign AI; seated alongside Altman, Hassabis, Amodei at G7 AI working lunch",
+              "type": "partnership",
+              "significance": "low",
+              "url": "https://www.cnbc.com/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "cohere",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 20.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.24,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "microsoft_ai",
+          "headcount_estimate": 223000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 37.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-13",
+              "headline": "Microsoft merges consumer and M365 Copilot apps into one; retires Group Chats, Podcasts, and Deep Research effective Aug 18; introduces paid 'Autopilot' agent tier",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/learning/changes-microsoft-copilot-app"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "amazon_aws_ai",
+          "headcount_estimate": 1500000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "Prior $168B figure was AWS total cloud run-rate, not AI-specific \u2014 removed; best AI-specific proxy is Trainium chip revenue run-rate (~$20B, Q1 2026)",
+          "arr_confidence": "low",
+          "recent_news": [
+            {
+              "date": "2026-08-12",
+              "headline": "AWS Continuum security tool integrates with OpenAI Codex and Anthropic Claude Code",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://venturebeat.com/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "perplexity",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 9.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.05,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-04",
+              "headline": "Ninth Circuit vacates injunction against Perplexity's Comet shopping agent in Amazon v. Perplexity; rules AI agents are 'tools, not persons' under CFAA",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://www.jdsupra.com/legalnews/tool-or-intruder-what-amazon-v-7674442"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "hugging_face",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.5,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "stability_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "nvidia",
+          "headcount_estimate": 36000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 253.49,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-11",
+              "headline": "Nvidia releases Nemotron 3.5 Lightning \u2014 30B-param open MoE model (3B active), leads Artificial Analysis accuracy-speed Pareto frontier; paired with new 'NeMo Switchyard' routing tool",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/"
+            },
+            {
+              "date": "2026-08-11",
+              "headline": "Nvidia partners with Blackstone, BlackRock, Goldman Sachs, KKR and others to launch compute-financing platforms targeting $500B+ in third-party AI infrastructure capital",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://www.coindesk.com/tech/2026/08/11/nvidia-wants-to-turn-its-ai-chips-into-an-investable-asset-class"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-11",
+              "product": "Nemotron 3.5 Lightning",
+              "type": "model_release",
+              "description": "Open MoE model optimized for fast, accurate long-running agent tasks"
+            }
+          ]
+        },
+        {
+          "company_id": "scale_ai",
+          "headcount_estimate": 860,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 13.8,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-10",
+              "headline": "Scale AI names Francis deSouza (former Google Cloud COO) as CEO, effective Aug 10, succeeding interim CEO Jason Droege",
+              "type": "leadership",
+              "significance": "high",
+              "url": "https://www.reuters.com/technology/scale-ai-taps-former-google-cloud-executive-ceo-2026-07-30"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "together_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 8.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.15,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-11",
+              "headline": "IBM signs multi-year $240M deal with Together AI to build a dedicated Nvidia HGX B300 inference cluster on IBM Cloud",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://siliconangle.com/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "elevenlabs",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.5,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-14",
+              "headline": "ElevenLabs partners with Ominimo for AI voice assistants",
+              "type": "partnership",
+              "significance": "low",
+              "url": "https://fintechmagazine.com/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "runway",
+          "headcount_estimate": 155,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 5.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "luma_ai",
+          "headcount_estimate": 150,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-11",
+              "headline": "Luma launches 'Luma Scenes' \u2014 storyboard-first video creation workflow powered by Uni-1",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://lumalabs.ai/news/introducing-luma-scenes"
+            },
+            {
+              "date": "2026-08-13",
+              "headline": "Luma and Dumbstruck launch 'Creative Intelligence for Advertising' partnership combining emotion analytics with Luma Agents video editing; Wayfair cited as early adopter",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://lumalabs.ai/news/luma-and-dumbstruck-launch-creative-intelligence-for-advertising"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-11",
+              "product": "Luma Scenes",
+              "type": "product_launch",
+              "description": "Storyboard-first video workflow with consistent keyframe generation"
+            }
+          ]
+        },
+        {
+          "company_id": "reka_ai",
+          "headcount_estimate": 80,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cognition_ai",
+          "headcount_estimate": 50,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 25.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-11",
+              "headline": "Cognition (Devin) reportedly in early funding talks at $40B+ valuation, up from $26B in May 2026; ARR reported near $1B, roughly doubled since May",
+              "type": "funding",
+              "significance": "high",
+              "url": "https://finance.yahoo.com/technology/ai/articles/ai-startup-cognition-funding-talks-035336592.html"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "thinking_machines",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "sierra_ai",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 15.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.2,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-13",
+              "headline": "StoreEase partners with Sierra to bring outcome-based-priced AI agents to the self-storage industry",
+              "type": "partnership",
+              "significance": "low",
+              "url": "https://www.tennessean.com/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "cursor",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 60.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-14",
+              "headline": "SpaceX officially closes its $60B all-stock acquisition of Cursor (Anysphere)",
+              "type": "business",
+              "significance": "high",
+              "url": "https://cursor.com/blog/joining-spacex"
+            },
+            {
+              "date": "2026-08-12",
+              "headline": "Cursor introduces Grok 4.6, first model built jointly with xAI/SpaceXAI post-acquisition",
+              "type": "model_release",
+              "significance": "medium",
+              "url": "https://cursor.com/blog"
+            },
+            {
+              "date": "2026-08-13",
+              "headline": "Cursor acquires Firetiger; also earns AIUC-1 certification for agent security/reliability",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://cursor.com/blog"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "harvey_ai",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-07",
+              "headline": "Harvey reportedly raising $500M at ~$15.5B valuation (in talks, not yet closed)",
+              "type": "funding",
+              "significance": "high",
+              "url": "https://siliconangle.com/"
+            },
+            {
+              "date": "2026-08-13",
+              "headline": "DeepJudge launches 'Agent Handoff Protocol' with Harvey and Thomson Reuters as adopters",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://www.law.com/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "glean",
+          "headcount_estimate": 700,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 7.25,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.3,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cerebras",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 44.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.604,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-13",
+              "headline": "OpenAI's 'Ultrafast' mode for GPT-5.6 Sol confirmed running on Cerebras hardware \u2014 750 tok/sec, ~14x standard speed",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/08/13/openai-introduces-ultrafast-a-new-mode-that-makes-gpt-5-6-sol-work-at-14x-the-speed/"
+            },
+            {
+              "date": "2026-08-12",
+              "headline": "Cerebras stock drops 14-16% after missing quarterly revenue estimates in second post-IPO earnings report, though raises full-year guidance",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://www.cnbc.com/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "groq",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 6.9,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-15",
+              "headline": "Adam Winter confirmed as Groq CEO, succeeding founder Jonathan Ross who departed via the Nvidia IP-licensing deal",
+              "type": "leadership",
+              "significance": "high",
+              "url": "https://groq.com/about-us"
+            }
+          ],
           "product_releases": []
         }
       ]
