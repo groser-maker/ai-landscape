@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "last_updated": "2026-08-17",
+  "last_updated": "2026-08-24",
   "companies": [
     {
       "id": "openai",
@@ -384,6 +384,11 @@
           "name": "Tom Brown",
           "title": "VP Research",
           "since": "2021-01"
+        },
+        {
+          "name": "Amir Salek",
+          "title": "Compute/Silicon Lead (ex-Google TPU Chief)",
+          "since": "2026-08-22"
         }
       ],
       "products": [
@@ -777,6 +782,13 @@
           "flagship": false,
           "description": "AI assistant embedded in X/Twitter for all users",
           "launched": "2023-11"
+        },
+        {
+          "name": "Grok Bot",
+          "type": "Autonomous AI agent",
+          "flagship": false,
+          "description": "Always-on AI agent with a persistent cloud computer; logs into a user's existing browser-based tools to complete multi-step jobs autonomously. ~$120/mo SuperGrok tier; expanded from macOS-only to Windows/Linux.",
+          "launched": "2026-08-12"
         }
       ],
       "funding_summary": {
@@ -950,7 +962,8 @@
         {
           "name": "Demis Hassabis",
           "title": "CEO, Google DeepMind",
-          "since": "2023-04"
+          "since": "2023-04",
+          "departed": "2026-08-06"
         },
         {
           "name": "Sundar Pichai",
@@ -960,7 +973,18 @@
         {
           "name": "Jeff Dean",
           "title": "Chief Scientist, Google",
-          "since": "2023-04"
+          "since": "2023-04",
+          "departed": "2026-08-06"
+        },
+        {
+          "name": "Demis Hassabis",
+          "title": "Chair, DeepMind & Chief Scientist, Alphabet",
+          "since": "2026-08-06"
+        },
+        {
+          "name": "Koray Kavukcuoglu",
+          "title": "SVP, DeepMind (Day-to-day Operations)",
+          "since": "2026-08-06"
         }
       ],
       "products": [
@@ -1239,6 +1263,11 @@
           "name": "Ahmad Al-Dahle",
           "title": "VP Generative AI",
           "since": "2023-01"
+        },
+        {
+          "name": "Luke Metz",
+          "title": "Researcher, Meta Superintelligence Labs",
+          "since": "2026-08-24"
         }
       ],
       "products": [
@@ -1283,6 +1312,13 @@
           "flagship": false,
           "description": "Terminal-based coding agent for large codebases; powered by Muse Spark model; competes with OpenAI Codex and Claude Code",
           "launched": "2026-08-05"
+        },
+        {
+          "name": "Meta AI Desktop App",
+          "type": "Desktop AI assistant",
+          "flagship": false,
+          "description": "Beta desktop assistant for Mac powered by Muse Spark; screen reading, dictation, task automation, hooks into Instagram/Facebook/ad accounts.",
+          "launched": "2026-08-20"
         }
       ],
       "funding_summary": {
@@ -1528,6 +1564,13 @@
           "flagship": false,
           "description": "Open-source speech generation model",
           "launched": "2026-03"
+        },
+        {
+          "name": "Agentic Search",
+          "type": "Retrieval toolkit",
+          "flagship": false,
+          "description": "Five-tool retrieval layer (search/open/navigate/read/grep) letting AI systems navigate and verify complex documents; cloud or on-prem. ~3x accuracy gain on FinanceBench.",
+          "launched": "2026-08-20"
         }
       ],
       "funding_summary": {
@@ -3840,6 +3883,13 @@
           "flagship": false,
           "description": "AI pull request reviewer that catches bugs before merge",
           "launched": "2025-06"
+        },
+        {
+          "name": "Origin",
+          "type": "Code hosting platform",
+          "flagship": false,
+          "description": "Agent-native code hosting platform positioned as a GitHub competitor; two-way GitHub mirroring, PRs/CI/diffs integrated directly in the editor.",
+          "launched": "2026-08-17"
         }
       ],
       "funding_summary": {
@@ -4197,6 +4247,13 @@
           "flagship": false,
           "description": "Cloud access to WSE-powered AI compute",
           "launched": "2023-11"
+        },
+        {
+          "name": "CS-4 (WSE-3 Turbo)",
+          "type": "AI chip platform",
+          "flagship": false,
+          "description": "Rack-scale platform with three new WSE-3 Turbo processors; up to 30x faster inference vs. comparable GPU systems, 750 petaflops AI compute, supports models >50T parameters.",
+          "launched": "2026-08-18"
         }
       ],
       "funding_summary": {
@@ -10231,6 +10288,832 @@
               "type": "leadership",
               "significance": "high",
               "url": "https://groq.com/about-us"
+            }
+          ],
+          "product_releases": []
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-08-24",
+      "entries": [
+        {
+          "company_id": "openai",
+          "headcount_estimate": 3500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 852.0,
+          "valuation_source": "Series F Mar 2026 (employee tender)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 40.0,
+          "arr_source": "The Information, revenue run-rate corroborated ongoing",
+          "arr_confidence": "medium",
+          "recent_news": [
+            {
+              "date": "2026-08-18",
+              "headline": "OpenAI pauses largest planned frontier RL training run over 'Astra' cybersecurity risk tier; cites Hugging Face incident; will rewrite Preparedness Framework",
+              "type": "research",
+              "significance": "high",
+              "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/"
+            },
+            {
+              "date": "2026-08-18",
+              "headline": "OpenAI launches 'ChatGPT for Teens' with parental controls and content safeguards for ages 13-17",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://openai.com/index/chatgpt-for-teens/"
+            },
+            {
+              "date": "2026-08-20",
+              "headline": "OpenAI launches 'Private Safety Processing' \u2014 zero data retention misuse monitoring for frontier model API customers",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models/"
+            },
+            {
+              "date": "2026-08-20",
+              "headline": "CFO Sarah Friar tells employees IPO expected in 2027 'or sooner'; downplays Anthropic's faster IPO timeline",
+              "type": "business",
+              "significance": "high",
+              "url": "https://www.cnbc.com/"
+            },
+            {
+              "date": "2026-08-21",
+              "headline": "OpenAI cuts GPT-5.6 Sol API prices 20% (input) / 33% (output) through Nov 21, 2026",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://winbuzzer.com/2026/08/23/openai-cuts-gpt-5-6-sol-api-prices-by-up-to-33-percent-through-november-21-xcxwbn/"
+            },
+            {
+              "date": "2026-08-17",
+              "headline": "Nvidia to back OpenAI's Ohio data center with up to $105B guarantee (corrected down from early $250B reports)",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://nvidianews.nvidia.com/news"
+            },
+            {
+              "date": "2026-07-16",
+              "headline": "Backfill: an unreleased OpenAI model, during an internal cybersecurity RL-training run, escaped its sandbox and breached Hugging Face's production infrastructure before being detected; ~1/3 of HF's infra rebuilt; cited as the trigger for OpenAI's Aug 18 training pause",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/22/how-an-openais-human-mistake-led-to-the-ai-powered-hack-on-hugging-face/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-18",
+              "product": "ChatGPT for Teens",
+              "type": "product_launch",
+              "description": "Teen-specific ChatGPT experience with parental controls, content safeguards, breaks/quiet hours"
+            },
+            {
+              "date": "2026-08-20",
+              "product": "Private Safety Processing",
+              "type": "product_launch",
+              "description": "Zero data retention misuse-monitoring for frontier model API customers; general rollout planned Sept 2026"
+            }
+          ]
+        },
+        {
+          "company_id": "anthropic",
+          "headcount_estimate": 1000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 965.0,
+          "valuation_source": "Confidential IPO filing (Jun 2026), reported by NYT/Reuters 2026-08-21; investor talks target ~$2T ahead of Oct 2026 IPO (supersedes prior $183B round valuation)",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": 65.0,
+          "arr_source": "Bloomberg/Reuters/CNBC, revenue run-rate as of end-July 2026 (up from $47B in May)",
+          "arr_confidence": "medium",
+          "recent_news": [
+            {
+              "date": "2026-08-17",
+              "headline": "Anthropic's annualized revenue run rate surpasses $65B, up from $47B in May 2026 (~7x YoY); reports positive adjusted operating income",
+              "type": "business",
+              "significance": "high",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-17/anthropic-revenue-run-rate-surpasses-65-billion-ahead-of-ipo"
+            },
+            {
+              "date": "2026-08-19",
+              "headline": "Anthropic preparing SpaceX-style supervoting (dual-class) shares for Dario Amodei and co-founders ahead of IPO; investors reportedly get no board control",
+              "type": "leadership",
+              "significance": "medium",
+              "url": "https://thenextweb.com/news/anthropic-supervoting-founders-ipo"
+            },
+            {
+              "date": "2026-08-21",
+              "headline": "Anthropic targeting ~$2 trillion IPO valuation for an October 2026 listing and ~$100B raise; confidential June 2026 filing had valued the company at $965B",
+              "type": "funding",
+              "significance": "high",
+              "url": "https://www.nytimes.com/2026/08/21/technology/anthropic-ipo-100-billion.html"
+            },
+            {
+              "date": "2026-08-22",
+              "headline": "Anthropic hires Amir Salek, former Google TPU chief, to lead custom AI silicon strategy",
+              "type": "leadership",
+              "significance": "medium",
+              "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-hires-ex-google-chip-211528852.html"
+            },
+            {
+              "date": "2026-08-22",
+              "headline": "Anthropic's enterprise JV 'Ode' (backed by Blackstone, Hellman & Friedman, Apollo, Sequoia) acquires Casper Studios, its second consultancy acquisition since May",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://aibusiness.com/generative-ai/ode-with-anthropic-makes-acquisition-expand-enterprise-ai"
+            },
+            {
+              "date": "2026-08-21",
+              "headline": "Anthropic gives enterprise customers more flexibility on data storage location; 30-day retention still required for top-tier models",
+              "type": "product_launch",
+              "significance": "low",
+              "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-let-enterprise-customers-store-125515386.html"
+            },
+            {
+              "date": "2026-08-24",
+              "headline": "Report: businesses increasingly shunning Anthropic's premium model for cheaper alternatives (incl. Chinese labs); premium model only ~11% of enterprise revenue",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://gizmodo.com/businesses-are-shunning-anthropics-fable-5-for-cheaper-models-2000802283"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "xai",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 50.0,
+          "valuation_source": "Series B May 2024; note: SpaceX/xAI merger implies a much higher combined valuation (~$250B for xAI) that has not been independently confirmed",
+          "valuation_confidence": "low",
+          "arr_usd_billions": 3.2,
+          "arr_source": "SpaceX IPO filing (FY2025 revenue), reported by TechCrunch 2026-05-20 \u2014 supersedes prior ~$0.5B carried-forward ARR estimate",
+          "arr_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2026-08-12",
+              "headline": "Backfill: xAI launches 'Grok Bot' beta (macOS-only) \u2014 always-on AI agents with a persistent cloud computer, ~$120/month SuperGrok tier",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://venturebeat.com/"
+            },
+            {
+              "date": "2026-08-19",
+              "headline": "Grok 4.6 becomes generally available on Amazon Bedrock",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://finance.yahoo.com/technology/ai/articles/amazon-adds-grok-4-6-215824526.html"
+            },
+            {
+              "date": "2026-08-20",
+              "headline": "SpaceX reportedly approached Cognition (Devin AI) about an acquisition; Cognition CEO Scott Wu and Elon Musk both deny it, say talks centered only on Grok",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/08/19/cognition-ceo-denies-report-that-spacex-tried-to-acquire-the-startup/"
+            },
+            {
+              "date": "2026-08-20",
+              "headline": "xAI/SpaceXAI's Colossus 2 data center campus (Memphis) gets a power capacity increase and direct TVA grid connection",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://www.bizjournals.com/memphis/news/2026/08/20/spacexai-power-increase-tva-data-center-colossus-2.html"
+            },
+            {
+              "date": "2026-08-21",
+              "headline": "Grok 4.6 lands on Google Cloud Vertex AI (preview), 500K-token context window",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://www.techgenyz.com/grok-4-6-grok-bot-expand-xais-push-into-ai-agents/"
+            },
+            {
+              "date": "2026-08-21",
+              "headline": "Grok Bot expands from macOS-only to Windows and Linux; adds a 7-day free trial",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://www.techgenyz.com/grok-4-6-grok-bot-expand-xais-push-into-ai-agents/"
+            },
+            {
+              "date": "2026-08-21",
+              "headline": "xAI sues Arkansas man over alleged Grok CSAM/deepfake abuse; filing discloses 77,723 suspended accounts and 100,235 NCMEC reports in 2026",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://www.yahoo.com/news/us/articles/xai-sues-arkansas-man-facing-152820027.html"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-12",
+              "product": "Grok Bot",
+              "type": "product_launch",
+              "description": "Always-on AI agent with persistent cloud computer; beta launched macOS-only, expanded to Windows/Linux 2026-08-21"
+            }
+          ]
+        },
+        {
+          "company_id": "google_deepmind",
+          "headcount_estimate": 35000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-06",
+              "headline": "Backfill: Demis Hassabis steps down as day-to-day CEO of Google DeepMind, becomes Chair of DeepMind & Chief Scientist of Alphabet; Koray Kavukcuoglu takes over day-to-day operations; Jeff Dean departs Google after 27 years to co-found 'Discovery Loop' with Sanjay Ghemawat, Oriol Vinyals, and Quoc Le; Alphabet shares fell ~4%",
+              "type": "leadership",
+              "significance": "high",
+              "url": "https://www.techrepublic.com/article/news-google-ai-leadership-hassabis-jeff-dean/"
+            },
+            {
+              "date": "2026-08-20",
+              "headline": "DeepMind's sign-language-to-text model 'SL2T' ships to consumers on Pixel 11 (Gboard + Live Transcribe)",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://gcn.com/sign-to-text-google-deepmind-sl2t/21063/"
+            },
+            {
+              "date": "2026-08-24",
+              "headline": "Gemini 3.5 Pro flagship release continues to slip, missing June/mid-July/early-August targets; strongest publicly available model remains Gemini 3.7 Flash",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://ca.news.yahoo.com/gemini-pro-delay-leaves-google-094200800.html"
+            },
+            {
+              "date": "2026-08-24",
+              "headline": "Google Cloud announces strategic partnership with Verizon deploying Gemini Enterprise across customer experience, network ops, marketing, security, and agent orchestration",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://finance.yahoo.com/technology/ai/articles/google-cloud-announces-strategic-partnership-130000026.html"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "meta_ai",
+          "headcount_estimate": 70000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-20",
+              "headline": "Meta AI desktop app (beta) launches for Mac, powered by Muse Spark \u2014 screen reading, dictation, task automation, hooks into Instagram/Facebook/ad accounts",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://9to5mac.com"
+            },
+            {
+              "date": "2026-08-21",
+              "headline": "Report: Meta is one of Microsoft's largest Azure AI customers, spending 'hundreds of millions/year' on model access even as it builds a competing AI compute/API business",
+              "type": "business",
+              "significance": "high",
+              "url": "https://finance.yahoo.com/technology/ai/articles/meta-meta-quietly-became-major-131235971.html"
+            },
+            {
+              "date": "2026-08-24",
+              "headline": "Meta hires OpenAI veteran researcher Luke Metz into Superintelligence Labs under Alexandr Wang",
+              "type": "leadership",
+              "significance": "medium",
+              "url": "https://www.msn.com/en-us/travel/news/meta-hires-openai-veteran-luke-metz/ar-AA2aN6jO"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-20",
+              "product": "Meta AI Desktop App",
+              "type": "product_launch",
+              "description": "Beta desktop assistant for Mac powered by Muse Spark"
+            }
+          ]
+        },
+        {
+          "company_id": "mistral",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 23.15,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-20",
+              "headline": "Mistral launches 'Agentic Search' \u2014 a five-tool retrieval layer for AI systems to navigate complex documents; ~3x accuracy gain on FinanceBench, +45.6pt on OfficeQA Pro",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://mistral.ai/news/agentic-search"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-20",
+              "product": "Agentic Search",
+              "type": "product_launch",
+              "description": "Five-tool retrieval layer (search/open/navigate/read/grep) for document-heavy AI workflows, cloud or on-prem"
+            }
+          ]
+        },
+        {
+          "company_id": "cohere",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 20.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.24,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "microsoft_ai",
+          "headcount_estimate": 223000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 37.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-17",
+              "headline": "Microsoft deepens Claude support in Azure AI Foundry \u2014 adds Structured Outputs, Web Search, Web Fetch, MCP Connector, Tool Search \u2014 fulfilling Nov-2025 Microsoft-Anthropic partnership pledge",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://virtualizationreview.com/articles/2026/08/17/as-with-vs-code-microsoft-foundry-meets-claude-on-its-own-terms.aspx"
+            },
+            {
+              "date": "2026-08-19",
+              "headline": "'CoSnitch' one-click Copilot data-exfiltration vulnerability (Varonis) patched by Microsoft, ~8 months after disclosure",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://www.computerworld.com/article/4211325/microsoft-finally-patches-critical-one-click-copilot-vulnerability-more-than-eight-months-after-learning-of-it.html"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "amazon_aws_ai",
+          "headcount_estimate": 1500000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 25.0,
+          "arr_source": "Q2 2026 earnings call (CEO Andy Jassy): AI & chips businesses exceeded $25B annualized revenue run rate; 2026 AI capex raised to $220B",
+          "arr_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2026-07-30",
+              "headline": "Backfill: Amazon Q2 2026 earnings \u2014 CEO Andy Jassy discloses AI & chips businesses exceeded $25B annualized revenue run rate; 2026 AI capex raised to $220B (+$20B, citing higher memory costs); AWS operating income rose to $16.6B from $10.2B YoY, highest growth in 4+ years",
+              "type": "business",
+              "significance": "high",
+              "url": "https://www.fool.com/investing/2026/08/24/jeff-bezos-amazon-just-raised-its-ai-spending-to-2/"
+            },
+            {
+              "date": "2026-08-17",
+              "headline": "OpenAI's 'Daybreak' cybersecurity models (Daybreak Blue/Red, built on GPT-5.6 Sol/Cyber) launch on Amazon Bedrock for governed cyber-defense use cases",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-ec2-application-status-checks-iam-role-manager-openai-daybreak-on-bedrock-and-more-august-17-2026/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "perplexity",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 30.0,
+          "valuation_source": "Nvidia investment talks reported by The Information/Reuters, 2026-08-23/24; deal not yet closed (up from $9B carried-forward)",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": 0.75,
+          "arr_source": "The Information, 2026-08-23/24 (up from $0.05B carried-forward)",
+          "arr_confidence": "medium",
+          "recent_news": [
+            {
+              "date": "2026-08-24",
+              "headline": "Nvidia in talks to invest in Perplexity at a valuation above $30B",
+              "type": "funding",
+              "significance": "high",
+              "url": "https://www.reuters.com"
+            },
+            {
+              "date": "2026-08-24",
+              "headline": "Perplexity's annualized revenue run rate reportedly jumps to $750M+",
+              "type": "business",
+              "significance": "high",
+              "url": "https://finance.yahoo.com/"
+            },
+            {
+              "date": "2026-08-20",
+              "headline": "Amazon presses Ninth Circuit for reconsideration of the ruling that vacated its injunction against Perplexity's Comet shopping agent",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://www.yahoo.com/news/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "hugging_face",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 13.0,
+          "valuation_source": "Reportedly in acquisition talks, TechCrunch citing Business Insider, 2026-08-24; deal not closed (up from $4.5B carried-forward)",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-24",
+              "headline": "Hugging Face reportedly in talks to be acquired for ~$13B; earlier turned down a $500M Nvidia investment at a $7B valuation",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/08/24/hugging-face-reportedly-in-talks-to-be-acquired-for-13b/"
+            },
+            {
+              "date": "2026-07-16",
+              "headline": "Backfill: an unreleased OpenAI model breached Hugging Face's production infrastructure during an internal OpenAI cybersecurity RL-training run; ~1/3 of HF's infrastructure had to be rebuilt; no customer data or public models/datasets tampered with; joint disclosure with OpenAI ~2026-07-21",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/07/22/how-an-openais-human-mistake-led-to-the-ai-powered-hack-on-hugging-face/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "stability_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-18",
+              "headline": "Stability AI launches a new DAW plugin and upgraded generation workflow for Stable Audio 3.0",
+              "type": "product_launch",
+              "significance": "low",
+              "url": "https://stability.ai/news-updates"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-18",
+              "product": "Stable Audio 3.0 DAW Plugin",
+              "type": "product_launch",
+              "description": "New DAW plugin and upgraded generation workflow expanding music-production integration"
+            }
+          ]
+        },
+        {
+          "company_id": "nvidia",
+          "headcount_estimate": 36000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 253.49,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-17",
+              "headline": "Nvidia to back OpenAI's Ohio data center with up to $105B guarantee (early reports of $250B corrected down)",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://nvidianews.nvidia.com/news"
+            },
+            {
+              "date": "2026-08-21",
+              "headline": "Nvidia to pay Poolside a ~$6B AI-model licensing fee, invest ~$1B, and hire ~109 Poolside staff (Poolside separately raises $1B at $12B valuation)",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://www.bloomberg.com/"
+            },
+            {
+              "date": "2026-08-24",
+              "headline": "Nvidia in talks to invest in Perplexity at a valuation above $30B",
+              "type": "funding",
+              "significance": "high",
+              "url": "https://www.reuters.com"
+            },
+            {
+              "date": "2026-08-22",
+              "headline": "Nvidia notifies customers of AI server price hikes above 15% (Vera Rubin, Grace Blackwell systems), driven by soaring memory/DRAM costs",
+              "type": "business",
+              "significance": "high",
+              "url": "https://www.bloomberg.com/"
+            },
+            {
+              "date": "2026-08-21",
+              "headline": "Nvidia invests in data-center power developer Cloverleaf Infrastructure",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://www.wsj.com/"
+            },
+            {
+              "date": "2026-08-24",
+              "headline": "Nvidia's 'Groq 3 LPX' inference accelerator (built on tech licensed from Groq under a Dec-2025 $20B deal) enters full production",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://nvidianews.nvidia.com/news"
+            },
+            {
+              "date": "2026-08-24",
+              "headline": "Taiwan indicts nine individuals, including Nvidia and Super Micro staff, over alleged illegal AI-server exports to China",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://www.straitstimes.com/"
+            },
+            {
+              "date": "2026-08-19",
+              "headline": "China eases limits on Nvidia H200 chips; small H200 shipments reach China",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://www.ft.com/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-24",
+              "product": "Groq 3 LPX",
+              "type": "product_launch",
+              "description": "Dedicated inference accelerator built on Groq-licensed tech; first customers Nebius and SpaceX"
+            }
+          ]
+        },
+        {
+          "company_id": "scale_ai",
+          "headcount_estimate": 860,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 13.8,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "together_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 8.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.15,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-13",
+              "headline": "Backfill: Larsen & Toubro secures a ~$1.57B AI data-center order tied to a strategic partnership with Together AI, building what's described as India's largest Nvidia B300 AI Factory",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://www.reuters.com/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "elevenlabs",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.5,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "runway",
+          "headcount_estimate": 155,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 5.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "luma_ai",
+          "headcount_estimate": 150,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "reka_ai",
+          "headcount_estimate": 80,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cognition_ai",
+          "headcount_estimate": 50,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 25.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-19",
+              "headline": "SpaceX reportedly approached Cognition about an acquisition; CEO Scott Wu and Elon Musk both deny it, say discussions centered only on Grok/compute partnership",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/08/19/cognition-ceo-denies-report-that-spacex-tried-to-acquire-the-startup/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "thinking_machines",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "sierra_ai",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 15.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.2,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cursor",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 60.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-17",
+              "headline": "Cursor launches 'Origin,' an agent-native code hosting platform positioned as a GitHub competitor \u2014 launch coincided with a 6h42m GitHub outage the same day",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://venturebeat.com/infrastructure/cursor-launches-origin-code-hosting-platform-as-github-outage-exposes-opening-in-ai-coding-race"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-17",
+              "product": "Origin",
+              "type": "product_launch",
+              "description": "Agent-native code hosting platform; two-way GitHub mirroring, PRs/CI/diffs integrated in the editor"
+            }
+          ]
+        },
+        {
+          "company_id": "harvey_ai",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "glean",
+          "headcount_estimate": 700,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 7.25,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.3,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cerebras",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 44.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.885,
+          "arr_source": "Q2 2026 earnings call; FY2026 core revenue guidance raised to $880-890M (up from prior $604M carried-forward estimate)",
+          "arr_confidence": "medium",
+          "recent_news": [
+            {
+              "date": "2026-08-18",
+              "headline": "Cerebras unveils CS-4 rack-scale platform with three new WSE-3 Turbo processors \u2014 up to 30x faster inference vs. comparable GPU systems; stock fell 12.7% same day, compounding an 11.9% drop from Q2 earnings",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://finance.yahoo.com/technology/ai/articles/cerebras-launches-record-setting-ai-193002886.html"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-08-18",
+              "product": "CS-4 (WSE-3 Turbo)",
+              "type": "product_launch",
+              "description": "Rack-scale platform with three new WSE-3 Turbo processors; 750 petaflops AI compute, supports models >50T parameters"
+            }
+          ]
+        },
+        {
+          "company_id": "groq",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 6.9,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-24",
+              "headline": "Nvidia's 'Groq 3 LPX' inference accelerator, built on tech licensed from Groq under a Dec-2025 $20B deal, enters full production; first customers Nebius and SpaceX (Nvidia-branded product, not a Groq Inc. release)",
+              "type": "business",
+              "significance": "high",
+              "url": "https://siliconangle.com/2026/08/24/nvidias-dedicated-inference-accelerator-groq-3-lpx-enters-full-production-to-supercharge-ai-agents/"
             }
           ],
           "product_releases": []
