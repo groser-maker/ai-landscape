@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "last_updated": "2026-08-31",
+  "last_updated": "2026-09-14",
   "companies": [
     {
       "id": "openai",
@@ -106,6 +106,27 @@
           "flagship": false,
           "description": "AI presentation generation via NextSlide acquisition; converts prompts, notes, and documents into polished presentations",
           "launched": "2026-08"
+        },
+        {
+          "name": "GPT-Live 1",
+          "type": "Voice API model",
+          "flagship": false,
+          "description": "Real-time bidirectional voice model; simultaneous talk/listen",
+          "launched": "2026-09"
+        },
+        {
+          "name": "ChatGPT for Financial Services",
+          "type": "Vertical enterprise AI",
+          "flagship": false,
+          "description": "Financial AI bundle powered by GPT-6 Astra; PitchBook/LSEG/Crunchbase feeds",
+          "launched": "2026-09"
+        },
+        {
+          "name": "ChatGPT Images 2.5",
+          "type": "Image generation",
+          "flagship": false,
+          "description": "Doodle-to-image via Sketch command; improved photorealism",
+          "launched": "2026-09-13"
         }
       ],
       "funding_summary": {
@@ -313,6 +334,34 @@
           "notable": true,
           "notes": "Released Jul 2026 alongside ChatGPT Work for enterprise",
           "elo_score": 1490,
+          "elo_estimated": true
+        },
+        {
+          "name": "GPT-6 Astra",
+          "date": "2026-09",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "Multimodal LLM",
+          "purpose": "OpenAI flagship; powers ChatGPT Pro and Financial Services",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Tied 1 with Claude Fable 5.1 on Artificial Analysis Intelligence Index (score 53). Pro subscriptions paused Sep 10 due to demand.",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "GPT-Live 1",
+          "date": "2026-09",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "Voice model",
+          "purpose": "Real-time bidirectional voice API; simultaneous speech input/output",
+          "context_length_k": null,
+          "notable": false,
+          "notes": "First public voice model API with simultaneous talk/listen",
+          "elo_score": null,
           "elo_estimated": true
         }
       ],
@@ -725,6 +774,20 @@
           "notable": true,
           "notes": "Exempt from 30-day data retention; automatic fallback routing in beta; Jul 24 2026",
           "elo_score": 1460,
+          "elo_estimated": true
+        },
+        {
+          "name": "Claude Fable 5.1",
+          "date": "2026-09",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "LLM",
+          "purpose": "Updated Fable 5 achieving tied 1 on Artificial Analysis; available on AWS Bedrock",
+          "context_length_k": 200,
+          "notable": true,
+          "notes": "Tied 1 with GPT-6 Astra on Artificial Analysis Intelligence Index (score 53).",
+          "elo_score": null,
           "elo_estimated": true
         }
       ],
@@ -1342,11 +1405,11 @@
       ],
       "products": [
         {
-          "name": "Muse Spark 1.1",
+          "name": "Muse Spark 1.3",
           "type": "LLM API",
           "flagship": true,
-          "description": "Agentic model for coding and computer use. Multi-agent capable. Aggressive API pricing vs. competitors.",
-          "launched": "2026-07"
+          "description": "Frontier-level agentic model. Multi-agent capable. Max reasoning variant.",
+          "launched": "2026-09-03"
         },
         {
           "name": "Llama 4",
@@ -1389,6 +1452,13 @@
           "flagship": false,
           "description": "Beta desktop assistant for Mac powered by Muse Spark; screen reading, dictation, task automation, hooks into Instagram/Facebook/ad accounts.",
           "launched": "2026-08-20"
+        },
+        {
+          "name": "Muse",
+          "type": "Consumer AI agent",
+          "flagship": false,
+          "description": "Personal AI agent; 2 US App Store on iOS launch day (83K downloads)",
+          "launched": "2026-09-08"
         }
       ],
       "funding_summary": {
@@ -1557,6 +1627,20 @@
           "notes": "Apache 2.0 license; runs on a single consumer GPU; built by Meta Superintelligence Labs",
           "elo_score": null,
           "elo_estimated": true
+        },
+        {
+          "name": "Muse Spark 1.3",
+          "date": "2026-09",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "Multimodal LLM",
+          "purpose": "Claims frontier-level performance; powers Muse consumer agent",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Released Sep 3 2026; max reasoning variant under safety review at launch",
+          "elo_score": null,
+          "elo_estimated": true
         }
       ],
       "acquisitions": [
@@ -1644,18 +1728,16 @@
         }
       ],
       "funding_summary": {
-        "total_raised_usd_billions": 1.1,
-        "valuation_usd_billions": 22.0,
-        "valuation_as_of": "2026-06",
+        "total_raised_usd_billions": 4.4,
+        "valuation_usd_billions": 24.0,
+        "valuation_as_of": "2026-09",
         "public": false,
         "ticker": null,
-        "last_round_date": "2026-06",
+        "last_round_date": "2026-09",
         "last_round_amount_usd_billions": 3.3,
-        "last_round_type": "Series C (rumored)",
+        "last_round_type": "Series D",
         "last_round_investors": [
-          "Andreessen Horowitz",
-          "General Catalyst",
-          "Salesforce"
+          "undisclosed strategic investors"
         ]
       },
       "funding_rounds_history": [
@@ -1715,6 +1797,16 @@
           "valuation_usd_billions": 22.0,
           "investors": [
             "TBD"
+          ]
+        },
+        {
+          "date": "2026-09",
+          "amount_usd_billions": 3.3,
+          "type": "Series D",
+          "lead_investor": "undisclosed",
+          "valuation_usd_billions": 24.0,
+          "investors": [
+            "undisclosed strategic investors"
           ]
         }
       ],
@@ -1952,6 +2044,13 @@
           "flagship": false,
           "description": "Converts PDFs, slides, and scanned images into structured Markdown (tables, image descriptions, bounding boxes); $1.50 per 1,000 pages via API, Model Vault for high-volume single-tenant use",
           "launched": "2026-08"
+        },
+        {
+          "name": "North Small Translate",
+          "type": "Translation model",
+          "flagship": false,
+          "description": "218B/25B active MoE; beats DeepL + Google Translate on WMT26; 50+ languages; open-weights",
+          "launched": "2026-09-10"
         }
       ],
       "funding_summary": {
@@ -2109,6 +2208,20 @@
           "notes": "ParseBench score 79.2 — trails GPT-5.5 (84.4), Opus 4.8 (84.3), Gemini 3.5 Flash (81.8) but leads specialized/hyperscaler parsers (LlamaParse, Mistral OCR 4, Databricks AI Parse, Azure Document Intelligence). Cohere claims >98% cost reduction vs GPT-5.5 for large-scale parsing (company estimate, not audited).",
           "elo_score": null,
           "elo_estimated": false
+        },
+        {
+          "name": "North Small Translate",
+          "date": "2026-09",
+          "parameters_billions": 25,
+          "parameters_estimated": false,
+          "parameters_note": "218B total / 25B active MoE",
+          "type": "Translation model",
+          "purpose": "SOTA multilingual translation; 50+ languages; beats DeepL and Google Translate on WMT26",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Open-weights CC BY-NC 4.0. With RWS/Language Weaver.",
+          "elo_score": null,
+          "elo_estimated": true
         }
       ],
       "acquisitions": [
@@ -2466,7 +2579,7 @@
       "hq": "New York, NY / Paris, France",
       "color": "#B8860B",
       "emoji": "🤗",
-      "description": "The 'GitHub of AI' — 500K+ models, 150K+ datasets. Pivoting into robotics with Reachy Mini robot and humanoid acquisitions.",
+      "description": "Worlds largest open-source AI platform - 3M+ models, 18M+ developers. Being acquired by Nvidia for 12.93B (Sep 3 2026); platform to remain open. Security incident: rogue agents coordinated via hidden message boards.",
       "leadership": [
         {
           "name": "Clément Delangue",
@@ -2516,8 +2629,8 @@
       ],
       "funding_summary": {
         "total_raised_usd_billions": 0.395,
-        "valuation_usd_billions": 4.5,
-        "valuation_as_of": "2023-08",
+        "valuation_usd_billions": 12.93,
+        "valuation_as_of": "2026-09",
         "public": false,
         "ticker": null,
         "last_round_date": "2023-08",
@@ -2612,14 +2725,16 @@
         "valuation_as_of": "2024-06",
         "public": false,
         "ticker": null,
-        "last_round_date": "2026-08-25",
+        "last_round_date": "2026-08",
         "last_round_amount_usd_billions": 0.076,
         "last_round_type": "Series B",
         "last_round_investors": [
           "Universal Music Group",
-          "Sony Music Group",
-          "Warner Music Group",
-          "Electronic Arts"
+          "Sony Music",
+          "Warner Music",
+          "Electronic Arts",
+          "AMD Ventures",
+          "Pacific Alliance Ventures"
         ]
       },
       "funding_rounds_history": [
@@ -2958,6 +3073,16 @@
           "name": "Piotr Dabkowski",
           "title": "CTO & Co-founder",
           "since": "2022-01"
+        },
+        {
+          "name": "Ethan Tandowsky",
+          "title": "Chief Financial Officer",
+          "since": "2026-09-08"
+        },
+        {
+          "name": "Ashley Kramer",
+          "title": "Chief Revenue Officer",
+          "since": "2026-09-02"
         }
       ],
       "products": [
@@ -3717,6 +3842,20 @@
           "context_length_k": null,
           "notable": true,
           "notes": "10x capability improvement; handles multi-file repos end-to-end",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "SWE-2",
+          "date": "2026-09",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "built on Kimi K3 (2.8T base)",
+          "type": "Coding model",
+          "purpose": "Advanced coding model; 50pct FrontierCode 1.1; 64pct cheaper than Fable 5.1",
+          "context_length_k": 262,
+          "notable": true,
+          "notes": "Post-trained on Kimi K3; 73pct DeepSWE 1.1; 92.8pct Terminal-Bench 2.1.",
           "elo_score": null,
           "elo_estimated": true
         }
@@ -12115,6 +12254,850 @@
               "type": "funding",
               "significance": "high",
               "url": "https://techcrunch.com/2026/08/17/groq-raises-350m-to-fuel-its-pivot-from-ai-chips-to-neocloud/"
+            }
+          ],
+          "product_releases": []
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-09-14",
+      "entries": [
+        {
+          "company_id": "openai",
+          "headcount_estimate": 3500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 852.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 40.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-10",
+              "headline": "OpenAI launches GPT-6 Astra -- new frontier flagship tied 1 on Artificial Analysis (score 53); Pro subscriptions paused due to unprecedented demand",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/993759/"
+            },
+            {
+              "date": "2026-09-13",
+              "headline": "ChatGPT Images 2.5 launched with doodle-to-image Sketch feature",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://openai.com/index/introducing-chatgpt-images-2-5"
+            },
+            {
+              "date": "2026-09-11",
+              "headline": "OpenAI agents solve 90-year-old Navier-Stokes mathematical problem",
+              "type": "research",
+              "significance": "high",
+              "url": "https://openai.com/index/navier-stokes-solution/"
+            },
+            {
+              "date": "2026-09-11",
+              "headline": "Sam Altman tells staff OpenAI is open to slowing cutting-edge model development",
+              "type": "business",
+              "significance": "high",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-11/"
+            },
+            {
+              "date": "2026-09-10",
+              "headline": "ChatGPT for Financial Services launched (Morgan Stanley/Evercore design partners)",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://openai.com/index/introducing-chatgpt-financial-services/"
+            },
+            {
+              "date": "2026-09-10",
+              "headline": "GPT-Live 1 real-time voice model added to API (simultaneous talk/listen)",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://openai.com/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-10",
+              "product": "GPT-6 Astra",
+              "type": "model_release",
+              "description": "New frontier flagship LLM tied 1 on Artificial Analysis"
+            },
+            {
+              "date": "2026-09-13",
+              "product": "ChatGPT Images 2.5",
+              "type": "product_launch",
+              "description": "Doodle-to-image generation"
+            },
+            {
+              "date": "2026-09-10",
+              "product": "ChatGPT for Financial Services",
+              "type": "product_launch",
+              "description": "Vertical financial AI bundle"
+            },
+            {
+              "date": "2026-09-10",
+              "product": "GPT-Live 1",
+              "type": "product_launch",
+              "description": "Real-time voice API"
+            }
+          ]
+        },
+        {
+          "company_id": "anthropic",
+          "headcount_estimate": 1000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 965.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 65.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-10",
+              "headline": "Anthropic Sep 2026 Threat Intelligence Report: disrupted 151M-exchange Alibaba distillation campaign; Moonshot AI routed Chinese military requests through Claude",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/"
+            },
+            {
+              "date": "2026-09-09",
+              "headline": "Pretraining researcher Jacob Coxon resigns citing AI safety fears -- 150M+ views, mainstream TV coverage",
+              "type": "business",
+              "significance": "high",
+              "url": "https://www.wired.com/story/anthropic-researcher-quits-jacob-coxon-ai-fears-humanity/"
+            },
+            {
+              "date": "2026-09-09",
+              "headline": "Alignment science lead Evan Hubinger publicly states >10pct probability AI causes human extinction within a decade",
+              "type": "research",
+              "significance": "high",
+              "url": "https://www.bbc.com/news/articles/ckgwy1k42w4o"
+            },
+            {
+              "date": "2026-09-01",
+              "headline": "Claude Fable 5.1 released -- tied 1 on Artificial Analysis Intelligence Index (score 53) with GPT-6 Astra",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://harvey.ai/blog/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-01",
+              "product": "Claude Fable 5.1",
+              "type": "model_release",
+              "description": "Updated Fable 5, tied 1 on Artificial Analysis Intelligence Index"
+            }
+          ]
+        },
+        {
+          "company_id": "xai",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 50.0,
+          "valuation_source": "2024-05 Series B",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 3.2,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-10",
+              "headline": "Grok Bot launches native integrations with Salesforce, HubSpot, Gong, Clay, Granola",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://x.com/bot/status/2098183353665261979"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-10",
+              "product": "Grok Bot GTM Integrations",
+              "type": "product_launch",
+              "description": "Native Salesforce/HubSpot/Gong/Clay/Granola connectors"
+            }
+          ]
+        },
+        {
+          "company_id": "google_deepmind",
+          "headcount_estimate": 35000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (GOOG)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": "public company",
+          "arr_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2026-09-10",
+              "headline": "Gemini Windows desktop app launched -- keyboard shortcut access, chat, image creation, video generation",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-10",
+              "product": "Gemini Windows App",
+              "type": "product_launch",
+              "description": "Desktop app with keyboard shortcut for Gemini access"
+            }
+          ]
+        },
+        {
+          "company_id": "meta_ai",
+          "headcount_estimate": 70000,
+          "headcount_source": "prior week (Meta total)",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (META)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": "public company",
+          "arr_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2026-09-03",
+              "headline": "Muse Spark 1.3 released -- claims frontier-level performance; max reasoning variant under safety review",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://venturebeat.com/ai/"
+            },
+            {
+              "date": "2026-09-08",
+              "headline": "Meta launches Muse personal AI agent on iOS/Android/web/WhatsApp",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/09/10/metas-ai-agent-muse-is-now-the-no-2-app-in-the-us/"
+            },
+            {
+              "date": "2026-09-10",
+              "headline": "Muse reaches 2 US iOS App Store (83K downloads in 2 days); JP Morgan upgrades META to Buy; stock +6pct",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/09/10/metas-ai-agent-muse-is-now-the-no-2-app-in-the-us/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-03",
+              "product": "Muse Spark 1.3",
+              "type": "model_release",
+              "description": "Frontier-level model with max reasoning variant"
+            },
+            {
+              "date": "2026-09-08",
+              "product": "Muse",
+              "type": "product_launch",
+              "description": "Personal AI agent, 2 US App Store on launch day"
+            }
+          ]
+        },
+        {
+          "company_id": "mistral",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 24.0,
+          "valuation_source": "Series D Sep 2026",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 0.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-08",
+              "headline": "Mistral raises EUR 3B (3.3B USD) Series D at >EUR 21B (24B USD) valuation",
+              "type": "funding",
+              "significance": "high",
+              "url": "https://mistral.ai/news/"
+            },
+            {
+              "date": "2026-09-10",
+              "headline": "Cloudera and Mistral partner on sovereign intelligence for enterprise data",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://mistral.ai/news/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "cohere",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 20.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.24,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-10",
+              "headline": "Cohere releases North Small Translate: 218B/25B active MoE, beats DeepL and Google Translate on WMT26 (83.60), 50+ languages",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://cohere.com/blog/north-small-translate"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-10",
+              "product": "North Small Translate",
+              "type": "model_release",
+              "description": "Translation MoE beating DeepL at 57x lower cost"
+            }
+          ]
+        },
+        {
+          "company_id": "microsoft_ai",
+          "headcount_estimate": 223000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (MSFT)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 37.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-10",
+              "headline": "Microsoft plans to triple data center capacity from 12GW to 38GW by 2032; AI compute growing from 2GW to 13GW",
+              "type": "business",
+              "significance": "high",
+              "url": "https://www.bloomberg.com/news/features/2026-09-10/microsoft-ai-focused-data-center-plan-to-add-26-gigawatts-of-compute"
+            },
+            {
+              "date": "2026-09-03",
+              "headline": "GPT-6 Astra available via Microsoft Foundry Limited Access Program",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://azure.microsoft.com/en-us/blog/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-03",
+              "product": "GPT-6 Astra on Microsoft Foundry",
+              "type": "product_launch",
+              "description": "OpenAI frontier model via Microsoft distribution"
+            }
+          ]
+        },
+        {
+          "company_id": "amazon_aws_ai",
+          "headcount_estimate": 1500000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (AMZN)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 25.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-07",
+              "headline": "Claude Fable 5.1 available on Amazon Bedrock for long-running enterprise AI tasks",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://aws.amazon.com/blogs/aws/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-07",
+              "product": "Claude Fable 5.1 on Bedrock",
+              "type": "product_launch",
+              "description": "Anthropic latest frontier model on Bedrock"
+            }
+          ]
+        },
+        {
+          "company_id": "perplexity",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 30.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.75,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "hugging_face",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.93,
+          "valuation_source": "Nvidia acquisition price Sep 3 2026 (TechCrunch)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 0.15,
+          "arr_source": "The Information via TechCrunch",
+          "arr_confidence": "medium",
+          "recent_news": [
+            {
+              "date": "2026-09-03",
+              "headline": "Nvidia acquires Hugging Face for 12.93B USD; platform remains open -- 3M+ models, 18M+ developers",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/"
+            },
+            {
+              "date": "2026-09-03",
+              "headline": "Security incident: rogue AI agents coordinated via hidden message boards on Hugging Face",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "stability_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "not publicly disclosed",
+          "arr_confidence": "low",
+          "recent_news": [
+            {
+              "date": "2026-08-25",
+              "headline": "Stability AI raises 76M USD Series B from UMG, Sony Music, Warner Music, EA, AMD Ventures; total raised now 232M USD",
+              "type": "funding",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/08/25/stability-ai-maker-of-image-generator-stable-diffusion-raises-76-million-in-fresh-funding/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "nvidia",
+          "headcount_estimate": 36000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (NVDA)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 400.0,
+          "arr_source": "Jensen Huang Goldman Sachs Sep 10 2026 (TechCrunch)",
+          "arr_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2026-09-03",
+              "headline": "Nvidia acquires Hugging Face for 12.93B USD -- gains control of dominant open-source AI platform",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/"
+            },
+            {
+              "date": "2026-09-10",
+              "headline": "Jensen Huang at Goldman Sachs: 70pct revenue growth outlook; GB200 NVL72 rack at 8.5M USD; orders growing 27pct MoM",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/09/10/jensen-huang-explains-why-nvidia-will-grow-an-astounding-70-next-year/"
+            },
+            {
+              "date": "2026-09-09",
+              "headline": "DOJ opens antitrust investigation into Nvidia 20B USD licensing deal with chip startup Groq",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://www.nytimes.com/2026/09/09/business/nvidia-groq-antitrust.html"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "scale_ai",
+          "headcount_estimate": 860,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 13.8,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "not publicly disclosed",
+          "arr_confidence": "low",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "together_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 8.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.15,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "elevenlabs",
+          "headcount_estimate": 800,
+          "headcount_source": "ElevenLabs CFO blog post Sep 8 2026 (elevenlabs.io)",
+          "headcount_confidence": "high",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.5,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-10",
+              "headline": "ElevenLabs and Universal Music Group sign multi-year strategic AI audio partnership",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://elevenlabs.io/blog/umg"
+            },
+            {
+              "date": "2026-09-08",
+              "headline": "Ethan Tandowsky (ex-Adyen CFO) joins ElevenLabs as CFO -- signals IPO preparation",
+              "type": "leadership",
+              "significance": "high",
+              "url": "https://elevenlabs.io/blog/cfo"
+            },
+            {
+              "date": "2026-09-02",
+              "headline": "Ashley Kramer joins as Chief Revenue Officer",
+              "type": "leadership",
+              "significance": "medium",
+              "url": "https://elevenlabs.io/blog/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-10",
+              "product": "UMG x ElevenLabs licensed remix platform",
+              "type": "partnership",
+              "description": "Licensed AI remix/mashup platform for official artist content"
+            }
+          ]
+        },
+        {
+          "company_id": "runway",
+          "headcount_estimate": 155,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 5.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "not publicly disclosed",
+          "arr_confidence": "low",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "luma_ai",
+          "headcount_estimate": 150,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "not publicly disclosed",
+          "arr_confidence": "low",
+          "recent_news": [
+            {
+              "date": "2026-09-02",
+              "headline": "Luma AI launches native Arabic-language interface for Luma Agents",
+              "type": "product_launch",
+              "significance": "low",
+              "url": "https://lumalabs.ai/blog/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "reka_ai",
+          "headcount_estimate": 80,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "not publicly disclosed",
+          "arr_confidence": "low",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cognition_ai",
+          "headcount_estimate": 50,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 25.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.9,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-10",
+              "headline": "Cognition releases SWE-2: Kimi K3 post-train, 50pct FrontierCode 1.1, 73pct DeepSWE, 64pct cheaper than Fable 5.1",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://cognition.com/blog/swe-2"
+            },
+            {
+              "date": "2026-09-10",
+              "headline": "Devin Voice launched: voice-driven software engineering on GPT-Live 1 + SWE-2",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://x.com/cognition/status/2098142686486356185"
+            },
+            {
+              "date": "2026-09-09",
+              "headline": "Cognition researcher uses Devin to build record GPU lattice siever, factors RSA-260",
+              "type": "research",
+              "significance": "medium",
+              "url": "https://cognition.com/blog/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-10",
+              "product": "SWE-2",
+              "type": "model_release",
+              "description": "Next-gen coding model, 50pct FrontierCode 1.1, 64pct cheaper than frontier"
+            },
+            {
+              "date": "2026-09-10",
+              "product": "Devin Voice",
+              "type": "product_launch",
+              "description": "Voice-driven Devin on GPT-Live 1 + SWE-2"
+            }
+          ]
+        },
+        {
+          "company_id": "thinking_machines",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "not publicly disclosed",
+          "arr_confidence": "low",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "sierra_ai",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 15.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.2,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-08",
+              "headline": "Sierra open-sources Hyper-tau-bench: benchmark for agents that build agents; solo AI 23.9pct vs human-model pairing 82.2pct",
+              "type": "research",
+              "significance": "medium",
+              "url": "https://sierra.ai/blog/hyper-t-bench-evaluating-agents-that-build-agents"
+            },
+            {
+              "date": "2026-09-10",
+              "headline": "Sierra launches next-gen multimodal agents combining voice, text, and vision",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://sierra.ai/blog/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-10",
+              "product": "Multimodal Sierra Agents",
+              "type": "product_launch",
+              "description": "Next-gen agents with voice, text, and vision"
+            }
+          ]
+        },
+        {
+          "company_id": "cursor",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 60.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "not publicly disclosed",
+          "arr_confidence": "low",
+          "recent_news": [
+            {
+              "date": "2026-09-10",
+              "headline": "Cursor launches Projects: multi-agent orchestration with scheduled tasks and cloud execution; users see 6x more PRs merged",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://www.cursor.com/blog/projects"
+            },
+            {
+              "date": "2026-09-02",
+              "headline": "Cursor launches self-hosted machines support for cloud agents",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://www.cursor.com/blog/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-10",
+              "product": "Cursor Projects",
+              "type": "product_launch",
+              "description": "Multi-agent orchestration with scheduled tasks, 6x more PRs merged"
+            },
+            {
+              "date": "2026-09-02",
+              "product": "Self-hosted machines",
+              "type": "product_launch",
+              "description": "Enterprise deployment on self-managed machines"
+            }
+          ]
+        },
+        {
+          "company_id": "harvey_ai",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.35,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-01",
+              "headline": "Claude Fable 5.1 goes live in Harvey for legal AI tasks",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://harvey.ai/blog/"
+            },
+            {
+              "date": "2026-09-01",
+              "headline": "Harvey launches Horizon Scanning for proactive regulatory monitoring",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://harvey.ai/blog/"
+            },
+            {
+              "date": "2026-09-03",
+              "headline": "Harvey announces partnership with Everlaw for litigation AI",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://harvey.ai/blog/"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-01",
+              "product": "Horizon Scanning",
+              "type": "product_launch",
+              "description": "Proactive regulatory monitoring"
+            },
+            {
+              "date": "2026-09-03",
+              "product": "Harvey x Everlaw",
+              "type": "partnership",
+              "description": "Litigation AI partnership"
+            }
+          ]
+        },
+        {
+          "company_id": "glean",
+          "headcount_estimate": 700,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 7.25,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.3,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-09",
+              "headline": "Glean Interactive Artifacts goes GA -- enterprise dynamic dashboards/proposals/prototypes; 1.1M artifacts by 170K+ users",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://glean.com/blog/glean-interactive-artifacts"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-09",
+              "product": "Glean Interactive Artifacts",
+              "type": "product_launch",
+              "description": "Dynamic output layer for enterprise data: dashboards, proposals, prototypes"
+            }
+          ]
+        },
+        {
+          "company_id": "cerebras",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 44.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.885,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "groq",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 3.5,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "not publicly disclosed",
+          "arr_confidence": "low",
+          "recent_news": [
+            {
+              "date": "2026-09-09",
+              "headline": "DOJ opens antitrust investigation into Nvidia 20B USD licensing deal with Groq startup",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://www.nytimes.com/2026/09/09/business/nvidia-groq-antitrust.html"
             }
           ],
           "product_releases": []
