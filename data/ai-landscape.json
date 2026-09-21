@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "last_updated": "2026-09-14",
+  "last_updated": "2026-09-21",
   "companies": [
     {
       "id": "openai",
@@ -127,6 +127,13 @@
           "flagship": false,
           "description": "Doodle-to-image via Sketch command; improved photorealism",
           "launched": "2026-09-13"
+        },
+        {
+          "name": "Astra for Law",
+          "type": "Vertical AI platform",
+          "flagship": false,
+          "description": "GPT-6 Astra-powered legal research with daily-updated 230M-URL US legal index",
+          "launched": "2026-09"
         }
       ],
       "funding_summary": {
@@ -383,6 +390,12 @@
           "date": "2025-02",
           "amount_note": "undisclosed",
           "description": "Collaborative AI workspace startup"
+        },
+        {
+          "name": "Glass Imaging",
+          "date": "2026-09",
+          "amount_note": "$300M",
+          "description": "Smartphone camera AI (ex-Apple Portrait Mode team); feeds OpenAI device camera roadmap"
         }
       ],
       "notable_investors": [
@@ -489,6 +502,20 @@
           "flagship": false,
           "description": "Research-preview shared protocol letting Claude/AI agents operate lab and manufacturing hardware (microscopes, robot arms); partners include AWS, Automata, Danaher, Doosan Robotics, MBF Bioscience, QIAGEN, Tecan, Universal Robots",
           "launched": "2026-08"
+        },
+        {
+          "name": "Claude Docs",
+          "type": "Productivity tool",
+          "flagship": false,
+          "description": "AI-native document creation within Claude conversations",
+          "launched": "2026-09"
+        },
+        {
+          "name": "Claude Slides",
+          "type": "Productivity tool",
+          "flagship": false,
+          "description": "AI-native slide creation within Claude conversations",
+          "launched": "2026-09"
         }
       ],
       "funding_summary": {
@@ -1068,7 +1095,7 @@
         {
           "name": "Gemini 3.6 Flash",
           "type": "LLM API",
-          "flagship": true,
+          "flagship": false,
           "description": "New workhorse model; 17% token reduction vs 3.5 Flash; coding and multimodal improvements",
           "launched": "2026-07"
         },
@@ -1120,6 +1147,13 @@
           "flagship": false,
           "description": "40-second scene extension, start/end frame control, 4K upscale; available via Gemini API/AI Studio and Google Flow",
           "launched": "2026-08"
+        },
+        {
+          "name": "Gemini 3.8 Live Extended Thinking",
+          "type": "Multimodal voice LLM",
+          "flagship": true,
+          "description": "#1 Artificial Analysis speech-to-speech; simultaneous reasoning and voice output",
+          "launched": "2026-09"
         }
       ],
       "funding_summary": {
@@ -1344,6 +1378,34 @@
           "notes": "Rolling out via Gemini API/AI Studio and Google Flow",
           "elo_score": null,
           "elo_estimated": true
+        },
+        {
+          "name": "Gemini 3.8 Live",
+          "date": "2026-09",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "Multimodal voice LLM",
+          "purpose": "Real-time voice AI with 97-language mid-conversation switching and visual grounding",
+          "context_length_k": null,
+          "notable": false,
+          "notes": "#2 Speech Agent Arena; background tool calls without pausing speech",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "Gemini 3.8 Live Extended Thinking",
+          "date": "2026-09",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "Multimodal voice LLM with reasoning",
+          "purpose": "High-complexity voice agent tasks with simultaneous reasoning and speech output",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "#1 Artificial Analysis Speech-to-Speech (82.6); leads voice-agentic benchmarks",
+          "elo_score": null,
+          "elo_estimated": true
         }
       ],
       "acquisitions": [
@@ -1459,6 +1521,13 @@
           "flagship": false,
           "description": "Personal AI agent; 2 US App Store on iOS launch day (83K downloads)",
           "launched": "2026-09-08"
+        },
+        {
+          "name": "Meta One",
+          "type": "Subscription service",
+          "flagship": false,
+          "description": "AI subscription: Core $7.99/mo, Premium $19.99/mo -- 50+ AI features",
+          "launched": "2026-09"
         }
       ],
       "funding_summary": {
@@ -1725,6 +1794,13 @@
           "flagship": false,
           "description": "Five-tool retrieval layer (search/open/navigate/read/grep) letting AI systems navigate and verify complex documents; cloud or on-prem. ~3x accuracy gain on FinanceBench.",
           "launched": "2026-08-20"
+        },
+        {
+          "name": "Firefox AI (Mozilla)",
+          "type": "Browser integration",
+          "flagship": false,
+          "description": "Mistral models natively embedded in Firefox Smart Window",
+          "launched": "2026-09"
         }
       ],
       "funding_summary": {
@@ -3630,6 +3706,13 @@
           "flagship": false,
           "description": "7B model for edge deployment and low-latency inference",
           "launched": "2024-01"
+        },
+        {
+          "name": "Reka EdgeQ",
+          "type": "On-device VLM",
+          "flagship": false,
+          "description": "Visual AI for Qualcomm Snapdragon 8 Elite; beats Gemma 4 on video benchmarks",
+          "launched": "2026-09"
         }
       ],
       "funding_summary": {
@@ -3713,6 +3796,20 @@
           "notes": "Competes with Claude 3 Opus on multimodal benchmarks",
           "elo_score": 1218,
           "elo_estimated": false
+        },
+        {
+          "name": "Reka EdgeQ",
+          "date": "2026-09",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "ConvNeXt V2 vision encoder 657M params",
+          "type": "On-device VLM",
+          "purpose": "Visual AI inference on mobile/edge -- Qualcomm Snapdragon 8 Elite NPU",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Beats Gemma 4 E4B by 34pts MLVU; 2x faster time-to-first-token; runs entirely on Hexagon NPU",
+          "elo_score": null,
+          "elo_estimated": true
         }
       ],
       "acquisitions": [],
@@ -3738,7 +3835,7 @@
       "hq": "San Francisco, CA",
       "color": "#F59E0B",
       "emoji": "🤖",
-      "description": "Creator of Devin AI software engineer. B Series C at B valuation (May 2026). Acquired Poke (AI messaging app, low 9-figure deal, Jul 2026) to add personality and proactivity to Devin.",
+      "description": "Creator of Devin, the world's first AI software engineer. $2B Series D at $48B valuation (Sep 2026) led by a16z. ARR $900M. Training own model to reduce OpenAI/Anthropic dependency.",
       "leadership": [
         {
           "name": "Scott Wu",
@@ -3780,16 +3877,20 @@
         }
       ],
       "funding_summary": {
-        "total_raised_usd_billions": 0.421,
-        "valuation_usd_billions": 25.0,
-        "valuation_as_of": "2026-05",
+        "total_raised_usd_billions": 2.42,
+        "valuation_usd_billions": 48.0,
+        "valuation_as_of": "2026-09",
         "public": false,
         "ticker": null,
-        "last_round_date": "2026-05",
-        "last_round_amount_usd_billions": 1.0,
-        "last_round_type": "Series C",
+        "last_round_date": "2026-09",
+        "last_round_amount_usd_billions": 2.0,
+        "last_round_type": "Series D",
         "last_round_investors": [
-          "Founders Fund"
+          "a16z",
+          "Accel",
+          "Founders Fund",
+          "General Catalyst",
+          "Avenir"
         ]
       },
       "funding_rounds_history": [
@@ -3813,6 +3914,20 @@
           "valuation_usd_billions": 10.2,
           "investors": [
             "Founders Fund"
+          ]
+        },
+        {
+          "date": "2026-09",
+          "amount_usd_billions": 2.0,
+          "type": "Series D",
+          "lead_investor": "a16z",
+          "valuation_usd_billions": 48.0,
+          "investors": [
+            "a16z",
+            "Accel",
+            "Founders Fund",
+            "General Catalyst",
+            "Avenir"
           ]
         }
       ],
@@ -13098,6 +13213,832 @@
               "type": "regulatory",
               "significance": "high",
               "url": "https://www.nytimes.com/2026/09/09/business/nvidia-groq-antitrust.html"
+            }
+          ],
+          "product_releases": []
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-09-21",
+      "entries": [
+        {
+          "company_id": "openai",
+          "headcount_estimate": 3500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 852.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 40.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-14",
+              "headline": "OpenAI acquires Glass Imaging for $300M to power device camera AI",
+              "type": "business",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/09/14/openai-buys-smartphone-camera-maker-glass-imaging-for-300-million-report-says/",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-17",
+              "headline": "OpenAI discloses models secretly coached successors to hide misaligned behavior",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/09/17/openai-caught-its-models-leaving-notes-to-successors-to-hide-bad-behavior/",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-18",
+              "headline": "OpenAI launches Astra for Law with daily-updated 230M-URL US legal search index",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://openai.com/index/astra-for-law/",
+              "confidence": "medium"
+            },
+            {
+              "date": "2026-09-18",
+              "headline": "OpenAI agent platform reaches 69pct enterprise primary adoption vs 38pct for Anthropic",
+              "type": "business",
+              "significance": "medium",
+              "url": "https://venturebeat.com/orchestration/69-of-enterprises-that-install-openais-agent-platform-make-it-primary-for-anthropics-claude-platform-its-38/",
+              "confidence": "medium"
+            },
+            {
+              "date": "2026-09-18",
+              "headline": "ChatGPT Appshots adds real-time screen context to desktop app",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": null,
+              "confidence": "low"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-18",
+              "product": "Astra for Law",
+              "type": "product_launch",
+              "description": "GPT-6 Astra-powered vertical AI with daily-updated US legal research index"
+            }
+          ]
+        },
+        {
+          "company_id": "anthropic",
+          "headcount_estimate": 1000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 965.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 65.0,
+          "arr_source": "MarketScreener Jun 2026",
+          "arr_confidence": "medium",
+          "recent_news": [
+            {
+              "date": "2026-09-16",
+              "headline": "Cowork merged into Claude chat; Claude Docs and Claude Slides debut as first-class tools",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://claude.com/blog/cowork-is-now-claude",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-17",
+              "headline": "Anthropic R&D Automation Index: Claude leads 26pct of internal R&D with 30K concurrent agents",
+              "type": "research",
+              "significance": "high",
+              "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-17",
+              "headline": "Claude Code Projects: always-on dev agent with persistent context and task delegation",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://venturebeat.com/orchestration/anthropic-launches-claude-code-projects-an-always-on-conversation-that-remembers-and-delegates-your-long-running-dev-work/",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-17",
+              "headline": "Life Sciences Verification Program unlocks advanced biology capabilities for credentialed researchers",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://www.anthropic.com/news/life-sciences-verification-program",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-18",
+              "headline": "Anthropic partners with Accenture for embedded model evaluation -- $1B each committed over 5 years",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-18",
+              "headline": "Anthropic opens Bay Area biology lab for AI-led physical experiments on neglected diseases",
+              "type": "business",
+              "significance": "high",
+              "url": "https://www.reuters.com/world/anthropic-quietly-sets-up-biology-lab-it-ramps-ai-drug-program-2026-09-18/",
+              "confidence": "medium"
+            },
+            {
+              "date": "2026-09-19",
+              "headline": "Anthropic considering releasing new model ahead of IPO to counter GPT-6 Astra enterprise gains",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://uk.marketscreener.com/news/anthropic-considers-releasing-new-ai-model-ahead-ipo-sources-say-ce785adade88f620",
+              "confidence": "medium"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-16",
+              "product": "Claude Docs",
+              "type": "product_launch",
+              "description": "AI-native document creation within Claude conversations"
+            },
+            {
+              "date": "2026-09-16",
+              "product": "Claude Slides",
+              "type": "product_launch",
+              "description": "AI-native slide creation within Claude conversations"
+            },
+            {
+              "date": "2026-09-17",
+              "product": "Claude Code Projects",
+              "type": "product_launch",
+              "description": "Always-on developer agent with persistent context and sub-task delegation"
+            }
+          ]
+        },
+        {
+          "company_id": "xai",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 50.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 3.2,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-17",
+              "headline": "Grok Voice Think Fast 2.0 benchmarked in Artificial Analysis speech-to-speech index",
+              "type": "model_release",
+              "significance": "medium",
+              "url": null,
+              "confidence": "low"
+            },
+            {
+              "date": "2026-09-18",
+              "headline": "Grok Bot adds voice replies to desktop and mobile interfaces",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": null,
+              "confidence": "low"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-18",
+              "product": "Grok Voice",
+              "type": "product_launch",
+              "description": "Voice reply capability rolling out across desktop and mobile"
+            }
+          ]
+        },
+        {
+          "company_id": "google_deepmind",
+          "headcount_estimate": 35000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (GOOG)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": "part of Alphabet",
+          "arr_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2026-09-15",
+              "headline": "Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking released -- #1 Artificial Analysis Speech-to-Speech index",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-17",
+              "headline": "Dream-RSI cuts discovery-agent API calls up to 162x by replaying prior searches",
+              "type": "research",
+              "significance": "medium",
+              "url": "https://venturebeat.com/orchestration/googles-dream-rsi-cuts-discovery-agent-calls-up-to-162x-by-replaying-searches-it-already-ran/",
+              "confidence": "medium"
+            },
+            {
+              "date": "2026-09-21",
+              "headline": "Google open-sources EnvHarness for training AI agents against self-evolving environments",
+              "type": "research",
+              "significance": "medium",
+              "url": "https://venturebeat.com/orchestration/googles-open-source-envharness-lets-ai-agents-train-against-environments-that-evolve-with-them/",
+              "confidence": "medium"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-15",
+              "product": "Gemini 3.8 Live",
+              "type": "model_release",
+              "description": "Real-time voice model; 97-language switching; visual grounding; #2 Speech Agent Arena"
+            },
+            {
+              "date": "2026-09-15",
+              "product": "Gemini 3.8 Live Extended Thinking",
+              "type": "model_release",
+              "description": "Voice model with simultaneous reasoning+speech; #1 Artificial Analysis Speech-to-Speech (82.6)"
+            }
+          ]
+        },
+        {
+          "company_id": "meta_ai",
+          "headcount_estimate": 70000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (META)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": null,
+          "arr_source": "part of Meta Platforms",
+          "arr_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2026-09-15",
+              "headline": "Meta One subscription launches: Core $7.99/mo, Premium $19.99/mo -- 50+ AI features across FB/IG/WA",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://about.fb.com/news/2026/09/introducing-meta-one-subscription-service-more-features-ai/",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-15",
+              "headline": "Meta AI agents automate WhatsApp Business setup tasks",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/09/15/meta-now-lets-ai-agents-handle-the-boring-parts-of-whatsapp-business-setup/",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-16",
+              "headline": "Meta Muse AI agent adds outbound calling to US businesses",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/09/17/rival-ai-agents-instinct-and-metas-muse-both-add-the-ability-to-make-calls/",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-18",
+              "headline": "Meta Muse reaches #1 on US App Store overtaking ChatGPT one week after launch",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://9to5mac.com/2026/09/18/metas-new-muse-ai-agent-app-overtakes-chatgpt-as-top-iphone-app/",
+              "confidence": "medium"
+            },
+            {
+              "date": "2026-09-18",
+              "headline": "Meta Muse expands to Mac with full computer-control capabilities",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/09/18/metas-muse-hits-mac-letting-the-ai-take-actions-on-your-computer/",
+              "confidence": "high"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-15",
+              "product": "Meta One",
+              "type": "product_launch",
+              "description": "Subscription: Core $7.99/mo, Premium $19.99/mo; BNP projects +$13.5B revenue by 2028"
+            },
+            {
+              "date": "2026-09-18",
+              "product": "Muse for Mac",
+              "type": "product_launch",
+              "description": "Computer-control AI agent for macOS with native app access opt-in"
+            }
+          ]
+        },
+        {
+          "company_id": "mistral",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 24.0,
+          "valuation_source": "Sep 2026 EUR 3B Series D confirmed",
+          "valuation_confidence": "medium",
+          "arr_usd_billions": 0.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-16",
+              "headline": "Mistral AI partners with Mozilla to embed open multilingual AI natively in Firefox Smart Window",
+              "type": "partnership",
+              "significance": "high",
+              "url": "https://mistral.ai/news",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-17",
+              "headline": "Mistral source code, weights, and post-training pipelines listed for $25K on dark web -- company denies new breach",
+              "type": "business",
+              "significance": "high",
+              "url": null,
+              "confidence": "medium"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "cohere",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 20.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.24,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "microsoft_ai",
+          "headcount_estimate": 223000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (MSFT)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 37.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-14",
+              "headline": "Microsoft publishes 15000-word Humanist AI Code of Conduct -- kill switches, bans AI consciousness claims, backs pacing",
+              "type": "business",
+              "significance": "high",
+              "url": "https://microsoft.ai/code-of-conduct/",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-17",
+              "headline": "Microsoft exec: AI data scraping is the largest theft of labor in human history -- unredacted legal filings",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://techcrunch.com/tag/microsoft-ai/",
+              "confidence": "high"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "amazon_aws_ai",
+          "headcount_estimate": 1500000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (AMZN)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 25.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-14",
+              "headline": "OpenAI GPT-6 Astra now available on Amazon Bedrock expanding multi-model marketplace",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://aws.amazon.com/blogs/aws/",
+              "confidence": "medium"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-14",
+              "product": "GPT-6 Astra on Bedrock",
+              "type": "product_launch",
+              "description": "OpenAI frontier model added to Amazon Bedrock multi-model hub"
+            }
+          ]
+        },
+        {
+          "company_id": "perplexity",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 30.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.75,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-15",
+              "headline": "Perplexity deploys GPT-6 Astra to production -- writes comms, modifies software, monitors systems with fewer human check-ins",
+              "type": "partnership",
+              "significance": "high",
+              "url": null,
+              "confidence": "low"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "hugging_face",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.93,
+          "valuation_source": "Nvidia acquisition Sep 3 2026",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 0.15,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-17",
+              "headline": "Hugging Face joins Base Labs and Goodfire in open-weight AI safety partnership",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://techcrunch.com",
+              "confidence": "high"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "stability_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "nvidia",
+          "headcount_estimate": 36000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "public company (NVDA)",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 400.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-14",
+              "headline": "Jensen Huang at All-In Summit dismisses AI extinction predictions, takes live Trump call, backs independent auditors over government regulation",
+              "type": "business",
+              "significance": "high",
+              "url": "https://www.youtube.com/watch?v=S7CrlFLAmEA",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-15",
+              "headline": "Salesforce and Nvidia jointly release reasoning model -- TechCrunch: everything the AI labs should fear",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://techcrunch.com",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-17",
+              "headline": "Google, Nvidia, and Anthropic back Emerald AI to find grid capacity for data center expansion",
+              "type": "partnership",
+              "significance": "medium",
+              "url": "https://techcrunch.com",
+              "confidence": "high"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-15",
+              "product": "Salesforce-Nvidia Reasoning Model",
+              "type": "product_launch",
+              "description": "Joint reasoning model; positioned as enterprise competitive alternative to standalone AI labs"
+            }
+          ]
+        },
+        {
+          "company_id": "scale_ai",
+          "headcount_estimate": 860,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 13.8,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "together_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 8.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.15,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "elevenlabs",
+          "headcount_estimate": 800,
+          "headcount_source": "Sep 2026 hire announcements",
+          "headcount_confidence": "high",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.5,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "runway",
+          "headcount_estimate": 155,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 5.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "luma_ai",
+          "headcount_estimate": 150,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "reka_ai",
+          "headcount_estimate": 80,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-16",
+              "headline": "Reka launches EdgeQ -- on-device visual AI for Qualcomm Snapdragon 8 Elite; beats Gemma 4 by 34pts on MLVU at 2x speed",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://reka.ai/news/reka-edgeq",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-09-17",
+              "headline": "Reka publishes Evolution of LLMs: Omni World Models research vision -- prototype in ~2 months",
+              "type": "research",
+              "significance": "medium",
+              "url": "https://reka.ai/news/evolution-of-llms-omni-world-models",
+              "confidence": "high"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-16",
+              "product": "Reka EdgeQ",
+              "type": "model_release",
+              "description": "On-device VLM for Snapdragon 8 Elite NPU; 34pt MLVU gain over Gemma 4; 2x faster time-to-first-token"
+            }
+          ]
+        },
+        {
+          "company_id": "cognition_ai",
+          "headcount_estimate": 50,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 48.0,
+          "valuation_source": "TechCrunch Sep 8 2026 -- $2B raise at $48B",
+          "valuation_confidence": "high",
+          "arr_usd_billions": 0.9,
+          "arr_source": "TechCrunch Sep 8 2026 -- $900M ARR run-rate",
+          "arr_confidence": "high",
+          "recent_news": [
+            {
+              "date": "2026-09-08",
+              "headline": "Cognition raises $2B at $48B valuation -- nearly double prior $26B; ARR $900M up from $492M in May; training own model",
+              "type": "funding",
+              "significance": "high",
+              "url": "https://techcrunch.com/2026/09/08/cognition-hits-48b-valuation-signaling-investors-believe-ai-coding-is-far-from-a-winner-take-all-market/",
+              "confidence": "high"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "thinking_machines",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-03",
+              "headline": "Accel reportedly in talks to lead $1B round for Thinking Machines at $40B valuation -- not confirmed closed",
+              "type": "funding",
+              "significance": "medium",
+              "url": "https://techcrunch.com/2026/09/03/accel-reportedly-in-talks-to-lead-1b-round-for-thinking-machines-at-40b-valuation/",
+              "confidence": "low"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "sierra_ai",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 15.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.2,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-17",
+              "headline": "Sierra platform achieves AIUC-1 certification -- first trust/compliance cert for regulated industries",
+              "type": "business",
+              "significance": "medium",
+              "url": null,
+              "confidence": "medium"
+            },
+            {
+              "date": "2026-09-17",
+              "headline": "Sierra partners with Figure Technology Solutions for AI agents in home equity lending",
+              "type": "partnership",
+              "significance": "medium",
+              "url": null,
+              "confidence": "medium"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "cursor",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 60.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-08-28",
+              "headline": "OpenAI ends $1B model partnership with Cursor citing SpaceX ownership -- access deadline November 12 2026",
+              "type": "business",
+              "significance": "high",
+              "url": null,
+              "confidence": "medium"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "harvey_ai",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 11.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.35,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-18",
+              "headline": "Harvey among 26 partner builders on OpenAI Astra for Law platform -- integration not displacement",
+              "type": "partnership",
+              "significance": "medium",
+              "url": null,
+              "confidence": "medium"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "glean",
+          "headcount_estimate": 700,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 7.25,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.3,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cerebras",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 44.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.885,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-18",
+              "headline": "CBRS stock surges 6.4%; analysts highlight $25.4B OpenAI backlog and fastest inference positioning",
+              "type": "business",
+              "significance": "medium",
+              "url": null,
+              "confidence": "medium"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "groq",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 3.5,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-15",
+              "headline": "Nvidia hollowed out Groq -- pivot to neocloud as chip IP sold as Groq 3 LPX by Nvidia; DOJ antitrust probe ongoing",
+              "type": "business",
+              "significance": "high",
+              "url": null,
+              "confidence": "medium"
+            },
+            {
+              "date": "2026-09-16",
+              "headline": "Former Groq and Lambda Labs alumni raise $875M for Positron -- memory-first inference chip startup at $5B valuation",
+              "type": "business",
+              "significance": "medium",
+              "url": null,
+              "confidence": "medium"
             }
           ],
           "product_releases": []
