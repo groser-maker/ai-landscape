@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "last_updated": "2026-09-28",
+  "last_updated": "2026-10-05",
   "companies": [
     {
       "id": "openai",
@@ -134,6 +134,20 @@
           "flagship": false,
           "description": "GPT-6 Astra-powered legal research with daily-updated 230M-URL US legal index",
           "launched": "2026-09"
+        },
+        {
+          "name": "Dots",
+          "type": "AI Agent",
+          "description": "Persistent always-on AI agent with own cloud computer; reachable by text, voice, Slack and Teams",
+          "flagship": false,
+          "launched": "2026-09-29"
+        },
+        {
+          "name": "Space",
+          "type": "Workspace",
+          "description": "AI-native shared workspace for docs, sheets, slides and automations; Dots-native",
+          "flagship": false,
+          "launched": "2026-09-29"
         }
       ],
       "funding_summary": {
@@ -482,6 +496,13 @@
         }
       ],
       "products": [
+        {
+          "name": "Claude Sonnet 5.5",
+          "type": "LLM",
+          "description": "High-capability agentic model with 30% per-task cost reduction; second only to Opus 5.5",
+          "flagship": false,
+          "launched": "2026-09-28"
+        },
         {
           "name": "Claude Mythos",
           "type": "LLM API",
@@ -858,6 +879,20 @@
           "notes": "Released Sept 22 2026. Output token price 20 per M. Matches Fable 5.1 benchmarks.",
           "elo_score": null,
           "elo_estimated": true
+        },
+        {
+          "name": "Claude Sonnet 5.5",
+          "date": "2026-09",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "LLM",
+          "purpose": "High-capability agentic model with 30% cost reduction per task; second only to Opus 5.5 on AI benchmarks",
+          "context_length_k": 200,
+          "notable": true,
+          "notes": "70.6% on Terminal-Bench 4.0, 56 on AA Intelligence Index; designed as Opus subagent",
+          "elo_score": null,
+          "elo_estimated": true
         }
       ],
       "acquisitions": [],
@@ -1148,6 +1183,13 @@
         }
       ],
       "products": [
+        {
+          "name": "Gemini 4 Argon",
+          "type": "Multimodal LLM",
+          "description": "Googles first frontier model in 6+ months; tops Vals Index, Vals Finance Agent, Harvey benchmarks; ~$1.99/task",
+          "flagship": true,
+          "launched": "2026-09-30"
+        },
         {
           "name": "Gemini 3.6 Flash",
           "type": "LLM API",
@@ -1502,6 +1544,20 @@
           "context_length_k": null,
           "notable": true,
           "notes": "Live model with avatar; Gemini 3.8 Live family Sept 2026.",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "Gemini 4 Argon",
+          "date": "2026-09",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "Multimodal LLM",
+          "purpose": "Google most capable frontier model; tops Vals Index, Vals Finance Agent, Harvey legal benchmarks",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "Initially limited to trusted cyber defenders; ~$1.99/task. API and Ultra subscriber access next.",
           "elo_score": null,
           "elo_estimated": true
         }
@@ -14890,6 +14946,525 @@
           "arr_usd_billions": null,
           "arr_source": "prior week",
           "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-10-05",
+      "entries": [
+        {
+          "company_id": "openai",
+          "headcount_estimate": 3500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 852.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 40.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-29",
+              "headline": "OpenAI launches Dots: persistent always-on AI agents with dedicated cloud computers at Dev Day 2026",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://openai.com/index/introducing-dots/"
+            },
+            {
+              "date": "2026-09-29",
+              "headline": "OpenAI launches Space, AI-native shared workspace competing with Microsoft 365 and Google Drive",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1001681/openai-devday-2026-biggest-news-announcements"
+            },
+            {
+              "date": "2026-09-29",
+              "headline": "OpenAI releases Decisions API, a fast judgment model for routing and classification built on Luna",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1001681/openai-devday-2026-biggest-news-announcements"
+            },
+            {
+              "date": "2026-09-30",
+              "headline": "FTC opens probe into OpenAI over product safety concerns related to rogue agent incidents",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-30/ftc-probing-openai-and-anthropic-over-product-safety-concerns"
+            },
+            {
+              "date": "2026-09-29",
+              "headline": "OpenAI signs White House Superintelligence Accord committing to internal controls and external AI auditors",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://www.axios.com/2026/09/29/trump-ai-voluntary-safety-white-house-zuckerberg"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-29",
+              "product": "Dots",
+              "type": "product_launch",
+              "description": "Persistent always-on AI agents with dedicated cloud computers; accessible via text, voice, Slack, and Teams"
+            },
+            {
+              "date": "2026-09-29",
+              "product": "Space",
+              "type": "product_launch",
+              "description": "AI-native shared workspace for docs, sheets, slides and automations; Dots-native"
+            },
+            {
+              "date": "2026-09-29",
+              "product": "Decisions API",
+              "type": "product_launch",
+              "description": "Fast judgment model API based on Luna for routing, labeling, and agent action selection"
+            }
+          ]
+        },
+        {
+          "company_id": "anthropic",
+          "headcount_estimate": 1000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 965.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 65.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-28",
+              "headline": "Anthropic releases Claude Sonnet 5.5: 70.6% on Terminal-Bench 4.0, 30% per-task cost reduction",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://www.anthropic.com/claude-sonnet-5-5"
+            },
+            {
+              "date": "2026-10-01",
+              "headline": "Anthropic targets pre-Thanksgiving IPO; S-1 shows $4.6B 2025 revenue; $1.8-2T target valuation",
+              "type": "business",
+              "significance": "high",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-01/anthropic-said-to-target-mega-ipo-before-thanksgiving-holiday"
+            },
+            {
+              "date": "2026-09-30",
+              "headline": "FTC opens investigation into Anthropic over product safety concerns",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://www.bloomberg.com/news/articles/2026-09-30/ftc-probing-openai-and-anthropic-over-product-safety-concerns"
+            },
+            {
+              "date": "2026-09-29",
+              "headline": "Dario Amodei speaks at White House; Anthropic signs Superintelligence Accord; Trump-Amodei detente",
+              "type": "regulatory",
+              "significance": "high",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-01/trump-says-he-liked-anthropic-s-amodei-in-sign-of-detente"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-28",
+              "product": "Claude Sonnet 5.5",
+              "type": "model_release",
+              "description": "High-capability agentic model with 30% per-task cost reduction; 70.6% on Terminal-Bench 4.0"
+            }
+          ]
+        },
+        {
+          "company_id": "xai",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 50.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 3.2,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-09-29",
+              "headline": "xAI signs White House Superintelligence Accord; Trump revealed as Grok power user before Maduro raid",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://time.com/article/2026/10/01/donald-trump-2026-interview/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "google_deepmind",
+          "headcount_estimate": 35000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": null,
+          "valuation_confidence": null,
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-09-30",
+              "headline": "Google releases Gemini 4 Argon: tops Vals Index and Harvey legal benchmarks; initially limited to trusted cyber defenders",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+            },
+            {
+              "date": "2026-09-29",
+              "headline": "Alphabet/Google DeepMind signs White House Superintelligence Accord on voluntary AI safety standards",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://www.axios.com/2026/09/29/trump-ai-voluntary-safety-white-house-zuckerberg"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-09-30",
+              "product": "Gemini 4 Argon",
+              "type": "model_release",
+              "description": "First frontier model in 6+ months; tops Vals Index, Vals Finance Agent, and Harvey legal benchmarks; ~$1.99/task"
+            }
+          ]
+        },
+        {
+          "company_id": "meta_ai",
+          "headcount_estimate": 70000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": null,
+          "valuation_confidence": null,
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [
+            {
+              "date": "2026-10-02",
+              "headline": "Meta Muse reaches 3M weekly users and 1M daily active users, driving META stock up 27% in September",
+              "type": "product_launch",
+              "significance": "high",
+              "url": "https://www.theinformation.com/briefings/exclusive-metas-muse-tops-3-million-weekly-users"
+            },
+            {
+              "date": "2026-09-29",
+              "headline": "Meta (Zuckerberg) signs White House Superintelligence Accord on voluntary AI safety standards",
+              "type": "regulatory",
+              "significance": "medium",
+              "url": "https://www.axios.com/2026/09/29/trump-ai-voluntary-safety-white-house-zuckerberg"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "mistral",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 23.5,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cohere",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 20.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.24,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "microsoft_ai",
+          "headcount_estimate": 223000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": null,
+          "valuation_confidence": null,
+          "arr_usd_billions": 37.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "amazon_aws_ai",
+          "headcount_estimate": 1500000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": null,
+          "valuation_confidence": null,
+          "arr_usd_billions": 25.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "perplexity",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 30.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.75,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "hugging_face",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.93,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.15,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "stability_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "nvidia",
+          "headcount_estimate": 36000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": null,
+          "valuation_confidence": null,
+          "arr_usd_billions": 400.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "scale_ai",
+          "headcount_estimate": 860,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 13.8,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "together_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 8.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.15,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "elevenlabs",
+          "headcount_estimate": 800,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 22.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.5,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "runway",
+          "headcount_estimate": 155,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 5.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "luma_ai",
+          "headcount_estimate": 150,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "reka_ai",
+          "headcount_estimate": 80,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cognition_ai",
+          "headcount_estimate": 50,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 48.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "thinking_machines",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "sierra_ai",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 15.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.2,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cursor",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 60.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "harvey_ai",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 15.5,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.35,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "glean",
+          "headcount_estimate": 700,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 7.25,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.3,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cerebras",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 44.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.885,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "groq",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 3.5,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": null,
+          "arr_confidence": null,
           "recent_news": [],
           "product_releases": []
         }
