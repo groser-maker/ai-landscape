@@ -141,11 +141,17 @@
     line-height: 1.45;
   }
 
-  .col-product  { width: 120px; font-weight: 600; color: #0070D2; }
-  .col-desc     { width: 200px; color: #3E4F6C; }
+  .col-product  { width: 120px; }
+  .col-desc     { width: 200px; }
   .col-gov      { width: 230px; }
-  .col-global   { width: 190px; color: #3E4F6C; }
+  .col-global   { width: 190px; }
   .col-asks     { }
+
+  tbody td.col-product { font-weight: 600; color: #0070D2; }
+  tbody td.col-desc    { color: #3E4F6C; }
+  tbody td.col-global  { color: #3E4F6C; }
+
+  thead th { color: #fff !important; }
 
   /* ── Readiness badges ── */
   .badge {
@@ -254,8 +260,8 @@
     margin-top: 20px;
   }
   .tab-btn {
-    padding: 9px 20px;
-    font-size: 12px;
+    padding: 10px 22px;
+    font-size: 14px;
     font-weight: 600;
     color: #54698D;
     background: none;
