@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CKO4 Product Cheat Sheet — Kevin Paschuck</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #F4F6F9;
+    color: #16325C;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .page {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 24px 28px 40px;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: #0070D2;
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px 28px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .header-left h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+  }
+  .header-left p {
+    font-size: 13px;
+    opacity: 0.85;
+  }
+  .header-right {
+    text-align: right;
+    font-size: 12px;
+    opacity: 0.8;
+    white-space: nowrap;
+  }
+  .header-right strong {
+    display: block;
+    font-size: 14px;
+    opacity: 1;
+    margin-bottom: 2px;
+  }
+
+  /* ── Exec Summary ── */
+  .summary {
+    background: #fff;
+    border-left: 4px solid #0070D2;
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+  }
+  .summary h2 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #0070D2;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .summary ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .summary ul li {
+    padding-left: 16px;
+    position: relative;
+    color: #16325C;
+  }
+  .summary ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #0070D2;
+  }
+  .summary ul li strong { color: #0070D2; }
+
+  /* ── Section titles ── */
+  .section-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #54698D;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 20px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #D8DDE6;
+  }
+
+  /* ── Tables ── */
+  .table-wrap {
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(22,50,92,0.08);
+    margin-bottom: 8px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead th {
+    background: #16325C;
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+  }
+
+  tbody tr:nth-child(odd)  { background: #F8F9FB; }
+  tbody tr:nth-child(even) { background: #fff; }
+  tbody tr:hover { background: #EAF3FB; }
+
+  td {
+    padding: 9px 12px;
+    vertical-align: top;
+    border-bottom: 1px solid #E8ECF0;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .col-product  { width: 120px; font-weight: 600; color: #0070D2; }
+  .col-desc     { width: 200px; color: #3E4F6C; }
+  .col-gov      { width: 230px; }
+  .col-global   { width: 190px; color: #3E4F6C; }
+  .col-asks     { }
+
+  /* ── Readiness badges ── */
+  .badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 4px;
+    white-space: nowrap;
+  }
+  .badge-green  { background: #EAF7EC; color: #2E7D32; border: 1px solid #A5D6A7; }
+  .badge-yellow { background: #FFF9E6; color: #8A6200; border: 1px solid #FFE082; }
+  .badge-red    { background: #FDECEA; color: #B71C1C; border: 1px solid #FFCDD2; }
+  .badge-gray   { background: #F3F4F6; color: #54698D; border: 1px solid #D8DDE6; }
+
+  .gov-detail {
+    font-size: 11px;
+    color: #54698D;
+    margin-top: 3px;
+  }
+  .gap-label { color: #B71C1C; font-weight: 600; }
+
+  /* ── Asks list ── */
+  .asks-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .asks-list li {
+    font-size: 11.5px;
+    color: #16325C;
+    padding-left: 14px;
+    position: relative;
+  }
+  .asks-list li::before {
+    content: attr(data-n);
+    position: absolute;
+    left: 0;
+    color: #0070D2;
+    font-weight: 700;
+    font-size: 10px;
+  }
+
+  /* ── GPS Asks footer ── */
+  .gps-asks {
+    background: #fff;
+    border-radius: 6px;
+    padding: 16px 20px;
+    box-shadow: 0 1px 4px rgba(22,50,92,0.08);
+    margin-top: 20px;
+  }
+  .gps-asks h3 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #0070D2;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .asks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 8px 24px;
+  }
+  .ask-item {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 12px;
+    color: #16325C;
+  }
+  .ask-num {
+    background: #0070D2;
+    color: #fff;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── Confidential footer ── */
+  .footer {
+    margin-top: 16px;
+    font-size: 10px;
+    color: #A8B7C7;
+    text-align: center;
+  }
+
+  /* ── Tabs ── */
+  .tab-bar {
+    display: flex;
+    gap: 0;
+    margin-bottom: 0;
+    border-bottom: 2px solid #D8DDE6;
+    margin-top: 20px;
+  }
+  .tab-btn {
+    padding: 9px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #54698D;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    cursor: pointer;
+    letter-spacing: 0.2px;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: #0070D2; }
+  .tab-btn.active {
+    color: #0070D2;
+    border-bottom-color: #0070D2;
+  }
+  .tab-count {
+    display: inline-block;
+    background: #E8ECF2;
+    color: #54698D;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    margin-left: 5px;
+  }
+  .tab-btn.active .tab-count {
+    background: #D0E8FA;
+    color: #0070D2;
+  }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── Print styles ── */
+  @media print {
+    body { background: #fff; font-size: 11px; }
+    .page { padding: 12px 16px; max-width: 100%; }
+    .header { border-radius: 4px; padding: 14px 18px; }
+    .header-left h1 { font-size: 18px; }
+    table { font-size: 10px; }
+    td, thead th { padding: 6px 8px; }
+    .summary, .gps-asks, .table-wrap { box-shadow: none; }
+    tbody tr:hover { background: inherit; }
+    .tab-panel { display: block !important; }
+    .tab-bar { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <h1>CKO4 Product Cheat Sheet</h1>
+      <p>Global Public Sector &nbsp;·&nbsp; Kevin Paschuck, President GPS &nbsp;·&nbsp; Day 0 Product Session</p>
+    </div>
+    <div class="header-right">
+      <strong>Nov 2, 2026 &nbsp;·&nbsp; San Francisco</strong>
+      Prepared by GPS Solution Engineering<br>Sources: FedRAMP Parity Sept 2026 · Missionforce Updates · GPS H2 BLT Asks
+    </div>
+  </div>
+
+  <!-- Executive Summary -->
+  <div class="summary">
+    <h2>Executive Summary</h2>
+    <ul>
+      <li><strong>~80% of committed FY27 FedRAMP High/IL5 parity gaps are on track for delivery.</strong> Key FY28 holdovers: Slack full parity, Tableau Core (IL5 via Second Front), Revenue Cloud CPQ/Billing, Informatica Data Integration.</li>
+      <li><strong>GPS is Salesforce's fastest-growing industry business at scale.</strong> Defense ACV +80% YoY. Agent go-lives at FEMA, TSA, IRS, Indiana Army HRC. 60 US federal agencies, all 50 states, 30+ countries, all 6 military branches.</li>
+      <li><strong>Recent wins to know:</strong> TSA Ace agent live — 100K conversations/mo, 96% resolution rate, projected $11M savings. HMRC 10-year Enterprise CRM contract. Missionforce + OpenAI partnership announced at Dreamforce. VA deal: $194M TCV AELA.</li>
+    </ul>
+  </div>
+
+  <!-- Tab bar -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('core', this)">Core Products <span class="tab-count">13</span></button>
+    <button class="tab-btn" onclick="switchTab('acq', this)">Acquisitions <span class="tab-count">4</span></button>
+    <button class="tab-btn" onclick="switchTab('asks', this)">GPS Asks <span class="tab-count">8</span></button>
+    <button class="tab-btn" onclick="switchTab('sources', this)">Sources <span class="tab-count">4</span></button>
+  </div>
+
+  <!-- Core Products Tab -->
+  <div class="tab-panel active" id="tab-core">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="col-product">Product</th>
+          <th class="col-desc">What It Is</th>
+          <th class="col-gov">GovCloud Readiness<br><span style="font-weight:400;opacity:0.75">FedRAMP High / IL5</span></th>
+          <th class="col-global">Global Readiness</th>
+          <th class="col-asks">Top 3 GPS Asks</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="col-product">Agentforce<br><span style="font-weight:400;font-size:11px;color:#54698D">AI Cloud</span></td>
+          <td class="col-desc">Autonomous AI agents across sales, service, HR. Pre-built agents, Agent Builder, AgentScript, Atlas reasoning engine.</td>
+          <td>
+            <span class="badge badge-yellow">FedRAMP High ✓ · IL5 ✗</span>
+            <div class="gov-detail">Base Agentforce authorized FedRAMP High. <strong>IL5 not yet authorized</strong> — blocks all DoD/defense deployments.</div>
+            <div class="gov-detail" style="margin-top:4px"><span class="gap-label">Additional FY28 gaps:</span> AgentScript, New Builder (Agent Studio)</div>
+          </td>
+          <td class="col-global">Go-lives: FEMA, TSA, IRS, Indiana, Army HRC (1st IL5 Agentforce 360 deal). Missionforce global rollout.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">IL5 authorization for base Agentforce — critical for all DoD expansion</li>
+              <li data-n="2">AgentScript parity in GovCloud</li>
+              <li data-n="3">New Builder (Agent Studio) parity</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Data Cloud<br><span style="font-weight:400;font-size:11px;color:#54698D">Data 360</span></td>
+          <td class="col-desc">Unified data platform — ingests, harmonizes, and activates customer data for real-time AI grounding and Agentforce.</td>
+          <td>
+            <span class="badge badge-green">97% FY27 · PARTIAL</span>
+            <div class="gov-detail">Strong progress. <span class="gap-label">FY28 gaps:</span> Coworker; Zero Copy (3rd-party gaps remain)</div>
+          </td>
+          <td class="col-global">$7.6M Q2 ACV (+118% YoY). CCR consumption still early-stage across GPS accounts.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Coworker parity in GovCloud</li>
+              <li data-n="2">Resolve Zero Copy 3rd-party gaps</li>
+              <li data-n="3">GovCloud UIP for accurate CCR / consumption visibility</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Sales Cloud</td>
+          <td class="col-desc">Core CRM — pipeline mgmt, forecasting, Einstein opportunity scoring, automation.</td>
+          <td>
+            <span class="badge badge-yellow">78% FY27 · PARTIAL</span>
+            <div class="gov-detail"><span class="gap-label">Gaps:</span> Activity Platform, Sales Intelligence</div>
+            <div class="gov-detail">Resource-constrained; large foundational work in flight</div>
+          </td>
+          <td class="col-global">Deployed globally across all GPS regions. Largest GPS ACV contributor alongside Service.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Activity Platform parity in GovCloud</li>
+              <li data-n="2">Sales Intelligence parity</li>
+              <li data-n="3">Sovereign cloud support roadmap (blocking EMEA/ANZ deals)</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Service Cloud</td>
+          <td class="col-desc">Customer service platform — case mgmt, knowledge base, contact center (CCaaS), AI service agents (Agentforce for Service).</td>
+          <td>
+            <span class="badge badge-yellow">76% FY27 · PARTIAL</span>
+            <div class="gov-detail">Core Service Cloud + legacy Salesforce Voice = ✓ authorized FedRAMP High + IL5.</div>
+            <div class="gov-detail" style="margin-top:4px"><span class="gap-label">Gaps:</span> <strong>Agentforce Voice</strong> (AI-native, new — not yet authorized); CCaaS; Einstein Bots (interoperable only)</div>
+          </td>
+          <td class="col-global">Critical for gov citizen services globally. TSA Ace (100K conversations/mo) built on PSS + Service.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Agentforce Voice (AI-native contact center) authorization — distinct from legacy SCV which is authorized</li>
+              <li data-n="2">CCaaS FedRAMP certification</li>
+              <li data-n="3">Einstein Bots authorization (currently interoperable only)</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Platform &amp;<br>Platform Services</td>
+          <td class="col-desc">Core dev platform (Flow, Apex, LWC, APIs, metadata). Platform Services = AIforce, MCPs, trust layer, auth infrastructure.</td>
+          <td>
+            <span class="badge badge-yellow">80% / 50%+ FY27 · PARTIAL</span>
+            <div class="gov-detail"><span class="gap-label">Gaps:</span> Vibes IDE, Archive, HXL (Headless); AIforce/MCPs — DISA auth path TBD*</div>
+            <div class="gov-detail">*Platform Services executing well; awaiting DISA authorization path for IL5</div>
+          </td>
+          <td class="col-global">Foundational — underpins all products globally. Many priorities in flight.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Resolve DISA authorization path for AIforce/MCPs in IL5 — blocks AI capabilities at DoD</li>
+              <li data-n="2">HXL Headless parity (Headless 360)</li>
+              <li data-n="3">Archive parity in GovCloud</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Slack<br><span style="font-weight:400;font-size:11px;color:#54698D">GovSlack</span></td>
+          <td class="col-desc">Team messaging and collaboration. GovSlack = FedRAMP-authorized version used by federal agencies. Agentforce integration via Slack AI.</td>
+          <td>
+            <span class="badge badge-red">Full parity H2 FY28 · PARTIAL</span>
+            <div class="gov-detail"><span class="gap-label">Gaps:</span> Slackbot, Slack-to-Core integration, Anthropic / alt model support</div>
+            <div class="gov-detail">Material architecture + DISA considerations driving timeline</div>
+          </td>
+          <td class="col-global">Global — used in HMRC (UK), international gov. DISA constraints affect all classified envs.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Slackbot parity in GovSlack</li>
+              <li data-n="2">Slack-to-Core integration — needed for unified Agentforce workflows</li>
+              <li data-n="3">Alt model support (Anthropic, GPT) in GovCloud environments</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">MuleSoft</td>
+          <td class="col-desc">Integration platform — API management, data integration, RPA, automation across hybrid/multi-cloud environments.</td>
+          <td>
+            <span class="badge badge-red">FedRAMP Moderate (separate auth) · NOT in High boundary · IL5 ✗</span>
+            <div class="gov-detail">Has its own FedRAMP <strong>Moderate</strong> authorization. Listed as <em>interoperable only</em> inside GovCloud Plus — not within the FedRAMP High boundary.</div>
+            <div class="gov-detail" style="margin-top:4px"><span class="gap-label">Feature gaps (FY27/FY28):</span> Agent Broker, Scanners, Viz, Identity &amp; Registry, Omni Gateway</div>
+          </td>
+          <td class="col-global">Available globally; key integration layer for agency modernization. FedRAMP Moderate boundary limits high-impact federal deals.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Elevate MuleSoft into FedRAMP High GovCloud Plus boundary — Moderate is insufficient for many agencies</li>
+              <li data-n="2">Agent Broker + Scanners parity (critical for agentic integration workflows)</li>
+              <li data-n="3">Omni Gateway parity</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Field Service</td>
+          <td class="col-desc">Scheduling, dispatch, and mobile workforce management for field technicians. Targeted at utilities, public works, defense logistics.</td>
+          <td>
+            <span class="badge badge-green">100% FY27 · PARTIAL</span>
+            <div class="gov-detail">On track. <span class="gap-label">In-flight:</span> Asset &amp; Inventory Mgmt, Field Service AI (prioritized with GovCloud)</div>
+          </td>
+          <td class="col-global">Available globally; growing in gov utilities and defense logistics use cases.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Complete Asset &amp; Inventory Mgmt in GovCloud</li>
+              <li data-n="2">Field Service AI (Agentforce) in GovCloud</li>
+              <li data-n="3">International gov expansion support</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Marketing Cloud</td>
+          <td class="col-desc">Digital marketing platform — email, mobile/SMS, journey builder, advertising, personalization at scale.</td>
+          <td>
+            <span class="badge badge-green">Growth + Advanced: FedRAMP High ✓ · IL5 ✓</span>
+            <div class="gov-detail">MC Growth and Advanced editions = ✓ authorized both environments. Better than previously understood.</div>
+            <div class="gov-detail" style="margin-top:4px"><span class="gap-label">Gaps (interoperable only):</span> MC Engagement (Exact Target), MC Account Engagement (Pardot)</div>
+            <div class="gov-detail"><span class="gap-label">IL5 gap:</span> Message Credits (SMS/WhatsApp) — FedRAMP ✓, IL5 ✗</div>
+          </td>
+          <td class="col-global">Available globally; gov public communications, citizen engagement campaigns.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">MC Engagement (Exact Target) authorization — interoperable only today, needed for large-scale gov campaigns</li>
+              <li data-n="2">MC Account Engagement (Pardot) authorization</li>
+              <li data-n="3">SMS/WhatsApp Message Credits IL5 authorization for DoD communication use cases</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Industries<br><span style="font-weight:400;font-size:11px;color:#54698D">Public Sector Solutions</span></td>
+          <td class="col-desc">Industry-specific clouds: PSS (gov/nonprofit CRM), Health Cloud, Financial Services Cloud, Automotive Cloud. Pre-built data models, compliance workflows.</td>
+          <td>
+            <span class="badge badge-yellow">82% FY27 · PARTIAL</span>
+            <div class="gov-detail">PSS core, Health Cloud, Education Cloud = ✓ FedRAMP High + IL5.</div>
+            <div class="gov-detail" style="margin-top:4px"><strong>Financial Services Cloud:</strong> ✓ FedRAMP High, <span class="gap-label">✗ IL5</span> — authorized for civilian gov, blocks DoD/defense use cases only.</div>
+            <div class="gov-detail"><strong>Automotive Cloud:</strong> ✓ FedRAMP High, <span class="gap-label">✗ IL5.</span></div>
+            <div class="gov-detail"><strong>Non-Profit Cloud:</strong> <span class="gap-label">Interoperable only</span> — not within FedRAMP High boundary.</div>
+          </td>
+          <td class="col-global">PSS in all 50 states, 60 federal agencies, all 15 Cabinet departments. HMRC 10-yr deal. 30+ countries.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Financial Services Cloud IL5 authorization — FedRAMP High already done; IL5 gap blocks Treasury/DoD finance use cases</li>
+              <li data-n="2">Non-Profit Cloud FedRAMP authorization (currently interoperable only — limits GPS Nonprofit segment)</li>
+              <li data-n="3">Industry AE investment: Health, Transportation, Tax &amp; Revenue verticals</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Tableau / Analytics<br><span style="font-weight:400;font-size:11px;color:#54698D">Tableau Next + CRMA · Tableau Core</span></td>
+          <td class="col-desc">BI &amp; analytics. Tableau Next = cloud-native, self-service BI. Tableau Core = server-based (on-prem/managed). CRMA = CRM Analytics embedded in Salesforce.</td>
+          <td>
+            <div><span class="badge badge-green">Tableau Next+CRMA: 100% FY27 · PARTIAL</span>
+            <div class="gov-detail">Personal Orgs gap remaining; standalone = quicker gov onboarding path</div></div>
+            <div style="margin-top:6px"><span class="badge badge-red">Tableau Core: H2 FY28 · NONE</span>
+            <div class="gov-detail">IL5 path via Second Front POC — pending</div></div>
+          </td>
+          <td class="col-global">Global; Tableau is top ACV product in GPS. Competitive pressure from MSFT Power BI (bundled with M365) and Databricks. ANZ/EMEA strong install base.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Tableau Core IL5 via Second Front — POC must accelerate; critical for DoD/IC customers</li>
+              <li data-n="2">Tableau as a Service for Fed / DoW (not yet committed)</li>
+              <li data-n="3">Server-to-Cloud / Tableau Next migration strategy for existing gov installs</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Revenue Cloud<br><span style="font-weight:400;font-size:11px;color:#54698D">CPQ / Billing / Contracts</span></td>
+          <td class="col-desc">Configure-Price-Quote, billing, contracts, and revenue lifecycle management. Key for agencies managing subscriptions, grants, and procurement.</td>
+          <td>
+            <span class="badge badge-red">0% FY27 · PARTIAL</span>
+            <div class="gov-detail"><span class="gap-label">Gaps:</span> CPQ, Billing, Contracts — Industries dependencies; Authorization in FY28</div>
+            <div class="gov-detail">Key priorities in flight; FY27 delivery not planned</div>
+          </td>
+          <td class="col-global">Available globally; needed to close Industries parity chain. Blocks Financial Services + Health Cloud GovCloud completeness.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Accelerate GovCloud certification — currently at 0% FY27</li>
+              <li data-n="2">Resolve Industries Cloud dependencies (Financial Services, Health)</li>
+              <li data-n="3">FY28 firm roadmap commitment with milestones</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Commerce Cloud</td>
+          <td class="col-desc">B2B and B2C e-commerce platform — digital storefronts, order management, personalized shopping experiences.</td>
+          <td>
+            <span class="badge badge-gray">0% FY27 · PARTIAL</span>
+            <div class="gov-detail">Not a Missionforce priority — no active GPS push for GovCloud parity</div>
+          </td>
+          <td class="col-global">Available globally; limited GPS relevance today.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="—" style="color:#A8B7C7">Not a current GPS priority</li>
+            </ol>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  </div><!-- /tab-core -->
+
+  <!-- Acquisitions Tab -->
+  <div class="tab-panel" id="tab-acq">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="col-product">Product</th>
+          <th class="col-desc">What It Is</th>
+          <th class="col-gov">GovCloud Readiness<br><span style="font-weight:400;opacity:0.75">FedRAMP High / IL5</span></th>
+          <th class="col-global">Global Readiness</th>
+          <th class="col-asks">Top 3 GPS Asks</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="col-product">Informatica</td>
+          <td class="col-desc">Enterprise data management — data integration, data quality, MDM, application integration. Acquired FY26.</td>
+          <td>
+            <span class="badge badge-red">Q3 FY28 · NONE</span>
+            <div class="gov-detail"><span class="gap-label">Gaps:</span> Data Integration, Application Integration. MDM not in current FedRAMP scope.</div>
+          </td>
+          <td class="col-global">Available globally. Customer Success not yet aligned under GPS CS leader (unlike other products in other OUs).</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Accelerate FedRAMP High — Q3 FY28 is too slow for federal pipeline</li>
+              <li data-n="2">Include MDM in FedRAMP scope (currently excluded)</li>
+              <li data-n="3">Move Informatica Customer Success under GPS CS leader (consistent with other OUs)</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Fin</td>
+          <td class="col-desc">AI-powered customer support automation platform. Handles customer inquiries, escalations, and self-service via AI agents.</td>
+          <td>
+            <span class="badge badge-gray">Not scoped · NONE</span>
+            <div class="gov-detail">Still evaluating GovCloud requirements — no roadmap committed</div>
+          </td>
+          <td class="col-global">TBD — early integration stage with Salesforce ecosystem.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Define GovCloud roadmap and timeline</li>
+              <li data-n="2">Map integration path with Service Cloud for Gov customers</li>
+              <li data-n="3">Commit to FY27/FY28 GovCloud scoping milestone</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Qualified</td>
+          <td class="col-desc">Pipeline generation platform — conversational AI on websites, real-time buyer engagement, and Agentforce-powered SDR automation.</td>
+          <td>
+            <span class="badge badge-gray">Not scoped · NONE</span>
+            <div class="gov-detail">Still evaluating GovCloud requirements — no roadmap committed</div>
+          </td>
+          <td class="col-global">TBD — early integration stage. Strong commercial traction but gov use case needs definition.</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Define GovCloud roadmap and timeline</li>
+              <li data-n="2">Map Sales Cloud integration for gov pipeline generation use cases</li>
+              <li data-n="3">Commit to FY27/FY28 GovCloud scoping milestone</li>
+            </ol>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-product">Contentful</td>
+          <td class="col-desc">Headless CMS — structured content management and delivery platform. Powers digital experiences across web, mobile, and digital services.</td>
+          <td>
+            <span class="badge badge-gray">Not in current scope · NONE</span>
+            <div class="gov-detail">Not included in current Missionforce parity tracking — no assessment underway</div>
+          </td>
+          <td class="col-global">Available globally; strong fit for gov digital services modernization (citizen portals, agency websites).</td>
+          <td>
+            <ol class="asks-list">
+              <li data-n="1">Add Contentful to Missionforce parity tracking and scoping</li>
+              <li data-n="2">Assess FedRAMP High pathway and timeline</li>
+              <li data-n="3">Define integration strategy with Experience Cloud / PSS for gov digital services</li>
+            </ol>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  </div><!-- /tab-acq -->
+
+  <!-- GPS Asks Tab -->
+  <div class="tab-panel" id="tab-asks">
+  <div class="gps-asks">
+    <h3>Key GPS Asks for Product Teams (H2 BLT Priorities)</h3>
+    <div class="asks-grid">
+      <div class="ask-item">
+        <div class="ask-num">1</div>
+        <div><strong>Continued product parity</strong> — maintain 1-release-behind-GA cadence across all products</div>
+      </div>
+      <div class="ask-item">
+        <div class="ask-num">2</div>
+        <div><strong>Sovereign Cloud roadmap</strong> for customers in EMEA and ANZ — currently blocking H2 ACV</div>
+      </div>
+      <div class="ask-item">
+        <div class="ask-num">3</div>
+        <div><strong>Industry AE investment</strong> in Health, Transportation, Tax &amp; Revenue verticals</div>
+      </div>
+      <div class="ask-item">
+        <div class="ask-num">4</div>
+        <div><strong>Move Informatica + Slack CS</strong> under GPS CS leader (as done in other OUs)</div>
+      </div>
+      <div class="ask-item">
+        <div class="ask-num">5</div>
+        <div><strong>Hiring exception</strong> for key FLM (front-line manager) headcount roles</div>
+      </div>
+      <div class="ask-item">
+        <div class="ask-num">6</div>
+        <div><strong>GovCloud UIP development</strong> for accurate Agentforce + Data Cloud CCR/consumption visibility</div>
+      </div>
+      <div class="ask-item">
+        <div class="ask-num">7</div>
+        <div><strong>ARI program funding</strong> — continued support for attrition avoidance ($29.3M saved in Q2)</div>
+      </div>
+      <div class="ask-item">
+        <div class="ask-num">8</div>
+        <div><strong>Executive engagement</strong> in Federal accounts to drive retention and ACV growth</div>
+      </div>
+    </div>
+  </div>
+  </div><!-- /tab-asks -->
+
+  <!-- Sources Tab -->
+  <div class="tab-panel" id="tab-sources">
+  <div class="table-wrap" style="margin-top:0">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:220px">Source</th>
+          <th style="width:100px">Date</th>
+          <th>Notes</th>
+          <th style="width:80px">Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:600;color:#0070D2">FedRAMP High/IL5 Parity Status<br><span style="font-weight:400;font-size:11px;color:#54698D">Internal GPS — Missionforce</span></td>
+          <td>Sept 2026</td>
+          <td>Internal parity tracking table: all products with cert status (PARTIAL / NONE), committed feature gap counts, FY27 delivery %, critical gaps by cloud, and progress reason. Primary source for GovCloud Readiness column.</td>
+          <td style="text-align:center;color:#A8B7C7;font-size:11px">Internal only</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;color:#0070D2">GPS CKO3 Laulima Deck<br><span style="font-weight:400;font-size:11px;color:#54698D">FY27 CKO 3 Laulima Day 0 OU Review — GPS</span></td>
+          <td>Aug 2026</td>
+          <td>Slide 7: Q2 performance by cloud and GPS product taxonomy. Slide 30: H2 BLT Asks — the 8 GPS asks to product teams used in the GPS Asks tab.</td>
+          <td style="text-align:center"><a href="https://docs.google.com/presentation/d/1XUzVKxyDSdD0gs8DWYMIkpQBubUoqZrRHhwIb4aCeTQ/edit" target="_blank" style="color:#0070D2;font-size:11px;text-decoration:none;font-weight:600">Open ↗</a></td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;color:#0070D2">GPS Slack Canvas<br><span style="font-weight:400;font-size:11px;color:#54698D">FY27 CKO4 Kevin Paschuck Product Cheat Sheet</span></td>
+          <td>Oct 2026</td>
+          <td>Internal GPS draft canvas: parity summary (~80% headline), recent customer wins (TSA Ace, HMRC, Missionforce anniversary + OpenAI), government affairs highlights, GovCloud Oracle/SCRT1 retirement. Source for Exec Summary and Global Readiness context.</td>
+          <td style="text-align:center"><a href="https://salesforce.enterprise.slack.com/docs/T34263EUF/F0CA972M5DX" target="_blank" style="color:#0070D2;font-size:11px;text-decoration:none;font-weight:600">Open ↗</a></td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;color:#0070D2">Salesforce Help Article 000396813<br><span style="font-weight:400;font-size:11px;color:#54698D">Government Cloud Available Products and Features</span></td>
+          <td>Oct 7, 2026</td>
+          <td>Official public-facing authorized product table for GovCloud Plus (FedRAMP High/IL2) and GovCloud Plus Defense (IL5). Reconciled against internal data — key corrections: Agentforce IL5 not authorized (base product), MuleSoft has separate FedRAMP Moderate (not High), Marketing Cloud Growth/Advanced fully authorized including IL5, Financial Services Cloud authorized for FedRAMP High (IL5 gap only), Non-Profit Cloud interoperable only.</td>
+          <td style="text-align:center"><a href="https://help.salesforce.com/s/articleView?id=000396813&type=1" target="_blank" style="color:#0070D2;font-size:11px;text-decoration:none;font-weight:600">Open ↗</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div><!-- /tab-sources -->
+
+  <div class="footer">
+    Confidential — Internal Use Only &nbsp;·&nbsp; Global Public Sector &nbsp;·&nbsp; Sources: Missionforce Parity Update Sept 2026 · GPS CKO3 Laulima Deck · GPS BLT Asks H2 FY27 · Help Article 000396813 &nbsp;·&nbsp; Prepared Oct 2026
+  </div>
+
+</div>
+<script>
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
