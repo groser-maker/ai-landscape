@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andy Cather — Senior Distinguished SE Nomination</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #0070D2;
+    --blue-dark: #005FB2;
+    --blue-accent: #00A1E0;
+    --navy: #16325C;
+    --bg: #F4F6F9;
+    --white: #FFFFFF;
+    --text: #16325C;
+    --text-muted: #54698D;
+    --border: #D8DDE6;
+    --success: #2E844A;
+    --sidebar-w: 200px;
+    --header-h: 25vh;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    font-size: 15px;
+    overflow-x: hidden;
+  }
+
+  /* ═══════════════════════════════════════
+     FIXED HEADER
+  ═══════════════════════════════════════ */
+  .header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--header-h);
+    background: linear-gradient(135deg, #16325C 0%, #0070D2 65%, #00A1E0 100%);
+    color: white;
+    display: flex;
+    align-items: stretch;
+    z-index: 100;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+  }
+
+  /* Left spacer to align with sidebar */
+  .header-sidebar-gap {
+    width: var(--sidebar-w);
+    flex-shrink: 0;
+    border-right: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  .header-sidebar-gap .panel-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* Main header content */
+  .header-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    gap: 24px;
+    min-width: 0;
+  }
+  .header-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .header-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 6px;
+  }
+  .header-name {
+    font-size: clamp(26px, 3.5vh, 38px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .header-role-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .header-current {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+  }
+  .header-arrow { color: rgba(255,255,255,0.4); font-size: 14px; }
+  .header-target {
+    font-size: 13px;
+    font-weight: 700;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 16px;
+    padding: 2px 12px;
+  }
+  .header-meta {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.55);
+  }
+  .header-meta span + span::before { content: ' · '; }
+
+  /* Photo */
+  .header-photo {
+    flex-shrink: 0;
+    width: clamp(80px, 12vh, 110px);
+    height: clamp(80px, 12vh, 110px);
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.4);
+    overflow: hidden;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .header-photo .initials {
+    font-size: clamp(20px, 3vh, 28px);
+    font-weight: 800;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 1px;
+  }
+
+  /* ═══════════════════════════════════════
+     SIDEBAR NAVIGATION
+  ═══════════════════════════════════════ */
+  .sidebar {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    width: var(--sidebar-w);
+    bottom: 0;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    z-index: 90;
+    padding: 20px 0;
+  }
+  .sidebar-legend {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #99A0AB;
+    padding: 0 20px 10px;
+  }
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: all 0.15s ease;
+    color: var(--text-muted);
+    font-size: 12.5px;
+    font-weight: 500;
+    line-height: 1.3;
+    user-select: none;
+  }
+  .nav-item:hover {
+    background: var(--bg);
+    color: var(--navy);
+  }
+  .nav-item.active {
+    border-left-color: var(--blue);
+    background: #EAF3FB;
+    color: var(--blue-dark);
+    font-weight: 700;
+  }
+  .nav-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+  }
+  .nav-num {
+    font-size: 9px;
+    font-weight: 700;
+    color: #C0C8D4;
+    margin-right: 2px;
+  }
+
+  /* ═══════════════════════════════════════
+     MAIN CONTENT
+  ═══════════════════════════════════════ */
+  .main {
+    margin-top: var(--header-h);
+    margin-left: var(--sidebar-w);
+    min-height: calc(100vh - var(--header-h));
+    padding: 36px 44px 60px;
+  }
+
+  /* Sections — only active one shown */
+  .section {
+    display: none;
+    animation: fadeIn 0.2s ease;
+  }
+  .section.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .section-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+
+  /* ── STAT TILES ── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .stat-tile {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--blue);
+    border-radius: 8px;
+    padding: 22px 24px;
+  }
+  .stat-tile.accent { border-top-color: var(--blue-accent); }
+  .stat-tile.navy   { border-top-color: var(--navy); }
+  .stat-tile.green  { border-top-color: var(--success); }
+  .stat-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 7px;
+  }
+  .stat-number sup { font-size: 20px; vertical-align: super; }
+  .stat-label { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+  .stat-note  { font-size: 11px; color: #84909E; }
+
+  /* ── PILLARS ── */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .pillar {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 26px;
+  }
+  .pillar-icon {
+    width: 42px; height: 42px;
+    background: #EAF3FB;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+    font-size: 20px;
+  }
+  .pillar h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .pillar ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .pillar ul li {
+    font-size: 13px; color: var(--text-muted);
+    padding-left: 16px; position: relative;
+  }
+  .pillar ul li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--blue); font-size: 11px; top: 1px;
+  }
+
+  /* ── ACCOUNT CARDS ── */
+  .accounts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .account-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+  }
+  .account-card.featured {
+    border-color: var(--border);
+    background: var(--white);
+  }
+  .account-tag {
+    display: inline-block;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    background: #EAF3FB; color: var(--blue-dark);
+    border-radius: 4px; padding: 2px 7px; margin-bottom: 10px;
+  }
+  .account-tag.dod      { background: #EEF1F6; color: var(--navy); }
+  .account-tag.strategic{ background: #FFF3E0; color: #A04000; }
+  .account-tag.intl     { background: #E6F6F0; color: #1A7A50; }
+  .account-card h4      { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .account-amount       { font-size: 24px; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: 6px; }
+  .account-amount.pipeline { color: var(--text-muted); font-size: 18px; }
+  .account-desc         { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+  /* ── BUILDER CARDS ── */
+  .builder-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .builder-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px;
+  }
+  .builder-card h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .builder-card p  { font-size: 13px; color: var(--text-muted); line-height: 1.45; }
+  .builder-scale {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    background: #EAF3FB; color: var(--blue-dark);
+    border-radius: 4px; padding: 2px 8px; margin-top: 10px;
+  }
+
+  /* ── RECOGNITION ── */
+  .recognition-list { display: flex; flex-direction: column; gap: 12px; }
+  .kudos-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--blue-accent);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    display: flex; align-items: flex-start; gap: 16px;
+  }
+  .kudos-from {
+    font-size: 12px; font-weight: 700; color: var(--navy);
+    white-space: nowrap; min-width: 180px;
+  }
+  .kudos-context { font-size: 13px; color: var(--text-muted); }
+
+  /* ── SCOPE ── */
+  .scope-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .scope-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .scope-box-header {
+    padding: 14px 20px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+  }
+  .scope-box.current  .scope-box-header { background: #54698D; color: #FFFFFF; }
+  .scope-box.proposed .scope-box-header { background: var(--blue); color: white; }
+  .scope-box ul { list-style: none; padding: 18px 22px; display: flex; flex-direction: column; gap: 11px; }
+  .scope-box ul li { font-size: 13px; color: var(--text); padding-left: 18px; position: relative; }
+  .scope-box.current  ul li::before { content: '◦'; position: absolute; left: 0; color: var(--text-muted); }
+  .scope-box.proposed ul li::before { content: '✦'; position: absolute; left: 0; color: var(--blue); font-size: 10px; top: 2px; }
+
+  /* ── RECOMMENDATION ── */
+  .recommendation {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    border-radius: 12px;
+    padding: 36px 44px;
+    color: white;
+    display: flex; align-items: center; justify-content: space-between; gap: 40px;
+  }
+  .recommendation h2 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+  .recommendation p  { font-size: 14px; color: rgba(255,255,255,0.82); max-width: 600px; }
+  .rec-badge {
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 10px;
+    padding: 18px 26px; text-align: center; min-width: 190px;
+  }
+  .rec-badge .rec-action { font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #7BCFFF; margin-bottom: 4px; }
+  .rec-badge .rec-name   { font-size: 17px; font-weight: 700; }
+  .rec-badge .rec-title  { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 3px; }
+
+  /* ── CONFERENCE ROOM SCALE-UP ── */
+  :root { --sidebar-w: 240px; }
+  body               { font-size: 19px; }
+  .section-title     { font-size: 32px; }
+  .section-sub       { font-size: 17px; margin-bottom: 20px; }
+  .stat-number       { font-size: 82px; }
+  .stat-number sup   { font-size: 44px; }
+  .stat-label        { font-size: 19px; margin-bottom: 8px; }
+  .stat-note         { font-size: 15px; }
+  .stat-tile         { padding: 48px 40px; }
+  /* Glance tiles fill available viewport height */
+  #glance.active     { display: flex; flex-direction: column; height: calc(100vh - var(--header-h) - 96px); }
+  #glance .stats-grid{ flex: 1; min-height: 0; }
+  #glance .stat-tile { display: flex; flex-direction: column; justify-content: center; text-align: center; }
+  .stat-number       { font-size: 70px; }
+  .stat-number sup   { font-size: 38px; }
+  .pillar h3         { font-size: 20px; }
+  .pillar ul li      { font-size: 17px; }
+  .pillar-icon       { font-size: 24px; width: 48px; height: 48px; }
+  .account-card h4   { font-size: 19px; margin-bottom: 6px; }
+  .account-amount    { font-size: 34px; }
+  .account-amount.pipeline { font-size: 22px; }
+  .account-desc      { font-size: 15px; }
+  .account-tag       { font-size: 12px; padding: 3px 9px; }
+  .nav-item          { font-size: 15px; padding: 12px 22px; }
+  .nav-icon          { font-size: 17px; }
+  .sidebar-legend    { font-size: 11px; }
+  .header-label      { font-size: 12px; }
+  .header-name       { font-size: clamp(34px, 4.2vh, 50px); }
+  .header-current    { font-size: 16px; }
+  .header-target     { font-size: 16px; }
+  .header-meta       { font-size: 14px; }
+  .panel-label       { font-size: 11px; }
+  .kudos-item        { padding: 18px 24px; }
+  .kudos-from        { font-size: 16px; min-width: 280px; white-space: normal; flex-shrink: 0; }
+  .kudos-context     { font-size: 17px; }
+  .scope-box-header  { font-size: 13px; padding: 16px 22px; }
+  .scope-box ul      { padding: 20px 26px; gap: 14px; }
+  .scope-box ul li   { font-size: 17px; }
+  .builder-card h4   { font-size: 19px; }
+  .builder-card p    { font-size: 17px; }
+  .builder-scale     { font-size: 14px; }
+  .recommendation h2 { font-size: 30px; }
+  .recommendation p  { font-size: 18px; }
+  .rec-badge .rec-action { font-size: 13px; }
+  .rec-badge .rec-name   { font-size: 22px; }
+  .rec-badge .rec-title  { font-size: 14px; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ FIXED HEADER ═══════════════ -->
+<div class="header">
+  <div class="header-sidebar-gap">
+    <div class="panel-label">GPS Specialist Team<br>FY27 Promotion Panel</div>
+  </div>
+  <div class="header-body">
+    <div class="header-info">
+      <div class="header-label">Senior Distinguished SE Nomination · GPS · FY27</div>
+      <div class="header-name">Andy Cather</div>
+      <div class="header-role-row">
+        <span class="header-current">Distinguished Strategic SE</span>
+        <span class="header-arrow">→</span>
+        <span class="header-target">Senior Distinguished Solution Engineer</span>
+      </div>
+      <div class="header-meta">
+        <span>GPS Federal &amp; Commercial</span>
+        <span>Contact Center / Agentforce Voice</span>
+        <span>acather@salesforce.com</span>
+      </div>
+    </div>
+    <div class="header-photo">
+      <!-- Replace src with andy-cather-photo.jpg once saved to this folder -->
+      <img src="andy-cather-photo.jpg" alt="Andy Cather"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="initials" style="display:none">AC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SIDEBAR NAV ═══════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-legend">Legend</div>
+  <div class="nav-item active" onclick="showSection('glance')">
+    <span class="nav-icon">📊</span>
+    <span><span class="nav-num">01 </span>The Case at a Glance</span>
+  </div>
+  <div class="nav-item" onclick="showSection('competencies')">
+    <span class="nav-icon">⚡</span>
+    <span><span class="nav-num">02 </span>Core Competencies</span>
+  </div>
+  <div class="nav-item" onclick="showSection('accounts')">
+    <span class="nav-icon">🏛️</span>
+    <span><span class="nav-num">03 </span>Key Account Impact</span>
+  </div>
+  <div class="nav-item" onclick="showSection('builder')">
+    <span class="nav-icon">🔧</span>
+    <span><span class="nav-num">04 </span>Builder Impact</span>
+  </div>
+  <div class="nav-item" onclick="showSection('recognition')">
+    <span class="nav-icon">🏆</span>
+    <span><span class="nav-num">05 </span>Recognition</span>
+  </div>
+  <div class="nav-item" onclick="showSection('scope')">
+    <span class="nav-icon">🎯</span>
+    <span><span class="nav-num">06 </span>Scope Expansion</span>
+  </div>
+  <div class="nav-item" onclick="showSection('recommendation')">
+    <span class="nav-icon">✅</span>
+    <span><span class="nav-num">07 </span>Recommendation</span>
+  </div>
+</nav>
+
+<!-- ═══════════════ MAIN CONTENT ═══════════════ -->
+<main class="main">
+
+  <!-- 01 · GLANCE -->
+  <div class="section active" id="glance">
+    <div class="section-title">The Case at a Glance</div>
+    <div class="section-sub">Andy's impact by the numbers — FY27.</div>
+    <div class="stats-grid">
+      <div class="stat-tile">
+        <div class="stat-number"><sup>$</sup>33M<sup>+</sup></div>
+        <div class="stat-label">Closed Won (FY27)</div>
+        <div class="stat-note">20+ deals, Apr–Oct 2026</div>
+      </div>
+      <div class="stat-tile accent">
+        <div class="stat-number">12<sup>+</sup></div>
+        <div class="stat-label">Active Engagements</div>
+        <div class="stat-note">Fed &amp; Commercial</div>
+      </div>
+      <div class="stat-tile navy">
+        <div class="stat-number">1,500<sup>+</sup></div>
+        <div class="stat-label">GPS Accounts Covered</div>
+        <div class="stat-note">OpenCTI EOL Dashboard he built</div>
+      </div>
+      <div class="stat-tile green">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Years as DSE</div>
+        <div class="stat-note">9.5 years at Salesforce</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 · COMPETENCIES -->
+  <div class="section" id="competencies">
+    <div class="section-title">Core Competencies</div>
+    <div class="section-sub">Three dimensions that define Andy's operating level.</div>
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-icon">⚡</div>
+        <h3>Strategic Deal Velocity</h3>
+        <ul>
+          <li>$17M+ in VA AELA expansions (Q2 + Q3 FY27) with pipeline continuing</li>
+          <li>$5.9M Amtrak EPW renewal; $5.4M FEMA Individual Assistance Platform</li>
+          <li>Army HRC Agentforce: 3,000 seats + 7.2M Flex Credits ($5.2M)</li>
+          <li>Manages multi-million renewals alongside net new simultaneously</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🔧</div>
+        <h3>Builder &amp; Multiplier</h3>
+        <ul>
+          <li>GPS OpenCTI EOL Dashboard: maps all 1,500+ GPS accounts needing migration</li>
+          <li>OpenCTI→Voice AE Site: complete playbook and ROI calculator for every GPS AE</li>
+          <li>PEN Pantry: reusable demo component library — single GitHub command install; 247-member Slack channel</li>
+          <li>LWC contact center AI library: 4 components, accelerator integration underway</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🌐</div>
+        <h3>Breadth &amp; Team Impact</h3>
+        <ul>
+          <li>GPS #1 in financial plan (39) &amp; #2 in ACV (5.8) — Andy is a primary driver</li>
+          <li>Owns GPS/SC QBR highlights, challenges, and asks for the entire group</li>
+          <li>Redesigning Black Belt program: cert model → community expert model</li>
+          <li>Actively coaching 3 team members through career transitions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 · ACCOUNTS -->
+  <div class="section" id="accounts">
+    <div class="section-title">Key Account Impact</div>
+    <div class="section-sub">Selected closed wins and strategic active engagements — Federal, S&amp;L, and international.</div>
+    <div class="accounts-grid">
+      <div class="account-card featured">
+        <div class="account-tag">Federal Civilian</div>
+        <h4>Dept. of Veterans Affairs</h4>
+        <div class="account-amount">$17M+</div>
+        <div class="account-desc">AELA expansions Q2 + Q3 FY27. 80,000 licensed users. Genesis architecture workstream. 55K-agent RFP dropping — largest GPS contact center opportunity.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag">Federal Civilian</div>
+        <h4>Amtrak</h4>
+        <div class="account-amount">$5.9M</div>
+        <div class="account-desc">Employee Productivity Workspace: 25K+ Call Center, Platform, and Org Permission licenses. Full renewal. Closed Jul 2026.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag dod">DoD</div>
+        <h4>US Army HRC</h4>
+        <div class="account-amount">$5.2M</div>
+        <div class="account-desc">Agentforce Digital Front Door: 3,000 A1E seats + 7.2M Flex Credits. IL5 GovCloud. Closed Jul 2026.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag">Federal Civilian</div>
+        <h4>FEMA</h4>
+        <div class="account-amount">$5.4M</div>
+        <div class="account-desc">Response &amp; Recovery Individual Assistance Program — Phase 1. Mission-critical citizen services. Closed May 2026.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag">Federal Civilian</div>
+        <h4>USPS</h4>
+        <div class="account-amount">$4.1M</div>
+        <div class="account-desc">+2,490 SC/SCV seats, +16,700 CC+ logins, Agentforce add-on. OpenCTI→Voice migration active. Closed Sep 2026.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag">Federal Civilian</div>
+        <h4>TSA</h4>
+        <div class="account-amount">$3.7M</div>
+        <div class="account-desc">Civil Rights &amp; Liberties Traveler Call Center: 4,580 Call Center + 1,469 Platform licenses. Renewal. Closed Aug 2026.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag strategic">Strategic</div>
+        <h4>CMS / 1-800-Medicare</h4>
+        <div class="account-amount pipeline">$39M renewal Jan 2027</div>
+        <div class="account-desc">18 orgs. Enterprise-wide unlimited Agentforce. Andy leading Governance strategy &amp; POC ($720K active).</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag dod">DoD Pipeline</div>
+        <h4>USAF / AFSC</h4>
+        <div class="account-amount pipeline">$1.8M pipeline</div>
+        <div class="account-desc">F-35 Organic Sustainment Phase 2. SRM, IL6. Andy SE on the deal.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag strategic">AMER S&amp;L</div>
+        <h4>Texas Dept. of Public Safety</h4>
+        <div class="account-amount">$883K</div>
+        <div class="account-desc">Two FY27 closes: Agentforce bots for the DL Contact Center ($430K, Jan 2026) + THP Recruiting &amp; Hiring platform ($453K, Jun 2026). Part of a 4-deal TxDPS cluster spanning enterprise licensing and Agentforce.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag strategic">AMER S&amp;L</div>
+        <h4>City of Minneapolis 311</h4>
+        <div class="account-amount">$836K</div>
+        <div class="account-desc">Full platform deployment for city-wide 311 contact center. Closed Jan 2026. Demonstrates Andy's reach beyond Federal into municipal government.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag intl">ANZ</div>
+        <h4>University of Melbourne</h4>
+        <div class="account-amount pipeline">$244K pipeline</div>
+        <div class="account-desc">Omni-channel engagement: Digital Engagement + Service Cloud Voice. Active Stage 3. Andy's international footprint extending into APAC higher education.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 · BUILDER -->
+  <div class="section" id="builder">
+    <div class="section-title">Builder Impact</div>
+    <div class="section-sub">Tools Andy built that scale across the entire GPS SE org — not just his own deals.</div>
+    <div class="builder-grid">
+      <div class="builder-card">
+        <h4>GPS OpenCTI EOL Dashboard</h4>
+        <p>Maps every GPS account using OpenCTI that needs to migrate to Salesforce Voice by Feb 2028. Identifies AVP, RVP, and AE by account. Includes telemetry usage data for commercial accounts. Used by AEs across the org.</p>
+        <span class="builder-scale">1,500+ GPS accounts covered</span>
+      </div>
+      <div class="builder-card">
+        <h4>OpenCTI → Voice AE Site</h4>
+        <p>A complete playbook and conversation guide for AEs to run the Salesforce Voice migration conversation with any customer. Built-in ROI calculator to show ACV impact. Designed to make every GPS AE more effective on this motion.</p>
+        <span class="builder-scale">GPS-wide AE enablement</span>
+      </div>
+      <div class="builder-card">
+        <h4>PEN Pantry Component Library</h4>
+        <p>Shareable library of demo components. Any SE can install via a single CLI command or recipe for their agentic coding tool. Designed for community contribution — not just Andy's components. Accelerator integration discussion underway with Mitch.</p>
+        <span class="builder-scale">Reusable across all GPS SEs</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 · RECOGNITION -->
+  <div class="section" id="recognition">
+    <div class="section-title">Recognition &amp; Sponsorship</div>
+    <div class="section-sub">EVP-level visibility and cross-org recognition for impact beyond his direct accounts.</div>
+    <div class="recognition-list">
+      <div class="kudos-item">
+        <div class="kudos-from">Paul Tatum (EVP) + Kishan &amp; Cinde</div>
+        <div class="kudos-context">Recognized by name at GPS QBR (Apr 2026) for Compass work. Explicit EVP call-out in a cross-segment review — rare for an individual SE contributor.</div>
+      </div>
+      <div class="kudos-item">
+        <div class="kudos-from">Anna Jocz</div>
+        <div class="kudos-context">Kudos for Census / Dept. of Commerce CQA support (Jun 2026). Cross-org recognition for SE engagement on a strategically important federal account.</div>
+      </div>
+      <div class="kudos-item">
+        <div class="kudos-from">Sara Costello (CMS)</div>
+        <div class="kudos-context">Called out Andy's contribution on CMS Agentforce Governance (Jul 2026) — the highest-stakes active GPS deal at $39M renewal with enterprise-wide unlimited Agentforce.</div>
+      </div>
+      <div class="kudos-item">
+        <div class="kudos-from">GPS SC QBR Position</div>
+        <div class="kudos-context">GPS is #1 in financial plan (39) and #2 in ACV across all segments. Andy owns QBR content strategy and narrative for the GPS SC group — de facto voice of GPS SC to leadership.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 · SCOPE -->
+  <div class="section" id="scope">
+    <div class="section-title">Scope Expansion</div>
+    <div class="section-sub">What changes — and what that means for GPS — at the Senior Distinguished level.</div>
+    <div class="scope-grid">
+      <div class="scope-box current">
+        <div class="scope-box-header">Distinguished Strategic SE — Current</div>
+        <ul>
+          <li>Individual contributor: close complex deals, support AEs</li>
+          <li>Build demos and proof-of-concept environments</li>
+          <li>Subject matter expertise in contact center / Agentforce Voice</li>
+          <li>Engage with team-level technical questions</li>
+          <li>Participate in community programs (Black Belt)</li>
+        </ul>
+      </div>
+      <div class="scope-box proposed">
+        <div class="scope-box-header">Senior Distinguished SE — Proposed</div>
+        <ul>
+          <li>Force multiplier: build org-wide tools the entire GPS SE team depends on</li>
+          <li>Own GPS contact center / Agentforce Voice strategy end-to-end</li>
+          <li>Lead the Black Belt program redesign and GPS community expert model</li>
+          <li>Drive product feedback and roadmap input from the field at scale</li>
+          <li>Mentor and develop multiple team members across functional tracks</li>
+          <li>Represent GPS SE excellence at EVP and cross-segment levels</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 · RECOMMENDATION -->
+  <div class="section" id="recommendation">
+    <div class="section-title">Recommendation</div>
+    <div class="section-sub"></div>
+    <div class="recommendation">
+      <div>
+        <h2>High Impact Candidate for Senior Tier</h2>
+        <p>Andy Cather is not approaching the Senior Distinguished SE level — he is already operating at it. His deal impact ($40M+ in 6 months), org-wide tools (1,500+ accounts), Black Belt program leadership, and team mentorship represent the full definition of this role. There are only ~12 Senior Distinguished SEs in the company. Andy belongs in that group.</p>
+      </div>
+      <div class="rec-badge">
+        <div class="rec-action">Nominated by</div>
+        <div class="rec-name">Geoff Roser</div>
+        <div class="rec-title">VP Solution Engineering</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+</script>
+</body>
+</html>

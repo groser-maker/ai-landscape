@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michael Bonaddio — Distinguished EA Nomination</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #0070D2;
+    --blue-dark: #005FB2;
+    --blue-accent: #00A1E0;
+    --navy: #16325C;
+    --bg: #F4F6F9;
+    --white: #FFFFFF;
+    --text: #16325C;
+    --text-muted: #54698D;
+    --border: #D8DDE6;
+    --success: #2E844A;
+    --teal: #0D7377;
+    --sidebar-w: 200px;
+    --header-h: 25vh;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    font-size: 15px;
+    overflow-x: hidden;
+  }
+
+  /* ═══════════════════════════════════════
+     FIXED HEADER
+  ═══════════════════════════════════════ */
+  .header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--header-h);
+    background: linear-gradient(135deg, #16325C 0%, #1B4F8A 55%, #0D7377 100%);
+    color: white;
+    display: flex;
+    align-items: stretch;
+    z-index: 100;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+  }
+
+  .header-sidebar-gap {
+    width: var(--sidebar-w);
+    flex-shrink: 0;
+    border-right: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  .header-sidebar-gap .panel-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .header-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    gap: 24px;
+    min-width: 0;
+  }
+  .header-info { flex: 1; min-width: 0; }
+  .header-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 6px;
+  }
+  .header-name {
+    font-size: clamp(26px, 3.5vh, 38px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .header-role-row {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 10px; flex-wrap: wrap;
+  }
+  .header-current { font-size: 13px; color: rgba(255,255,255,0.65); }
+  .header-arrow   { color: rgba(255,255,255,0.4); font-size: 14px; }
+  .header-target  {
+    font-size: 13px; font-weight: 700;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 16px; padding: 2px 12px;
+  }
+  .header-meta { font-size: 11.5px; color: rgba(255,255,255,0.55); }
+  .header-meta span + span::before { content: ' · '; }
+
+  .header-photo {
+    flex-shrink: 0;
+    width: clamp(80px, 12vh, 110px);
+    height: clamp(80px, 12vh, 110px);
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.4);
+    overflow: hidden;
+    background: rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .header-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center top;
+  }
+  .header-photo .initials {
+    font-size: clamp(20px, 3vh, 28px);
+    font-weight: 800; color: rgba(255,255,255,0.75); letter-spacing: 1px;
+  }
+
+  /* ═══════════════════════════════════════
+     SIDEBAR
+  ═══════════════════════════════════════ */
+  .sidebar {
+    position: fixed;
+    top: var(--header-h); left: 0;
+    width: var(--sidebar-w); bottom: 0;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    overflow-y: auto; z-index: 90;
+    padding: 20px 0;
+  }
+  .sidebar-legend {
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 1.8px; text-transform: uppercase;
+    color: #99A0AB; padding: 0 20px 10px;
+  }
+  .nav-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 20px; cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: all 0.15s ease;
+    color: var(--text-muted); font-size: 12.5px; font-weight: 500;
+    line-height: 1.3; user-select: none;
+  }
+  .nav-item:hover { background: var(--bg); color: var(--navy); }
+  .nav-item.active {
+    border-left-color: var(--teal);
+    background: #E8F5F5; color: #0A5558; font-weight: 700;
+  }
+  .nav-icon { font-size: 15px; flex-shrink: 0; width: 20px; text-align: center; }
+  .nav-num  { font-size: 9px; font-weight: 700; color: #C0C8D4; margin-right: 2px; }
+
+  /* ═══════════════════════════════════════
+     MAIN
+  ═══════════════════════════════════════ */
+  .main {
+    margin-top: var(--header-h);
+    margin-left: var(--sidebar-w);
+    min-height: calc(100vh - var(--header-h));
+    padding: 36px 44px 60px;
+  }
+
+  .section { display: none; animation: fadeIn 0.2s ease; }
+  .section.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-title { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+  .section-sub   { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; }
+
+  /* ── STATS ── */
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  }
+  .stat-tile {
+    background: var(--white); border: 1px solid var(--border);
+    border-top: 3px solid var(--blue); border-radius: 8px; padding: 22px 24px;
+  }
+  .stat-tile.accent { border-top-color: var(--blue-accent); }
+  .stat-tile.teal   { border-top-color: var(--teal); }
+  .stat-tile.green  { border-top-color: var(--success); }
+  .stat-number { font-size: 36px; font-weight: 800; color: var(--navy); line-height: 1; margin-bottom: 7px; }
+  .stat-label  { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+  .stat-note   { font-size: 11px; color: #84909E; }
+
+  /* ── TENURE BAR ── */
+  .tenure-bar {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 18px 24px;
+    display: flex; align-items: center; gap: 0; margin-top: 16px;
+  }
+  .tenure-item { flex: 1; text-align: center; }
+  .tenure-num   { font-size: 22px; font-weight: 800; color: var(--navy); }
+  .tenure-label { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+  .tenure-divider { width: 1px; height: 40px; background: var(--border); flex-shrink: 0; }
+
+  /* ── PILLARS ── */
+  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .pillar {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 26px;
+  }
+  .pillar-icon {
+    width: 42px; height: 42px; background: #EAF3FB;
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px; font-size: 20px;
+  }
+  .pillar h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .pillar ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .pillar ul li { font-size: 13px; color: var(--text-muted); padding-left: 16px; position: relative; }
+  .pillar ul li::before { content: '→'; position: absolute; left: 0; color: var(--blue); font-size: 11px; top: 1px; }
+
+  /* ── ACCOUNTS ── */
+  .accounts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .account-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 18px;
+  }
+  .account-card.featured {
+    border-color: var(--border);
+    background: var(--white);
+  }
+  .account-tag {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    background: #EAF3FB; color: var(--blue-dark);
+    border-radius: 4px; padding: 2px 7px; margin-bottom: 10px;
+  }
+  .account-tag.public-safety { background: #F3E8FF; color: #5A2D82; }
+  .account-tag.federal       { background: #EEF1F6; color: var(--navy); }
+  .account-tag.health        { background: #E8F5E9; color: var(--success); }
+  .account-card h4      { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .account-amount       { font-size: 22px; font-weight: 800; color: var(--teal); line-height: 1; margin-bottom: 6px; }
+  .account-amount.multi { font-size: 16px; color: var(--text-muted); }
+  .account-card p       { font-size: 13px; color: var(--text-muted); line-height: 1.45; }
+
+  /* ── COMPETENCY BLOCKS ── */
+  .competency-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .comp-block {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 18px; text-align: center;
+  }
+  .comp-icon  { font-size: 24px; margin-bottom: 8px; display: block; }
+  .comp-title { font-size: 12px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+
+  /* ── SCOPE ── */
+  .scope-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .scope-box { background: var(--white); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .scope-box-header { padding: 14px 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; }
+  .scope-box.current  .scope-box-header { background: #54698D; color: #FFFFFF; }
+  .scope-box.proposed .scope-box-header { background: var(--teal); color: white; }
+  .scope-box ul { list-style: none; padding: 18px 22px; display: flex; flex-direction: column; gap: 11px; }
+  .scope-box ul li { font-size: 13px; color: var(--text); padding-left: 18px; position: relative; }
+  .scope-box.current  ul li::before { content: '◦'; position: absolute; left: 0; color: var(--text-muted); }
+  .scope-box.proposed ul li::before { content: '✦'; position: absolute; left: 0; color: var(--teal); font-size: 10px; top: 2px; }
+
+  /* ── VALUES ── */
+  .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .values-col h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
+  .vto-list { display: flex; flex-direction: column; gap: 10px; }
+  .vto-item {
+    background: var(--white); border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 8px 8px 0; padding: 14px 18px;
+    font-size: 13px; color: var(--text);
+  }
+  .vto-item strong { display: block; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+  .milestone-badge {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 24px; text-align: center;
+  }
+  .milestone-badge .num   { font-size: 52px; font-weight: 800; color: var(--blue); line-height: 1; }
+  .milestone-badge .label { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-top: 8px; }
+  .milestone-badge .sub   { font-size: 11px; color: #84909E; margin-top: 4px; }
+  .acv-row { display: flex; gap: 12px; margin-top: 14px; }
+  .acv-mini {
+    flex: 1; background: var(--white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 14px; text-align: center;
+  }
+  .acv-mini .num   { font-size: 24px; font-weight: 800; color: var(--navy); }
+  .acv-mini .label { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+  /* ── RECOMMENDATION ── */
+  .recommendation {
+    background: linear-gradient(135deg, var(--navy) 0%, #1B4F8A 60%, #0D7377 100%);
+    border-radius: 12px; padding: 36px 44px; color: white;
+    display: flex; align-items: center; justify-content: space-between; gap: 40px;
+  }
+  .recommendation h2 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+  .recommendation p  { font-size: 14px; color: rgba(255,255,255,0.82); max-width: 600px; }
+  .rec-badge {
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 10px; padding: 18px 26px; text-align: center; min-width: 190px;
+  }
+  .rec-badge .rec-action { font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #7BCFFF; margin-bottom: 4px; }
+  .rec-badge .rec-name   { font-size: 17px; font-weight: 700; }
+  .rec-badge .rec-title  { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 3px; }
+
+  /* ── CONFERENCE ROOM SCALE-UP ── */
+  :root { --sidebar-w: 240px; }
+  body               { font-size: 19px; }
+  .section-title     { font-size: 32px; }
+  .section-sub       { font-size: 17px; margin-bottom: 32px; }
+  .stat-number       { font-size: 54px; }
+  .stat-label        { font-size: 17px; margin-bottom: 6px; }
+  .stat-note         { font-size: 14px; }
+  .stat-tile         { padding: 26px 28px; }
+  .tenure-num        { font-size: 26px; }
+  .tenure-label      { font-size: 13px; }
+  .pillar h3         { font-size: 20px; }
+  .pillar ul li      { font-size: 17px; }
+  .pillar-icon       { font-size: 24px; width: 48px; height: 48px; }
+  .account-card h4   { font-size: 19px; margin-bottom: 4px; }
+  .account-amount    { font-size: 30px; }
+  .account-amount.multi { font-size: 20px; }
+  .account-card p    { font-size: 15px; }
+  .account-tag       { font-size: 12px; padding: 3px 9px; }
+  .comp-icon         { font-size: 30px; }
+  .comp-title        { font-size: 14px; }
+  .nav-item          { font-size: 15px; padding: 12px 22px; }
+  .nav-icon          { font-size: 17px; }
+  .sidebar-legend    { font-size: 11px; }
+  .header-label      { font-size: 12px; }
+  .header-name       { font-size: clamp(34px, 4.2vh, 50px); }
+  .header-current    { font-size: 16px; }
+  .header-target     { font-size: 16px; }
+  .header-meta       { font-size: 14px; }
+  .panel-label       { font-size: 11px; }
+  .scope-box-header  { font-size: 13px; padding: 16px 22px; }
+  .scope-box ul      { padding: 20px 26px; gap: 14px; }
+  .scope-box ul li   { font-size: 17px; }
+  .vto-item          { font-size: 16px; padding: 16px 20px; }
+  .vto-item strong   { font-size: 17px; }
+  .milestone-badge .num   { font-size: 60px; }
+  .milestone-badge .label { font-size: 16px; }
+  .milestone-badge .sub   { font-size: 14px; }
+  .acv-mini .num     { font-size: 28px; }
+  .acv-mini .label   { font-size: 13px; }
+  .recommendation h2 { font-size: 30px; }
+  .recommendation p  { font-size: 18px; }
+  .rec-badge .rec-action { font-size: 13px; }
+  .rec-badge .rec-name   { font-size: 22px; }
+  .rec-badge .rec-title  { font-size: 14px; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ FIXED HEADER ═══════════════ -->
+<div class="header">
+  <div class="header-sidebar-gap">
+    <div class="panel-label">GPS Specialist Team<br>FY27 Promotion Panel</div>
+  </div>
+  <div class="header-body">
+    <div class="header-info">
+      <div class="header-label">Distinguished Enterprise Architect Nomination · APAC · FY27</div>
+      <div class="header-name">Michael Bonaddio</div>
+      <div class="header-role-row">
+        <span class="header-current">Enterprise Architect</span>
+        <span class="header-arrow">→</span>
+        <span class="header-target">Distinguished Enterprise Architect</span>
+      </div>
+      <div class="header-meta">
+        <span>APAC — Australia &amp; New Zealand</span>
+        <span>Public Safety &amp; Government Specialist</span>
+        <span>Joined May 2020</span>
+      </div>
+    </div>
+    <div class="header-photo">
+      <!-- Replace src with michael-bonaddio-photo.jpg once saved to this folder -->
+      <img src="michael-bonaddio-photo.jpg" alt="Michael Bonaddio"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="initials" style="display:none">MB</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SIDEBAR NAV ═══════════════ -->
+<nav class="sidebar">
+  <div class="sidebar-legend">Legend</div>
+  <div class="nav-item active" onclick="showSection('glance')">
+    <span class="nav-icon">📊</span>
+    <span><span class="nav-num">01 </span>The Case at a Glance</span>
+  </div>
+  <div class="nav-item" onclick="showSection('competencies')">
+    <span class="nav-icon">🤝</span>
+    <span><span class="nav-num">02 </span>Core Competencies</span>
+  </div>
+  <div class="nav-item" onclick="showSection('accounts')">
+    <span class="nav-icon">🌏</span>
+    <span><span class="nav-num">03 </span>Key Account Portfolio</span>
+  </div>
+  <div class="nav-item" onclick="showSection('values')">
+    <span class="nav-icon">🛡️</span>
+    <span><span class="nav-num">04 </span>Character &amp; Values</span>
+  </div>
+  <div class="nav-item" onclick="showSection('scope')">
+    <span class="nav-icon">🎯</span>
+    <span><span class="nav-num">05 </span>Scope Expansion</span>
+  </div>
+  <div class="nav-item" onclick="showSection('recommendation')">
+    <span class="nav-icon">✅</span>
+    <span><span class="nav-num">06 </span>Recommendation</span>
+  </div>
+</nav>
+
+<!-- ═══════════════ MAIN CONTENT ═══════════════ -->
+<main class="main">
+
+  <!-- 01 · GLANCE -->
+  <div class="section active" id="glance">
+    <div class="section-title">The Case at a Glance</div>
+    <div class="section-sub">Michael's sustained performance across 6+ years in APAC.</div>
+    <div class="stats-grid">
+      <div class="stat-tile">
+        <div class="stat-number">49</div>
+        <div class="stat-label">DSR-Driven Opportunities</div>
+        <div class="stat-note">Since joining the EA team, May 2020</div>
+      </div>
+      <div class="stat-tile accent">
+        <div class="stat-number">~4</div>
+        <div class="stat-label">Closed Deals Per Quarter</div>
+        <div class="stat-note">Sustained over 6+ years</div>
+      </div>
+      <div class="stat-tile teal">
+        <div class="stat-number">2/3</div>
+        <div class="stat-label">Win Rate</div>
+        <div class="stat-note">Closes 2 out of every 3 he supports</div>
+      </div>
+      <div class="stat-tile green">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Impact Milestones</div>
+        <div class="stat-note">Achieved by mid-FY24 — less than halfway through the year</div>
+      </div>
+    </div>
+    <div class="tenure-bar">
+      <div class="tenure-item">
+        <div class="tenure-num">6 yrs</div>
+        <div class="tenure-label">At Salesforce</div>
+      </div>
+      <div class="tenure-divider"></div>
+      <div class="tenure-item">
+        <div class="tenure-num">7 yrs</div>
+        <div class="tenure-label">Pre-SF Impl. Experience</div>
+      </div>
+      <div class="tenure-divider"></div>
+      <div class="tenure-item">
+        <div class="tenure-num">13 yrs</div>
+        <div class="tenure-label">Total SF Expertise</div>
+      </div>
+      <div class="tenure-divider"></div>
+      <div class="tenure-item">
+        <div class="tenure-num">APAC</div>
+        <div class="tenure-label">Regional Anchor AUS/NZ</div>
+      </div>
+      <div class="tenure-divider"></div>
+      <div class="tenure-item">
+        <div class="tenure-num">11+</div>
+        <div class="tenure-label">Strategic Accounts</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 · COMPETENCIES -->
+  <div class="section" id="competencies">
+    <div class="section-title">Core Competencies</div>
+    <div class="section-sub">What sets Michael apart in the APAC market.</div>
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-icon">🤝</div>
+        <h3>Executive Partnership</h3>
+        <ul>
+          <li>Trusted C-level advisor at Victoria Police, SAPOL, Dept of Health &amp; Aged Care, and Digital Transformation Agency</li>
+          <li>Earns a seat at the executive table — not as a vendor, but as a strategic transformation partner</li>
+          <li>Deftly navigates organizational politics in complex, multi-stakeholder APAC environments</li>
+          <li>The person AEs and senior APAC leadership call when a deal is stuck at the executive level</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🏛️</div>
+        <h3>APAC Cornerstone</h3>
+        <ul>
+          <li>The primary EA for the APAC GPS team — routinely mentors SEs across the region</li>
+          <li>Red account turnaround specialist: called in to resolve post-sale political and technical crises</li>
+          <li>Advises APAC SI partners on implementation quality — filling a critical gap in the partner ecosystem</li>
+          <li>Deep respect from APAC senior management; consistent source of pipeline momentum</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🛡️</div>
+        <h3>Industry Credibility</h3>
+        <ul>
+          <li>Active Victoria State Emergency Services (SES) volunteer — genuine public safety practitioner</li>
+          <li>Credibility with police and emergency services agencies that cannot be coached — it's lived experience</li>
+          <li>Deep knowledge across public safety, health, revenue, vital records, and justice sectors</li>
+          <li>Understands the unique challenges of the APAC partner ecosystem and advises on gaps</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 · ACCOUNTS -->
+  <div class="section" id="accounts">
+    <div class="section-title">Key Account Portfolio</div>
+    <div class="section-sub">Michael's flagship APAC accounts — closed deal evidence plus advisory and C-level engagement.</div>
+    <div class="accounts-grid">
+      <div class="account-card featured">
+        <div class="account-tag federal">Federal</div>
+        <h4>National Disability Insurance Agency</h4>
+        <div class="account-amount">$16M+</div>
+        <p>5 closed deals: $6.6M SELA renewal (Mar 2025), $4.2M RFP add-on (Oct 2025), $3.0M renewal + Agentforce uplift (Sep 2026), $1.9M user expansion (Aug 2024), $509K PSS + CC+ (Jan 2026). Michael's anchor federal account.</p>
+      </div>
+      <div class="account-card">
+        <div class="account-tag federal">Federal</div>
+        <h4>Dept. of Health &amp; Aged Care</h4>
+        <div class="account-amount">$1.1M</div>
+        <p>$726K CC+ NACA add-on (Apr 2025) + $383K RUL expansion (Dec 2024). Michael advises at the executive level on Australia's most sensitive health programs, roadmap advisory across complex policy environments.</p>
+      </div>
+      <div class="account-card">
+        <div class="account-tag">State Government</div>
+        <h4>Services Victoria / Dept. of Gov. Services</h4>
+        <div class="account-amount">$858K</div>
+        <p>4 closes across the portfolio: Call Centre Expansion $114K (Nov 2025), CRM $18K (Aug 2025), BPS 2nd Drop $54K (Apr 2025), RTBA go-live $441K (Jun 2025), WWCH $230K (Jul 2026). Vital records and citizen services.</p>
+      </div>
+      <div class="account-card featured">
+        <div class="account-tag public-safety">Public Safety</div>
+        <h4>Victoria Police</h4>
+        <div class="account-amount">$165K</div>
+        <p>Data Cloud PILO closed Jan 2026. Flagship relationship — Michael's Victoria SES volunteer work gives him command-level credibility no other SE can replicate. Trusted strategic partner, not just a technology advisor.</p>
+      </div>
+      <div class="account-card featured">
+        <div class="account-tag public-safety">Public Safety</div>
+        <h4>South Australia Police (SAPOL)</h4>
+        <p>Deep executive engagement in a high-scrutiny government environment. Michael navigates complex political terrain to maintain Salesforce as a strategic partner. Advisory role — no direct closed deal recorded.</p>
+      </div>
+      <div class="account-card">
+        <div class="account-tag federal">Federal</div>
+        <h4>Digital Transformation Agency</h4>
+        <p>Australia's whole-of-government digital transformation body. Michael advises on Salesforce's role in the national digital strategy — C-suite engagement at the highest level of federal government. Advisory role.</p>
+      </div>
+      <div class="account-card">
+        <div class="account-tag health">Health</div>
+        <h4>NSW Health</h4>
+        <p>One of Australia's largest public health systems. Multi-stakeholder, multi-cloud engagement requiring the EA-level orchestration and political navigation that Michael specializes in. Advisory role.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 · VALUES -->
+  <div class="section" id="values">
+    <div class="section-title">Character &amp; Values</div>
+    <div class="section-sub">Michael's commitment to community isn't a resume line — it's what gives him credibility with the customers he serves.</div>
+    <div class="values-grid">
+      <div class="values-col">
+        <h3>Volunteer &amp; Community Leadership</h3>
+        <div class="vto-list">
+          <div class="vto-item">
+            <strong>Victoria State Emergency Services (SES)</strong>
+            Active emergency services volunteer — on-call and deployed in active incidents. This is what gives him peer-level credibility with Victoria Police, SAPOL, and other public safety agencies. It can't be coached.
+          </div>
+          <div class="vto-item">
+            <strong>Aurora School for the Deaf (Pro-Bono)</strong>
+            Pro-bono technology work for an educational institution serving the deaf community. Consistently leads VTO hours within the team year after year.
+          </div>
+          <div class="vto-item">
+            <strong>Assistance Dogs Australia</strong>
+            Community volunteer work alongside a full-time EA role and SES commitment. Reflects consistent Ohana values — not performed for reviews, practiced daily.
+          </div>
+        </div>
+      </div>
+      <div class="values-col">
+        <h3>Impact Recognition</h3>
+        <div class="milestone-badge">
+          <div class="num">7</div>
+          <div class="label">Impact Milestones</div>
+          <div class="sub">Achieved by June 29th, FY24 — less than halfway through the fiscal year</div>
+        </div>
+        <div class="acv-row">
+          <div class="acv-mini">
+            <div class="num">2/3</div>
+            <div class="label">Win rate, 6 years</div>
+          </div>
+          <div class="acv-mini">
+            <div class="num">~24</div>
+            <div class="label">Closes per year</div>
+          </div>
+          <div class="acv-mini">
+            <div class="num">49</div>
+            <div class="label">Career DSR opps</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 · SCOPE -->
+  <div class="section" id="scope">
+    <div class="section-title">Scope Expansion</div>
+    <div class="section-sub">Michael has been operating in the Distinguished EA capacity since February — the promotion formalizes what already exists.</div>
+    <div class="scope-grid">
+      <div class="scope-box current">
+        <div class="scope-box-header">Enterprise Architect — Current</div>
+        <ul>
+          <li>Qualify and lead technical engagements alongside AEs</li>
+          <li>Architecture advisory for individual accounts</li>
+          <li>Illuminate and Ignite engagement facilitation</li>
+          <li>SE mentoring in the region</li>
+          <li>Partner implementation guidance on specific deals</li>
+          <li>Post-sales technical advisory (often informal)</li>
+        </ul>
+      </div>
+      <div class="scope-box proposed">
+        <div class="scope-box-header">Distinguished EA — Proposed</div>
+        <ul>
+          <li>Executive Sponsor and C-suite Partner: formalize the advisory relationship Michael already holds informally at multiple agencies</li>
+          <li>Ongoing digital transformation roadmap ownership across all phases — not just at close</li>
+          <li>Board-room advisory: strategic business and operating model guidance alongside technology</li>
+          <li>TMP organization input: advise on APAC-specific product enhancements from the field</li>
+          <li>Influence all 4 phases of C360 — growing AOV and ACV across the portfolio</li>
+          <li>Multiplier across GPS APAC: raise the bar for every SE, AE, and partner team he touches</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 · RECOMMENDATION -->
+  <div class="section" id="recommendation">
+    <div class="section-title">Recommendation</div>
+    <div class="section-sub"></div>
+    <div class="recommendation">
+      <div>
+        <h2>Delivering at the Distinguished Level Today</h2>
+        <p>Michael Bonaddio has been operating in the Distinguished EA capacity since February of this year. His 2-of-3 win rate, 49 DSR-driven opportunities, C-level executive relationships across the most complex APAC government accounts, and genuine community investment make this promotion both deserved and overdue. He is the north star for what APAC EA excellence looks like — and the formal recognition should match the work.</p>
+      </div>
+      <div class="rec-badge">
+        <div class="rec-action">Nominated by</div>
+        <div class="rec-name">Geoff Roser</div>
+        <div class="rec-title">VP Solution Engineering</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+</script>
+</body>
+</html>
