@@ -421,16 +421,18 @@
           <td>
             <span class="badge badge-yellow">For Flow: on pricelist · Anypoint: Winter '27</span>
             <div class="ok-item">MuleSoft for Flow (Integration) — on GovCloud Plus pricelist (March 2026)</div>
-            <div class="gov-detail">Anypoint Platform has standalone FedRAMP <strong>Moderate</strong> authorization today — NOT within the GovCloud Plus High boundary. Anypoint Platform + Agent Fabric targeting FedRAMP Class D (High) Winter '27; DoD IL5 Spring '27.</div>
+            <div class="gov-detail">⚠️ <strong>For Flow is licensed via GovCloud Plus, but its runtime runs on Anypoint Platform's own FedRAMP <em>Moderate</em> authorization</strong> — NOT within the GovCloud Plus High boundary. Until Anypoint reaches FedRAMP High (Winter '27), For Flow integrations operate at Moderate assurance level only.</div>
+            <div class="gov-detail">Anypoint Platform standalone FedRAMP Moderate today. Full FedRAMP Class D (High) + Agent Fabric: Winter '27. DoD IL5: Spring '27.</div>
           </td>
           <td>
             <div class="gap-item"><strong>Anypoint Platform — NOT yet FedRAMP High; targeting Winter '27</strong></div>
             <div class="gap-item">Agent Fabric (MCP Bridge, AI Gateway, Agent Registry, Trusted Agent Identity) — FedRAMP High Winter '27; IL5 Spring '27</div>
             <div class="gap-item">MuleSoft for Flow: IDP — NOT on GovCloud Plus pricelist, FedRAMP auth in progress</div>
+            <div class="gap-item"><strong>Connector availability</strong> — connectors may appear in docs but fail in customer's actual FedRAMP environment (network configs, firewall rules); significantly worse in Defense: DISA must open ports on a per-customer request basis, creating deal-blocking delays</div>
             <div class="gap-item">GCC High Microsoft connectors (SharePoint, Power BI) — no confirmed timeline</div>
             <div class="gap-item">IL5 (DoD): Spring '27 target for Anypoint Platform</div>
           </td>
-          <td class="col-global">Available globally; key integration layer for agency modernization. FedRAMP High + Agent Fabric (Winter '27) will unlock AI integration workflows at DoW.</td>
+          <td class="col-global">Available globally; key integration layer for agency modernization. <strong>America.gov</strong> (largest current federal sales play) requires MuleSoft at both GovCloud Plus (GA1/FedRAMP High) and GCPD (GA2/IL5) — puts direct pressure on Winter '27 + Spring '27 delivery. FedRAMP High + Agent Fabric (Winter '27) will unlock AI integration workflows at DoW.</td>
           <td>
             <ol class="asks-list">
               <li data-n="1">Accelerate Anypoint Platform to FedRAMP High (Winter '27) — Moderate is insufficient for high-impact federal deals</li>
