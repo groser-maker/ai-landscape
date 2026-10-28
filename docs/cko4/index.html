@@ -261,13 +261,13 @@
           <td class="col-product">Agentforce<br><span style="font-weight:400;font-size:11px;color:#54698D">AI Cloud</span></td>
           <td class="col-desc">Autonomous AI agents across sales, service, HR. Pre-built agents, Agent Builder, AgentScript, Atlas reasoning engine.</td>
           <td>
-            <span class="badge badge-green">FedRAMP High + IL5 ✓ (GCPD launched Aug 2026)</span>
-            <div class="ok-item">Agentforce Customer &amp; Employee Agents — FedRAMP High</div>
+            <span class="badge badge-green">Base: FedRAMP High · PSS/Health/Education editions: IL5 (GCPD Aug 2026)</span>
+            <div class="ok-item">Agentforce Customer &amp; Employee Agents (base) — FedRAMP High</div>
             <div class="ok-item">PSS Agentforce 1 Edition — FedRAMP High + IL5</div>
             <div class="ok-item">Health Cloud Agentforce 1 Edition — FedRAMP High + IL5</div>
             <div class="ok-item">Education Cloud Agentforce 1 Edition — FedRAMP High + IL5</div>
             <div class="ok-item">Agentforce Vibes (Desktop) — FedRAMP High + IL5 (Sep 2026)</div>
-            <div class="gov-detail">Anthropic Claude models (Sonnet 5/Opus 4.8) GA via LLM Gateway FedRAMP High — require Support Case to enable in GovCloud orgs.</div>
+            <div class="gov-detail">Anthropic Claude (latest models) GA via LLM Gateway FedRAMP High — require Support Case to enable in GovCloud orgs. OpenAI partnership also available.</div>
           </td>
           <td>
             <div class="gap-item">Agentforce Builder (new) — no GovCloud timeline confirmed</div>
@@ -295,7 +295,8 @@
             <div class="ok-item">Data Cloud One — FedRAMP High + IL5</div>
             <div class="ok-item">Document AI — FedRAMP High + IL5</div>
             <div class="ok-item">Customer Data Cloud Starter — FedRAMP High</div>
-            <div class="ok-item">Notebook AI — FedRAMP High + IL5 <span style="color:#8A6200">(verify before citing)</span></div>
+            <div class="ok-item">Notebook AI — FedRAMP High + IL5</div>
+            <div class="ok-item">Dynamic Data Masking — FedRAMP High + IL5 (Sep 22, 2026)</div>
           </td>
           <td>
             <div class="gap-item"><strong>Connector availability — #1 ground-level pain point.</strong> Docs may indicate support but real-world functionality varies by customer environment; no published certification matrix exists. Who to escalate for specific deployment scenarios is unclear</div>
@@ -308,7 +309,7 @@
           <td>
             <ol class="asks-list">
               <li data-n="1">Connector parity — publish a certified connector matrix by deployment environment (AWS GovCloud, Azure, Azure GCC High, etc.); resolve Databricks all 3 zero copy modes; define GovCloud Plus Defense compatibility</li>
-              <li data-n="2">Resolve Zero Copy 3rd-party gaps</li>
+              <li data-n="2">Databricks zero copy — all 3 modes confirmed working, Defense environment compatibility defined</li>
               <li data-n="3">Coworker parity in GovCloud</li>
             </ol>
           </td>
@@ -324,10 +325,11 @@
             <div class="ok-item">In-App Walkthroughs (no 3rd-party) — FedRAMP High + IL5</div>
           </td>
           <td>
-            <div class="gap-item">Activity Platform / Sales Intelligence — FY27</div>
+            <div class="gap-item">Activity Platform / Sales Intelligence — FY28</div>
             <div class="gap-item">Sales Engagement — interoperable only</div>
             <div class="gap-item">Salesforce Maps — interoperable only</div>
             <div class="gap-item">Einstein Activity Capture — interoperable only</div>
+            <div class="gap-item">Sovereign cloud (EMEA, ANZ) — no roadmap committed; blocking international gov deals</div>
           </td>
           <td class="col-global">Deployed globally across all GPS regions. Largest GPS ACV contributor alongside Service.</td>
           <td>
@@ -345,13 +347,14 @@
           <td>
             <span class="badge badge-yellow">76% FY27 · PARTIAL</span>
             <div class="ok-item">Service Cloud — FedRAMP High + IL5</div>
-            <div class="ok-item">Legacy Salesforce Voice (fka Service Cloud Voice) — FedRAMP High + IL5</div>
-            <div class="ok-item">Knowledge, Surveys, Field Service — FedRAMP High + IL5</div>
+            <div class="ok-item">Legacy Salesforce Voice (formerly Service Cloud Voice) — FedRAMP High + IL5</div>
+            <div class="ok-item">Knowledge, Surveys — FedRAMP High + IL5</div>
             <div class="ok-item">Digital Engagement (Chat, Messaging) — FedRAMP High + IL5</div>
           </td>
           <td>
-            <div class="gap-item"><strong>Agentforce Voice (AI-native)</strong> — not yet authorized; <strong>28Q1 target</strong>. Legacy SCV is authorized</div>
-            <div class="gap-item">Contact Center / CCaaS — not authorized</div>
+            <div class="gap-item"><strong>Agentforce Voice (AI-native)</strong> — not yet authorized; <strong>FY28 Q1 target</strong>. Legacy SCV is authorized</div>
+            <div class="gap-item">Agent Casey (AI contact center agent) — FY28</div>
+            <div class="gap-item">Contact Center / CCaaS (Contact Center as a Service) — not authorized</div>
             <div class="gap-item">Einstein Bots — interoperable only</div>
             <div class="gap-item">Appointment Assistant, Shift Management — interoperable only</div>
           </td>
@@ -359,8 +362,8 @@
           <td>
             <ol class="asks-list">
               <li data-n="1">Agentforce Voice (AI-native) authorization — distinct from legacy SCV which IS authorized</li>
-              <li data-n="2">CCaaS FedRAMP certification</li>
-              <li data-n="3">Einstein Bots authorization (interoperable only today)</li>
+              <li data-n="2">Agent Casey (AI contact center) authorization — FY28 target</li>
+              <li data-n="3">CCaaS FedRAMP certification</li>
             </ol>
           </td>
         </tr>
@@ -372,7 +375,7 @@
             <span class="badge badge-yellow">80% / 50%+ · PARTIAL</span>
             <div class="ok-item">Lightning Platform, APIs, Flow — FedRAMP High + IL5</div>
             <div class="ok-item">Identity (Employee, Identity-Only) — FedRAMP High + IL5</div>
-            <div class="ok-item">Scale Center / Scale Test — FedRAMP High + IL5</div>
+            <div class="ok-item">Scale Center / Scale Test — FedRAMP High + IL2 <span style="color:#8A6200">(IL5 in process at DISA)</span></div>
             <div class="ok-item">Platform Events, Change Data Capture — FedRAMP High + IL5</div>
           </td>
           <td>
@@ -398,14 +401,14 @@
           <td class="col-product">Slack<br><span style="font-weight:400;font-size:11px;color:#54698D">GovSlack</span></td>
           <td class="col-desc">Team messaging and collaboration. GovSlack = FedRAMP-authorized. Agentforce integration via Slack AI.</td>
           <td>
-            <span class="badge badge-red">Full parity H2 FY28</span>
-            <div class="gov-detail">GovSlack has separate FedRAMP authorization — not covered by GovCloud Plus boundary. Partial feature set available today.</div>
+            <span class="badge badge-red">Full parity H2 FY28 (DISA-dependent)</span>
+            <div class="ok-item">GovSlack core — messaging, channels, direct messages, file sharing (FedRAMP authorized today)</div>
+            <div class="gov-detail">GovSlack has separate FedRAMP authorization — not covered by GovCloud Plus boundary. Core messaging is live; AI/agent capabilities are not yet authorized.</div>
           </td>
           <td>
-            <div class="gap-item">Slackbot — FY28</div>
-            <div class="gap-item">Slack-to-Core integration — FY28</div>
+            <div class="gap-item">Slackbot / Slack AI — FY28</div>
+            <div class="gap-item">Slack-to-Core integration — FY28; architectural work underway but DISA approval required</div>
             <div class="gap-item">Alt model support (Anthropic, other models) — FY28</div>
-            <div class="gap-item">Material architecture + DISA constraints drive timeline</div>
           </td>
           <td class="col-global">Global — HMRC (UK), international gov. DISA constraints affect all classified environments.</td>
           <td>
@@ -421,25 +424,23 @@
           <td class="col-product">MuleSoft</td>
           <td class="col-desc">Integration platform — API management, data integration, RPA, automation across hybrid/multi-cloud.</td>
           <td>
-            <span class="badge badge-yellow">For Flow: on pricelist · Anypoint: Winter '27</span>
-            <div class="ok-item">MuleSoft for Flow (Integration) — on GovCloud Plus pricelist (March 2026)</div>
-            <div class="gov-detail">⚠️ <strong>For Flow is licensed via GovCloud Plus, but its runtime runs on Anypoint Platform's own FedRAMP <em>Moderate</em> authorization</strong> — NOT within the GovCloud Plus High boundary. Until Anypoint reaches FedRAMP High (Winter '27), For Flow integrations operate at Moderate assurance level only.</div>
-            <div class="gov-detail">Anypoint Platform standalone FedRAMP Moderate today. Full FedRAMP Class D (High) + Agent Fabric: Winter '27. DoD IL5: Spring '27.</div>
+            <span class="badge badge-green">Anypoint FedRAMP High: Live Oct 21 · IL5: Spring '27</span>
+            <div class="ok-item">Anypoint Platform — FedRAMP High, launched GovCloud Plus Oct 21, 2026</div>
+            <div class="ok-item">MuleSoft for Flow (Integration) — on GovCloud Plus pricelist; now runs at FedRAMP High assurance</div>
+            <div class="gov-detail">Agent Fabric (MCP Bridge, AI Gateway, Agent Registry, Trusted Agent Identity): FedRAMP High Winter '27; DoD IL5: Spring '27</div>
           </td>
           <td>
-            <div class="gap-item"><strong>Anypoint Platform — NOT yet FedRAMP High; targeting Winter '27</strong></div>
             <div class="gap-item">Agent Fabric (MCP Bridge, AI Gateway, Agent Registry, Trusted Agent Identity) — FedRAMP High Winter '27; IL5 Spring '27</div>
             <div class="gap-item">MuleSoft for Flow: IDP — NOT on GovCloud Plus pricelist, FedRAMP auth in progress</div>
-            <div class="gap-item"><strong>Connector availability</strong> — connectors may appear in docs but fail in customer's actual FedRAMP environment (network configs, firewall rules); significantly worse in Defense: DISA must open ports on a per-customer request basis, creating deal-blocking delays</div>
+            <div class="gap-item"><strong>Connector availability</strong> — connectors may appear in docs but fail in customer's actual FedRAMP environment; significantly worse in Defense: DISA must open ports on a per-customer request basis, creating deal-blocking delays</div>
             <div class="gap-item">GCC High Microsoft connectors (SharePoint, Power BI) — no confirmed timeline</div>
-            <div class="gap-item">IL5 (DoD): Spring '27 target for Anypoint Platform</div>
           </td>
-          <td class="col-global">Available globally; key integration layer for agency modernization. <strong>America.gov</strong> (largest current federal sales play) requires MuleSoft at both GovCloud Plus (GA1/FedRAMP High) and GCPD (GA2/IL5) — puts direct pressure on Winter '27 + Spring '27 delivery. FedRAMP High + Agent Fabric (Winter '27) will unlock AI integration workflows at DoW.</td>
+          <td class="col-global">Available globally; key integration layer for agency modernization. Anypoint Platform FedRAMP High is now live (Oct 21, 2026). <strong>America.gov</strong> (largest current federal sales play) requires MuleSoft at both GovCloud Plus (GA1/FedRAMP High — now delivered) and GCPD (GA2/IL5 — Spring '27 target).</td>
           <td>
             <ol class="asks-list">
-              <li data-n="1">Accelerate Anypoint Platform to FedRAMP High (Winter '27) — Moderate is insufficient for high-impact federal deals</li>
-              <li data-n="2">Agent Fabric (MCP Bridge + AI Gateway) IL5 by Spring '27 — critical for AI orchestration at DoW</li>
-              <li data-n="3">MuleSoft for Flow: IDP parity on GovCloud Plus pricelist</li>
+              <li data-n="1">Confirm Anypoint Platform DoD IL5 by Spring '27 — critical for America.gov and defense agency deals</li>
+              <li data-n="2">Agent Fabric (MCP Bridge + AI Gateway) IL5 by Spring '27 — needed for AI orchestration at DoW</li>
+              <li data-n="3">Resolve DISA connector port-opening bottleneck — per-customer manual requests creating deal-blocking delays in Defense</li>
             </ol>
           </td>
         </tr>
@@ -448,12 +449,12 @@
           <td class="col-product">Field Service</td>
           <td class="col-desc">Scheduling, dispatch, and mobile workforce management for field technicians. Gov utilities, defense logistics.</td>
           <td>
-            <span class="badge badge-green">100% FY27</span>
+            <span class="badge badge-green">Core SKUs: 100% · Add-ons in progress</span>
             <div class="ok-item">Salesforce Field Service (+, Contractor, Dispatcher) — FedRAMP High + IL5</div>
           </td>
           <td>
-            <div class="gap-item">Asset &amp; Inventory Management — in flight FY27</div>
-            <div class="gap-item">Field Service AI (Agentforce) — 27Q4, Not Started</div>
+            <div class="gap-item">Asset &amp; Inventory Management — in flight, FY27 target</div>
+            <div class="gap-item">Field Service AI (Agentforce) — authorization not yet started; FY27 Q4 target</div>
           </td>
           <td class="col-global">Available globally; growing in gov utilities and defense logistics use cases.</td>
           <td>
@@ -472,19 +473,20 @@
             <span class="badge badge-green">Growth + Advanced ✓ FedRAMP High + IL5</span>
             <div class="ok-item">MC Growth Edition — FedRAMP High + IL5</div>
             <div class="ok-item">MC Advanced Edition — FedRAMP High + IL5</div>
+            <div class="ok-item">MC Account Engagement (formerly Pardot) — FedRAMP High</div>
             <div class="ok-item">Salesforce Personalization — FedRAMP High</div>
             <div class="ok-item">Message Credits (Email) — FedRAMP High</div>
           </td>
           <td>
-            <div class="gap-item">MC Engagement (Exact Target) — interoperable only</div>
-            <div class="gap-item">MC Account Engagement (Pardot) — interoperable only</div>
+            <div class="gap-item">MC Engagement (Marketing Cloud Engagement, legacy) — interoperable only</div>
+            <div class="gap-item">MC Account Engagement — IL5 ✗ (FedRAMP High only)</div>
             <div class="gap-item">SMS / WhatsApp Message Credits — FedRAMP ✓, IL5 ✗</div>
           </td>
           <td class="col-global">Available globally; gov public communications, citizen engagement campaigns.</td>
           <td>
             <ol class="asks-list">
-              <li data-n="1">MC Engagement (Exact Target) authorization — interoperable only, needed for large-scale gov campaigns</li>
-              <li data-n="2">MC Account Engagement (Pardot) authorization</li>
+              <li data-n="1">MC Engagement (legacy) authorization — interoperable only today, needed for large-scale gov campaigns</li>
+              <li data-n="2">MC Account Engagement IL5 authorization — FedRAMP High done; IL5 gap remains</li>
               <li data-n="3">SMS/WhatsApp Message Credits IL5 authorization for DoW communication use cases</li>
             </ol>
           </td>
@@ -497,7 +499,7 @@
             <span class="badge badge-yellow">82% FY27 · PARTIAL</span>
             <div class="ok-item">PSS core (BRE, OmniStudio, App Forms, Foundations) — FedRAMP High + IL5</div>
             <div class="ok-item">Health Cloud — FedRAMP High + IL5</div>
-            <div class="ok-item">Education Cloud — FedRAMP High + IL5</div>
+            <div class="ok-item">Education Cloud — FedRAMP High (base); IL5 for Agentforce 1 Edition only</div>
             <div class="ok-item">Financial Services Cloud — FedRAMP High ✓ (IL5 gap only)</div>
           </td>
           <td>
@@ -520,7 +522,7 @@
           <td class="col-product">Tableau / Analytics<br><span style="font-weight:400;font-size:11px;color:#54698D">Tableau Next · Tableau Cloud · CRMA</span></td>
           <td class="col-desc">BI &amp; analytics. Tableau Next = next-gen cloud analytics built on Salesforce infrastructure. Tableau Cloud = traditional hosted Tableau (most existing customer installs). CRMA = CRM Analytics embedded.</td>
           <td>
-            <span class="badge badge-green">Tableau Next: 100% FY27 · FedRAMP High + IL5</span>
+            <span class="badge badge-yellow">Tableau Next: FedRAMP High + IL5 · Personal Orgs gap · Tableau Cloud: IL5 in process</span>
             <div class="ok-item">Tableau Next Consumer + Creator — FedRAMP High + IL5</div>
             <div class="ok-item">CRM Analytics (no 3rd-party) — FedRAMP High + IL5</div>
           </td>
@@ -528,7 +530,7 @@
             <div class="gap-item"><strong>Tableau Cloud (traditional hosted) — no IL5 authorization.</strong> DoD/IC path under evaluation with Second Front Systems (a gov cloud enablement partner that accelerates FedRAMP/IL5 certification), targeting H2 FY28</div>
             <div class="gap-item">Personal Orgs — Tableau Next gap remaining</div>
           </td>
-          <td class="col-global">Global; GPS's highest-revenue product by annual contract value. Competitive pressure from MSFT Power BI (M365 bundling) and Databricks. ANZ/EMEA strong install base of existing Tableau Cloud customers.</td>
+          <td class="col-global">Global; top ACV analytics product in GPS. Competitive pressure from MSFT Power BI (M365 bundling) and Databricks. ANZ/EMEA strong install base of existing Tableau Cloud customers.</td>
           <td>
             <ol class="asks-list">
               <li data-n="1">Tableau Cloud IL5 path — accelerate Second Front Systems engagement; critical for DoW/IC customers on existing Tableau Cloud installs</li>
@@ -543,14 +545,15 @@
           <td class="col-desc">Platform encryption (database-level), field audit trail, event monitoring, threat detection, data mask, external key management, privacy center. Compliance and security capabilities for regulated customers.</td>
           <td>
             <span class="badge badge-yellow">Core Shield ✓ · Threat Detection ✗</span>
-            <div class="ok-item">Shield (Platform Encryption, Field Audit Trail, Event Monitoring) — FedRAMP High + IL5</div>
+            <div class="ok-item">Shield (Platform Encryption, Field Audit Trail, Event Monitoring core) — FedRAMP High + IL5</div>
             <div class="ok-item">External Key Management — FedRAMP High + IL5</div>
             <div class="ok-item">Data Mask — FedRAMP High + IL5</div>
             <div class="ok-item">Security Center, Privacy Center — FedRAMP High + IL5</div>
             <div class="ok-item">Shield Data Detect — FedRAMP High</div>
           </td>
           <td>
-            <div class="gap-item"><strong>Threat Detection — interoperable only</strong> (NOT within FedRAMP boundary)</div>
+            <div class="gap-item"><strong>Event Log Objects (Event Monitoring)</strong> — blocked; Big Data FD dependency not yet authorized</div>
+            <div class="gap-item"><strong>Threat Detection — interoperable only</strong> (authorization in process; currently operates outside FedRAMP boundary)</div>
             <div class="gap-item">Shield Data Detect — IL5 ✗</div>
             <div class="gap-item">Salesforce Authenticator — interoperable only</div>
             <div class="gap-item">Backup &amp; Recover Next — FedRAMP ✓, IL5 ✗</div>
@@ -558,9 +561,9 @@
           <td class="col-global">Critical selling point for regulated industries globally. Required for many federal contracts. FedRAMP High encryption + audit trail = key differentiator vs. commercial cloud.</td>
           <td>
             <ol class="asks-list">
-              <li data-n="1">Threat Detection authorization — interoperable only today; critical for federal security operations centers</li>
-              <li data-n="2">Shield Data Detect IL5 authorization — needed for DoW security compliance</li>
-              <li data-n="3">Salesforce Authenticator authorization (interoperable only — limits MFA options in classified environments)</li>
+              <li data-n="1">Event Log Objects (Event Monitoring) authorization — blocked by Big Data FD dependency; needed for federal audit and SOC use cases</li>
+              <li data-n="2">Threat Detection authorization — interoperable only today; critical for federal security operations centers</li>
+              <li data-n="3">Shield Data Detect IL5 authorization — needed for DoW security compliance</li>
             </ol>
           </td>
         </tr>
@@ -570,20 +573,20 @@
           <td class="col-desc">Configure-Price-Quote, billing, contracts, revenue lifecycle management. Key for agency procurement and subscription management.</td>
           <td>
             <span class="badge badge-yellow">BRE ✓ IL5 · Rest interoperable only</span>
-            <div class="ok-item">Business Rules Engine (BRE) — FedRAMP High + IL5 ✅</div>
-            <div class="gov-detail">All other Revenue Cloud products are interoperable only — NOT FedRAMP authorized. Customers must make a risk-based decision. NOT available at all in GovCloud Plus Defense. VOC logged (Oct 2026).</div>
+            <div class="ok-item">Business Rules Engine (BRE) — FedRAMP High + IL5</div>
+            <div class="gov-detail">All other Revenue Cloud products are interoperable only — not within FedRAMP authorization boundary. Interoperable products are NOT available in GovCloud Plus Defense at all.</div>
           </td>
           <td>
             <div class="gap-item">CPQ (all tiers) — interoperable only</div>
             <div class="gap-item">Revenue Cloud Advanced — interoperable only in Civilian; <strong>NOT available in Defense</strong></div>
-            <div class="gap-item">Salesforce Pricing (NGP) — authorization at GIA2H/Air-gapped levels open question</div>
+            <div class="gap-item">Salesforce Pricing (next-gen pricing) — FedRAMP High/IL5 authorization path not confirmed</div>
             <div class="gap-item">Billing, Growth, Contracts — interoperable only</div>
             <div class="gap-item">Blocks Industries parity (FSC, Health) via dependency chain</div>
           </td>
           <td class="col-global">Available globally; needed to close Industries parity chain. Blocks Financial Services + Health Cloud GovCloud completeness.</td>
           <td>
             <ol class="asks-list">
-              <li data-n="1">Accelerate GovCloud certification — currently 0% FY27</li>
+              <li data-n="1">Accelerate GovCloud certification for CPQ/Billing/Contracts — BRE is authorized; rest of Revenue Cloud is not</li>
               <li data-n="2">Resolve Industries Cloud dependencies (FSC, Health)</li>
               <li data-n="3">FY28 firm roadmap commitment with milestones</li>
             </ol>
@@ -635,10 +638,10 @@
           <td class="col-product">Informatica</td>
           <td class="col-desc">Enterprise data management — data integration, data quality, MDM, application integration. Acquired FY26.</td>
           <td>
-            <span class="badge badge-yellow">FedRAMP Env Live (CDI + CAI) · GTM in progress</span>
+            <span class="badge badge-yellow">FedRAMP Env Live · Commercial GA FY28</span>
             <div class="ok-item">Cloud Data Integration (CDI) — FedRAMP environment operational (Oct 2026)</div>
             <div class="ok-item">Cloud Application Integration (CAI) — FedRAMP environment operational (Oct 2026)</div>
-            <div class="gov-detail">Informatica has its own separate FedRAMP environment (not within GovCloud Plus boundary). Full commercial GTM: CS SKUs being finalized Oct 2026. Not yet at full commercial availability.</div>
+            <div class="gov-detail">Informatica has its own separate FedRAMP environment (not within GovCloud Plus boundary). FedRAMP env is live, but this is NOT the same as commercial GA — CS SKUs still being finalized; customers cannot yet buy. Full commercial availability: FY28.</div>
           </td>
           <td>
             <div class="gap-item">MDM — not in current FedRAMP scope</div>
