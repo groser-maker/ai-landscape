@@ -291,23 +291,25 @@
           <td class="col-product">Data Cloud<br><span style="font-weight:400;font-size:11px;color:#54698D">Data 360</span></td>
           <td class="col-desc">Unified data platform — ingests, harmonizes, and activates customer data for real-time AI grounding and Agentforce.</td>
           <td>
-            <span class="badge badge-green">97% FY27 · Strong</span>
+            <span class="badge badge-yellow">97% FY27 (authorized) · Connector gaps in practice</span>
             <div class="ok-item">Data Cloud One — FedRAMP High + IL5</div>
             <div class="ok-item">Document AI — FedRAMP High + IL5</div>
             <div class="ok-item">Customer Data Cloud Starter — FedRAMP High</div>
+            <div class="ok-item">Notebook AI — FedRAMP High + IL5 <span style="color:#8A6200">(verify before citing)</span></div>
           </td>
           <td>
-            <div class="gap-item">Coworker — FY28</div>
+            <div class="gap-item"><strong>Connector availability — #1 ground-level pain point.</strong> Docs may indicate support but real-world functionality varies by customer environment; no published certification matrix exists. Who to escalate for specific deployment scenarios is unclear</div>
+            <div class="gap-item">Databricks Connector: only 2 of 3 zero copy modes confirmed working. Certification status across deployment environments is unknown: AWS GovCloud, AWS Commercial, Azure, Azure GCC High, Google Cloud — none of these combinations are confirmed working in GovCloud Plus Defense</div>
             <div class="gap-item">Zero Copy — 3rd-party gaps remain</div>
+            <div class="gap-item">Coworker — FY28</div>
             <div class="gap-item">Data Space Platform — FedRAMP High only, IL5 ✗</div>
-            <div class="gap-item">Notebook AI — FedRAMP High only, IL5 ✗</div>
           </td>
           <td class="col-global">$7.6M Q2 ACV (+118% YoY). CCR consumption still early-stage across GPS accounts.</td>
           <td>
             <ol class="asks-list">
-              <li data-n="1">Coworker parity in GovCloud</li>
+              <li data-n="1">Connector parity — publish a certified connector matrix by deployment environment (AWS GovCloud, Azure, Azure GCC High, etc.); resolve Databricks all 3 zero copy modes; define GovCloud Plus Defense compatibility</li>
               <li data-n="2">Resolve Zero Copy 3rd-party gaps</li>
-              <li data-n="3">GovCloud UIP for accurate CCR / consumption visibility</li>
+              <li data-n="3">Coworker parity in GovCloud</li>
             </ol>
           </td>
         </tr>
