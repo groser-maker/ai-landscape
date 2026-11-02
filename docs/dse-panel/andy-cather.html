@@ -386,6 +386,101 @@
   .scope-box.current  ul li::before { content: '◦'; position: absolute; left: 0; color: var(--text-muted); }
   .scope-box.proposed ul li::before { content: '✦'; position: absolute; left: 0; color: var(--blue); font-size: 10px; top: 2px; }
 
+  /* ── TRACK RECORD SUMMARY ── */
+  .track-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .track-tile {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+  .track-tile.highlight {
+    border-color: var(--blue);
+    background: #EAF3FB;
+  }
+  .track-tile.pipeline-tile { border-top: 2px solid var(--text-muted); }
+  .track-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .track-tile.highlight .track-num { color: var(--blue); }
+  .track-tile.pipeline-tile .track-num { color: var(--text-muted); }
+  .track-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .track-note { font-size: 11px; color: #84909E; line-height: 1.4; }
+
+  /* ── GEO CALLOUT ── */
+  .geo-callout {
+    margin-top: 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .geo-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+    padding-top: 3px;
+  }
+  .geo-items { display: flex; flex-wrap: wrap; gap: 6px; }
+  .geo-tag {
+    font-size: 11px;
+    background: #EEF1F6;
+    color: var(--navy);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-weight: 600;
+  }
+
+  /* ── EXTERNAL IMPACT ── */
+  .external-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .external-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px;
+  }
+  .ext-type {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--blue-dark);
+    background: #EAF3FB;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .external-card h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .external-card p  { font-size: 13px; color: var(--text-muted); line-height: 1.45; }
+
   /* ── RECOMMENDATION ── */
   .recommendation {
     background: linear-gradient(135deg, var(--navy), var(--blue));
@@ -454,6 +549,14 @@
   .rec-badge .rec-action { font-size: 13px; }
   .rec-badge .rec-name   { font-size: 22px; }
   .rec-badge .rec-title  { font-size: 14px; }
+  .track-num             { font-size: 36px; }
+  .track-label           { font-size: 14px; }
+  .track-note            { font-size: 13px; }
+  .geo-label             { font-size: 12px; }
+  .geo-tag               { font-size: 13px; padding: 4px 10px; }
+  .external-card h4      { font-size: 19px; }
+  .external-card p       { font-size: 17px; }
+  .ext-type              { font-size: 12px; padding: 3px 10px; }
 </style>
 </head>
 <body>
@@ -506,17 +609,21 @@
     <span class="nav-icon">🔧</span>
     <span><span class="nav-num">04 </span>Builder Impact</span>
   </div>
+  <div class="nav-item" onclick="showSection('external')">
+    <span class="nav-icon">🎤</span>
+    <span><span class="nav-num">05 </span>External Impact</span>
+  </div>
   <div class="nav-item" onclick="showSection('recognition')">
     <span class="nav-icon">🏆</span>
-    <span><span class="nav-num">05 </span>Recognition</span>
+    <span><span class="nav-num">06 </span>Recognition</span>
   </div>
   <div class="nav-item" onclick="showSection('scope')">
     <span class="nav-icon">🎯</span>
-    <span><span class="nav-num">06 </span>Scope Expansion</span>
+    <span><span class="nav-num">07 </span>Scope Expansion</span>
   </div>
   <div class="nav-item" onclick="showSection('recommendation')">
     <span class="nav-icon">✅</span>
-    <span><span class="nav-num">07 </span>Recommendation</span>
+    <span><span class="nav-num">08 </span>Recommendation</span>
   </div>
 </nav>
 
@@ -529,9 +636,9 @@
     <div class="section-sub">Andy's impact by the numbers — FY27.</div>
     <div class="stats-grid">
       <div class="stat-tile">
-        <div class="stat-number"><sup>$</sup>33M<sup>+</sup></div>
+        <div class="stat-number"><sup>$</sup>55.3M</div>
         <div class="stat-label">Closed Won (FY27)</div>
-        <div class="stat-note">20+ deals, Apr–Oct 2026</div>
+        <div class="stat-note">24 deals, Feb–Oct 2026</div>
       </div>
       <div class="stat-tile accent">
         <div class="stat-number">12<sup>+</sup></div>
@@ -592,13 +699,36 @@
   <!-- 03 · ACCOUNTS -->
   <div class="section" id="accounts">
     <div class="section-title">Key Account Impact</div>
-    <div class="section-sub">Selected closed wins and strategic active engagements — Federal, S&amp;L, and international.</div>
+    <div class="section-sub">24 FY27 wins totaling $55.3M — Federal civilian, DoD, S&amp;L, Commercial, and International.</div>
+    <div class="track-summary">
+      <div class="track-tile">
+        <div class="track-num">$25.7M</div>
+        <div class="track-label">FY26 Closed Won</div>
+        <div class="track-note">31 deals · CMS Master SELA $6.1M, CMS CQP $3.9M, Leidos/VA MDE $2.8M</div>
+      </div>
+      <div class="track-tile highlight">
+        <div class="track-num">$55.3M</div>
+        <div class="track-label">FY27 Closed Won</div>
+        <div class="track-note">24 deals · 115% YoY growth</div>
+      </div>
+      <div class="track-tile pipeline-tile">
+        <div class="track-num">$24.2M</div>
+        <div class="track-label">Active Pipeline</div>
+        <div class="track-note">30 deals · Navy Recruiting $9.4M, NIH $3.3M, CMS Comms $1.6M</div>
+      </div>
+    </div>
     <div class="accounts-grid">
       <div class="account-card featured">
         <div class="account-tag">Federal Civilian</div>
         <h4>Dept. of Veterans Affairs</h4>
         <div class="account-amount">$17M+</div>
         <div class="account-desc">AELA expansions Q2 + Q3 FY27. 80,000 licensed users. Genesis architecture workstream. 55K-agent RFP dropping — largest GPS contact center opportunity.</div>
+      </div>
+      <div class="account-card featured">
+        <div class="account-tag">Federal Civilian</div>
+        <h4>IRS Office of Chief Counsel</h4>
+        <div class="account-amount">$8.99M</div>
+        <div class="account-desc">Renewal closed FY27 — single largest deal of the year. Demonstrates long-term strategic relationship with a high-complexity IRS component. Anchor win for FY27 Federal performance.</div>
       </div>
       <div class="account-card">
         <div class="account-tag">Federal Civilian</div>
@@ -607,16 +737,16 @@
         <div class="account-desc">Employee Productivity Workspace: 25K+ Call Center, Platform, and Org Permission licenses. Full renewal. Closed Jul 2026.</div>
       </div>
       <div class="account-card">
-        <div class="account-tag dod">DoD</div>
-        <h4>US Army HRC</h4>
-        <div class="account-amount">$5.2M</div>
-        <div class="account-desc">Agentforce Digital Front Door: 3,000 A1E seats + 7.2M Flex Credits. IL5 GovCloud. Closed Jul 2026.</div>
-      </div>
-      <div class="account-card">
         <div class="account-tag">Federal Civilian</div>
         <h4>FEMA</h4>
         <div class="account-amount">$5.4M</div>
         <div class="account-desc">Response &amp; Recovery Individual Assistance Program — Phase 1. Mission-critical citizen services. Closed May 2026.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag dod">DoD</div>
+        <h4>US Army HRC</h4>
+        <div class="account-amount">$5.2M</div>
+        <div class="account-desc">Agentforce Digital Front Door: 3,000 A1E seats + 7.2M Flex Credits. IL5 GovCloud. Closed Jul 2026.</div>
       </div>
       <div class="account-card">
         <div class="account-tag">Federal Civilian</div>
@@ -631,10 +761,46 @@
         <div class="account-desc">Civil Rights &amp; Liberties Traveler Call Center: 4,580 Call Center + 1,469 Platform licenses. Renewal. Closed Aug 2026.</div>
       </div>
       <div class="account-card">
-        <div class="account-tag strategic">Strategic</div>
+        <div class="account-tag strategic">AMER Commercial</div>
+        <h4>Florida Prepaid College Board</h4>
+        <div class="account-amount">$2.3M</div>
+        <div class="account-desc">Closed FY27. Demonstrates Andy's commercial / higher-ed reach alongside the Federal core — part of broader geographic and vertical diversity in FY27.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag intl">International</div>
+        <h4>IFC (World Bank Group)</h4>
+        <div class="account-amount">$1.6M</div>
+        <div class="account-desc">Agentforce add-on for the International Finance Corporation. Closed Apr 2026. International development org — extends Andy's footprint beyond US Federal into multilateral finance.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag">Federal Civilian</div>
+        <h4>FMCSA — FMCC Phase 2</h4>
+        <div class="account-amount">$1.6M</div>
+        <div class="account-desc">Federal Motor Carrier Safety Administration: FMCC Phase 2. Closed Jul 2026. Continued expansion within DOT family of agencies.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag">Federal Civilian</div>
+        <h4>IRS PSF → A1E Upgrade</h4>
+        <div class="account-amount">$1.0M</div>
+        <div class="account-desc">Migrated 8,364 users from PSF to Agentforce 1 Enterprise. Closed Apr 2026. Alongside IRS OCC renewal, establishes Andy as the IRS relationship SE.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag">Federal Civilian</div>
+        <h4>Treasury DO — Contractor Onboarding</h4>
+        <div class="account-amount">$790K</div>
+        <div class="account-desc">Contractor Onboarding Portal for Treasury Departmental Offices. Net new use case expanding Salesforce footprint into HR/onboarding within a critical Federal civilian account.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag strategic">AMER S&amp;L</div>
+        <h4>Texas Dept. of Public Safety</h4>
+        <div class="account-amount">$453K</div>
+        <div class="account-desc">THP Recruiting &amp; Hiring platform (Jun 2026 FY27). Part of a 4-deal TxDPS cluster — spanning enterprise licensing, Agentforce bots, and workforce modernization.</div>
+      </div>
+      <div class="account-card">
+        <div class="account-tag strategic">Strategic Active</div>
         <h4>CMS / 1-800-Medicare</h4>
-        <div class="account-amount pipeline">$39M renewal Jan 2027</div>
-        <div class="account-desc">18 orgs. Enterprise-wide unlimited Agentforce. Andy leading Governance strategy &amp; POC ($720K active).</div>
+        <div class="account-amount pipeline">$772K active RFP</div>
+        <div class="account-desc">18 orgs. Enterprise-wide unlimited Agentforce license. Andy leading Governance POC strategy — the most complex multi-org governance challenge in GPS Federal.</div>
       </div>
       <div class="account-card">
         <div class="account-tag dod">DoD Pipeline</div>
@@ -644,21 +810,30 @@
       </div>
       <div class="account-card">
         <div class="account-tag strategic">AMER S&amp;L</div>
-        <h4>Texas Dept. of Public Safety</h4>
-        <div class="account-amount">$883K</div>
-        <div class="account-desc">Two FY27 closes: Agentforce bots for the DL Contact Center ($430K, Jan 2026) + THP Recruiting &amp; Hiring platform ($453K, Jun 2026). Part of a 4-deal TxDPS cluster spanning enterprise licensing and Agentforce.</div>
-      </div>
-      <div class="account-card">
-        <div class="account-tag strategic">AMER S&amp;L</div>
         <h4>City of Minneapolis 311</h4>
         <div class="account-amount">$836K</div>
-        <div class="account-desc">Full platform deployment for city-wide 311 contact center. Closed Jan 2026. Demonstrates Andy's reach beyond Federal into municipal government.</div>
+        <div class="account-desc">Full platform deployment for city-wide 311 contact center. Closed Jan 2026 (FY26). Demonstrates Andy's S&amp;L reach alongside federal core.</div>
       </div>
-      <div class="account-card">
-        <div class="account-tag intl">ANZ</div>
-        <h4>University of Melbourne</h4>
-        <div class="account-amount pipeline">$244K pipeline</div>
-        <div class="account-desc">Omni-channel engagement: Digital Engagement + Service Cloud Voice. Active Stage 3. Andy's international footprint extending into APAC higher education.</div>
+    </div>
+    <div class="geo-callout">
+      <div class="geo-label">Geographic reach beyond AMER Federal</div>
+      <div class="geo-items">
+        <span class="geo-tag">Victoria Police (AU)</span>
+        <span class="geo-tag">NAV Norway $676K</span>
+        <span class="geo-tag">Student Loans UK</span>
+        <span class="geo-tag">Renewi NL</span>
+        <span class="geo-tag">RTM France</span>
+        <span class="geo-tag">UN OHCHR</span>
+        <span class="geo-tag">Hard Rock Digital US+Canada</span>
+        <span class="geo-tag">WGU</span>
+        <span class="geo-tag">Purdue Global $1.3M</span>
+        <span class="geo-tag">LA Care AF Voice 90K users</span>
+        <span class="geo-tag">Baylor Genetics</span>
+        <span class="geo-tag">EF Education First</span>
+        <span class="geo-tag">LA County 311</span>
+        <span class="geo-tag">City of San Jose</span>
+        <span class="geo-tag">Town of Cary</span>
+        <span class="geo-tag">CA State Bar</span>
       </div>
     </div>
   </div>
@@ -666,7 +841,7 @@
   <!-- 04 · BUILDER -->
   <div class="section" id="builder">
     <div class="section-title">Builder Impact</div>
-    <div class="section-sub">Tools Andy built that scale across the entire GPS SE org — not just his own deals.</div>
+    <div class="section-sub">1,565 SE activities FY27 (already past all of FY26's 1,545). 230+ Blackbelt AI/CC engagements. Named AI Innovation Liaison to the Agentic Transformation team (Sep 2026).</div>
     <div class="builder-grid">
       <div class="builder-card">
         <h4>GPS OpenCTI EOL Dashboard</h4>
@@ -680,13 +855,61 @@
       </div>
       <div class="builder-card">
         <h4>PEN Pantry Component Library</h4>
-        <p>Shareable library of demo components. Any SE can install via a single CLI command or recipe for their agentic coding tool. Designed for community contribution — not just Andy's components. Accelerator integration discussion underway with Mitch.</p>
+        <p>Shareable library of demo components. Any SE can install via a single CLI command or recipe for their agentic coding tool. Designed for community contribution — not just Andy's components. 247-member Slack channel.</p>
         <span class="builder-scale">Reusable across all GPS SEs</span>
+      </div>
+      <div class="builder-card">
+        <h4>AF Voice GovCloud Multi-Org Pattern</h4>
+        <p>Designed and documented the architecture pattern enabling GovCloud customers (CBP, NIH, VA) to use Agentforce Voice via a commercial org + Partner Contact Center / Amazon Connect — unblocking a capability gap that was preventing the entire GovCloud customer segment from adopting AF Voice.</p>
+        <span class="builder-scale">GovCloud-wide enablement pattern</span>
+      </div>
+      <div class="builder-card">
+        <h4>GPS Product Council Toolkit</h4>
+        <p>Contributed a field-ready AI/CC toolkit to the GPS Product Council quarterly submission process — open to every GPS SE. Bryan Wise, upon building with it: "Inspired by Andy Cather — I used his work." Established a repeatable SE-to-product feedback loop at the org level.</p>
+        <span class="builder-scale">Named AI Innovation Liaison, Agentic Transformation (Sep 2026)</span>
       </div>
     </div>
   </div>
 
-  <!-- 05 · RECOGNITION -->
+  <!-- 05 · EXTERNAL IMPACT -->
+  <div class="section" id="external">
+    <div class="section-title">External Impact</div>
+    <div class="section-sub">Speaking engagements, executive demos, and field leadership beyond his own accounts.</div>
+    <div class="external-grid">
+      <div class="external-card">
+        <div class="ext-type">Dreamforce</div>
+        <h4>Dreamforce Day Zero — 2024 &amp; 2025</h4>
+        <p>Presented at Dreamforce Day Zero in both consecutive years — exclusive pre-conference day for top Government &amp; Public Sector prospects and customers. Representing GPS SE at the company's flagship event.</p>
+      </div>
+      <div class="external-card">
+        <div class="ext-type">State Innovation Days</div>
+        <h4>3 State Innovation Days</h4>
+        <p>Most recently Michigan Innovation Day — live Agentforce Voice demo with Brian Nault for state CIOs and technology executives. Demonstrates GPS AI capability in front of senior public sector decision-makers.</p>
+      </div>
+      <div class="external-card">
+        <div class="ext-type">Solution Summit</div>
+        <h4>Oct 7 Solution Summit — POC Session</h4>
+        <p>Presented a POC session at the GPS Solution Summit driving broad SE engagement in the AF Voice motion. Geoff Roser: "Really creative and entertaining." Cross-GPS field enablement at scale.</p>
+      </div>
+      <div class="external-card">
+        <div class="ext-type">Executive Demo</div>
+        <h4>VA Genesys + SF Integration</h4>
+        <p>Led an executive-level Genesys + Salesforce integration demo for VA leadership. Werner Watschke (Oct 9): engagement led directly to a VA POC request — the executive-to-POC conversion that most SE demos never achieve.</p>
+      </div>
+      <div class="external-card">
+        <div class="ext-type">Executive Demo</div>
+        <h4>Army HRC Agentforce Voice — End-to-End</h4>
+        <p>End-to-end Agentforce Voice demo for Army HRC executive leadership in an IL5 GovCloud environment. Directly supported the $5.2M close. Showcases the full stack of Andy's technical depth at the executive level.</p>
+      </div>
+      <div class="external-card">
+        <div class="ext-type">Community</div>
+        <h4>D360 Community: Consumption Intelligence</h4>
+        <p>Presented on Consumption Intelligence to the Data 360 community call — cross-org knowledge sharing on a topic central to Agentforce adoption and renewal health. Positions Andy as a thought leader beyond GPS.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 · RECOGNITION -->
   <div class="section" id="recognition">
     <div class="section-title">Recognition &amp; Sponsorship</div>
     <div class="section-sub">EVP-level visibility and cross-org recognition for impact beyond his direct accounts.</div>
@@ -701,16 +924,28 @@
       </div>
       <div class="kudos-item">
         <div class="kudos-from">Sara Costello (CMS)</div>
-        <div class="kudos-context">Called out Andy's contribution on CMS Agentforce Governance (Jul 2026) — the highest-stakes active GPS deal at $39M renewal with enterprise-wide unlimited Agentforce.</div>
+        <div class="kudos-context">Called out Andy's contribution on CMS Agentforce Governance (Jul 2026) — leading POC strategy for the most complex multi-org enterprise Agentforce engagement in GPS Federal: 18 orgs, unlimited enterprise license, active $772K RFP.</div>
       </div>
       <div class="kudos-item">
         <div class="kudos-from">GPS SC QBR Position</div>
         <div class="kudos-context">GPS is #1 in financial plan (39) and #2 in ACV across all segments. Andy owns QBR content strategy and narrative for the GPS SC group — de facto voice of GPS SC to leadership.</div>
       </div>
+      <div class="kudos-item">
+        <div class="kudos-from">Geoff Roser · Jun 2026</div>
+        <div class="kudos-context">"Grand slam home run in front of key leadership." Andy named by SC PM in the SC PM briefing deck — recognition at a leadership review that goes on permanent record.</div>
+      </div>
+      <div class="kudos-item">
+        <div class="kudos-from">Geoff Roser · OpenCTI Dashboard</div>
+        <div class="kudos-context">"The OpenCTI dashboard is next level!!!" — direct reaction to seeing the GPS OpenCTI EOL Dashboard Andy built, which now covers 1,500+ GPS accounts and is used by AEs across the org.</div>
+      </div>
+      <div class="kudos-item">
+        <div class="kudos-from">Werner Watschke · Oct 9, 2026</div>
+        <div class="kudos-context">Strong VA leadership engagement following Andy's Genesys + Salesforce integration demo — directly led to a VA POC request. Werner cited the demo as the specific driver of leadership's decision to pursue the POC.</div>
+      </div>
     </div>
   </div>
 
-  <!-- 06 · SCOPE -->
+  <!-- 07 · SCOPE -->
   <div class="section" id="scope">
     <div class="section-title">Scope Expansion</div>
     <div class="section-sub">What changes — and what that means for GPS — at the Senior Distinguished level.</div>
@@ -739,14 +974,14 @@
     </div>
   </div>
 
-  <!-- 07 · RECOMMENDATION -->
+  <!-- 08 · RECOMMENDATION -->
   <div class="section" id="recommendation">
     <div class="section-title">Recommendation</div>
     <div class="section-sub"></div>
     <div class="recommendation">
       <div>
         <h2>High Impact Candidate for Senior Tier</h2>
-        <p>Andy Cather is not approaching the Senior Distinguished SE level — he is already operating at it. His deal impact ($40M+ in 6 months), org-wide tools (1,500+ accounts), Black Belt program leadership, and team mentorship represent the full definition of this role. There are only ~12 Senior Distinguished SEs in the company. Andy belongs in that group.</p>
+        <p>Andy Cather is not approaching the Senior Distinguished SE level — he is already operating at it. His deal impact ($55.3M FY27, 24 deals), org-wide tools (1,500+ accounts), Black Belt program leadership, AI Innovation Liaison role, and team mentorship represent the full definition of this role. There are only ~12 Senior Distinguished SEs in the company. Andy belongs in that group.</p>
       </div>
       <div class="rec-badge">
         <div class="rec-action">Nominated by</div>
