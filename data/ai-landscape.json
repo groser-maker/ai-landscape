@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "last_updated": "2026-11-09",
+  "last_updated": "2026-11-16",
   "companies": [
     {
       "id": "openai",
@@ -919,6 +919,20 @@
           "context_length_k": 200,
           "notable": true,
           "notes": "70.6% on Terminal-Bench 4.0, 56 on AA Intelligence Index; designed as Opus subagent",
+          "elo_score": null,
+          "elo_estimated": true
+        },
+        {
+          "name": "Claude Fable 5.2",
+          "date": "2026-11",
+          "parameters_billions": null,
+          "parameters_estimated": true,
+          "parameters_note": "undisclosed",
+          "type": "LLM",
+          "purpose": "Top-tier model for demanding technical work; Mythos 5.2 is same model with relaxed cyber/bio safeguards for vetted orgs",
+          "context_length_k": null,
+          "notable": true,
+          "notes": "$8/$40 per M tokens; up to 30% faster than 5.1; FrontierSWE v2 69.9%, OSWorld 2.1 89.3%",
           "elo_score": null,
           "elo_estimated": true
         }
@@ -3149,12 +3163,23 @@
         {
           "name": "Jensen Huang",
           "title": "CEO & Co-founder",
-          "since": "1993-01"
+          "since": "1993-01",
+          "departed": "2026-11-12"
         },
         {
           "name": "Colette Kress",
           "title": "CFO",
           "since": "2013-09"
+        },
+        {
+          "name": "Colette Kress",
+          "title": "Interim CEO & CFO",
+          "departed": null
+        },
+        {
+          "name": "Harvey C. Jones",
+          "title": "Chair of the Board (first-ever)",
+          "departed": null
         }
       ],
       "products": [
@@ -18124,6 +18149,482 @@
               "type": "business",
               "significance": "medium",
               "url": "https://www.cnbc.com/2026/11/05/stock-market-selloff-ai-fears.html"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "scale_ai",
+          "headcount_estimate": 860,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 29.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "together_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 8.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.15,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "elevenlabs",
+          "headcount_estimate": 800,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 22.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.5,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "runway",
+          "headcount_estimate": 155,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 5.3,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "luma_ai",
+          "headcount_estimate": 150,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 4.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "reka_ai",
+          "headcount_estimate": 80,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cognition_ai",
+          "headcount_estimate": 50,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 48.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 1.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "thinking_machines",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "sierra_ai",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 15.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.2,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cursor",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 60.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 2.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "harvey_ai",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 15.5,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.35,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "glean",
+          "headcount_estimate": 700,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 7.25,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.3,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cerebras",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 60.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.885,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "groq",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 6.9,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-11-16",
+      "entries": [
+        {
+          "company_id": "openai",
+          "headcount_estimate": 3500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1250.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 50.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-11-10",
+              "headline": "OpenAI introduces Businesses in ChatGPT: advertiser dashboard and business agents",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://openai.com/index/introducing-businesses-chatgpt/"
+            },
+            {
+              "date": "2026-11-13",
+              "headline": "OpenAI introduces ChatGPT Wallet for agent checkout without exposing card details",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "https://openai.com/index/introducing-chatgpt-wallet/"
+            },
+            {
+              "date": "2026-11-12",
+              "headline": "OpenAI reportedly posts record ~$10B Q3 revenue (+~50% QoQ) with growing operating losses",
+              "type": "business",
+              "significance": "medium",
+              "url": "",
+              "source": "AI Daily Brief 2026-11-12"
+            },
+            {
+              "date": "2026-11-12",
+              "headline": "OpenAI acquires AI travel agent Odessia",
+              "type": "business",
+              "significance": "low",
+              "url": "",
+              "source": "AI Daily Brief 2026-11-12"
+            },
+            {
+              "date": "2026-11-16",
+              "headline": "LVMH Media Division announces partnership with OpenAI",
+              "type": "partnership",
+              "significance": "low",
+              "url": "https://openai.com/index/lvmh-media-division-partnership/"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "anthropic",
+          "headcount_estimate": 1000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 965.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 67.2,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-11-09",
+              "headline": "Anthropic releases Claude Fable 5.2 and Mythos 5.2 (same model; Mythos for vetted cyber/life-science orgs); up to 30% faster, $8/$40 per M tokens",
+              "type": "model_release",
+              "significance": "high",
+              "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+            },
+            {
+              "date": "2026-11-10",
+              "headline": "Anthropic launches roadshow for proposed IPO; reported price range $70-78/share (~$1.4T implied valuation)",
+              "type": "funding",
+              "significance": "high",
+              "url": "https://www.anthropic.com/news/roadshow-launch"
+            },
+            {
+              "date": "2026-11-11",
+              "headline": "Anthropic launches Claude Sheets, Whiteboards and Data workplace tools; Microsoft shares fall 2.2%",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "",
+              "source": "AI Daily Brief / TAAFT newsletter"
+            },
+            {
+              "date": "2026-11-13",
+              "headline": "Claude can join Google Meet calls as a participant (beta, Team and Enterprise)",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "",
+              "source": "AI Daily Brief / TAAFT newsletter"
+            }
+          ],
+          "product_releases": [
+            {
+              "date": "2026-11-09",
+              "product": "Claude Fable 5.2",
+              "type": "model_release",
+              "description": "Top-tier model; Mythos 5.2 variant with relaxed safeguards for verified orgs"
+            }
+          ]
+        },
+        {
+          "company_id": "xai",
+          "headcount_estimate": 300,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 50.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 3.2,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "google_deepmind",
+          "headcount_estimate": 35000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-11-12",
+              "headline": "Google launches Gemini-powered glasses; Gemini 4 Carbon now publicly available",
+              "type": "product_launch",
+              "significance": "medium",
+              "url": "",
+              "source": "TAAFT newsletter 2026-11-13"
+            }
+          ],
+          "product_releases": []
+        },
+        {
+          "company_id": "meta_ai",
+          "headcount_estimate": 70000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "mistral",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 23.5,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.4,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "cohere",
+          "headcount_estimate": 500,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 20.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.24,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "microsoft_ai",
+          "headcount_estimate": 223000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 37.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "amazon_aws_ai",
+          "headcount_estimate": 1500000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 25.0,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "perplexity",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 30.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.75,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "hugging_face",
+          "headcount_estimate": 200,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 12.9,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 0.15,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "stability_ai",
+          "headcount_estimate": 100,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": 1.0,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": null,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [],
+          "product_releases": []
+        },
+        {
+          "company_id": "nvidia",
+          "headcount_estimate": 36000,
+          "headcount_source": "prior week",
+          "headcount_confidence": "carried_forward",
+          "valuation_usd_billions": null,
+          "valuation_source": "prior week",
+          "valuation_confidence": "carried_forward",
+          "arr_usd_billions": 384.8,
+          "arr_source": "prior week",
+          "arr_confidence": "carried_forward",
+          "recent_news": [
+            {
+              "date": "2026-11-12",
+              "headline": "Jensen Huang steps down as Nvidia CEO and board member effective immediately; CFO Colette Kress named interim CEO, Harvey Jones first-ever chair",
+              "type": "leadership",
+              "significance": "high",
+              "url": "https://nvidianews.nvidia.com/news"
             }
           ],
           "product_releases": []
