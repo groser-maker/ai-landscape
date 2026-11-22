@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPS Specialist All Hands · November 23, 2026</title>
+  <style>
+    /* GLOBAL STYLES */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #F4F6F9;
+      color: #16325C;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: linear-gradient(135deg, #0070D2 0%, #00A1E0 100%);
+      color: white;
+      padding: 32px 40px;
+      border-radius: 12px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 12px rgba(0,112,210,0.25);
+    }
+    .page-header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .page-header .subtitle {
+      font-size: 0.92rem;
+      opacity: 0.95;
+      font-weight: 400;
+    }
+
+    /* COLLAPSIBLE SECTIONS */
+    section {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      margin-bottom: 24px;
+      padding: 0;
+    }
+    section h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0070D2;
+      margin: 0;
+      padding: 18px 28px;
+      border-bottom: 2px solid #E4E9F0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+    section h2:hover {
+      background: #F0F6FF;
+      border-radius: 8px 8px 0 0;
+    }
+    section.open h2 {
+      border-radius: 8px 8px 0 0;
+    }
+    section:not(.open) h2 {
+      border-bottom: none;
+      border-radius: 8px;
+    }
+    section h2 .chevron {
+      margin-left: auto;
+      font-size: 0.85rem;
+      color: #999;
+      transition: transform 0.2s;
+    }
+    section.open h2 .chevron {
+      transform: rotate(180deg);
+    }
+    .section-body {
+      display: none;
+      padding: 20px 28px 24px;
+    }
+    section.open .section-body {
+      display: block;
+    }
+
+    /* NEW HIRES & GUEST PRESENTERS */
+    .newhire-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .newhire-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 14px;
+      background: #F8FAFC;
+      border-radius: 8px;
+      border-left: 4px solid #00A1E0;
+    }
+    .newhire-photo {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #00A1E0;
+      flex-shrink: 0;
+    }
+    .newhire-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #16325C;
+    }
+    .newhire-title {
+      font-size: 0.82rem;
+      color: #444;
+      margin-top: 2px;
+    }
+    .newhire-team {
+      font-size: 0.78rem;
+      color: #0070D2;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* ANNOUNCEMENTS & OPEN DISCUSSION */
+    .ann-bullets {
+      list-style: disc;
+      padding-left: 22px;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+    .ann-bullets li {
+      padding: 3px 0;
+    }
+    .ann-bullets ul {
+      list-style: circle;
+      padding-left: 20px;
+      margin-top: 4px;
+    }
+    .ann-bullets a {
+      color: #0070D2;
+      text-decoration: none;
+    }
+    .ann-bullets a:hover {
+      text-decoration: underline;
+    }
+
+    /* RECENT WINS */
+    .wins-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .wins-table th {
+      background: #0070D2;
+      color: white;
+      padding: 10px 12px;
+      text-align: left;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .wins-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid #E4E9F0;
+      vertical-align: top;
+    }
+    .wins-table tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
+    .wins-table tr:hover td {
+      background: #EBF5FF;
+    }
+    .wins-table .total-row td {
+      font-weight: 700;
+      background: #EBF5FF;
+      border-top: 2px solid #0070D2;
+    }
+    .wins-table tr.wins-group td {
+      background: #16325C !important;
+      color: white;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 6px 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .source-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      padding: 1px 5px;
+      border-radius: 3px;
+      margin-left: 3px;
+      font-weight: 600;
+    }
+    .tag-act {
+      background: #D4E6FF;
+      color: #0050A0;
+    }
+    .tag-dsr {
+      background: #D7F5E3;
+      color: #006633;
+    }
+    .tag-dc {
+      background: #FFF0CC;
+      color: #7A5500;
+    }
+    .tag-io {
+      background: #F3E6FF;
+      color: #5C0099;
+    }
+    .wins-legend {
+      font-size: 0.78rem;
+      color: #706E6B;
+      margin-top: 10px;
+    }
+    .wins-legend span {
+      margin-right: 12px;
+    }
+
+    /* SPECIALIST HIGHLIGHTS */
+    .highlight-group {
+      margin-bottom: 20px;
+    }
+    .highlight-group:last-child {
+      margin-bottom: 0;
+    }
+    .highlight-group h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #16325C;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #E4E9F0;
+    }
+    .highlight-list {
+      list-style: none;
+      padding: 0;
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+    .highlight-list li {
+      padding: 4px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+    .highlight-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #0070D2;
+      font-weight: 700;
+    }
+    .highlight-list a {
+      color: #0070D2;
+      text-decoration: none;
+      margin-left: 4px;
+    }
+    .highlight-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* SAR UPDATE */
+    .sar-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .sar-table th {
+      background: #0070D2;
+      color: white;
+      padding: 10px 12px;
+      text-align: left;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .sar-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid #E4E9F0;
+      vertical-align: top;
+    }
+    .sar-table tr:nth-child(even) {
+      background: #F8FAFC;
+    }
+    .sar-table tr:hover {
+      background: #EBF5FF;
+    }
+
+    /* T&E UPDATE */
+    .te-subtitle {
+      font-size: 0.85rem;
+      color: #706E6B;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+    .te-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 900px) {
+      .te-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 560px) {
+      .te-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .donut-wrap {
+      text-align: center;
+    }
+    .donut-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #16325C;
+      margin-top: 8px;
+    }
+    .donut-sub {
+      font-size: 0.75rem;
+      color: #706E6B;
+      margin-top: 2px;
+    }
+    .te-note {
+      font-size: 0.78rem;
+      color: #706E6B;
+      margin-top: 14px;
+      text-align: right;
+    }
+    .te-note a {
+      color: #0070D2;
+      text-decoration: none;
+    }
+    .te-note a:hover {
+      text-decoration: underline;
+    }
+
+    /* ACV SNAPSHOT */
+    .acv-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 900px) {
+      .acv-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 560px) {
+      .acv-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+    .acv-card {
+      background: #F8FAFC;
+      border: 2px solid #E4E9F0;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+    .acv-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0070D2;
+      margin-bottom: 6px;
+    }
+    .acv-label {
+      font-size: 0.82rem;
+      color: #16325C;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .acv-progress {
+      font-size: 0.78rem;
+      color: #706E6B;
+    }
+    .acv-methodology {
+      font-size: 0.78rem;
+      color: #706E6B;
+      line-height: 1.6;
+      padding: 12px;
+      background: #F8FAFC;
+      border-radius: 6px;
+      border-left: 3px solid #0070D2;
+      margin-top: 16px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      body { padding: 12px; }
+      .page-header { padding: 24px 20px; }
+      .page-header h1 { font-size: 1.4rem; }
+      section h2 { padding: 14px 20px; font-size: 1.05rem; }
+      .section-body { padding: 16px 20px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>📋 GPS Specialist All Hands · November 23, 2026</h1>
+      <p class="subtitle">Every other Monday · 14-day wins window: Nov 09 – Nov 23 · Q4 FY27</p>
+    </div>
+
+    <!-- NEW HIRES -->
+    <section id="new-hires">
+      <h2 onclick="toggleSection(this)">👋 New Hires <span class="chevron">▼</span></h2>
+      <div class="section-body">
+        <div class="newhire-list">
+          <div class="newhire-item">
+            <img src="https://avatars.slack-edge.com/2026-11-16/12616504978518_8b21a686660818893407_original.jpg" alt="Robert Foster" class="newhire-photo">
+            <div>
+              <div class="newhire-name">Robert Foster</div>
+              <div class="newhire-title">Principal, Enterprise Architect</div>
+              <div class="newhire-team">John Sautter's team (SE - PS - CLOUD - A)</div>
+            </div>
+          </div>
+          <div class="newhire-item">
+            <img src="https://avatars.slack-edge.com/2026-11-18/12632555460309_39ea6da7ee6dfe063c8d_original.jpg" alt="Jaswant Kasinedi" class="newhire-photo">
+            <div>
+              <div class="newhire-name">Jaswant Kasinedi</div>
+              <div class="newhire-title">Forward Deployed Engineer</div>
+              <div class="newhire-team">Shelby Kivett's team (TBLD - PS - PRODUCT - BUILDER)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANNOUNCEMENTS -->
+    <section id="announcements">
+      <h2 onclick="toggleSection(this)">📢 Announcements from Geoff and Paul <span class="chevron">▼</span></h2>
+      <div class="section-body">
+        <ul class="ann-bullets">
+          <li><em>No new announcements for this meeting. See Open Discussion for key updates on token optimization and AI spend management.</em></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RECENT WINS -->
+    <section id="recent-wins">
+      <h2 onclick="toggleSection(this)">🏆 Recent Wins (Nov 09 – Nov 23) <span class="chevron">▼</span></h2>
+      <div class="section-body">
+        <table class="wins-table">
+          <thead>
+            <tr>
+              <th>Opportunity</th>
+              <th>Amount</th>
+              <th>Type</th>
+              <th>Contributors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="wins-group">
+              <td colspan="4">ADD-ON BUSINESS</td>
+            </tr>
+            <tr>
+              <td>JPL Slack Uplift and Upgrade to Enterprise Plus</td>
+              <td>$139,650</td>
+              <td>Add-On Business</td>
+              <td>Naseer Rashid <span class="source-tag tag-act">Act</span> <span class="source-tag tag-dc">DC</span></td>
+            </tr>
+            <tr>
+              <td>US Army T2COM DEVCOM C5ISR Empower (+20 A4X, +Cust</td>
+              <td>$104,141</td>
+              <td>Add-On Business</td>
+              <td>Ben Chun <span class="source-tag tag-dsr">DSR</span></td>
+            </tr>
+            <tr>
+              <td>Constellation Research Inc - Slack EKM</td>
+              <td>$6,336</td>
+              <td>Add-On Business</td>
+              <td><span class="source-tag tag-dc">DC</span></td>
+            </tr>
+            <tr class="wins-group">
+              <td colspan="4">NEW BUSINESS</td>
+            </tr>
+            <tr>
+              <td>AZ DES Data360 ACE ELA (D360) #BDS-PB</td>
+              <td>$953,673</td>
+              <td>New Business</td>
+              <td>Bryan Wise <span class="source-tag tag-act">Act</span> <span class="source-tag tag-io">IO</span></td>
+            </tr>
+            <tr>
+              <td>SLK - Alabama Port Authority-(+28)+28 #SLACKDOWN</td>
+              <td>$22,906</td>
+              <td>New Business</td>
+              <td>Marissa Herencia-White <span class="source-tag tag-act">Act</span> <span class="source-tag tag-dc">DC</span></td>
+            </tr>
+            <tr>
+              <td>**SLK - Colorado Department of Parks & Wildlife</td>
+              <td>$10,800</td>
+              <td>New Business</td>
+              <td>Sal DiGilio <span class="source-tag tag-act">Act</span></td>
+            </tr>
+            <tr class="wins-group">
+              <td colspan="4">SWAP</td>
+            </tr>
+            <tr>
+              <td>FED2 - IRCC CXP R4 Contract Amd AF D360 #AI #AWS</td>
+              <td>~$133,070 ($180,688 CAD)</td>
+              <td>Swap</td>
+              <td>Cole Sidhu <span class="source-tag tag-dsr">DSR</span></td>
+            </tr>
+            <tr class="total-row">
+              <td colspan="2"><strong>TOTAL: 7 wins</strong></td>
+              <td colspan="2"><strong>$1,370,576 USD + $180,688 CAD</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="wins-legend">
+          <span><span class="source-tag tag-act">Act</span> = SE Activity Report</span>
+          <span><span class="source-tag tag-dsr">DSR</span> = Deal Support Request</span>
+          <span><span class="source-tag tag-dc">DC</span> = Deal Contribution</span>
+          <span><span class="source-tag tag-io">IO</span> = Influenced Opportunity</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIALIST HIGHLIGHTS -->
+    <section id="highlights">
+      <h2 onclick="toggleSection(this)">⭐ Specialist Highlights <span class="chevron">▼</span></h2>
+      <div class="section-body">
+        <div class="highlight-group">
+          <h3>⭐ Highlights</h3>
+          <ul class="highlight-list">
+            <li><strong>Naseer Rashid</strong> (11/17) — VHA Leadership Slack activation at Orlando Medical Center</li>
+          </ul>
+        </div>
+        <div class="highlight-group">
+          <h3>🎓 Enablement</h3>
+          <ul class="highlight-list">
+            <li><strong>Nitin Kundeshwar</strong> (11/10) — PASSED the Professional Builder Onboarding Capstone Project.  Congratulations!  Thank you for all your efforts on this and leading the team!</li>
+            <li><strong>Jeremy Blankenship</strong> (11/10) — PASSED the Professional Builder Onboarding Capstone Project.  Congratulations!  Thank you for all your efforts on this and kudos on the poositive feedback from your team!</li>
+            <li><strong>Shelby Kivett</strong> (11/10) — PASSED the Professional Builder Onboarding Capstone Project!</li>
+          </ul>
+        </div>
+        <div class="highlight-group">
+          <h3>🏅 Certs / Ranger / Milestones</h3>
+          <ul class="highlight-list">
+            <li><strong>Jeremy Blankenship</strong> (11/10) — Professional Builder Onboarding Capstone Project</li>
+            <li><strong>Jack Galletta</strong> (11/11) — All Star Ranger</li>
+            <li><strong>Jack Galletta</strong> (11/11) — Achieved ALL STAR Ranger status! Congrats and thank you for continuing to invest in your learning!</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAR UPDATE -->
+    <section id="sar-update">
+      <h2 onclick="toggleSection(this)">🎯 SAR Update <span class="chevron">▼</span></h2>
+      <div class="section-body">
+        <table class="sar-table">
+          <thead>
+            <tr>
+              <th>Account</th>
+              <th>Specialist Areas</th>
+              <th>People</th>
+              <th>Latest Update</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>VA CCC</td>
+              <td>Data Cloud/AI, Enterprise Architects, Agent Acceleration</td>
+              <td>Andy Cather, Jean-Marie Sautter, Ben Chun</td>
+              <td>Multiple efforts underway with VA CCC, White House hotline, COE Best practices</td>
+            </tr>
+            <tr>
+              <td>USDA ERAS GIS</td>
+              <td>Scale Specialists</td>
+              <td>Josh Dreifuss</td>
+              <td>SE team assisting with Services delivery of GIS capabilities, including overlaying customer-submitted polygons with ESRI layers representing possible conflicts and relevant laws.</td>
+            </tr>
+            <tr>
+              <td>VA ITSM Transformation</td>
+              <td>Scale Specialists, Slack</td>
+              <td>Adam Landsman, Jeremy Blankenship, Geoff Roser</td>
+              <td>Marc B initiative - ServiceNow takeout VA wide</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- T&E UPDATE -->
+    <section id="te-update">
+      <h2 onclick="toggleSection(this)">💰 T&E Update <span class="chevron">▼</span></h2>
+      <div class="section-body">
+        <p class="te-subtitle">Q4 FY27 · most recent week: November 20 · 20.7% of quarter elapsed (day 19 of 92) · tracker: FY27-H2 tab · 5 budgets</p>
+        <div class="te-grid">
+          <div class="donut-wrap">
+            <svg viewBox="0 0 120 70" class="te-donut">
+              <path d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="#E4E9F0" stroke-width="12" />
+              <path d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="#28A745" stroke-width="12"
+                    stroke-dasharray="29.8 127.2" stroke-linecap="round" />
+              <text x="60" y="45" text-anchor="middle" font-size="22" font-weight="700" fill="#28A745">19%</text>
+              <text x="60" y="62" text-anchor="middle" font-size="10" fill="#706E6B">$17,110 / $88,000</text>
+            </svg>
+            <div class="donut-label">ALL</div>
+          </div>
+          <div class="donut-wrap">
+            <svg viewBox="0 0 120 70" class="te-donut">
+              <path d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="#E4E9F0" stroke-width="12" />
+              <path d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="#28A745" stroke-width="12"
+                    stroke-dasharray="40.8 116.2" stroke-linecap="round" />
+              <text x="60" y="45" text-anchor="middle" font-size="22" font-weight="700" fill="#28A745">26%</text>
+              <text x="60" y="62" text-anchor="middle" font-size="10" fill="#706E6B">$6,549 / $25,000</text>
+            </svg>
+            <div class="donut-label">EA</div>
+          </div>
+          <div class="donut-wrap">
+            <svg viewBox="0 0 120 70" class="te-donut">
+              <path d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="#E4E9F0" stroke-width="12" />
+              <path d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="#28A745" stroke-width="12"
+                    stroke-dasharray="44.0 113.0" stroke-linecap="round" />
+              <text x="60" y="45" text-anchor="middle" font-size="22" font-weight="700" fill="#28A745">28%</text>
+              <text x="60" y="62" text-anchor="middle" font-size="10" fill="#706E6B">$3,629 / $13,000</text>
+            </svg>
+            <div class="donut-label">BVS</div>
+          </div>
+          <div class="donut-wrap">
+            <svg viewBox="0 0 120 70" class="te-donut">
+              <path d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="#E4E9F0" stroke-width="12" />
+              <path d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="#28A745" stroke-width="12"
+                    stroke-dasharray="20.4 136.6" stroke-linecap="round" />
+              <text x="60" y="45" text-anchor="middle" font-size="22" font-weight="700" fill="#28A745">13%</text>
+              <text x="60" y="62" text-anchor="middle" font-size="10" fill="#706E6B">$4,427 / $35,000</text>
+            </svg>
+            <div class="donut-label">BUILDER</div>
+          </div>
+          <div class="donut-wrap">
+            <svg viewBox="0 0 120 70" class="te-donut">
+              <path d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="#E4E9F0" stroke-width="12" />
+              <path d="M 10 60 A 50 50 0 0 1 110 60" fill="none" stroke="#28A745" stroke-width="12"
+                    stroke-dasharray="9.4 147.6" stroke-linecap="round" />
+              <text x="60" y="45" text-anchor="middle" font-size="22" font-weight="700" fill="#28A745">6%</text>
+              <text x="60" y="62" text-anchor="middle" font-size="10" fill="#706E6B">$558 / $10,000</text>
+            </svg>
+            <div class="donut-label">SLACK/IDO</div>
+          </div>
+        </div>
+        <p class="te-note">
+          All budgets are under pace for Q4. BUILDER is 13% spent with 79% of quarter remaining. BVS is 28% spent with 79% of quarter remaining.
+          <a href="https://docs.google.com/spreadsheets/d/1rJ7EEq-SImYhnBr8N1KyZHvtzfCZgpDidbFnKviXJjY/edit#gid=1975647821" target="_blank">View FY27-H2 Tracker →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ACV SNAPSHOT -->
+    <section id="acv-snapshot">
+      <h2 onclick="toggleSection(this)">📊 ACV Snapshot (Q4 FY27) <span class="chevron">▼</span></h2>
+      <div class="section-body">
+        <div class="acv-stats">
+          <div class="acv-card">
+            <div class="acv-value">$592.7M</div>
+            <div class="acv-label">GPS YTD ACV</div>
+            <div class="acv-progress">74.1% of $800M quota</div>
+          </div>
+          <div class="acv-card">
+            <div class="acv-value">~$211.0M</div>
+            <div class="acv-label">Specialist Touched YTD</div>
+            <div class="acv-progress">35.6% of GPS YTD</div>
+          </div>
+          <div class="acv-card">
+            <div class="acv-value">~$18.3M</div>
+            <div class="acv-label">GPS Q4 Closed ACV</div>
+            <div class="acv-progress">7.0% of $260M commit</div>
+          </div>
+          <div class="acv-card">
+            <div class="acv-value">~$1.5M</div>
+            <div class="acv-label">Specialist Q4 Touch</div>
+            <div class="acv-progress">8.1% of Q4 closed</div>
+          </div>
+        </div>
+        <div class="acv-methodology">
+          <strong>Methodology:</strong> GPS YTD ACV from waterfall report 00Oed000002IpvlEAC (authoritative source).
+          GPS Q4 estimated via SOQL scaling ratio (1.242×). Specialist-touched figures are <strong>deduplicated</strong> Opportunity.Amount sums
+          (375 unique opps YTD, 9 unique opps Q4) from DC/DSR/IO sources — when multiple team members touch the same deal, it's counted once.
+          Team roster: 42 active user IDs from canvas F0B3PMSMY81 (Nov 17 refresh). Q4 commit: $260M.
+        </div>
+      </div>
+    </section>
+
+    <!-- OPEN DISCUSSION -->
+    <section id="open-discussion">
+      <h2 onclick="toggleSection(this)">💬 Open Discussion <span class="chevron">▼</span></h2>
+      <div class="section-body">
+        <ul class="ann-bullets">
+          <li><a href="https://salesforce-internal.slack.com/archives/C054FPAR4CW/p1794950782793899" target="_blank">Make Every Token Count!</a></li>
+          <li><a href="https://team24-portal.forge-prod.sfdcbt.net/content-frame/ai-spend" target="_blank">AI Spend Dashboard</a></li>
+          <li>Token Optimization Best Practices
+            <ul>
+              <li><a href="https://salesforce.enterprise.slack.com/docs/T34263EUF/F0C77BKJ9K4" target="_blank">Cost Background Canvas</a> – Where cost comes from
+                <ul>
+                  <li>Don't include files, just paste links</li>
+                  <li>Be careful spawning subagents</li>
+                  <li>Cache is only 5 minutes… after that the whole context has to be re-read</li>
+                </ul>
+              </li>
+              <li><a href="https://salesforce.enterprise.slack.com/docs/T34263EUF/F0CB7MP9BR7" target="_blank">Actionable Tips Canvas</a>
+                <ul>
+                  <li>Has a ready-made <code>CLAUDE.md</code> block with instant savings</li>
+                </ul>
+              </li>
+              <li><strong>Start fresh:</strong> Chat history is resent every turn, so long threads get heavier over time. Start a new thread when topics change or the AI starts to drift.</li>
+              <li><strong>Hit Stop:</strong> If a response is long or off-track, stop it and re-prompt with a tighter ask.</li>
+              <li><strong>Reuse what works:</strong> Save effective prompts, skills, agents, and workflows instead of rebuilding them. Turn recurring tasks into a Gem or Slackbot Skill, and put shared rules in a file like <code>AGENTS.md</code> or <code>CLAUDE.md</code>.</li>
+              <li><strong>Curate your context:</strong> Reduce unnecessary context and provide only the relevant files, logs, or requirements. A few exact files beat a whole directory.</li>
+              <li><strong>Document as you go:</strong> Ask the model to summarize its findings so you can pick the work back up later without starting over.</li>
+              <li><strong>Turn off what you're not using:</strong> Every active tool integration (like an MCP server) adds overhead to the prompt. Keep only what you need.</li>
+            </ul>
+          </li>
+          <li><a href="https://salesforce.enterprise.slack.com/docs/T34263EUF/F0CDDTH20UR" target="_blank">Additional Tips Canvas</a></li>
+          <li>SlidesEvolve from Salesforce Research (not listed on Software Catalog yet)
+            <ul>
+              <li><a href="https://salesforce.enterprise.slack.com/docs/T34263EUF/F0C9E1PDP3L" target="_blank">SlidesEvolve Canvas</a></li>
+              <li>Requires Claude Code CLI or Athena API</li>
+              <li>Installs as an app on Mac - not available on windows yet</li>
+              <li>Creates a PPTX, but can be imported into Google Slides</li>
+            </ul>
+          </li>
+        </ul>
+        <p style="margin-top: 12px; font-size: 0.88rem; color: #706E6B;"><code>/explain-usage</code> is a skill that will explain how to improve cost.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    function toggleSection(h2) {
+      h2.closest('section').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
